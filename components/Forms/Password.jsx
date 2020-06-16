@@ -7,12 +7,7 @@ const Password = ({ name, ...props }) => {
 
   return (
     <div className="relative">
-      <input
-        id={name}
-        type={type}
-        className="w-full p-2 rounded-lg border border-gray-400 focus:border-gray-800 transition duration-500"
-        {...props}
-      />
+      <input id={name} type={type} className="form-input w-full" {...props} />
       <button
         type="button"
         className="absolute right-0 p-2 outline-none"

@@ -1,0 +1,22 @@
+/**
+ * @see https://css-tricks.com/perfect-full-page-background-image/
+ * @see https://css-tricks.com/almanac/properties/b/background-blend-mode/
+ */
+ .cover,
+ .cover-error {
+   background: no-repeat center center / cover fixed;
+   background-image: url('/images/cover.jpg');
+   background-color: #777;
+   background-blend-mode: multiply;
+ }
+ .cover-error {
+   background-image: url('/images/error.jpg');
+   background-color: #aaa;
+ }
+
+ .flex-item {
+   @apply mr-2 my-1;
+ }
+ .flex-item-lg {
+   @apply mr-2 my-2;
+ }

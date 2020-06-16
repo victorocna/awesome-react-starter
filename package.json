@@ -17,6 +17,8 @@
   ],
   "author": "victorocna <victor@chesscoders.com> (https://chesscoders.com)",
   "dependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "autoprefixer": "^9.8.0",
     "dotenv": "^8.2.0",
     "formik": "^2.1.4",
     "js-cookie": "^2.2.1",
@@ -25,13 +27,17 @@
     "node-fetch": "^2.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-query": "^1.5.8",
     "react-spring": "^8.0.27",
+    "tailwindcss": "^1.4.6",
     "toasted-notes": "^3.2.0",
     "yup": "^0.29.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint-plugin-react": "^7.20.0"
+    "eslint": "^7.2.0",
+    "eslint-plugin-react": "^7.20.0",
+    "prettier": "^2.0.5"
   },
   "eslintConfig": {
     "env": {

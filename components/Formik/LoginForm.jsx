@@ -17,12 +17,12 @@ const LoginForm = () => (
         </Fieldset>
         <Fieldset
           name="password"
-          className="mb-4"
+          className="mb-2"
           label={<div className="text-gray-800">Your password</div>}
         >
           <Field name="password" as={Password} />
         </Fieldset>
-        <Button type="submit" disabled={isSubmitting}>
+        <Button type="submit" disabled={isSubmitting} className="mt-2">
           Login
         </Button>
       </Form>

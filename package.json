@@ -18,11 +18,16 @@
   "author": "victorocna <victor@chesscoders.com> (https://chesscoders.com)",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "formik": "^2.1.4",
     "js-cookie": "^2.2.1",
     "jsonwebtoken": "^8.5.1",
     "next": "^9.4.4",
+    "node-fetch": "^2.6.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-spring": "^8.0.27",
+    "toasted-notes": "^3.2.0",
+    "yup": "^0.29.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

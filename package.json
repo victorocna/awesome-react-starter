@@ -38,34 +38,5 @@
     "eslint": "^7.11.0",
     "eslint-plugin-react": "^7.21.4",
     "prettier": "^2.1.2"
-  },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "node": true,
-      "commonjs": true,
-      "es6": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended"
-    ],
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module"
-    },
-    "rules": {
-      "no-warning-comments": "warn",
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off"
-    }
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "tabWidth": 2,
-    "semi": true,
-    "singleQuote": true,
-    "arrowParens": "always"
   }
 }

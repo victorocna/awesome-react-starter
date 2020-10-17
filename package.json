@@ -1,6 +1,6 @@
 {
   "name": "next-with-auth-starter",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Starter for Next.js projects with authentication",
   "main": "index.js",
   "scripts": {
@@ -20,24 +20,24 @@
     "@tailwindcss/custom-forms": "^0.2.1",
     "autoprefixer": "^9.8.6",
     "dotenv": "^8.2.0",
-    "formik": "^2.1.5",
+    "formik": "^2.2.0",
     "js-cookie": "^2.2.1",
     "jsonwebtoken": "^8.5.1",
-    "next": "^9.5.4",
-    "node-fetch": "^2.6.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "next": "^9.5.5",
+    "node-fetch": "^2.6.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-query": "^1.5.10",
     "react-spring": "^8.0.27",
-    "tailwindcss": "^1.6.0",
+    "tailwindcss": "^1.9.3",
     "toasted-notes": "^3.2.0",
-    "yup": "^0.29.2"
+    "yup": "^0.29.3"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.6.0",
-    "eslint-plugin-react": "^7.20.5",
-    "prettier": "^2.0.5"
+    "eslint": "^7.11.0",
+    "eslint-plugin-react": "^7.21.4",
+    "prettier": "^2.1.2"
   },
   "eslintConfig": {
     "env": {

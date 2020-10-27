@@ -1,10 +1,22 @@
-const AppHead = ({ title, description, googleFonts, fontAwesome }) => (
-  <>
-    {title && <title>{title}</title>}
-    {description && <meta name="description" content={description} />}
-    {googleFonts && <link rel="stylesheet" href={googleFonts} />}
-    {fontAwesome && <link rel="stylesheet" href={fontAwesome} />}
-  </>
-);
+import React, { useContext } from 'react';
+import Head from 'next/head';
+import { AppContext } from '.';
+import { Favicon, OpenGraph } from '.';
+
+const AppHead = () => {
+  const { sitename, description, googleFonts, fontAwesome, bootstrap } = useContext(AppContext);
+
+  return (
+    <Head>
+      <title>{sitename}</title>
+      <meta name="description" content={description} />
+      {googleFonts && <link rel="stylesheet" href={googleFonts} />}
+      {fontAwesome && <link rel="stylesheet" href={fontAwesome} />}
+      {bootstrap && <link rel="stylesheet" href={bootstrap} />}
+      <Favicon />
+      <OpenGraph />
+    </Head>
+  );
+};
 
 export default AppHead;

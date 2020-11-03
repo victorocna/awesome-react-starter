@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
+import Head from 'next/head';
 import { AppContext } from '.';
 
 const OpenGraph = () => {
   const { sitename, title, description, image, baseurl } = useContext(AppContext);
 
   return (
-    <>
+    <Head>
       <meta property="og:site_name" content={sitename} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
@@ -15,7 +16,7 @@ const OpenGraph = () => {
 
       <meta itemProp="name" content={title} />
       <meta itemProp="description" content={description} />
-    </>
+    </Head>
   );
 };
 

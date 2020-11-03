@@ -14,7 +14,11 @@ module.exports = {
     },
   },
   purge: [
-    './components/**/*.jsx',
-    './pages/**/*.js',
+    './components/**/*.jsx', // all components
+    './pages/**/*.js', // all pages as well
   ],
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
 };

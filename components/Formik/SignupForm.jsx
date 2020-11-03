@@ -1,5 +1,5 @@
 import { Formik, Form, Field } from 'formik';
-import { Fieldset, Input, Password, Submit } from '../Forms';
+import { Fieldset, Input, Password, Submit, Recaptcha } from '../Forms';
 import { signup as signupValues } from '../../models';
 import { signup } from '../../controllers/identity';
 
@@ -24,6 +24,7 @@ const SignupForm = () => (
         <Field name="password" as={Password} />
       </Fieldset>
       <Submit className="mt-2">Signup</Submit>
+      <Field type="hidden" value="g-recaptcha-response" as={Recaptcha} />
     </Form>
   </Formik>
 );

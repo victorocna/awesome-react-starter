@@ -1,5 +1,5 @@
 import { Formik, Form, Field } from 'formik';
-import { Fieldset, Password, Submit } from '../Forms';
+import { Fieldset, Password, Submit, Recaptcha } from '../Forms';
 import { reset as resetValues } from '../../models';
 import { reset } from '../../controllers/identity';
 
@@ -14,6 +14,7 @@ const ResetForm = ({ hash }) => (
         <Field name="password" as={Password} />
       </Fieldset>
       <Submit className="mt-2">Reset password</Submit>
+      <Field type="hidden" value="g-recaptcha-response" as={Recaptcha} />
     </Form>
   </Formik>
 );

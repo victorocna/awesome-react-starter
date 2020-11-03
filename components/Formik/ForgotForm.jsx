@@ -1,5 +1,5 @@
 import { Formik, Form, Field } from 'formik';
-import { Fieldset, Input, Submit } from '../Forms';
+import { Fieldset, Input, Submit, Recaptcha } from '../Forms';
 import { forgot as forgotValues } from '../../models';
 import { forgot } from '../../controllers/identity';
 
@@ -14,6 +14,7 @@ const ForgotForm = () => (
         <Field name="email" type="email" as={Input} />
       </Fieldset>
       <Submit className="mt-2">Send password reset email</Submit>
+      <Field type="hidden" value="g-recaptcha-response" as={Recaptcha} />
     </Form>
   </Formik>
 );

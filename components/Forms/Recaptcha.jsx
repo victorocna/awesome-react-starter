@@ -17,14 +17,12 @@ const Recaptcha = () => {
     }
   };
 
-  return (
-    <ReactRecaptcha
-      ref={ref}
-      sitekey={process.env.RECAPTCHA_SITE_KEY}
-      size="invisible"
-      onChange={onChange}
-    />
-  );
+  const sitekey = process.env.RECAPTCHA_SITE_KEY;
+  if (!sitekey) {
+    return null;
+  }
+
+  return <ReactRecaptcha ref={ref} sitekey={sitekey} size="invisible" onChange={onChange} />;
 };
 
 export default Recaptcha;

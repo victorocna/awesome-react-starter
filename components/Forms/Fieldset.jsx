@@ -1,3 +1,4 @@
+import React from 'react';
 import { Help } from '.';
 
 const Fieldset = ({ label, help, name, className, ...props }) => {

@@ -7,18 +7,12 @@ import { useRouter } from 'next/router';
 export default function withRouter(WrappedComponent) {
   const Router = () => {
     const router = useRouter();
-    if (isEmpty(router.query)) {
+    const { query } = router;
+    if (isEmpty(query)) {
       return null;
     }
 
-    if (router.query.hash) {
-      return <WrappedComponent hash={router.query.hash} />;
-    }
-    if (router.query.id) {
-      return <WrappedComponent id={router.query.id} />;
-    }
-
-    return <WrappedComponent />;
+    return <WrappedComponent {...query} />;
   };
 
   return Router;

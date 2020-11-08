@@ -21,7 +21,6 @@
     "autoprefixer": "^9.8.6",
     "dotenv": "^8.2.0",
     "formik": "^2.2.1",
-    "js-cookie": "^2.2.1",
     "jsonwebtoken": "^8.5.1",
     "next": "^10.0.0",
     "node-fetch": "^2.6.1",
@@ -30,6 +29,7 @@
     "react-google-recaptcha": "^2.1.0",
     "react-query": "^1.5.10",
     "react-spring": "^8.0.27",
+    "redux": "^4.0.5",
     "tailwindcss": "^1.9.6",
     "toasted-notes": "^3.2.0",
     "yup": "^0.29.3"

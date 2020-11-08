@@ -1,6 +1,6 @@
-import fetch from 'node-fetch';
-import cookie from 'js-cookie';
+import nodeFetch from 'node-fetch';
 import resolve from './resolve';
+import store from './store';
 
 /**
  * Wraps node-fetch with common project-wide options
@@ -9,27 +9,28 @@ import resolve from './resolve';
  * @param {*} options Common options
  * @see https://www.npmjs.com/package/node-fetch#options
  */
-const wrapFetch = async (url, { data, withAuth = true, method = 'GET', ...options } = {}) => {
+const fetch = async (url, { data, withAuth = true, method = 'GET', ...options } = {}) => {
   const headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
   };
+
   if (withAuth) {
-    headers.Authorization = `Bearer ${cookie.get(process.env.COOKIE_NAME)}`;
+    headers.Authorization = `Bearer ${store.getState()}`;
   }
 
-  const res = await fetch(resolve(url), {
+  const res = await nodeFetch(resolve(url), {
     headers,
     method,
     body: data ? JSON.stringify(data) : null,
+    credentials: 'include',
     ...options,
   });
 
   if (!res.ok) {
-    const { name, message } = await res.json();
-    throw new Error(`${name}! ${message}`);
+    throw new Error(await res.json());
   }
   return await res.json();
 };
 
-export default wrapFetch;
+export default fetch;

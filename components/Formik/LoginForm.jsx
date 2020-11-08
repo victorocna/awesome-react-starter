@@ -1,7 +1,7 @@
 import { Formik, Form, Field } from 'formik';
 import { Fieldset, Input, Password, Recaptcha, Submit } from '../Forms';
 import { login as loginValues } from '../../models';
-import { login } from '../../services/auth';
+import { login } from '../../controllers/identity';
 
 const LoginForm = () => (
   <Formik {...loginValues} onSubmit={login}>

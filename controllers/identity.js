@@ -1,5 +1,26 @@
 import router from 'next/router';
 import { fetch, toaster } from '../functions';
+import { login as loginAuth, logout as logoutAuth } from '../services/auth';
+
+export const login = async (data) => {
+  try {
+    const message = await loginAuth(data);
+    toaster.success(message);
+    router.push('/dashboard');
+  } catch ({ message }) {
+    toaster.error(message);
+  }
+};
+
+export const logout = async () => {
+  try {
+    const message = await logoutAuth();
+    toaster.success(message);
+    router.push('/login');
+  } catch ({ message }) {
+    toaster.error(message);
+  }
+};
 
 export const signup = async (data) => {
   try {

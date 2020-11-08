@@ -9,7 +9,7 @@ import store from './store';
  * @param {*} options Common options
  * @see https://www.npmjs.com/package/node-fetch#options
  */
-const fetch = async (url, { data, withAuth = true, method = 'GET', ...options } = {}) => {
+const fetch = async (url, { data, withAuth = false, method = 'GET', ...options } = {}) => {
   const headers = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
@@ -23,12 +23,12 @@ const fetch = async (url, { data, withAuth = true, method = 'GET', ...options } 
     headers,
     method,
     body: data ? JSON.stringify(data) : null,
-    credentials: 'include',
     ...options,
   });
 
   if (!res.ok) {
-    throw new Error(await res.json());
+    const { message } = await res.json();
+    throw new Error(message);
   }
   return await res.json();
 };

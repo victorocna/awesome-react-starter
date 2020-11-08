@@ -1,9 +1,11 @@
 import { checkAuth, withAuth } from '../../services/auth';
+import { Layout, Quote } from '../../components/Demo';
 
 const Dashboard = () => (
-  <main>
-    <h1>Admin Dashboard</h1>
-  </main>
+  <Layout>
+    <h1 className="font-semibold mb-4">Dashboard</h1>
+    <Quote />
+  </Layout>
 );
 
 export async function getServerSideProps(context) {

@@ -1,4 +1,5 @@
-import fetch from './fetch';
+import fetch from '../api/fetch';
+import store from './store'
 
 const refreshToken = async (cookie) => {
   const { token } = await fetch(`/refresh-token`, {
@@ -7,6 +8,7 @@ const refreshToken = async (cookie) => {
     credentials: 'include',
     headers: { cookie },
   });
+  store.dispatch({ type: 'SET', jwt: token });
 
   return token;
 };

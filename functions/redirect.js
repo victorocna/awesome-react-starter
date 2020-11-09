@@ -7,7 +7,7 @@ const redirect = (token) => {
     return false;
   }
 
-  return Router.push('/admin');
+  return Router.push('/dashboard');
 };
 
 export default redirect;

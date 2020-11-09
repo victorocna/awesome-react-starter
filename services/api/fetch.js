@@ -1,6 +1,6 @@
 import nodeFetch from 'node-fetch';
 import resolve from './resolve';
-import store from './store';
+import store from '../auth/store';
 
 /**
  * Wraps node-fetch with common project-wide options

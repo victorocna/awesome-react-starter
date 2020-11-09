@@ -1,5 +1,6 @@
 import router from 'next/router';
-import { fetch, toaster } from '../functions';
+import { toaster } from '../functions';
+import { fetch } from '../services/api';
 import { login as loginAuth, logout as logoutAuth } from '../services/auth';
 
 export const login = async (data) => {

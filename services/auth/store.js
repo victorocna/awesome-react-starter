@@ -13,4 +13,6 @@ function inMemoryJwt(state = null, action) {
 
 export const store = createStore(inMemoryJwt);
 
+store.subscribe(() => console.log(store.getState()))
+
 export default store;

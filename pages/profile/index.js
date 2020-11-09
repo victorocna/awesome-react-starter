@@ -1,9 +1,10 @@
 import { checkAuth, withAuth } from '../../services/auth';
-import { Layout } from '../../components/Demo';
+import { Layout, Profile } from '../../components/Demo';
 
 const Page = () => (
   <Layout>
-    <h1 className="font-semibold">My profile</h1>
+    <h1 className="font-semibold mb-4">My profile</h1>
+    <Profile />
   </Layout>
 );
 

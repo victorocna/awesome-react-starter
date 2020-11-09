@@ -1,4 +1,4 @@
-import fetch from './fetch';
+import fetch from '../api/fetch';
 import store from './store';
 
 const login = async (data) => {

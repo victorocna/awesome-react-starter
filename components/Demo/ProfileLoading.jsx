@@ -1,6 +1,6 @@
 import React from 'react';
 
-const QuoteLoading = () => (
+const ProfileLoading = () => (
   <div className="animate-pulse">
     <div className="flex flex-col px-4 lg:px-8 bg-white py-2">
       <dt className="lg:w-1/4">Name: </dt>
@@ -13,4 +13,4 @@ const QuoteLoading = () => (
   </div>
 );
 
-export default QuoteLoading;
+export default ProfileLoading;

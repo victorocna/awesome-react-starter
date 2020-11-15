@@ -1,12 +1,15 @@
 import React from 'react';
 
-const Checkbox = ({ label, ...props }) => {
-  return (
-    <div className="flex flex-wrap items-center">
-      <input type="checkbox" className="form-checkbox p-2 cursor-pointer" {...props} />
-      {label}
-    </div>
-  );
-};
+const Checkbox = ({ label, value, ...props }) => (
+  <div className="flex flex-wrap items-center space-x-2">
+    <input
+      type="checkbox"
+      className="form-checkbox p-2 cursor-pointer"
+      defaultChecked={value}
+      {...props}
+    />
+    {label}
+  </div>
+);
 
 export default Checkbox;

@@ -1,8 +1,9 @@
 import * as Yup from 'yup';
 
 const stepOneSchema = {
-  fullname: Yup.string().required(),
-  email: Yup.string().email().required(),
+  fullname: Yup.string().required('Your name is mandatory'),
+  email: Yup.string().email('Your email is invalid').required('Your email is mandatory'),
+  terms: Yup.boolean().oneOf([true], 'You must accept the terms and conditions').required(),
 };
 const stepTwoSchema = {
   country: Yup.string().required(),
@@ -15,6 +16,7 @@ const stepThreeSchema = {
 const stepOneValues = {
   fullname: '',
   email: '',
+  terms: true,
 };
 const stepTwoValues = {
   country: '',

@@ -1,5 +1,5 @@
 import { Field } from 'formik';
-import { Fieldset, Input, Datepicker } from '../Forms';
+import { Fieldset, Datepicker, Select } from '../Forms';
 import { Button } from '..';
 
 const StepTwo = ({ previous }) => (
@@ -8,7 +8,14 @@ const StepTwo = ({ previous }) => (
       name="country"
       label={<div className="text-gray-800 font-semibold mb-1">Country</div>}
     >
-      <Field name="country" type="text" as={Input} />
+      <Field name="country">
+        {(props) => (
+          <Select {...props}>
+            <option value="one">Option 1</option>
+            <option value="two">Option 2</option>
+          </Select>
+        )}
+      </Field>
     </Fieldset>
 
     <Fieldset

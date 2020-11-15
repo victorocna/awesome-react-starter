@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
 import { HeaderSteps, StepOne, StepTwo, StepThree } from '../Multistep';
-import { validationSchema, initialValues } from '../../models/multi-step'
+import { validationSchema, initialValues } from '../../models/multi-step';
+import { toaster } from '../../functions';
 
 const Multistep = () => {
   const [step, setStep] = useState(0);
@@ -29,8 +30,16 @@ const Multistep = () => {
     return validationSchema[step];
   };
   const stepValues = (step) => {
-    return initialValues[step]
-  }
+    return initialValues[step];
+  };
+  const handleSubmit = () => {
+    const isLastStep = step === 2;
+    if (isLastStep) {
+      toaster.success('Multi step Formik form finished successfully');
+    } else {
+      return next();
+    }
+  };
 
   return (
     <article className="bg-white border border-gray-400 rounded-lg py-4 lg:py-8 mb-4">
@@ -38,7 +47,7 @@ const Multistep = () => {
       <Formik
         validationSchema={stepValidation(step)}
         initialValues={stepValues(step)}
-        onSubmit={next}
+        onSubmit={handleSubmit}
       >
         <Form className="p-4">{renderStep(step)}</Form>
       </Formik>

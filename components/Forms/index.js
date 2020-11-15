@@ -1,8 +1,10 @@
 import Age from './Age';
+import Bio from './Bio';
 import Checkbox from './Checkbox';
 import Country from './Country';
 import DateOfBirth from './DateOfBirth';
 import Datepicker from './Datepicker';
+import Debug from './Debug';
 import Email from './Email';
 import Fieldset from './Fieldset';
 import Fullname from './Fullname';
@@ -17,10 +19,12 @@ import Textarea from './Textarea';
 
 export {
   Age,
+  Bio,
   Checkbox,
   Country,
   DateOfBirth,
   Datepicker,
+  Debug,
   Email,
   Fieldset,
   Fullname,

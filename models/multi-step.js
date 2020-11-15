@@ -6,11 +6,11 @@ const stepOneSchema = {
   terms: Yup.boolean().oneOf([true], 'You must accept the terms and conditions').required(),
 };
 const stepTwoSchema = {
-  country: Yup.string().required(),
-  dateOfBirth: Yup.date().required(),
+  country: Yup.string().required('Your country is required'),
+  dateOfBirth: Yup.date('Your date of birth is invalid'),
 };
 const stepThreeSchema = {
-  agree: Yup.boolean().oneOf([true]).required(),
+  bio: Yup.string(),
 };
 
 const stepOneValues = {
@@ -24,7 +24,7 @@ const stepTwoValues = {
   ...stepOneValues,
 };
 const stepThreeValues = {
-  agree: false,
+  bio: '',
   ...stepTwoValues,
 };
 

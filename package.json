@@ -25,7 +25,6 @@
     "formik": "^2.2.1",
     "jsonwebtoken": "^8.5.1",
     "next": "^10.0.0",
-    "node-fetch": "^2.6.1",
     "react": "^16.14.0",
     "react-day-picker": "^7.4.8",
     "react-dom": "^16.14.0",
@@ -35,6 +34,7 @@
     "redux": "^4.0.5",
     "tailwindcss": "^1.9.6",
     "toasted-notes": "^3.2.0",
+    "world-countries": "^4.0.0",
     "yup": "^0.29.3"
   },
   "devDependencies": {

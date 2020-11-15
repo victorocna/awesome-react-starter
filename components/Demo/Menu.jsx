@@ -9,6 +9,9 @@ const Menu = () => (
     <Link href="/profile" className="ml-2">
       My profile
     </Link>
+    <Link href="/multi-step" className="ml-2">
+      Multi step
+    </Link>
     <Logout />
   </div>
 );

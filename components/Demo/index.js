@@ -3,6 +3,7 @@ import Header from './Header';
 import Layout from './Layout';
 import Logout from './Logout';
 import Menu from './Menu';
+import Multistep from './Multistep';
 import Profile from './Profile';
 import ProfileError from './ProfileError';
 import ProfileLoading from './ProfileLoading';
@@ -18,6 +19,7 @@ export {
   Layout,
   Logout,
   Menu,
+  Multistep,
   Profile,
   ProfileError,
   ProfileLoading,

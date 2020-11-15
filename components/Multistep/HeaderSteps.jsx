@@ -2,7 +2,7 @@ import React from 'react';
 import { HeaderStep } from '.';
 
 const HeaderSteps = ({ step }) => (
-  <div className="bg-white p-4 grid gap-4 grid-cols-4 border-t border-b">
+  <div className="bg-white p-4 grid gap-4 grid-cols-3 border-t border-b">
     <HeaderStep isActive={step >= 0}>
       <span>1. Step one</span>
     </HeaderStep>

@@ -7,7 +7,7 @@ const stepOneSchema = {
 };
 const stepTwoSchema = {
   country: Yup.string().required(),
-  birthday: Yup.date().required(),
+  dateOfBirth: Yup.date().required(),
 };
 const stepThreeSchema = {
   agree: Yup.boolean().oneOf([true]).required(),
@@ -20,7 +20,7 @@ const stepOneValues = {
 };
 const stepTwoValues = {
   country: '',
-  birthday: '',
+  dateOfBirth: '',
   ...stepOneValues,
 };
 const stepThreeValues = {

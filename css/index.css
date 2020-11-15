@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import 'animate.css';
+@import 'datepicker.css';
 @import 'layout.css';
 @import 'loading.css';
 @import 'toaster.css';

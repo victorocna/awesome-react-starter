@@ -1,5 +1,5 @@
 import { Field } from 'formik';
-import { Fieldset, Input } from '../Forms';
+import { Fieldset, Input, Datepicker } from '../Forms';
 import { Button } from '..';
 
 const StepTwo = ({ previous }) => (
@@ -15,7 +15,7 @@ const StepTwo = ({ previous }) => (
       name="birthday"
       label={<div className="text-gray-800 font-semibold mb-1">Date of birth</div>}
     >
-      <Field name="birthday" type="text" as={Input} />
+      <Field name="birthday" type="text" as={Datepicker} />
     </Fieldset>
 
     <Button variant="outline" className="mr-4" onClick={previous}>

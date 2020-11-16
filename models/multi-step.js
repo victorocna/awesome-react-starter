@@ -14,8 +14,8 @@ const stepThreeSchema = {
 };
 
 const stepOneValues = {
-  fullname: '',
-  email: '',
+  fullname: 'Gogu', // FIXME: remove dummy data
+  email: 'gogu@example.com',
   terms: true,
 };
 const stepTwoValues = {

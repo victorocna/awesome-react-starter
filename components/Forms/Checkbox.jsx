@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Checkbox = ({ label, value, ...props }) => (
-  <div className="flex flex-wrap items-center space-x-2">
+  <div className="flex items-center space-x-2">
     <input
       type="checkbox"
       className="form-checkbox p-2 cursor-pointer"

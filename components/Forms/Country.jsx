@@ -1,27 +1,19 @@
 import { Field } from 'formik';
-import countries from 'world-countries';
-import { Fieldset, Select } from '.';
+import { Fieldset, Dropdown } from '.';
+import { countries } from '../../data';
 
 const Country = () => {
-  const showCountries = (country) => (
-    <option key={country.name.common} value={country.name.common}>
-      {country.name.common}
-    </option>
-  );
-
-  const CountrySelect = (props) => (
-    <Select placeholder="Select your country" {...props}>
-      {countries.map(showCountries)}
-    </Select>
+  const CountryDropdown = (props) => (
+    <Dropdown items={countries.map(({ name }) => name)} {...props} />
   );
 
   return (
     <Fieldset
       name="country"
       label={<div className="text-gray-800 font-semibold mb-1">Country</div>}
-      help={<p className="text-gray-600">Required info</p>}
+      help={<p className="text-gray-600">Uses custom dropdown</p>}
     >
-      <Field name="country" as={CountrySelect} />
+      <Field name="country" as={CountryDropdown} />
     </Fieldset>
   );
 };

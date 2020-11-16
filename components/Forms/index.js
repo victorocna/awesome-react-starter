@@ -5,6 +5,7 @@ import Country from './Country';
 import DateOfBirth from './DateOfBirth';
 import Datepicker from './Datepicker';
 import Debug from './Debug';
+import Dropdown from './Dropdown';
 import Email from './Email';
 import Fieldset from './Fieldset';
 import Fullname from './Fullname';
@@ -16,6 +17,7 @@ import Recaptcha from './Recaptcha';
 import Submit from './Submit';
 import Terms from './Terms';
 import Textarea from './Textarea';
+import UsState from './UsState';
 
 export {
   Age,
@@ -25,6 +27,7 @@ export {
   DateOfBirth,
   Datepicker,
   Debug,
+  Dropdown,
   Email,
   Fieldset,
   Fullname,
@@ -36,4 +39,5 @@ export {
   Submit,
   Terms,
   Textarea,
+  UsState,
 };

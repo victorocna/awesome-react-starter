@@ -1,0 +1,11 @@
+input:disabled,
+textarea:disabled,
+select:disabled {
+  @apply cursor-not-allowed bg-gray-200;
+}
+
+input:read-only,
+textarea:read-only,
+select:read-only {
+  @apply cursor-default;
+}

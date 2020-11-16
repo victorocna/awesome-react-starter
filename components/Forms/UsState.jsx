@@ -15,8 +15,7 @@ const UsState = () => {
   const {
     values: { country },
   } = useFormikContext();
-  console.log({ country });
-  if (country === 'Algeria') {
+  if (country === 'United States') {
     setDisabled(false);
   }
 

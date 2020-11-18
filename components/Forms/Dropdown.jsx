@@ -1,11 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
+import { useFormikContext } from 'formik';
 import Downshift from 'downshift';
 
-const Dropdown = ({ items = [], onChange }) => {
+const Dropdown = ({ name, placeholder, items = [] }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { setFieldValue, touched, setTouched } = useFormikContext();
+
   const handleSelect = (value) => {
     setIsOpen(false);
-    onChange(value);
+    setTouched({ ...touched, name });
+    setFieldValue(name, value);
   };
 
   const ref = useRef();
@@ -33,13 +37,14 @@ const Dropdown = ({ items = [], onChange }) => {
   };
 
   return (
-    <Downshift isOpen={isOpen} onSelect={handleSelect}>
-      {({ getInputProps, getMenuProps, ...props }) => (
+    <Downshift isOpen={isOpen} onChange={(value) => handleSelect(value)}>
+      {({ getInputProps, getMenuProps, ...dropdownProps }) => (
         <div className="relative">
           <div className="relative">
             <input
               {...getInputProps()}
               ref={ref}
+              placeholder={placeholder}
               className="form-input w-full"
               onFocus={() => setIsOpen(true)}
               onBlur={() => setIsOpen(false)}
@@ -55,7 +60,7 @@ const Dropdown = ({ items = [], onChange }) => {
               className="absolute w-full mt-2 border shadow rounded overflow-y-auto max-h-50"
               {...getMenuProps()}
             >
-              {items.map((item, index) => showItem(item, index, props))}
+              {items.map((item, index) => showItem(item, index, dropdownProps))}
             </ul>
           )}
         </div>

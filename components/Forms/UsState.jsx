@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Field, useFormikContext } from 'formik';
 import { Fieldset, Select } from '.';
 import { states } from '../../data';
@@ -15,9 +15,11 @@ const UsState = () => {
   const {
     values: { country },
   } = useFormikContext();
-  if (country === 'United States') {
-    setDisabled(false);
-  }
+
+  useEffect(() => {
+    const isUnitedStates = country === 'United States';
+    setDisabled(!isUnitedStates);
+  }, [country]);
 
   return (
     <Fieldset

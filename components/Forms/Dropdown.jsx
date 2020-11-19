@@ -26,13 +26,13 @@ const Dropdown = ({ name, value, placeholder, children }) => {
   const handleSelect = (value) => {
     setIsOpen(false);
     setFieldValue(name, value);
-    setTouched({ ...touched, [name]: true });
   };
 
   const ref = useRef();
   useEffect(() => {
     if (!isOpen) {
       ref.current.blur();
+      setTouched({ [name]: true, ...touched });
     }
   }, [isOpen]);
 

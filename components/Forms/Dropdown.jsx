@@ -25,8 +25,8 @@ const Dropdown = ({ name, value, placeholder, children }) => {
   const { touched, setTouched, setFieldValue } = useFormikContext();
   const handleSelect = (value) => {
     setIsOpen(false);
-    setTouched({ ...touched, [name]: true });
     setFieldValue(name, value);
+    setTouched({ ...touched, [name]: true });
   };
 
   const ref = useRef();

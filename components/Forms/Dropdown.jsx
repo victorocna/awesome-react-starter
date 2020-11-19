@@ -71,8 +71,8 @@ const Dropdown = ({ name, value, placeholder, children }) => {
   return (
     <Downshift isOpen={isOpen} onChange={handleSelect}>
       {({ getInputProps, getMenuProps, inputValue, ...rest }) => (
-        <div className="relative z-50">
-          <div className="relative z-50">
+        <div className="relative">
+          <div className="relative">
             <input
               {...getInputProps()}
               ref={ref}
@@ -90,7 +90,7 @@ const Dropdown = ({ name, value, placeholder, children }) => {
 
           {isOpen && (
             <ul
-              className="absolute w-full mt-2 border shadow rounded overflow-y-auto max-h-50"
+              className="absolute z-50 w-full mt-2 border shadow rounded overflow-y-auto max-h-50"
               {...getMenuProps()}
             >
               {options.map(showItem(rest))}

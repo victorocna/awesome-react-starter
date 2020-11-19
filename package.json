@@ -1,6 +1,6 @@
 {
   "name": "next-with-auth-starter",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "Starter for Next.js projects with authentication",
   "main": "index.js",
   "scripts": {

@@ -5,11 +5,22 @@ import Downshift from 'downshift';
 const Dropdown = ({ name, value, placeholder, children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const childrenToItems = ({ props }) => ({
-    label: props.children,
-    value: props.value,
+  const childrenToItems = ({ value, children }) => {
+    if (typeof children === 'object') {
+      return childrenToItems({
+        value: value || children.props.children,
+        children: children.props.children,
+      });
+    }
+
+    return {
+      label: children,
+      value: value || children,
+    };
+  };
+  const options = React.Children.map(children, ({ props }) => {
+    return childrenToItems(props);
   });
-  const options = React.Children.map(children, childrenToItems);
 
   const { touched, setTouched, setFieldValue } = useFormikContext();
   const handleSelect = (value) => {
@@ -60,8 +71,8 @@ const Dropdown = ({ name, value, placeholder, children }) => {
   return (
     <Downshift isOpen={isOpen} onChange={handleSelect}>
       {({ getInputProps, getMenuProps, inputValue, ...rest }) => (
-        <div className="relative">
-          <div className="relative">
+        <div className="relative z-50">
+          <div className="relative z-50">
             <input
               {...getInputProps()}
               ref={ref}

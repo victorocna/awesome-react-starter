@@ -2,13 +2,19 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useFormikContext } from 'formik';
 import Downshift from 'downshift';
 
-const Dropdown = ({ name, placeholder, children }) => {
+const Dropdown = ({ name, value, placeholder, children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { setFieldValue, touched, setTouched } = useFormikContext();
 
+  const childrenToItems = ({ props }) => ({
+    label: props.children,
+    value: props.value,
+  });
+  const options = React.Children.map(children, childrenToItems);
+
+  const { touched, setTouched, setFieldValue } = useFormikContext();
   const handleSelect = (value) => {
     setIsOpen(false);
-    setTouched({ ...touched, name });
+    setTouched({ ...touched, [name]: true });
     setFieldValue(name, value);
   };
 
@@ -19,36 +25,48 @@ const Dropdown = ({ name, placeholder, children }) => {
     }
   }, [isOpen]);
 
-  const showItem = (item, index, props) => {
-    const { getItemProps, highlightedIndex, selectedItem } = props;
-    const classes = ['p-2 z-50 bg-white'];
-    if (highlightedIndex === index) {
-      classes.push('bg-blue-200');
+  const showLabel = (value) => {
+    try {
+      const option = options.filter((item) => item.value === value);
+      return option[0].label;
+    } catch (err) {
+      return value;
     }
-    if (selectedItem === item.props.children) {
-      classes.push('bg-blue-200');
-    }
+  };
 
-    return (
-      <li
-        key={item.props.value}
-        className={classes.join(' ')}
-        {...getItemProps({ index, item: item.props.children })}
-      >
-        {item.props.children}
-      </li>
-    );
+  const showItem = ({ getItemProps, highlightedIndex, selectedItem }) => {
+    // eslint-disable-next-line
+    return (item, index) => {
+      const classes = ['p-2 z-50 bg-white'];
+      if (highlightedIndex === index) {
+        classes.push('bg-blue-200');
+      }
+      if (selectedItem === item.value) {
+        classes.push('bg-blue-200');
+      }
+
+      return (
+        <li
+          key={item.value}
+          className={classes.join(' ')}
+          {...getItemProps({ index, item: item.value })}
+        >
+          {item.label}
+        </li>
+      );
+    };
   };
 
   return (
-    <Downshift isOpen={isOpen} onChange={(value) => handleSelect(value)}>
-      {({ getInputProps, getMenuProps, ...rest }) => (
+    <Downshift isOpen={isOpen} onChange={handleSelect}>
+      {({ getInputProps, getMenuProps, inputValue, ...rest }) => (
         <div className="relative">
           <div className="relative">
             <input
               {...getInputProps()}
               ref={ref}
               placeholder={placeholder}
+              value={showLabel(value || inputValue)}
               className="form-input w-full"
               onFocus={() => setIsOpen(true)}
               onBlur={() => setIsOpen(false)}
@@ -64,7 +82,7 @@ const Dropdown = ({ name, placeholder, children }) => {
               className="absolute w-full mt-2 border shadow rounded overflow-y-auto max-h-50"
               {...getMenuProps()}
             >
-              {React.Children.map(children, (item, index) => showItem(item, index, rest))}
+              {options.map(showItem(rest))}
             </ul>
           )}
         </div>

@@ -3,8 +3,10 @@ import { Fieldset, Dropdown } from '.';
 import { countries } from '../../data';
 
 const Country = () => {
-  const CountryDropdown = (props) => (
-    <Dropdown items={countries.map(({ name }) => name)} {...props} />
+  const showCountries = ({ name, value }) => (
+    <option key={value} value={value}>
+      {name}
+    </option>
   );
 
   return (
@@ -13,7 +15,9 @@ const Country = () => {
       label={<div className="text-gray-800 font-semibold mb-1">Country</div>}
       help={<p className="text-gray-600">Uses custom dropdown</p>}
     >
-      <Field name="country" as={CountryDropdown} />
+      <Field name="country" placeholder="Select your country" as={Dropdown}>
+        {countries.map(showCountries)}
+      </Field>
     </Fieldset>
   );
 };

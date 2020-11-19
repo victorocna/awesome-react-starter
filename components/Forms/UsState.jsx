@@ -17,8 +17,7 @@ const UsState = () => {
   } = useFormikContext();
 
   useEffect(() => {
-    const isUnitedStates = country === 'United States';
-    setDisabled(!isUnitedStates);
+    setDisabled(country !== 'USA');
   }, [country]);
 
   return (

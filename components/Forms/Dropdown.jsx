@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useFormikContext } from 'formik';
 import Downshift from 'downshift';
 
-const Dropdown = ({ name, placeholder, items = [] }) => {
+const Dropdown = ({ name, placeholder, children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { setFieldValue, touched, setTouched } = useFormikContext();
 
@@ -25,20 +25,24 @@ const Dropdown = ({ name, placeholder, items = [] }) => {
     if (highlightedIndex === index) {
       classes.push('bg-blue-200');
     }
-    if (selectedItem === item) {
+    if (selectedItem === item.props.children) {
       classes.push('bg-blue-200');
     }
 
     return (
-      <li key={item} className={classes.join(' ')} {...getItemProps({ index, item })}>
-        {item}
+      <li
+        key={item.props.value}
+        className={classes.join(' ')}
+        {...getItemProps({ index, item: item.props.children })}
+      >
+        {item.props.children}
       </li>
     );
   };
 
   return (
     <Downshift isOpen={isOpen} onChange={(value) => handleSelect(value)}>
-      {({ getInputProps, getMenuProps, ...dropdownProps }) => (
+      {({ getInputProps, getMenuProps, ...rest }) => (
         <div className="relative">
           <div className="relative">
             <input
@@ -60,7 +64,7 @@ const Dropdown = ({ name, placeholder, items = [] }) => {
               className="absolute w-full mt-2 border shadow rounded overflow-y-auto max-h-50"
               {...getMenuProps()}
             >
-              {items.map((item, index) => showItem(item, index, dropdownProps))}
+              {React.Children.map(children, (item, index) => showItem(item, index, rest))}
             </ul>
           )}
         </div>

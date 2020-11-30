@@ -22,7 +22,7 @@ const ForgotForm = () => {
           className="mb-2"
           label={<div className="text-gray-800">Your email</div>}
         >
-          <Field name="email" type="email" as={Input} />
+          <Field name="email" type="email" as={Input} autoFocus />
         </Fieldset>
         <Submit className="mt-2" onlyOnce>
           Send password reset email

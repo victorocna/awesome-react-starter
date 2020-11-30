@@ -22,7 +22,7 @@ const ResetForm = ({ hash }) => {
           className="mb-2"
           label={<div className="text-gray-800">Your new password</div>}
         >
-          <Field name="password" as={Password} />
+          <Field name="password" as={Password} autoFocus />
         </Fieldset>
         <Submit className="mt-2" onlyOnce>
           Reset password

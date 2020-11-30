@@ -22,7 +22,7 @@ const SignupForm = () => {
           className="mb-2"
           label={<div className="text-gray-800">Your name</div>}
         >
-          <Field name="name" type="text" as={Input} />
+          <Field name="name" type="text" as={Input} autoFocus />
         </Fieldset>
         <Fieldset
           name="email"

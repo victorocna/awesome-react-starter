@@ -1,5 +1,5 @@
 import { Button } from '..';
-import { logout } from '../../controllers/identity';
+import { logout } from '../../controllers';
 
 const Logout = () => (
   <Button variant="primary" className="ml-2" onClick={logout}>

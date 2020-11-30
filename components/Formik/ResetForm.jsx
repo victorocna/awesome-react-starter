@@ -1,22 +1,36 @@
+import { useRef } from 'react';
 import { Formik, Form, Field } from 'formik';
 import { Fieldset, Password, Submit, Recaptcha } from '../Forms';
-import { reset as resetValues } from '../../models';
-import { reset } from '../../controllers/identity';
+import { validationSchema, initialValues } from '../../models/reset';
+import { reset } from '../../controllers';
 
-const ResetForm = ({ hash }) => (
-  <Formik {...resetValues} onSubmit={(values, helpers) => reset(hash, values, helpers)}>
-    <Form>
-      <Fieldset
-        name="password"
-        className="mb-2"
-        label={<div className="text-gray-800">Your new password</div>}
-      >
-        <Field name="password" as={Password} />
-      </Fieldset>
-      <Submit className="mt-2">Reset password</Submit>
-      <Field type="hidden" value="g-recaptcha-response" as={Recaptcha} />
-    </Form>
-  </Formik>
-);
+const ResetForm = ({ hash }) => {
+  const ref = useRef(null);
+  const handleSubmit = async (values) => {
+    await reset(ref, hash, values);
+  };
+
+  return (
+    <Formik
+      validationSchema={validationSchema}
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+    >
+      <Form>
+        <Fieldset
+          name="password"
+          className="mb-2"
+          label={<div className="text-gray-800">Your new password</div>}
+        >
+          <Field name="password" as={Password} />
+        </Fieldset>
+        <Submit className="mt-2" onlyOnce>
+          Reset password
+        </Submit>
+        <Recaptcha ref={ref} />
+      </Form>
+    </Formik>
+  );
+};
 
 export default ResetForm;

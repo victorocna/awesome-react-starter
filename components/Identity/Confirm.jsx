@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import { confirm } from '../../controllers';
 import { Loading } from '..';
 
 const Confirm = ({ hash }) => {
@@ -8,15 +9,10 @@ const Confirm = ({ hash }) => {
     <>
       {status === 'loading' && <Loading />}
       {status === 'error' && (
-        <p className="text-red-600 animated fadeIn">
-          Eroare! Contul nu a fost confirmat. Te rugăm să ne contactezi pentru rezolvarea problemei
-          și confirmarea contului.
-        </p>
+        <p className="text-red-600 animated fadeIn">Error! Your account was not confirmed.</p>
       )}
       {status === 'success' && (
-        <p className="text-green-700 animated fadeIn">
-          Succes! Contul tău pe platforma <strong>ichessclub</strong> a fost confirmat.
-        </p>
+        <p className="text-green-700 animated fadeIn">Success! Your account was confirmed.</p>
       )}
     </>
   );

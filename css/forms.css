@@ -9,3 +9,16 @@ textarea:read-only,
 select:read-only {
   @apply cursor-default;
 }
+
+button:focus {
+  outline: 0 !important;
+}
+button:active {
+  outline: 0 !important;
+  position: relative;
+  top: 1px;
+}
+button:disabled {
+  cursor: not-allowed;
+  filter: opacity(0.75);
+}

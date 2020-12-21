@@ -8,8 +8,4 @@ const Dashboard = () => (
   </Layout>
 );
 
-export async function getServerSideProps(context) {
-  return await checkAuth(context);
-}
-
-export default withAuth(Dashboard);
+export default Dashboard;

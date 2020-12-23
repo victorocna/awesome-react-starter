@@ -5,8 +5,12 @@ import { toaster } from '../../functions';
 
 const Page = () => {
   const handleClick = async () => {
-    const { message } = await fetch('give-me-cookies');
-    toaster.success(message);
+    try {
+      const { message } = await fetch('give-me-cookies');
+      toaster.success(message);
+    } catch ({ message }) {
+      toaster.error(`Error! ${message}`);
+    }
   };
 
   return (

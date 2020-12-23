@@ -1,18 +1,13 @@
 import { Link } from '..';
-import { Logout } from '.';
 
 const Menu = () => (
   <div className="flex items-center">
-    <Link href="/dashboard" className="ml-2">
-      Dashboard
+    <Link href="/login" className="ml-2">
+      Login
     </Link>
-    <Link href="/profile" className="ml-2">
-      My profile
+    <Link href="/terms" className="ml-2">
+      Terms
     </Link>
-    <Link href="/multi-step" className="ml-2">
-      Multi step
-    </Link>
-    <Logout />
   </div>
 );
 

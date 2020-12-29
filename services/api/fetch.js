@@ -23,6 +23,7 @@ const fetch = async (url, { data, withAuth = false, method = 'GET', ...options }
     headers,
     method,
     body: data ? JSON.stringify(data) : null,
+    credentials: 'include',
     ...options,
   });
 

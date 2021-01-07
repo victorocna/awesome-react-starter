@@ -10,10 +10,10 @@ Install dependencies
 npm install
 ```
 
-Copy the example environment variables and set them
+Copy the example environment variables and update them if needed
 
 ```bash
-cp .example.env .env
+cp .env.example .env
 ```
 
 Start the local server

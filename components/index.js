@@ -5,6 +5,7 @@ import Favicon from './Favicon';
 import Link from './Link';
 import Loading from './Loading';
 import OpenGraph from './OpenGraph';
+import Toaster from './Toaster';
 import withRouter from './withRouter';
 
-export { AppContext, AppHead, Button, Favicon, Link, Loading, OpenGraph, withRouter };
+export { AppContext, AppHead, Button, Favicon, Link, Loading, OpenGraph, Toaster, withRouter };

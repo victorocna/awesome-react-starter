@@ -1,24 +1,22 @@
-import toaster from 'toasted-notes';
+import toast from 'react-hot-toast';
 
-toaster.success = (message, options) => {
+export const success = (message) => {
   if (/<\/?[a-z][\s\S]*>/i.test(message)) {
     return false;
   }
 
-  return toaster.notify(
-    <div className="Toaster__success Toaster__alert_text">{message}</div>,
-    options
-  );
+  return toast.success(message);
 };
-toaster.error = (message, options) => {
+
+export const error = (message) => {
   if (/<\/?[a-z][\s\S]*>/i.test(message)) {
-    message = 'Ups! A apărut o eroare necunoscută';
+    message = 'Oups! An unknown error has occured';
   }
 
-  return toaster.notify(
-    <div className="Toaster__error Toaster__alert_text">{message}</div>,
-    options
-  );
+  return toast.error(message);
 };
 
-export default toaster;
+export default {
+  success,
+  error,
+};

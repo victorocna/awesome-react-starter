@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppContext, AppHead } from '../components';
+import { AppContext, AppHead, Toaster } from '../components';
 import * as context from '../site.config';
 import '../css/index.css';
 
@@ -10,6 +10,7 @@ const Root = (props) => {
     <AppContext.Provider value={context}>
       <AppHead />
       <Component {...pageProps} />
+      <Toaster />
     </AppContext.Provider>
   );
 };

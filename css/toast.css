@@ -1,0 +1,13 @@
+.react-hot-toast > div:nth-child(2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  justify-content: start;
+}
+
+@media (min-width: 576px) {
+  .react-hot-toast {
+    max-width: 460px !important;
+  }
+}

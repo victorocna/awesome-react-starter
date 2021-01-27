@@ -32,10 +32,8 @@
     "react-google-recaptcha": "^2.1.0",
     "react-hot-toast": "^1.0.2",
     "react-query": "^1.5.10",
-    "react-spring": "^8.0.27",
     "redux": "^4.0.5",
     "tailwindcss": "^1.9.6",
-    "toasted-notes": "^3.2.0",
     "world-countries": "^4.0.0",
     "yup": "^0.29.3"
   },

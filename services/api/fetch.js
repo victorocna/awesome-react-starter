@@ -17,13 +17,13 @@ const fetch = async (url, { data, withAuth = false, method = 'GET', ...options }
 
   if (withAuth) {
     headers.Authorization = `Bearer ${store.getState()}`;
+    options.credentials = 'include';
   }
 
   const res = await nodeFetch(resolve(url), {
     headers,
     method,
     body: data ? JSON.stringify(data) : null,
-    credentials: 'include',
     ...options,
   });
 

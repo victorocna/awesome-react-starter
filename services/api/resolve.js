@@ -2,17 +2,18 @@
  * Resolves the URL path
  */
 const resolve = (url) => {
-  if (url.indexOf('http')) {
-    const parts = [process.env.API_BASE_URL];
-    if (url[0] !== '/') {
-      parts.push('/');
-    }
-    parts.push(url);
-
-    return parts.join('');
+  if (~url.indexOf('http')) {
+    return url;
   }
 
-  return url;
+  const parts = [process.env.API_BASE_URL];
+  const firstCharacter = url[0];
+  if (firstCharacter !== '/') {
+    parts.push('/');
+  }
+  parts.push(url);
+
+  return parts.join('');
 };
 
 export default resolve;

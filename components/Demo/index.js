@@ -15,6 +15,7 @@ import Quote from './Quote';
 import QuoteError from './QuoteError';
 import QuoteLoading from './QuoteLoading';
 import QuoteSuccess from './QuoteSuccess';
+import SayHello from './SayHello';
 
 export {
   Footer,
@@ -34,4 +35,5 @@ export {
   QuoteSuccess,
   QuoteError,
   QuoteLoading,
+  SayHello,
 };

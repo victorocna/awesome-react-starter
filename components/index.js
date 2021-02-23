@@ -6,6 +6,18 @@ import Link from './Link';
 import Loading from './Loading';
 import OpenGraph from './OpenGraph';
 import Toaster from './Toaster';
+import Tooltip from './Tooltip';
 import withRouter from './withRouter';
 
-export { AppContext, AppHead, Button, Favicon, Link, Loading, OpenGraph, Toaster, withRouter };
+export {
+  AppContext,
+  AppHead,
+  Button,
+  Favicon,
+  Link,
+  Loading,
+  OpenGraph,
+  Toaster,
+  Tooltip,
+  withRouter,
+};

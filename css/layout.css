@@ -23,3 +23,7 @@
 .max-h-50 {
   max-height: 50vh;
 }
+.max {
+  max-width: 1536px;
+  margin: 0 auto;
+}

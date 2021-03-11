@@ -6,7 +6,7 @@ const Logo = () => {
 
   return (
     <Link href="/">
-      <div className="logo flex items-start mt-4 mb-12 cursor-pointer">
+      <div className="logo flex items-start mb-12 cursor-pointer">
         <img src="/images/logo.png" alt={sitename} />
       </div>
     </Link>

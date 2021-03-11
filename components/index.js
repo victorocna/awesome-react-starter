@@ -4,6 +4,9 @@ import Button from './Button';
 import Favicon from './Favicon';
 import Link from './Link';
 import Loading from './Loading';
+import Logo from './Logo';
+import Menu from './Menu';
+import MenuItem from './MenuItem';
 import OpenGraph from './OpenGraph';
 import Toaster from './Toaster';
 import Tooltip from './Tooltip';
@@ -16,6 +19,9 @@ export {
   Favicon,
   Link,
   Loading,
+  Logo,
+  Menu,
+  MenuItem,
   OpenGraph,
   Toaster,
   Tooltip,

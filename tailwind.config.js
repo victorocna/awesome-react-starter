@@ -9,6 +9,7 @@ module.exports = {
       },
       fontFamily: {
         display: 'Libre Baskerville, Arial, sans-serif',
+        body: 'Noto Sans JP, Arial, sans-serif',
       },
     },
   },

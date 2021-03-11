@@ -1,12 +1,11 @@
-const forms = require('@tailwindcss/custom-forms');
-
 module.exports = {
   important: true,
-  plugins: [forms],
   theme: {
     extend: {
       colors: {
-        charcoal: '#353B50',
+        primary: '#0F4C81',
+        secondary: '#53B0AE',
+        accent: '#F74371',
       },
       fontFamily: {
         display: 'Libre Baskerville, Arial, sans-serif',

@@ -22,11 +22,11 @@ export default [
   {
     name: 'Signup',
     href: '/signup',
-    icon: 'fas fa-clipboard-list',
+    icon: 'fas fa-star',
   },
   {
     name: '404 Page',
     href: '/404',
-    icon: 'fas fa-map',
+    icon: 'fas fa-directions',
   },
 ];

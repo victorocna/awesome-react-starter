@@ -4,6 +4,8 @@
 
 @import 'normalize.css';
 @import 'animate.css';
+@import 'buttons.css';
+@import 'components.css';
 @import 'datepicker.css';
 @import 'forms.css';
 @import 'layout.css';

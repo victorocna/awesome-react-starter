@@ -1,0 +1,11 @@
+.tooltip > .arrow:before {
+  @apply border-b-4 border-primary;
+}
+.tooltip > .tooltip-inner {
+  @apply bg-primary;
+}
+.bs-tooltip-bottom > .arrow:before {
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}

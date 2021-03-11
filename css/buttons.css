@@ -1,0 +1,28 @@
+.form-button {
+  @apply border-2 py-1 px-4 rounded shadow text-sm font-semibold inline-block cursor-pointer;
+  @apply border-purple-700 bg-purple-700 text-white;
+}
+
+.form-button-primary {
+  @apply border-primary bg-primary text-white;
+}
+.form-button-secondary {
+  @apply border-secondary bg-secondary text-white;
+}
+.form-button-accent {
+  @apply border-accent bg-accent text-white;
+}
+
+.square-button {
+  @apply border-2 py-1 px-6 rounded text-sm font-semibold inline-block cursor-pointer;
+}
+
+.square-button-primary {
+  @apply border-primary text-primary;
+}
+.square-button-secondary {
+  @apply border-secondary text-secondary;
+}
+.square-button-accent {
+  @apply border-accent text-accent;
+}

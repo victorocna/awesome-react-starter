@@ -15,6 +15,7 @@ import Quote from './Quote';
 import QuoteError from './QuoteError';
 import QuoteLoading from './QuoteLoading';
 import QuoteSuccess from './QuoteSuccess';
+import SayGoodbye from './SayGoodbye';
 import SayHello from './SayHello';
 
 export {
@@ -35,5 +36,6 @@ export {
   QuoteSuccess,
   QuoteError,
   QuoteLoading,
+  SayGoodbye,
   SayHello,
 };

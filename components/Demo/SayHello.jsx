@@ -17,7 +17,11 @@ const SayHello = () => {
     toaster.success(hello[Math.floor(Math.random() * hello.length)]);
   };
 
-  return <Button onClick={handleClick}>Say Hello 🛎</Button>;
+  return (
+    <Button className="square-button square-button-secondary" onClick={handleClick}>
+      Say Hello
+    </Button>
+  );
 };
 
 export default SayHello;

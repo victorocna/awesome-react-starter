@@ -5,6 +5,11 @@ export default [
     icon: 'fas fa-tv',
   },
   {
+    name: 'My todos',
+    href: '/todo',
+    icon: 'fas fa-check-double',
+  },
+  {
     name: 'Settings',
     href: '/settings',
     icon: 'fas fa-tools',

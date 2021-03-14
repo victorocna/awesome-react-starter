@@ -14,7 +14,7 @@
 }
 
 .square-button {
-  @apply border-2 py-1 px-6 rounded text-sm font-semibold inline-block cursor-pointer;
+  @apply relative border-2 py-1 px-6 rounded text-sm font-semibold inline-block cursor-pointer;
 }
 
 .square-button-primary {

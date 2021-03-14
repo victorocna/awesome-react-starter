@@ -1,13 +1,17 @@
 import { useFormikContext } from 'formik';
 import { Button } from '..';
+import { isDisabled } from '../../functions'
 
-const Submit = ({ children, onlyOnce, ...props }) => {
-  const { isSubmitting, submitCount, isValid, validateOnMount } = useFormikContext();
-  const disabled = isSubmitting || (validateOnMount && !isValid) || (onlyOnce && submitCount);
+const Submit = ({ children, isLoading, ...props }) => {
+  const formikContext = useFormikContext()
+  const disabled = isDisabled(isLoading, formikContext);
 
   return (
     <Button type="submit" disabled={disabled} {...props}>
       {children}
+      {isLoading && (
+        <img src="/icons/loading.gif" alt="loading" className="mx-1 w-5 absolute right-0 top-2" />
+      )}
     </Button>
   );
 };

@@ -3,7 +3,7 @@ import { useInfiniteQuery as infiniteQuery } from 'react-query';
 import { axios } from '../services/api';
 
 const useInfiniteQuery = (url, options) => {
-  const limit = 3;
+  const limit = 30;
   const getNextPageParam = ({ hasNext, offset }) => {
     return hasNext && offset;
   };

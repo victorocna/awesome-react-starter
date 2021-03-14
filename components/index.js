@@ -4,6 +4,7 @@ import Button from './Button';
 import Favicon from './Favicon';
 import Link from './Link';
 import Loading from './Loading';
+import LoadMore from './LoadMore';
 import Logo from './Logo';
 import Menu from './Menu';
 import MenuItem from './MenuItem';
@@ -19,6 +20,7 @@ export {
   Favicon,
   Link,
   Loading,
+  LoadMore,
   Logo,
   Menu,
   MenuItem,

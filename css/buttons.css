@@ -26,3 +26,10 @@
 .square-button-accent {
   @apply border-accent text-accent;
 }
+
+.todo > button {
+  display: none;
+}
+.todo:hover > button {
+  display: initial;
+}

@@ -24,13 +24,13 @@ button:disabled {
 }
 
 .form-input {
-  @apply border border-gray-300 rounded-lg text-sm py-2 px-3;
+  @apply border border-gray-500 rounded text-sm py-2 px-3;
 }
 .form-input:focus {
   @apply outline-none;
 }
 .form-textarea {
-  @apply border border-gray-300 rounded-lg text-sm py-2 px-3;
+  @apply border border-gray-500 rounded text-sm py-2 px-3;
 }
 .form-textarea:focus {
   @apply outline-none;

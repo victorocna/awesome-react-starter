@@ -8,13 +8,12 @@ const useInfiniteQuery = (url, options) => {
     return hasNext && offset;
   };
 
-  const key = stringifyUrl({ url, query: { limit, ...options } });
   const fetcher = ({ pageParam: offset }) => {
     return axios(stringifyUrl({ url, query: { limit, ...options, offset } }));
   };
   const config = { getNextPageParam, limit, ...options };
 
-  const response = infiniteQuery(key, fetcher, config);
+  const response = infiniteQuery(url, fetcher, config);
   if (response.status !== 'success') {
     return response;
   }

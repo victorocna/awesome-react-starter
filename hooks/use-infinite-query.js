@@ -13,7 +13,7 @@ const useInfiniteQuery = (url, options) => {
   };
   const config = { getNextPageParam, limit, ...options };
 
-  const response = infiniteQuery(url, fetcher, config);
+  const response = infiniteQuery([url, options], fetcher, config);
   if (response.status !== 'success') {
     return response;
   }

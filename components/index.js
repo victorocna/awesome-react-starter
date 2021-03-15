@@ -7,6 +7,7 @@ import Loading from './Loading';
 import LoadMore from './LoadMore';
 import Logo from './Logo';
 import Menu from './Menu';
+import MenuButton from './MenuButton';
 import MenuItem from './MenuItem';
 import OpenGraph from './OpenGraph';
 import Toaster from './Toaster';
@@ -23,6 +24,7 @@ export {
   LoadMore,
   Logo,
   Menu,
+  MenuButton,
   MenuItem,
   OpenGraph,
   Toaster,

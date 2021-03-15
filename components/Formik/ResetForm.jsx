@@ -24,9 +24,7 @@ const ResetForm = ({ hash }) => {
         >
           <Field name="password" as={Password} autoFocus />
         </Fieldset>
-        <Submit className="mt-2" onlyOnce>
-          Reset password
-        </Submit>
+        <Submit onlyOnce>Reset password</Submit>
         <Recaptcha ref={ref} />
       </Form>
     </Formik>

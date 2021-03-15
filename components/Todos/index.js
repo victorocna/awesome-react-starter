@@ -1,6 +1,9 @@
 import AddTodo from './AddTodo';
 import CheckTodo from './CheckTodo';
+import FilterTodos from './FilterTodos';
 import RemoveTodo from './RemoveTodo';
+import SortTodos from './SortTodos';
+import TodoBox from './TodoBox';
 import TodoList from './TodoList';
 import TodoListError from './TodoListError';
 import TodoListLoading from './TodoListLoading';
@@ -10,7 +13,10 @@ import TodoName from './TodoName';
 export {
   AddTodo,
   CheckTodo,
+  FilterTodos,
   RemoveTodo,
+  SortTodos,
+  TodoBox,
   TodoList,
   TodoListError,
   TodoListLoading,

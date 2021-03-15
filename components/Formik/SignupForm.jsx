@@ -38,7 +38,7 @@ const SignupForm = () => {
         >
           <Field name="password" as={Password} />
         </Fieldset>
-        <Submit className="mt-2">Signup</Submit>
+        <Submit>Signup</Submit>
         <Recaptcha ref={ref} />
       </Form>
     </Formik>

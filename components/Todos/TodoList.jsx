@@ -1,10 +1,9 @@
 import { useInfiniteQuery } from '../../hooks';
 import { TodoListError, TodoListLoading, TodoListSuccess } from '.';
 import { LoadMore } from '..';
-import { readManyTodos } from '../../api/todo';
 
-const TodoList = () => {
-  const { data, status, ...props } = useInfiniteQuery('todos', readManyTodos);
+const TodoList = ({ options }) => {
+  const { data, status, ...props } = useInfiniteQuery('todos', options);
 
   return (
     <div className="flex-1">

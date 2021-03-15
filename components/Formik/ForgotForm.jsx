@@ -24,9 +24,7 @@ const ForgotForm = () => {
         >
           <Field name="email" type="email" as={Input} autoFocus />
         </Fieldset>
-        <Submit className="mt-2" onlyOnce>
-          Send password reset email
-        </Submit>
+        <Submit onlyOnce>Send password reset email</Submit>
         <Recaptcha ref={ref} />
       </Form>
     </Formik>

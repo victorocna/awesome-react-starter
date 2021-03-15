@@ -1,6 +1,6 @@
 import { checkAuth, withAuth } from '../services/auth';
 import { Menu, Tooltip } from '../components';
-import { AddTodo, TodoList } from '../components/Todos';
+import { TodoBox } from '../components/Todos';
 
 const Page = () => (
   <div className="font-body text-sm min-h-screen bg-gray-100 flex">
@@ -11,10 +11,7 @@ const Page = () => (
         <Tooltip placement="bottom">Manage your todo list with this simple interface</Tooltip>
       </div>
       <div className="grid md:grid-cols-2 gap-4">
-        <div className="p-4 bg-white rounded shadow flex flex-col space-y-4">
-          <AddTodo />
-          <TodoList />
-        </div>
+        <TodoBox />
         <div className="p-4 bg-white rounded shadow space-y-4">
           <h3 className="font-semibold text-lg">Help is on its way</h3>
           <p>

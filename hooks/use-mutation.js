@@ -1,10 +1,11 @@
-import router from 'next/router';
+import { useRouter } from 'next/router';
 import { useMutation as useQueryMutation, useQueryClient } from 'react-query';
 import { toaster } from '../functions';
 
 const useMutation = (key, fn, options) => {
   const { success, error, redirect, ...rest } = options;
 
+  const router = useRouter();
   const queryClient = useQueryClient();
   const mutation = useQueryMutation(fn, {
     onSuccess: () => {

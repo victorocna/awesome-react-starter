@@ -1,7 +1,14 @@
 import { stringifyUrl } from 'query-string';
+import { string, object } from 'prop-types';
 import { useInfiniteQuery as infiniteQuery } from 'react-query';
 import { axios } from '../services/api';
 
+/**
+ * Custom hook for useInfiniteQuery
+ *
+ * @param {String} url
+ * @param {Object} options
+ */
 const useInfiniteQuery = (url, options) => {
   const limit = 30;
   const getNextPageParam = ({ hasNext, offset }) => {
@@ -29,6 +36,16 @@ const useInfiniteQuery = (url, options) => {
   }
 
   return { ...response, data };
+};
+
+useInfiniteQuery.PropTypes = {
+  url: string,
+  options: object,
+};
+
+useInfiniteQuery.defaultProps = {
+  url: '',
+  options: {},
 };
 
 export default useInfiniteQuery;

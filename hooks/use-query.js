@@ -1,8 +1,10 @@
 import { useQuery as query } from 'react-query';
-import { fetch } from '../services/api';
+import { axios } from '../services/api';
 
 const useQuery = (url) => {
-  return query(url, fetch);
+  return query(url, ({ queryKey }) => {
+    return axios(queryKey[0]);
+  });
 };
 
 export default useQuery;

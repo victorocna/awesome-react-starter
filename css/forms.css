@@ -49,3 +49,10 @@ button:disabled {
   z-index: 0;
 }
 
+.form-better-select {
+  @apply border border-gray-500 rounded flex justify-between py-2 px-3 w-full bg-gray-100;
+}
+
+.form-better-select__dropdown {
+  @apply z-10 pt-1 bg-gray-100 w-full absolute top-full border-b border-r border-l border-gray-500 rounded-b;
+}

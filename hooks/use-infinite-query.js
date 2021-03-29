@@ -30,9 +30,9 @@ const useInfiniteQuery = (url, options) => {
     pages: [],
   };
   for (const page of response.data.pages) {
-    const { documents, ...paginated } = page;
-    data.pageParams = paginated;
-    data.pages.push(documents);
+    const { pages, pageParams } = page;
+    data.pageParams = pageParams;
+    data.pages.push(pages);
   }
 
   return { ...response, data };

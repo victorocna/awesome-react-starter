@@ -1,17 +1,17 @@
-import { DropdownSelect } from '../Forms';
-
-const items = [
-  { value: '', verbose: 'View all', defaultSelected: true },
-  { value: 'completed', verbose: 'Only completed' },
-  { value: 'pending', verbose: 'Only pending' },
-];
+import { Dropdown } from '../Forms';
 
 const FilterTodos = ({ setOptions }) => {
   const handleChange = (value) => {
     setOptions((prev) => ({ ...prev, only: value }));
   };
 
-  return <DropdownSelect items={items} placeholder="placeholder" onSelect={handleChange} />;
+  return (
+    <Dropdown onSelect={handleChange}>
+      <option defaultSelected>View all</option>
+      <option value="completed">Only completed</option>
+      <option value="pending">Only pending</option>
+    </Dropdown>
+  );
 };
 
 export default FilterTodos;

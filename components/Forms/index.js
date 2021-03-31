@@ -6,7 +6,6 @@ import DateOfBirth from './DateOfBirth';
 import Datepicker from './Datepicker';
 import Debug from './Debug';
 import Dropdown from './Dropdown';
-import DropdownSelect from './DropdownSelect';
 import Email from './Email';
 import Fieldset from './Fieldset';
 import Fullname from './Fullname';
@@ -29,7 +28,6 @@ export {
   Datepicker,
   Debug,
   Dropdown,
-  DropdownSelect,
   Email,
   Fieldset,
   Fullname,

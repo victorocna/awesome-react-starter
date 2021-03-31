@@ -1,7 +1,13 @@
 /**
  * Used for constructing useSelect hook params
  */
-const prepareItems = (items = [], onSelect = () => {}) => {
+const prepareItems = (children = [], onSelect = () => {}) => {
+  const items = children.map(({ props: { value, defaultSelected, children } }) => ({
+    value,
+    defaultSelected,
+    verbose: children,
+  }));
+
   return {
     items,
     defaultSelectedItem: items.find(({ defaultSelected }) => defaultSelected) || null,

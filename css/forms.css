@@ -54,5 +54,5 @@ button:disabled {
 }
 
 .form-better-select__dropdown {
-  @apply z-10 pt-1 bg-gray-100 w-full absolute top-full border-b border-r border-l border-gray-500 rounded-b;
+  @apply z-10 bg-gray-100 w-full outline-none absolute top-full border-b border-r border-l border-gray-500 rounded-b;
 }

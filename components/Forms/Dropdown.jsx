@@ -9,7 +9,7 @@ const Dropdown = ({ placeholder, onSelect, children }) => {
     getMenuProps,
     highlightedIndex,
     getItemProps,
-  } = useSelect(children, onSelect);
+  } = useSelect({ children, onSelect });
 
   const showItems = ({ props: { value, children } }, index) => {
     const key = `${value}${index}`;
@@ -33,7 +33,10 @@ const Dropdown = ({ placeholder, onSelect, children }) => {
           <i className="fas fa-chevron-down" />
         </span>
       </div>
-      <ul className={classnames(isOpen && 'form-dropdown-list')} {...getMenuProps()}>
+      <ul
+        className={classnames('outline-none', isOpen && 'form-dropdown-list')}
+        {...getMenuProps()}
+      >
         {isOpen && children.map(showItems)}
       </ul>
     </div>

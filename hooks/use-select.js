@@ -1,6 +1,6 @@
 import { useSelect as select } from 'downshift';
 
-const useSelect = (children, onSelect, ...args) => {
+const useSelect = ({ children, onSelect, ...props }) => {
   const prepareItems = (children = [], onSelect = () => {}) => {
     const items = children.map(({ props: { value, defaultSelected, children } }) => ({
       value,
@@ -15,8 +15,9 @@ const useSelect = (children, onSelect, ...args) => {
       onSelectedItemChange: ({ selectedItem = {} }) => onSelect(selectedItem.value),
     };
   };
+  const wow = prepareItems(children, onSelect);
 
-  return select(prepareItems(children, onSelect), ...args);
+  return select({ ...wow, ...props });
 };
 
 export default useSelect;

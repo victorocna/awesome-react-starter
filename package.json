@@ -24,6 +24,7 @@
     "downshift": "^6.1.0",
     "formik": "^2.2.6",
     "jsonwebtoken": "^8.5.1",
+    "merge-class-names": "^1.4.0",
     "next": "^10.0.8",
     "query-string": "^6.14.1",
     "react": "^17.0.1",

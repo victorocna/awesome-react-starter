@@ -1,6 +1,5 @@
-import React from 'react';
 import { useSelect } from 'downshift';
-import { prepareItems } from '../../functions';
+import { prepareItems, classnames } from '../../functions';
 
 const Dropdown = ({ placeholder, onSelect, children }) => {
   const {
@@ -12,10 +11,21 @@ const Dropdown = ({ placeholder, onSelect, children }) => {
     getItemProps,
   } = useSelect(prepareItems(children, onSelect));
 
+  const showItems = ({ props: { value, children } }, index) => {
+    const key = `${value}${index}`;
+    const className = classnames('py-1 px-3', highlightedIndex === index && 'bg-gray-400');
+
+    return (
+      <li key={key} className={className} {...getItemProps({ value, index })}>
+        {children}
+      </li>
+    );
+  };
+
   return (
     <div className="relative">
       <div
-        className={`form-better-select ${isOpen ? 'rounded-b-none' : ''}`}
+        className={classnames('form-better-select', isOpen && 'rounded-b-none')}
         {...getToggleButtonProps()}
       >
         <span>{(selectedItem && selectedItem.verbose) || placeholder}</span>
@@ -23,17 +33,8 @@ const Dropdown = ({ placeholder, onSelect, children }) => {
           <i className="fas fa-chevron-down" />
         </span>
       </div>
-      <ul className={isOpen ? 'form-better-select__dropdown' : ''} {...getMenuProps()}>
-        {isOpen &&
-          children.map(({ props: { value, children } }, index) => (
-            <li
-              className={`py-1 px-3 ${highlightedIndex === index && 'bg-gray-400'}`}
-              key={`${value}${index}`}
-              {...getItemProps({ value, index })}
-            >
-              {children}
-            </li>
-          ))}
+      <ul className={classnames(isOpen && 'form-better-select__dropdown')} {...getMenuProps()}>
+        {isOpen && children.map(showItems)}
       </ul>
     </div>
   );

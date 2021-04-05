@@ -1,5 +1,5 @@
-import { useSelect } from 'downshift';
-import { prepareItems, classnames } from '../../functions';
+import { useSelect } from '../../hooks';
+import { classnames } from '../../functions';
 
 const Dropdown = ({ placeholder, onSelect, children }) => {
   const {
@@ -9,7 +9,7 @@ const Dropdown = ({ placeholder, onSelect, children }) => {
     getMenuProps,
     highlightedIndex,
     getItemProps,
-  } = useSelect(prepareItems(children, onSelect));
+  } = useSelect(children, onSelect);
 
   const showItems = ({ props: { value, children } }, index) => {
     const key = `${value}${index}`;
@@ -25,7 +25,7 @@ const Dropdown = ({ placeholder, onSelect, children }) => {
   return (
     <div className="relative">
       <div
-        className={classnames('form-better-select', isOpen && 'rounded-b-none')}
+        className={classnames('form-dropdown', isOpen && 'rounded-b-none')}
         {...getToggleButtonProps()}
       >
         <span>{(selectedItem && selectedItem.verbose) || placeholder}</span>
@@ -33,7 +33,7 @@ const Dropdown = ({ placeholder, onSelect, children }) => {
           <i className="fas fa-chevron-down" />
         </span>
       </div>
-      <ul className={classnames(isOpen && 'form-better-select__dropdown')} {...getMenuProps()}>
+      <ul className={classnames(isOpen && 'form-dropdown-list')} {...getMenuProps()}>
         {isOpen && children.map(showItems)}
       </ul>
     </div>

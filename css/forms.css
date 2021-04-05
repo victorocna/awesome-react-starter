@@ -49,3 +49,10 @@ button:disabled {
   z-index: 0;
 }
 
+.form-dropdown {
+  @apply border border-gray-500 rounded flex justify-between py-2 px-3 w-full bg-gray-100;
+}
+
+.form-dropdown-list {
+  @apply z-10 bg-gray-100 w-full outline-none absolute top-full border-b border-r border-l border-gray-500 rounded-b;
+}

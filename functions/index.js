@@ -1,5 +1,6 @@
+import classnames from './classnames';
 import isDisabled from './is-disabled';
 import redirect from './redirect';
 import toaster from './toaster';
 
-export { isDisabled, redirect, toaster };
+export { classnames, isDisabled, redirect, toaster };

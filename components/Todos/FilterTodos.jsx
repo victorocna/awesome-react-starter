@@ -1,18 +1,16 @@
-import { Select } from '../Forms';
+import { Dropdown } from '../Forms';
 
 const FilterTodos = ({ setOptions }) => {
-  const handleChange = (event) => {
-    setOptions((prev) => ({ ...prev, only: event.target.value }));
+  const handleChange = (value) => {
+    setOptions((prev) => ({ ...prev, only: value }));
   };
 
   return (
-    <Select onChange={handleChange}>
-      <option value="" defaultChecked>
-        View all
-      </option>
+    <Dropdown onSelect={handleChange}>
+      <option defaultSelected>View all</option>
       <option value="completed">Only completed</option>
       <option value="pending">Only pending</option>
-    </Select>
+    </Dropdown>
   );
 };
 

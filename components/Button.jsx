@@ -6,7 +6,7 @@ const Button = ({ href, children, ...props }) => {
       props.target = '_blank';
     }
     return (
-      <a href={href} {...props}>
+      <a role="button" href={href} {...props}>
         {children}
       </a>
     );

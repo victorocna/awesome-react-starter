@@ -6,4 +6,7 @@ module.exports = {
     LOG_EVERYWHERE: process.env.LOG_EVERYWHERE,
     RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY,
   },
+  future: {
+    webpack5: true,
+  },
 };

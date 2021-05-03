@@ -1,6 +1,7 @@
 import Age from './Age';
 import Bio from './Bio';
 import Checkbox from './Checkbox';
+import Combobox from './Combobox';
 import Country from './Country';
 import DateOfBirth from './DateOfBirth';
 import Datepicker from './Datepicker';
@@ -23,6 +24,7 @@ export {
   Age,
   Bio,
   Checkbox,
+  Combobox,
   Country,
   DateOfBirth,
   Datepicker,

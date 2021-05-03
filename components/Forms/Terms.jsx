@@ -5,7 +5,7 @@ const Terms = () => {
   const TermsCheckbox = (props) => (
     <Checkbox
       label={
-        <div className="text-gray-800 font-semibold mb-1">
+        <div className="text-gray-800 font-semibold">
           I accept the terms and conditions of this application
         </div>
       }

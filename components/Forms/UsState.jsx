@@ -23,7 +23,7 @@ const UsState = () => {
   return (
     <Fieldset
       name="state"
-      label={<div className="text-gray-800 font-semibold mb-1">US State</div>}
+      label={<div className="text-gray-800 font-semibold">US State</div>}
       help={<p className="text-gray-600">Uses default select tag</p>}
     >
       <Field name="state" disabled={disabled} placeholder="Select your state" as={UsStateSelect} />

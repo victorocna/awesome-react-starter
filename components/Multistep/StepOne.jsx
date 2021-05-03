@@ -17,9 +17,13 @@ const StepOne = () => {
         <div>
           <label className="text-gray-800 font-semibold mb-0">Choose a county</label>
           <Combobox>
-            <option value="Alba">Alba</option>
-            <option value="Arges">Arges</option>
-            <option value="Bacau">Bacau</option>
+            <option value="01">Alba</option>
+            <option value="02">Arad</option>
+            <option value="03">Arges</option>
+            <option value="04">Bacau</option>
+            <option value="40">Bucuresti</option>
+            <option value="41">Bucuresti Sector 1</option>
+            <option value="42">Bucuresti Sector 2</option>
           </Combobox>
         </div>
       </div>

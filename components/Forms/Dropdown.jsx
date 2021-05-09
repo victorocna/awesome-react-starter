@@ -37,7 +37,7 @@ const Dropdown = ({ placeholder, onSelect, children }) => {
         </span>
       </div>
       <ul
-        className={classnames('outline-none', isOpen && 'form-dropdown-list')}
+        className={classnames('outline-none my-0', isOpen && 'form-dropdown-list')}
         {...getMenuProps()}
       >
         {isOpen && children.map(showItems)}

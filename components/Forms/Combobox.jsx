@@ -52,7 +52,7 @@ const Combobox = ({ children }) => {
       </div>
       <ul
         className={classnames(
-          'outline-none max-h-40 overflow-y-auto',
+          'outline-none my-0 max-h-40 overflow-y-auto',
           isOpen && inputItems.length && 'form-dropdown-list'
         )}
         {...getMenuProps()}

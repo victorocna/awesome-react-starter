@@ -9,7 +9,7 @@ const Input = (props) => {
     }
   }, [ref]);
 
-  return <input ref={ref} className="form-input w-full" {...props} />;
+  return <input ref={ref} className="form-input w-full rounded" {...props} />;
 };
 
 export default Input;

@@ -21,4 +21,7 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
+  plugins: [
+    require('@tailwindcss/typography'), // official plugin
+  ],
 };

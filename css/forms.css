@@ -35,10 +35,11 @@ button:disabled {
 }
 
 .form-select {
-  @apply border border-gray-500 rounded text-sm px-3 cursor-default;
+  @apply border border-gray-500 rounded text-sm cursor-default;
+  padding: 2px 0;
 }
 .form-select > select {
-  @apply bg-transparent appearance-none outline-none py-2;
+  @apply bg-transparent appearance-none outline-none px-3 py-2;
 }
 .form-select > select,
 .dropdown > select {
@@ -51,9 +52,18 @@ button:disabled {
 }
 
 .form-dropdown {
-  @apply border border-gray-500 rounded flex justify-between py-2 px-3 w-full bg-gray-100;
+  @apply border border-gray-500 rounded flex justify-between py-2 px-3 w-full bg-white;
 }
 
 .form-dropdown-list {
   @apply z-10 bg-gray-100 w-full outline-none absolute top-full border-b border-r border-l border-gray-500 rounded-b;
+}
+
+.form-radio:disabled,
+.form-radio:disabled ~ span {
+  cursor: not-allowed;
+}
+
+input[type='number'] {
+  appearance: textfield;
 }

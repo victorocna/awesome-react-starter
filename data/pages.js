@@ -34,4 +34,14 @@ export default [
     href: '/404',
     icon: 'fas fa-directions',
   },
+  {
+    name: 'Elements',
+    href: '/dashboard/elements',
+    icon: 'fas fa-paragraph',
+  },
+  {
+    name: 'Forms',
+    href: '/dashboard/forms',
+    icon: 'fas fa-keyboard',
+  },
 ];

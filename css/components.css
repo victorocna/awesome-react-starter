@@ -9,3 +9,7 @@
   border-right-color: transparent;
   border-top-color: transparent;
 }
+
+.first-letter::first-letter {
+  text-transform: uppercase;
+}

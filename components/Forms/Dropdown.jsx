@@ -12,11 +12,14 @@ const Dropdown = ({ placeholder, onSelect, children }) => {
   } = useSelect({ children, onSelect });
 
   const showItems = ({ props: { value, children } }, index) => {
-    const key = `${value}${index}`;
-    const className = classnames('py-1 px-3', highlightedIndex === index && 'bg-gray-400');
+    const isHover = highlightedIndex === index;
 
     return (
-      <li key={key} className={className} {...getItemProps({ value, index })}>
+      <li
+        key={`${value}${index}`}
+        className={classnames('py-1 px-3', isHover && 'bg-gray-400')}
+        {...getItemProps({ value, index })}
+      >
         {children}
       </li>
     );

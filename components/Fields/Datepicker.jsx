@@ -1,11 +1,25 @@
-import React from 'react'
+import { format as dateFormat } from 'date-fns';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
 
-const Datepicker = () => {
+const Datepicker = ({ onChange, ...props }) => {
+  const inputProps = { className: 'form-input w-full' };
+
+  const formatDate = (date, format, locale) => {
+    return dateFormat(date, format, { locale });
+  };
+
+  if (typeof onChange === 'function') {
+    props.onDayChange = onChange;
+  }
+
   return (
-    <div>
-      <h3>datepicker</h3>
-    </div>
-  )
-}
+    <DayPickerInput
+      formatDate={formatDate}
+      inputProps={inputProps}
+      placeholder="yyyy-MM-dd"
+      {...props}
+    />
+  );
+};
 
-export default Datepicker
+export default Datepicker;

@@ -59,11 +59,13 @@ button:disabled {
   @apply z-10 bg-gray-100 w-full outline-none absolute top-full border-b border-r border-l border-gray-500 rounded-b;
 }
 
+.form-checkbox:disabled,
+.form-checkbox:disabled ~ div,
 .form-radio:disabled,
 .form-radio:disabled ~ span {
-  cursor: not-allowed;
+  cursor: not-allowed !important;
 }
 
 input[type='number'] {
-  appearance: textfield;
+  appearance: textfield !important;
 }

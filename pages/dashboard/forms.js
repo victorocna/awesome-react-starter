@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import { Menu, Tooltip, MenuButton, Button, Spinner } from '../../components';
+import { Menu, Tooltip, MenuButton, Button, Spinner, Link } from '../../components';
 import {
   Checkbox,
   Combobox,
+  Datepicker,
   Dropdown,
   Input,
   Select,
   Textarea,
   RadioGroup,
   Radio,
+  Fieldset,
 } from '../../components/Fields';
 
 const Page = () => {
@@ -32,15 +34,21 @@ const Page = () => {
                 <strong>Oh yes, forms!</strong> How elusive and hard to get right they always seem
                 to be. <br />
                 This page should visually help you determine if the styles are what you expect.
-                Nothing more, nothing less.
+                Nothing more, nothing less. <br />
+                <Link href="/dashboard/formik">Visit this page</Link> to test your forms with Formik
+                integration.
               </p>
               <div className="mb-4">
-                <label className="mb-0">Basic input field</label>
-                <Input type="text" placeholder="Well, this was easy" />
+                <label htmlFor="easy" className="cursor-pointer mb-0">
+                  Basic input field
+                </label>
+                <Input id="easy" placeholder="Well, this was easy" />
               </div>
               <div className="mb-4">
-                <label className="mb-0">Basic textarea field</label>
-                <Textarea placeholder="Bio, notes, you name it!" />
+                <label htmlFor="bio" className="cursor-pointer mb-0">
+                  Basic textarea field
+                </label>
+                <Textarea id="bio" placeholder="Bio, notes, you name it!" />
               </div>
               <div className="bg-primary text-white -mx-6 px-6 py-2 mb-4">
                 Now what we covered the simple form elements, let's get into the more complex ones.
@@ -48,19 +56,20 @@ const Page = () => {
                 Also notice how this element defies its parent padding class. Inspect it to see how
                 its done. Tip: negative margins
               </div>
+              <div>
+                <h3>Fieldsets</h3>
+                <p>Next we have some inputs with label and help sections called fieldsets.</p>
+              </div>
               <div className="mb-4 grid md:grid-cols-3 gap-4">
-                <div>
-                  <label className="mb-0">Your email</label>
+                <Fieldset label="Your email" help="Give your users a helping hand">
                   <Input type="email" />
-                </div>
-                <div>
-                  <label className="mb-0">Your phone number</label>
+                </Fieldset>
+                <Fieldset label="Your phone number" help="Optional info">
                   <Input type="tel" />
-                </div>
-                <div>
-                  <label className="mb-0">Your age</label>
+                </Fieldset>
+                <Fieldset label="Your age" help="Cannot be smaller than 1">
                   <Input type="number" />
-                </div>
+                </Fieldset>
               </div>
               <div className="bg-secondary text-white -mx-6 px-6 py-2 mb-4">
                 Enough inputs for now. We still have many other form elements.
@@ -103,12 +112,22 @@ const Page = () => {
                 </div>
               </div>
               <div className="mb-4">
+                <h3>Datepickers</h3>
+                <p>
+                  Pick or write any date and display them in any format. That's how versatile a
+                  datepicker should be.
+                </p>
+                <div className="mb-4 grid md:grid-cols-3 gap-4">
+                  <Datepicker format="dd-MM-yyyy" placeholder="dd-MM-yyyy" />
+                </div>
+              </div>
+              <div className="mb-4">
                 <h3>Choose your favourite color (multiple options)</h3>
                 <p>
                   This is an excelent place for checkboxes. When the user has to choose one and only
                   one option, that is when radio groups should be used.
                 </p>
-                <div className="flex items-center space-x-2">
+                <div className="md:flex md:items-center md:space-x-2">
                   <Checkbox value="green">Green</Checkbox>
                   <Checkbox value="red" defaultChecked>
                     Red

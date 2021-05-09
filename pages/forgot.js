@@ -1,5 +1,5 @@
 import { Link } from '../components';
-import { ForgotForm } from '../components/Formik';
+import { ForgotForm } from '../components/Forms';
 
 const ForgotPage = () => (
   <main className="cover min-h-screen px-4 py-8 flex flex-col items-center justify-center">

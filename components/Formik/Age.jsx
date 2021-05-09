@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { differenceInYears } from 'date-fns';
 import { Field, useFormikContext } from 'formik';
-import { Fieldset, Input } from '.';
+import { Input } from '../Fields';
+import { Fieldset } from '.';
 
 const Age = () => {
   const { values, setFieldValue } = useFormikContext();

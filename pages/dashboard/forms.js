@@ -1,6 +1,15 @@
 import { useState } from 'react';
-import { Menu, Tooltip, MenuButton, RadioGroup, Radio, Button, Spinner } from '../../components';
-import { Checkbox, Combobox, Dropdown, Input, Select, Textarea } from '../../components/Forms';
+import { Menu, Tooltip, MenuButton, Button, Spinner } from '../../components';
+import {
+  Checkbox,
+  Combobox,
+  Dropdown,
+  Input,
+  Select,
+  Textarea,
+  RadioGroup,
+  Radio,
+} from '../../components/Fields';
 
 const Page = () => {
   const [isLoading, setLoading] = useState(false);

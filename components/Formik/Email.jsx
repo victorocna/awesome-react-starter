@@ -1,5 +1,6 @@
 import { Field } from 'formik';
-import { Fieldset, Input } from '../Forms';
+import { Input } from '../Fields';
+import { Fieldset } from '.';
 
 const Email = () => (
   <Fieldset

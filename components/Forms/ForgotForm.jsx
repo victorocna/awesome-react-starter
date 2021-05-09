@@ -1,13 +1,14 @@
 import { useRef } from 'react';
 import { Formik, Form, Field } from 'formik';
-import { Fieldset, Input, Password, Recaptcha, Submit } from '../Forms';
-import { validationSchema, initialValues } from '../../models/login';
-import { login } from '../../controllers';
+import { Input, Recaptcha } from '../Fields';
+import { Fieldset, Submit } from '../Formik';
+import { validationSchema, initialValues } from '../../models/forgot';
+import { forgot } from '../../controllers';
 
-const LoginForm = () => {
+const ForgotForm = () => {
   const ref = useRef(null);
   const handleSubmit = async (values) => {
-    await login(ref, values);
+    await forgot(ref, values);
   };
 
   return (
@@ -24,18 +25,11 @@ const LoginForm = () => {
         >
           <Field name="email" type="email" as={Input} autoFocus />
         </Fieldset>
-        <Fieldset
-          name="password"
-          className="mb-2"
-          label={<div className="text-gray-800">Your password</div>}
-        >
-          <Field name="password" as={Password} />
-        </Fieldset>
-        <Submit>Login</Submit>
+        <Submit onlyOnce>Send password reset email</Submit>
         <Recaptcha ref={ref} />
       </Form>
     </Formik>
   );
 };
 
-export default LoginForm;
+export default ForgotForm;

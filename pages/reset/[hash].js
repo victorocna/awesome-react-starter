@@ -1,4 +1,4 @@
-import { ResetForm } from '../../components/Formik';
+import { ResetForm } from '../../components/Forms';
 import { Link, withRouter } from '../../components';
 
 const ResetPage = ({ hash }) => (

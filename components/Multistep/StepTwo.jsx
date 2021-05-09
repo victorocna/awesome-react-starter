@@ -1,4 +1,4 @@
-import { Age, Country, DateOfBirth, UsState } from '../Forms';
+import { Age, Country, DateOfBirth, UsState } from '../Formik';
 import { Button } from '..';
 
 const StepTwo = ({ previous }) => (

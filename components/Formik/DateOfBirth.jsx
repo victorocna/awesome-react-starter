@@ -1,5 +1,5 @@
 import { Field } from 'formik';
-import { Fieldset, Datepicker } from '.';
+import { Datepicker, Fieldset } from '.';
 
 const DateOfBirth = () => (
   <Fieldset

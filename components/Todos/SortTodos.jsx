@@ -1,4 +1,4 @@
-import { Select } from '../Forms';
+import { Select } from '../Fields';
 
 const SortTodos = ({ setOptions }) => {
   const rearrange = (event) => {

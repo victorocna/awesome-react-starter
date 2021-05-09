@@ -1,5 +1,6 @@
 import { Field } from 'formik';
-import { Fieldset, Textarea } from '../Forms';
+import { Textarea } from '../Fields';
+import { Fieldset } from '.';
 
 const Bio = () => (
   <Fieldset

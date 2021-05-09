@@ -10,9 +10,6 @@ import Menu from './Menu';
 import MenuButton from './MenuButton';
 import MenuItem from './MenuItem';
 import OpenGraph from './OpenGraph';
-import Radio from './Radio';
-import RadioContext from './RadioContext';
-import RadioGroup from './RadioGroup';
 import Spinner from './Spinner';
 import Toaster from './Toaster';
 import Tooltip from './Tooltip';
@@ -31,9 +28,6 @@ export {
   MenuButton,
   MenuItem,
   OpenGraph,
-  Radio,
-  RadioContext,
-  RadioGroup,
   Spinner,
   Toaster,
   Tooltip,

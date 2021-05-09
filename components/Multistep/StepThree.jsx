@@ -1,4 +1,4 @@
-import { Bio } from '../Forms';
+import { Bio } from '../Formik';
 import { Button } from '..';
 
 const StepThree = ({ previous }) => (

@@ -1,5 +1,6 @@
 import { Field } from 'formik';
-import { Fieldset, Dropdown } from '.';
+import { Dropdown } from '../Fields';
+import { Fieldset } from '.';
 import { countries } from '../../data';
 
 const Country = () => {

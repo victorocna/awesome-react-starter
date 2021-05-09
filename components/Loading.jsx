@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Loading = () => (
   <div className="loading-overlay z-50">
     <div className="cssload-loader">

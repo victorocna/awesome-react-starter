@@ -1,5 +1,6 @@
 import { Field } from 'formik';
-import { Fieldset, Checkbox } from '.';
+import { Checkbox } from '../Fields';
+import { Fieldset } from '.';
 
 const Terms = () => {
   const TermsCheckbox = (props) => (

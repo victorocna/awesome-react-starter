@@ -1,4 +1,5 @@
-import { Combobox, Dropdown, Email, Fullname, Terms } from '../Forms';
+import { Combobox, Dropdown } from '../Fields';
+import { Email, Fullname, Terms } from '../Formik';
 import { Button } from '..';
 
 const StepOne = () => {

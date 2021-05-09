@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { Formik, Form, Field } from 'formik';
-import { Fieldset, Password, Submit, Recaptcha } from '../Forms';
+import { Password, Recaptcha } from '../Fields';
+import { Fieldset, Submit } from '../Formik';
 import { validationSchema, initialValues } from '../../models/reset';
 import { reset } from '../../controllers';
 

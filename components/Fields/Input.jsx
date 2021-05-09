@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react';
 
-const Input = (props) => {
+const Input = ({ autoFocus, ...props }) => {
   const ref = useRef(null);
-  const { autoFocus } = props;
   useEffect(() => {
     if (autoFocus) {
       ref.current.focus();

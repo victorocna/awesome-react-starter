@@ -3,7 +3,7 @@ import React from 'react';
 const Fieldset = ({ label, help, children }) => {
   return (
     <fieldset>
-      <label className="cursor-pointer mb-0">
+      <label className="w-full cursor-pointer mb-0">
         {label}
         {children}
       </label>

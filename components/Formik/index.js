@@ -6,6 +6,7 @@ import Datepicker from './Datepicker';
 import Debug from './Debug';
 import Email from './Email';
 import Fieldset from './Fieldset';
+import Form from './Form';
 import Fullname from './Fullname';
 import Help from './Help';
 import Submit from './Submit';
@@ -21,6 +22,7 @@ export {
   Debug,
   Email,
   Fieldset,
+  Form,
   Fullname,
   Help,
   Submit,

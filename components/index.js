@@ -10,6 +10,7 @@ import Menu from './Menu';
 import MenuButton from './MenuButton';
 import MenuItem from './MenuItem';
 import OpenGraph from './OpenGraph';
+import ShowMore from './ShowMore';
 import Spinner from './Spinner';
 import Toaster from './Toaster';
 import Tooltip from './Tooltip';
@@ -28,6 +29,7 @@ export {
   MenuButton,
   MenuItem,
   OpenGraph,
+  ShowMore,
   Spinner,
   Toaster,
   Tooltip,

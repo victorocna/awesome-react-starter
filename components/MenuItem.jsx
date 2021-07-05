@@ -1,25 +1,24 @@
 import { useRouter } from 'next/router';
 import { Link } from '.';
+import { classnames } from '../functions';
 
-const MenuItem = ({ icon, href, children }) => {
+const MenuItem = ({ href, children, level }) => {
   const router = useRouter();
   const { pathname } = router;
 
-  const classes = ['text-gray-900 hover:text-accent'];
-  if (pathname === href) {
-    // menu item active styles
-    classes.push('text-accent');
-  }
-
   return (
-    <li className="menu-item text-gray-400 flex flex-wrap items-center space-x-3">
-      <div className="w-4 flex justify-center text-sm">
-        <i className={icon}></i>
-      </div>
-      <Link href={href} className={classes.join(' ')}>
+    <Link href={href}>
+      <a
+        className={classnames(
+          'menu-item px-8 py-2 hover:bg-gray-100 cursor-pointer',
+          'no-underline text-gray-900',
+          level === 1 ? 'pl-8' : 'pl-12',
+          pathname === href && 'text-primary font-semibold'
+        )}
+      >
         {children}
-      </Link>
-    </li>
+      </a>
+    </Link>
   );
 };
 

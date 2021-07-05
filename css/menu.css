@@ -1,3 +1,8 @@
+.nav-menu {
+  width: 16rem;
+  min-width: 16rem;
+}
+
 @media (max-width: 1279px) {
   .nav-menu {
     transition: transform 0.3s ease-in-out;
@@ -6,7 +11,6 @@
     left: 0;
     height: 100vh;
     position: fixed;
-    width: 16rem;
     z-index: 200;
   }
   .nav-menu ul {

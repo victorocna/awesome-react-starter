@@ -2,46 +2,51 @@ export default [
   {
     name: 'Dashboard',
     href: '/dashboard',
-    icon: 'fas fa-tv',
   },
   {
     name: 'My todos',
     href: '/todo',
-    icon: 'fas fa-check-double',
   },
   {
     name: 'Settings',
     href: '/settings',
-    icon: 'fas fa-tools',
   },
   {
     name: 'Profile',
     href: '/profile',
-    icon: 'fas fa-user',
   },
   {
-    name: 'Login',
-    href: '/login',
-    icon: 'fas fa-fingerprint',
+    name: 'Components',
+    items: [
+      {
+        name: 'Buttons',
+        href: '/dashboard/elements',
+      },
+      {
+        name: 'Show more',
+        href: '/demo/show-more',
+      },
+      {
+        name: 'Forms',
+        href: '/dashboard/forms',
+      },
+    ],
   },
   {
-    name: 'Signup',
-    href: '/signup',
-    icon: 'fas fa-star',
+    name: 'Identity',
+    items: [
+      {
+        name: 'Login page',
+        href: '/login',
+      },
+      {
+        name: 'Signup page',
+        href: '/signup',
+      },
+    ],
   },
   {
     name: '404 Page',
     href: '/404',
-    icon: 'fas fa-directions',
-  },
-  {
-    name: 'Elements',
-    href: '/dashboard/elements',
-    icon: 'fas fa-paragraph',
-  },
-  {
-    name: 'Forms',
-    href: '/dashboard/forms',
-    icon: 'fas fa-keyboard',
   },
 ];

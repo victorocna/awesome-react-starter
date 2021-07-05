@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { classnames } from '../functions';
 
-const ShowMore = ({ children }) => {
-  const [show, setShow] = useState(false);
+const ShowMore = ({ children, label = 'Show more', visible = false }) => {
+  const [show, setShow] = useState(visible);
   const handleClick = () => {
     setShow((prev) => !prev);
   };
@@ -14,7 +14,7 @@ const ShowMore = ({ children }) => {
         className="flex items-center space-x-1 text-primary"
         onClick={handleClick}
       >
-        <p>Show more</p>
+        <span>{label}</span>
         <i className={classnames(show ? 'fas fa-chevron-up' : 'fas fa-chevron-down')} />
       </button>
       {show && <div className="animated fadeIn">{children}</div>}

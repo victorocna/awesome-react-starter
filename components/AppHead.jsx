@@ -4,16 +4,21 @@ import { AppContext } from '.';
 import { Favicon, OpenGraph } from '.';
 
 const AppHead = () => {
-  const { sitename, description, googleFonts, fontAwesome, bootstrap } = useContext(AppContext);
+  const { sitename, description, stylesheets, scripts } = useContext(AppContext);
+  const showStylesheets = (href) => {
+    return <link key={href} rel="stylesheet" href={href} />;
+  };
+  const showScripts = (src) => {
+    return <script key={src} type="text/javascript" src={src}></script>;
+  };
 
   return (
     <>
       <Head>
         <title>{sitename}</title>
         <meta name="description" content={description} />
-        {googleFonts && <link rel="stylesheet" href={googleFonts} />}
-        {fontAwesome && <link rel="stylesheet" href={fontAwesome} />}
-        {bootstrap && <link rel="stylesheet" href={bootstrap} />}
+        {stylesheets.map(showStylesheets)}
+        {scripts.map(showScripts)}
       </Head>
       <Favicon />
       <OpenGraph />

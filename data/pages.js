@@ -23,6 +23,14 @@ export default [
         href: '/dashboard/elements',
       },
       {
+        name: 'Overflow',
+        href: '/demo/overflow',
+      },
+      {
+        name: 'Pills',
+        href: '/demo/pill',
+      },
+      {
         name: 'Show more',
         href: '/demo/show-more',
       },

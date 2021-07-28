@@ -17,7 +17,7 @@ const ShowMore = ({ children, label = 'Show more', visible = false }) => {
         <span>{label}</span>
         <i className={classnames(show ? 'fas fa-chevron-up' : 'fas fa-chevron-down')} />
       </button>
-      {show && <div className="animated fadeIn">{children}</div>}
+      {show && <div>{children}</div>}
     </div>
   );
 };

@@ -5,6 +5,7 @@ import useModal from './use-modal';
 import useMutation from './use-mutation';
 import useOnClickOutside from './use-onclick-outside';
 import useQuery from './use-query';
+import useRerender from './use-rerender';
 import useSelect from './use-select';
 
 export {
@@ -15,5 +16,6 @@ export {
   useMutation,
   useOnClickOutside,
   useQuery,
+  useRerender,
   useSelect,
 };

@@ -3,7 +3,7 @@ import { Formik, Form, Field } from 'formik';
 import { Input, Password, Recaptcha } from '../Fields';
 import { Fieldset, Submit } from '../Formik';
 import { validationSchema, initialValues } from '../../models/login';
-import { login } from '../../controllers';
+import { login } from '../../api';
 
 const LoginForm = () => {
   const ref = useRef(null);

@@ -3,7 +3,7 @@ import { Formik, Form, Field } from 'formik';
 import { Input, Recaptcha } from '../Fields';
 import { Fieldset, Submit } from '../Formik';
 import { validationSchema, initialValues } from '../../models/forgot';
-import { forgot } from '../../controllers';
+import { forgot } from '../../api';
 
 const ForgotForm = () => {
   const ref = useRef(null);

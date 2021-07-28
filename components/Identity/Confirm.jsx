@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import { confirm } from '../../controllers';
+import { confirm } from '../../api';
 import { Loading } from '..';
 
 const Confirm = ({ hash }) => {

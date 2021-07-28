@@ -14,6 +14,8 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'no-unused-vars': ['error', { ignoreRestSiblings: true }],
     'no-warning-comments': 'warn',
     'react/no-unescaped-entities': 'off',
     'react/react-in-jsx-scope': 'off',

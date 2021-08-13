@@ -3,6 +3,7 @@ import { RadioContext } from '.';
 
 const Radio = ({ children, ...props }) => {
   const context = useContext(RadioContext);
+  props.checked = props.value === context.selectedValue;
 
   return (
     <label className="inline-flex items-center relative cursor-pointer space-x-1 mr-2 max-w-full">

@@ -146,11 +146,9 @@ const Page = () => {
                   Below we have a disabled readio button. Usually, you should style it differently
                   so that the user can immediately tell it cannot click it.
                 </p>
-                <RadioGroup name="favouriteColor">
+                <RadioGroup name="favouriteColor" selectedValue="red">
                   <Radio value="green">Green</Radio>
-                  <Radio value="red" defaultChecked>
-                    Red
-                  </Radio>
+                  <Radio value="red">Red</Radio>
                   <Radio value="yellow" disabled>
                     Yellow (disabled)
                   </Radio>

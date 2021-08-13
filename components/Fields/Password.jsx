@@ -12,6 +12,7 @@ const Password = ({ name, ...props }) => {
         type="button"
         className="absolute right-0 p-2 outline-none"
         onClick={() => toggle(!showPassword)}
+        tabIndex="-1"
       >
         <i className={action}></i>
       </button>

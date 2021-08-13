@@ -1,35 +1,16 @@
-import { useState } from 'react';
-import { local } from 'store2';
 import { MenuItem } from '.';
 import { classnames } from '../functions';
+import { useMenu } from '../hooks';
 
 const MenuGroup = ({ name, items, children, level }) => {
-  let initialOpen = local.get(`menu.${name}`);
-  if (initialOpen === null) {
-    initialOpen = true;
-  }
-  const [open, setOpen] = useState(initialOpen);
+  const { open, toggleOpen } = useMenu(`menu.${name}`);
 
-  const toggleMenu = () => {
-    setOpen((open) => {
-      local.set(`menu.${name}`, !open);
-      return !open;
-    });
-  };
-
-  const showItems = ({ name, href, items }) => {
+  // only one level deep
+  const showItems = ({ name, href }) => {
     return (
-      <>
-        {items ? (
-          <MenuGroup key={name} name={name} items={items} level={level + 1}>
-            {name}
-          </MenuGroup>
-        ) : (
-          <MenuItem key={name} href={href} level={level + 1}>
-            {name}
-          </MenuItem>
-        )}
-      </>
+      <MenuItem key={name} href={href} level="2">
+        {name}
+      </MenuItem>
     );
   };
 
@@ -40,7 +21,7 @@ const MenuGroup = ({ name, items, children, level }) => {
           'flex items-center py-2 text-gray-900 hover:bg-gray-100 cursor-pointer',
           level === 1 ? 'pl-8' : 'pl-12'
         )}
-        onClick={toggleMenu}
+        onClick={toggleOpen}
       >
         {children}
         <i

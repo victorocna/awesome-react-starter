@@ -1,4 +1,3 @@
-import { checkAuth, withAuth } from '../../services/auth';
 import { Layout, Profile } from '../../components/Demo';
 
 const Page = () => (

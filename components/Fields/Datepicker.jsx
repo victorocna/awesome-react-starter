@@ -1,24 +1,33 @@
-import { format as dateFormat } from 'date-fns';
+import { useRef } from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
+import { format as dateFormat } from 'date-fns';
 
-const Datepicker = ({ onChange, ...props }) => {
-  const inputProps = { className: 'form-input w-full' };
+const Datepicker = (props) => {
+  const inputProps = { className: 'outline-none' };
+  const dayPickerProps = { firstDayOfWeek: 1 };
 
-  const formatDate = (date, format, locale) => {
-    return dateFormat(date, format, { locale });
+  const formatDate = (date, format = 'dd/MM/yyyy') => {
+    return dateFormat(date, format);
   };
 
-  if (typeof onChange === 'function') {
-    props.onDayChange = onChange;
-  }
+  const ref = useRef();
+  const openPicker = () => {
+    ref.current.input.focus();
+  };
 
   return (
-    <DayPickerInput
-      formatDate={formatDate}
-      inputProps={inputProps}
-      placeholder="yyyy-MM-dd"
-      {...props}
-    />
+    <div className="flex form-input bg-white cursor-pointer" onClick={openPicker}>
+      <DayPickerInput
+        ref={ref}
+        inputProps={inputProps}
+        dayPickerProps={dayPickerProps}
+        placeholder="dd/MM/yyyy"
+        format="dd/MM/yyyy"
+        formatDate={formatDate}
+        {...props}
+      />
+      <i className="my-auto far fa-calendar-alt text-primary" />
+    </div>
   );
 };
 

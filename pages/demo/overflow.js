@@ -24,4 +24,20 @@ const Page = () => {
   );
 };
 
+export async function getStaticProps() {
+  // hide page on production environments
+  if (process.env.NODE_ENV !== 'production') {
+    return {
+      props: {},
+    };
+  }
+
+  return {
+    redirect: {
+      destination: '/',
+      permanent: false,
+    },
+  };
+}
+
 export default Page;

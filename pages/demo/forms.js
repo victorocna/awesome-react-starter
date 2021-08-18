@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, Tooltip, MenuButton, Button, Spinner, Link } from '../../components';
+import { Menu, Tooltip, MenuButton, Button, Spinner } from '../../components';
 import {
   Checkbox,
   Combobox,
@@ -11,6 +11,7 @@ import {
   RadioGroup,
   Radio,
   Fieldset,
+  Password,
 } from '../../components/Fields';
 
 const Page = () => {
@@ -34,9 +35,7 @@ const Page = () => {
                 <strong>Oh yes, forms!</strong> How elusive and hard to get right they always seem
                 to be. <br />
                 This page should visually help you determine if the styles are what you expect.
-                Nothing more, nothing less. <br />
-                <Link href="/dashboard/formik">Visit this page</Link> to test your forms with Formik
-                integration.
+                Nothing more, nothing less.
               </p>
               <div className="mb-4">
                 <label htmlFor="easy" className="cursor-pointer mb-0">
@@ -122,6 +121,15 @@ const Page = () => {
                 </div>
               </div>
               <div className="mb-4">
+                <h3>Passwords</h3>
+                <p>
+                  Password inputs should always have the option of toggling the password visibility.
+                </p>
+                <div className="mb-4 grid md:grid-cols-3 gap-4">
+                  <Password />
+                </div>
+              </div>
+              <div className="mb-4">
                 <h3>Choose your favourite color (multiple options)</h3>
                 <p>
                   This is an excelent place for checkboxes. When the user has to choose one and only
@@ -178,5 +186,21 @@ const Page = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  // hide page on production environments
+  if (process.env.NODE_ENV !== 'production') {
+    return {
+      props: {},
+    };
+  }
+
+  return {
+    redirect: {
+      destination: '/',
+      permanent: false,
+    },
+  };
+}
 
 export default Page;

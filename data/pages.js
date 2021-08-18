@@ -1,7 +1,7 @@
 export default [
   {
     name: 'Dashboard',
-    href: '/dashboard',
+    href: '/demo',
   },
   {
     name: 'My todos',
@@ -20,7 +20,7 @@ export default [
     items: [
       {
         name: 'Buttons',
-        href: '/dashboard/elements',
+        href: '/demo/buttons',
       },
       {
         name: 'Overflow',
@@ -36,7 +36,7 @@ export default [
       },
       {
         name: 'Forms',
-        href: '/dashboard/forms',
+        href: '/demo/forms',
       },
     ],
   },

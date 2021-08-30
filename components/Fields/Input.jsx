@@ -1,14 +1,7 @@
-import { useEffect, useRef } from 'react';
+import React from 'react';
 
-const Input = ({ autoFocus, ...props }) => {
-  const ref = useRef(null);
-  useEffect(() => {
-    if (autoFocus) {
-      ref.current.focus();
-    }
-  }, [ref]);
-
-  return <input ref={ref} className="form-input w-full rounded" {...props} />;
+const Input = (props) => {
+  return <input type="text" inputMode="text" className="form-input" {...props} />;
 };
 
 export default Input;

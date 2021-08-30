@@ -1,3 +1,9 @@
+input,
+textarea,
+select {
+  @apply w-full;
+}
+
 input:disabled,
 textarea:disabled,
 select:disabled {

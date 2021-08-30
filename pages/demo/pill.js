@@ -16,17 +16,14 @@ const Page = () => {
 
 export async function getStaticProps() {
   // hide page on production environments
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV === 'production') {
     return {
-      props: {},
+      notFound: true,
     };
   }
 
   return {
-    redirect: {
-      destination: '/',
-      permanent: false,
-    },
+    props: {},
   };
 }
 

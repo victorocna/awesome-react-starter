@@ -8,7 +8,7 @@ const Email = () => (
     label={<div className="text-gray-800 font-semibold">Email address</div>}
     help={<p className="text-gray-600">This information is required</p>}
   >
-    <Field name="email" type="email" as={Input} />
+    <Field name="email" type="email" inputMode="email" as={Input} />
   </Fieldset>
 );
 

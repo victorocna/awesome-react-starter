@@ -61,13 +61,13 @@ const Page = () => {
               </div>
               <div className="mb-4 grid md:grid-cols-3 gap-4">
                 <Fieldset label="Your email" help="Give your users a helping hand">
-                  <Input type="email" />
+                  <Input type="email" inputMode="email" />
                 </Fieldset>
                 <Fieldset label="Your phone number" help="Optional info">
-                  <Input type="tel" />
+                  <Input type="tel" inputMode="tel" />
                 </Fieldset>
                 <Fieldset label="Your age" help="Cannot be smaller than 1">
-                  <Input type="number" />
+                  <Input type="number" inputMode="number" />
                 </Fieldset>
               </div>
               <div className="bg-secondary text-white -mx-6 px-6 py-2 mb-4">

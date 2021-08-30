@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { Formik, Form, Field } from 'formik';
-import { Input, Password, Recaptcha } from '../Fields';
+import { Email, Input, Password, Recaptcha } from '../Fields';
 import { Fieldset, Submit } from '../Formik';
 import { validationSchema, initialValues } from '../../models/signup';
 import { signup } from '../../api';
@@ -23,14 +23,14 @@ const SignupForm = () => {
           className="mb-2"
           label={<div className="text-gray-800">Your name</div>}
         >
-          <Field name="name" type="text" as={Input} autoFocus />
+          <Field name="name" as={Input} autoFocus />
         </Fieldset>
         <Fieldset
           name="email"
           className="mb-2"
           label={<div className="text-gray-800">Your email</div>}
         >
-          <Field name="email" type="email" as={Input} />
+          <Field name="email" as={Email} />
         </Fieldset>
         <Fieldset
           name="password"

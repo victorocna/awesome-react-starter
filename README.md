@@ -69,4 +69,9 @@ Replace the value with any key accepted by your API.
 
 ## Loggers
 
-Coming soon
+[Pino logger](https://www.npmjs.com/package/pino) is included by default in the app.
+
+## Security headers
+
+These HTTP response headers increase the security of the app and are bundled by default.
+Review and update the security headers in the `headers.js` file and analyse your app [using this tool](https://securityheaders.com).

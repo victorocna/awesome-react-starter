@@ -1,4 +1,5 @@
 require('dotenv').config();
+const headers = require('./headers');
 
 module.exports = {
   env: {
@@ -6,5 +7,16 @@ module.exports = {
     LOG_EVERYWHERE: process.env.LOG_EVERYWHERE,
     RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   webpack5: true,
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers,
+      },
+    ];
+  },
 };

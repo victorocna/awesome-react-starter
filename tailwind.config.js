@@ -22,6 +22,9 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   plugins: [
-    require('@tailwindcss/typography'), // official plugin
+    require('@tailwindcss/forms')({
+      strategy: 'class',
+    }),
+    require('@tailwindcss/typography'),
   ],
 };

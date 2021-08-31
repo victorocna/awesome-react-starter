@@ -24,9 +24,9 @@ const Page = () => {
 
               <h3>Square buttons</h3>
               <div className="flex items-center gap-2">
-                <Button className="button square primary">Primary</Button>
-                <Button className="button square secondary">Secondary</Button>
-                <Button className="button square accent">Accent</Button>
+                <Button className="button full primary">Primary</Button>
+                <Button className="button full secondary">Secondary</Button>
+                <Button className="button full accent">Accent</Button>
               </div>
 
               <h3>Mini buttons</h3>

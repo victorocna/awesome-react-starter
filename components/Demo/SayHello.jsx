@@ -18,7 +18,7 @@ const SayHello = () => {
   };
 
   return (
-    <Button className="square-button square-button-secondary" onClick={handleClick}>
+    <Button className="button full secondary" onClick={handleClick}>
       Say Hello
     </Button>
   );

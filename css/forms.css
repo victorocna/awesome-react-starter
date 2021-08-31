@@ -1,7 +1,7 @@
 input,
 textarea,
 select {
-  @apply w-full;
+  width: 100%;
 }
 
 input:disabled,
@@ -28,33 +28,6 @@ a[role='button']:active {
 button:disabled {
   cursor: not-allowed;
   filter: opacity(0.75);
-}
-
-.form-input,
-.form-textarea {
-  @apply border border-gray-500 rounded text-sm py-2 px-3;
-}
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus {
-  @apply outline-none;
-}
-
-.form-select {
-  @apply border border-gray-500 rounded text-sm cursor-default;
-  padding: 2px 0;
-}
-.form-select > select {
-  @apply bg-transparent appearance-none outline-none px-3 py-2;
-}
-.form-select > select,
-.dropdown > select {
-  z-index: 1;
-}
-.form-select > i,
-.dropdown > i {
-  position: relative;
-  z-index: 0;
 }
 
 .form-dropdown {

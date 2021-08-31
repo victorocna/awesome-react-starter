@@ -24,7 +24,7 @@ const AddTodoForm = () => {
     >
       <Form className="flex space-x-4">
         <Field name="name" as={Input} autoFocus autoComplete="off" />
-        <Submit className="square-button square-button-accent" isLoading={mutation.isLoading}>
+        <Submit className="button full accent" isLoading={mutation.isLoading}>
           Add
         </Submit>
       </Form>

@@ -30,7 +30,7 @@ const StepOne = () => {
       </div>
       <Email />
       <Terms />
-      <Button className="form-button" type="submit">
+      <Button className="button full primary" type="submit">
         Continue
       </Button>
     </div>

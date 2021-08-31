@@ -18,7 +18,7 @@ const SayGoodbye = () => {
   };
 
   return (
-    <Button className="square-button square-button-accent" onClick={handleClick}>
+    <Button className="button full accent" onClick={handleClick}>
       Say Goodbye
     </Button>
   );

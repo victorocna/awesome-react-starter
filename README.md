@@ -1,13 +1,13 @@
-# Next with auth starter
+# React and Next.js starter pack
 
-Starter for Next.js projects with authentication
+Starter for React and Next.js projects with authentication, custom hooks, Tailwind support and many more
 
 ## Quick start
 
 Install dependencies
 
 ```bash
-npm install
+npm ci
 ```
 
 Copy the example environment variables and update them if needed

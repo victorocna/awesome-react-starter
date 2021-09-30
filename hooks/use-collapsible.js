@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { local } from 'store2';
 
-const useMenu = (key) => {
-  const [open, setOpen] = useState(false);
+const useCollapsible = (key) => {
+  const [isOpen, setOpen] = useState(false);
 
   const initial = local.get(key);
   useEffect(() => {
@@ -15,14 +15,14 @@ const useMenu = (key) => {
     }
   }, [initial]);
 
-  const toggleOpen = () => {
+  const toggle = () => {
     setOpen((open) => {
       local.set(key, !open);
       return !open;
     });
   };
 
-  return { open, setOpen, toggleOpen };
+  return { isOpen, setOpen, toggle };
 };
 
-export default useMenu;
+export default useCollapsible;

@@ -5,19 +5,19 @@ const useSelect = ({ children, onSelect, ...props }) => {
     const items = children.map(({ props: { value, defaultSelected, children } }) => ({
       value,
       defaultSelected,
-      verbose: children,
+      label: children,
     }));
 
     return {
       items,
       defaultSelectedItem: items.find(({ defaultSelected }) => defaultSelected) || null,
-      itemToString: ({ verbose }) => verbose,
+      itemToString: ({ label }) => label,
       onSelectedItemChange: ({ selectedItem = {} }) => onSelect(selectedItem.value),
     };
   };
-  const wow = prepareItems(children, onSelect);
+  const preparedItems = prepareItems(children, onSelect);
 
-  return select({ ...wow, ...props });
+  return select({ ...preparedItems, ...props });
 };
 
 export default useSelect;

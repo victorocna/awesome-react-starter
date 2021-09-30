@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import { string, func, object } from 'prop-types';
 import { useMutation as useQueryMutation, useQueryClient } from 'react-query';
 import { toaster } from '../functions';
 
@@ -9,8 +8,10 @@ import { toaster } from '../functions';
  * @param {String} key
  * @param {Function} fn
  * @param {Object} options
+ * @returns {Object} Returns the mutation function, status and others
+ * @see https://react-query.tanstack.com/reference/useMutation
  */
-const useMutation = (key, fn, options) => {
+const useMutation = (key, fn, options = {}) => {
   const {
     success,
     successCallback,
@@ -47,18 +48,6 @@ const useMutation = (key, fn, options) => {
   });
 
   return mutation;
-};
-
-useMutation.PropTypes = {
-  key: string,
-  fn: func,
-  options: object,
-};
-
-useMutation.defaultProps = {
-  key: '',
-  func: () => {},
-  options: {},
 };
 
 export default useMutation;

@@ -1,5 +1,4 @@
 import { stringifyUrl } from 'query-string';
-import { string, object } from 'prop-types';
 import { useInfiniteQuery as infiniteQuery } from 'react-query';
 import { axios } from '../services/api';
 
@@ -8,8 +7,10 @@ import { axios } from '../services/api';
  *
  * @param {String} url
  * @param {Object} options
+ * @returns {Object} Returns query data, status and others
+ * @see https://react-query.tanstack.com/reference/useInfiniteQuery
  */
-const useInfiniteQuery = (url, options) => {
+const useInfiniteQuery = (url, options = {}) => {
   const limit = 30;
   const getNextPageParam = ({ hasNext, offset }) => {
     return hasNext && offset;
@@ -36,16 +37,6 @@ const useInfiniteQuery = (url, options) => {
   }
 
   return { ...response, data };
-};
-
-useInfiniteQuery.PropTypes = {
-  url: string,
-  options: object,
-};
-
-useInfiniteQuery.defaultProps = {
-  url: '',
-  options: {},
 };
 
 export default useInfiniteQuery;

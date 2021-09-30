@@ -1,9 +1,9 @@
 import { MenuItem } from '.';
 import { classnames } from '../functions';
-import { useMenu } from '../hooks';
+import { useCollapsible } from '../hooks';
 
 const MenuGroup = ({ name, items, children, level }) => {
-  const { open, toggleOpen } = useMenu(`menu.${name}`);
+  const { isOpen, toggle } = useCollapsible(`menu.${name}`);
 
   // only one level deep
   const showItems = ({ name, href }) => {
@@ -21,17 +21,17 @@ const MenuGroup = ({ name, items, children, level }) => {
           'flex items-center py-2 text-gray-900 hover:bg-gray-100 cursor-pointer',
           level === 1 ? 'pl-8' : 'pl-12'
         )}
-        onClick={toggleOpen}
+        onClick={toggle}
       >
         {children}
         <i
           className={classnames(
             'pl-1 text-gray-600',
-            open ? 'fas fa-angle-down' : 'fas fa-angle-up'
+            isOpen ? 'fas fa-angle-down' : 'fas fa-angle-up'
           )}
         />
       </div>
-      <div className={classnames('flex flex-col py-2', !open && 'hidden')}>
+      <div className={classnames('flex flex-col py-2', !isOpen && 'hidden')}>
         {items.map(showItems)}
       </div>
     </>

@@ -3,7 +3,7 @@ import { axios } from '../services/api';
 
 const useQuery = (url, options) => {
   const queryFn = ({ queryKey }) => {
-    return axios(queryKey[0]);
+    return axios(queryKey);
   };
 
   return query(url, queryFn, options);

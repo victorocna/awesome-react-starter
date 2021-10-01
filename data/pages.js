@@ -23,6 +23,10 @@ export default [
         href: '/demo/buttons',
       },
       {
+        name: 'Modals',
+        href: '/demo/modals',
+      },
+      {
         name: 'Overflow',
         href: '/demo/overflow',
       },

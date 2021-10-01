@@ -1,5 +1,6 @@
 import AppContext from './app-context';
 import AppHead from './AppHead';
+import AreYouSure from './AreYouSure';
 import Button from './Button';
 import Favicon from './Favicon';
 import Layout from './Layout';
@@ -11,6 +12,7 @@ import Menu from './Menu';
 import MenuButton from './MenuButton';
 import MenuGroup from './MenuGroup';
 import MenuItem from './MenuItem';
+import Modal from './Modal';
 import OpenGraph from './OpenGraph';
 import Overflow from './Overflow';
 import Percent from './Percent';
@@ -26,6 +28,7 @@ import withRouter from './withRouter';
 export {
   AppContext,
   AppHead,
+  AreYouSure,
   Button,
   Favicon,
   Layout,
@@ -37,6 +40,7 @@ export {
   MenuButton,
   MenuGroup,
   MenuItem,
+  Modal,
   OpenGraph,
   Overflow,
   Percent,

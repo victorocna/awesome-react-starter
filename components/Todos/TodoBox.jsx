@@ -5,7 +5,7 @@ const TodoBox = () => {
   const [options, setOptions] = useState({});
 
   return (
-    <div className="p-4 bg-white rounded shadow flex flex-col space-y-4">
+    <div className="p-4 bg-white rounded shadow flex flex-col gap-4">
       <AddTodo />
       <div className="my-4 grid md:grid-cols-2 gap-4">
         <FilterTodos setOptions={setOptions} />

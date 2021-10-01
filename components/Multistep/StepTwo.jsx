@@ -3,7 +3,7 @@ import { Button } from '..';
 
 const StepTwo = ({ previous }) => {
   return (
-    <div className="space-y-4">
+    <div className="grid gap-4">
       <div className="grid md:grid-cols-2 gap-4">
         <Country />
         <UsState />

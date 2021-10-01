@@ -20,7 +20,7 @@ const Page = () => {
   return (
     <div className="font-body text-sm min-h-screen bg-gray-100 flex">
       <Menu />
-      <main className="max w-full lg:col-span-5 p-4 lg:p-8 xl:px-12 space-y-4">
+      <main className="max w-full lg:col-span-5 p-4 lg:p-8 xl:px-12">
         <div className="flex items-center mb-12">
           <div className="flex flex-1">
             <h3 className="text-2xl font-semibold">Forms</h3>
@@ -135,7 +135,7 @@ const Page = () => {
                   This is an excelent place for checkboxes. When the user has to choose one and only
                   one option, that is when radio groups should be used.
                 </p>
-                <div className="md:flex md:items-center md:space-x-2">
+                <div className="md:flex md:items-center md:gap-2">
                   <Checkbox value="green">Green</Checkbox>
                   <Checkbox value="red" defaultChecked>
                     Red
@@ -169,11 +169,8 @@ const Page = () => {
                   This should be your primary button. But instead of submitting the form, it only
                   shows the loading indicator.
                 </p>
-                <div className="flex items-center space-x-2">
-                  <Button
-                    className="square-button square-button-primary"
-                    onClick={() => setLoading(!isLoading)}
-                  >
+                <div className="flex items-center gap-2">
+                  <Button className="button full primary" onClick={() => setLoading(!isLoading)}>
                     Show me
                   </Button>
                   <Spinner show={isLoading} />

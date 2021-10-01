@@ -4,7 +4,7 @@ import { Button } from '..';
 
 const StepOne = () => {
   return (
-    <div className="space-y-4">
+    <div className="grid gap-4">
       <Fullname />
       <div className="grid gap-4 md:grid-cols-2">
         <div>

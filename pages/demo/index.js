@@ -5,7 +5,7 @@ const Page = () => {
   return (
     <div className="font-body text-sm min-h-screen bg-gray-100 flex">
       <Menu />
-      <main className="max w-full lg:col-span-5 p-4 lg:p-8 xl:px-12 space-y-4">
+      <main className="max w-full lg:col-span-5 p-4 lg:p-8 xl:px-12">
         <div className="flex items-center mb-12">
           <div className="flex flex-1">
             <h3 className="text-2xl font-semibold">Dashboard</h3>
@@ -14,7 +14,7 @@ const Page = () => {
           <MenuButton />
         </div>
         <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-white rounded shadow p-4 space-y-4">
+          <div className="bg-white rounded shadow p-4 grid gap-4">
             <p className="text-gray-800">
               Bacon ipsum dolor amet brisket jowl burgdoggen, sausage capicola ground round chicken
               tail boudin porchetta landjaeger turducken turkey shoulder short ribs. Ham meatloaf
@@ -39,9 +39,11 @@ const Page = () => {
               kielbasa ribeye swine t-bone cupim turkey kevin chicken. Spare ribs beef venison
               prosciutto pork loin tongue andouille pancetta filet mignon.
             </p>
-            <SayHello />
+            <div>
+              <SayHello />
+            </div>
           </div>
-          <div className="bg-white rounded shadow p-4 space-y-4">
+          <div className="bg-white rounded shadow p-4 grid gap-4">
             <p className="text-gray-800">
               Bacon ipsum dolor amet shank rump kevin fatback, corned beef short loin salami. Beef
               hamburger pork sirloin corned beef burgdoggen. Beef ground round meatloaf tail filet
@@ -66,7 +68,9 @@ const Page = () => {
               Andouille brisket corned beef ham beef, chicken salami doner. Tail meatball picanha
               rump, pork loin kevin bresaola strip steak salami.
             </p>
-            <SayGoodbye />
+            <div>
+              <SayGoodbye />
+            </div>
           </div>
         </div>
       </main>

@@ -11,7 +11,7 @@ const ShowMore = ({ children, label = 'Show more', visible = false }) => {
     <div>
       <button
         type="button"
-        className="flex items-center space-x-1 text-primary"
+        className="flex items-center gap-1 text-primary"
         onClick={handleClick}
       >
         <span>{label}</span>

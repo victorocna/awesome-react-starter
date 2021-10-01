@@ -1,4 +1,4 @@
-import { classnames } from '../functions';
+import { classnames } from '../lib';
 
 const Pill = ({ children, className }) => {
   return (

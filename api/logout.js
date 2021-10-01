@@ -1,7 +1,5 @@
-import router from 'next/router';
-import { toaster } from '../functions';
-import { axios } from '../services/api';
-import { store } from '../services/auth';
+import { axios, router, toaster } from '../lib';
+import { store } from '../auth';
 
 const logout = async () => {
   try {

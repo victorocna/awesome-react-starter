@@ -1,4 +1,4 @@
-import { checkAuth, withAuth } from '../../services/auth';
+import { checkAuth, withAuth } from '../../auth';
 import { Layout, Multistep } from '../../components/Demo';
 
 const Page = () => {

@@ -1,4 +1,4 @@
-import { checkAuth, withAuth } from '../services/auth';
+import { checkAuth, withAuth } from '../auth';
 import { Menu, MenuButton, Tooltip } from '../components';
 import { TodoBox } from '../components/Todos';
 

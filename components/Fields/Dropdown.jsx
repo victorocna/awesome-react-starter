@@ -1,5 +1,5 @@
 import { useSelect } from '../../hooks';
-import { classnames } from '../../functions';
+import { classnames } from '../../lib';
 
 const Dropdown = ({ placeholder, onSelect, children }) => {
   const {

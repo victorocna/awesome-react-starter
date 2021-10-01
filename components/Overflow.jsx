@@ -1,5 +1,5 @@
 import { cloneElement, Children } from 'react';
-import { classnames } from '../functions';
+import { classnames } from '../lib';
 
 const Overflow = ({ children }) => {
   const append = (child) => {

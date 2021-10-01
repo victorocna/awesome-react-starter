@@ -1,5 +1,5 @@
 import { MenuItem } from '.';
-import { classnames } from '../functions';
+import { classnames } from '../lib';
 import { useCollapsible } from '../hooks';
 
 const MenuGroup = ({ name, items, children, level }) => {

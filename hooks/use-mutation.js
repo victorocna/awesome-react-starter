@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useMutation as useQueryMutation, useQueryClient } from 'react-query';
-import { toaster } from '../functions';
+import { toaster } from '../lib';
 
 /**
  * Custom hook for useMutation

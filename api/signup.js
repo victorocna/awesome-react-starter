@@ -1,6 +1,4 @@
-import router from 'next/router';
-import { toaster } from '../functions';
-import { axios } from '../services/api';
+import { axios, router, toaster } from '../lib';
 
 const signup = async (ref, data) => {
   try {

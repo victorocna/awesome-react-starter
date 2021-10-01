@@ -1,5 +1,5 @@
 import { Button } from '..';
-import { toaster } from '../../functions';
+import { toaster } from '../../lib';
 
 const SayGoodbye = () => {
   const handleClick = () => {

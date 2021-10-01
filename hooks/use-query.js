@@ -1,5 +1,5 @@
 import { useQuery as query } from 'react-query';
-import { axiosAuth } from '../services/api';
+import { axiosAuth } from '../lib';
 
 const useQuery = (url, options) => {
   const queryFn = ({ queryKey }) => {

@@ -1,5 +1,4 @@
-import { toaster } from '../functions';
-import { axios } from '../services/api';
+import { axios, toaster } from '../lib';
 
 const reset = async (ref, hash, data) => {
   try {

@@ -1,18 +1,19 @@
 import router from 'next/router';
 import { toaster } from '../functions';
-import { login as loginAuth } from '../services/auth';
+import { axios } from '../services/api';
+import { store } from '../services/auth';
 
 const login = async (ref, data) => {
   try {
     // execute google recaptcha
     data['g-recaptcha-response'] = await ref.current.executeAsync();
 
-    // execute main action
-    const message = await loginAuth(data);
+    const { token } = axios.post('login', data);
+    store.dispatch({ type: 'SET', jwt: token });
 
     // notify user and other actions
-    toaster.success(message);
-    router.push('/dashboard');
+    toaster.success('Login successful');
+    router.push('/admin');
   } catch ({ message }) {
     toaster.error(message);
 

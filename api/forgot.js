@@ -1,5 +1,5 @@
 import { toaster } from '../functions';
-import { fetch } from '../services/api';
+import { axios } from '../services/api';
 
 const forgot = async (ref, data) => {
   try {
@@ -7,12 +7,13 @@ const forgot = async (ref, data) => {
     data['g-recaptcha-response'] = await ref.current.executeAsync();
 
     // execute main action
-    await fetch(`forgot`, { data, withAuth: false, method: 'POST' });
+    await axios.post('forgot', data);
 
     // notify user and other actions
     toaster.success('You will receive an email with reset instructions');
-  } catch ({ message }) {
-    toaster.error(message);
+  } catch (err) {
+    // ambiguous success message for failed attempts
+    toaster.success('You will receive an email with reset instructions');
 
     // reset google recaptcha on invalid login
     ref.current.reset();

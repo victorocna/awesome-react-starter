@@ -1,6 +1,6 @@
 import { stringifyUrl } from 'query-string';
 import { useInfiniteQuery as infiniteQuery } from 'react-query';
-import { axios } from '../services/api';
+import { axiosAuth } from '../services/api';
 
 /**
  * Custom hook for useInfiniteQuery
@@ -17,7 +17,7 @@ const useInfiniteQuery = (url, options = {}) => {
   };
 
   const fetcher = ({ pageParam: offset }) => {
-    return axios(stringifyUrl({ url, query: { limit, ...options, offset } }));
+    return axiosAuth(stringifyUrl({ url, query: { limit, ...options, offset } }));
   };
   const config = { getNextPageParam, limit, ...options };
 

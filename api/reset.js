@@ -1,5 +1,5 @@
 import { toaster } from '../functions';
-import { fetch } from '../services/api';
+import { axios } from '../services/api';
 
 const reset = async (ref, hash, data) => {
   try {
@@ -7,7 +7,7 @@ const reset = async (ref, hash, data) => {
     data['g-recaptcha-response'] = await ref.current.executeAsync();
 
     // execute main action
-    await fetch(`reset/${hash}`, { data, withAuth: false, method: 'POST' });
+    await axios.post(`reset/${hash}`, data);
 
     // notify user and other actions
     toaster.success('Your password has been changed');

@@ -1,7 +1,7 @@
-import { fetch } from '../services/api';
+import { axios } from '../services/api';
 
 const confirm = async (hash) => {
-  return await fetch(`confirm/${hash}`, { withAuth: false, method: 'POST' });
+  return await axios.post(`confirm/${hash}`);
 };
 
 export default confirm;

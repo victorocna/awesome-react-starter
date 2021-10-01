@@ -1,13 +1,17 @@
 import router from 'next/router';
 import { toaster } from '../functions';
-import { logout as logoutAuth } from '../services/auth';
+import { axios } from '../services/api';
+import { store } from '../services/auth';
 
 const logout = async () => {
   try {
-    const message = await logoutAuth();
+    await axios.post('logout');
+    store.dispatch({ type: 'REMOVE' });
 
     // notify user and other actions
-    toaster.success(message);
+    toaster.success('Logout successful');
+
+    // redirect home
     router.push('/login');
   } catch ({ message }) {
     toaster.error(message);

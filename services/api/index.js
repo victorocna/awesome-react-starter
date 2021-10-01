@@ -1,4 +1,4 @@
 import axios from './axios';
-import fetch from './fetch';
+import axiosAuth from './axios-auth';
 
-export { axios, fetch };
+export { axios, axiosAuth };

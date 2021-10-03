@@ -6,14 +6,14 @@ const login = async (ref, data) => {
     // execute google recaptcha
     data['g-recaptcha-response'] = await ref.current.executeAsync();
 
-    const { token } = axios.post('login', data);
+    const { token } = await axios.post('login', data);
     store.dispatch({ type: 'SET', jwt: token });
 
     // notify user and other actions
     toaster.success('Login successful');
     router.push('/admin');
-  } catch ({ message }) {
-    toaster.error(message);
+  } catch (err) {
+    toaster.error(err.message);
 
     // reset google recaptcha on invalid login
     ref.current.reset();

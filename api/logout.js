@@ -11,8 +11,8 @@ const logout = async () => {
 
     // redirect home
     router.push('/login');
-  } catch ({ message }) {
-    toaster.error(message);
+  } catch (err) {
+    toaster.error(err.message);
   }
 };
 

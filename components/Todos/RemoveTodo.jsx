@@ -1,5 +1,5 @@
 import { useMutation } from '../../hooks';
-import { deleteTodo } from '../../api/todo';
+import { deleteTodo } from '../../examples/api/todo';
 
 const RemoveTodo = ({ id }) => {
   const mutation = useMutation('todos', deleteTodo, {

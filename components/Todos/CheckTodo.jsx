@@ -1,5 +1,5 @@
 import { Checkbox } from '../Fields';
-import { checkTodo } from '../../api/todo';
+import { checkTodo } from '../../examples/api/todo';
 import { useMutation } from '../../hooks';
 
 const CheckTodo = ({ id, done }) => {

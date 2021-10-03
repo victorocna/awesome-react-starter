@@ -1,8 +1,8 @@
 import { Formik, Form, Field } from 'formik';
 import { Input } from '../Fields';
 import { Submit } from '../Formik';
-import { validationSchema, initialValues } from '../../models/todo';
-import { createTodo } from '../../api/todo';
+import { validationSchema, initialValues } from '../../examples/models/todo';
+import { createTodo } from '../../examples/api/todo';
 import { useMutation } from '../../hooks';
 
 const AddTodoForm = () => {

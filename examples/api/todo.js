@@ -1,4 +1,4 @@
-import { axios } from '../lib';
+import { axios } from '../../lib';
 
 export const createTodo = (data) => {
   return axios.post('todos', data);

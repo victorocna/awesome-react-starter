@@ -1,5 +1,6 @@
 import { checkAuth, withAuth } from '../../auth';
-import { Layout, Logout, Profile } from '../../components/Demo';
+import { Layout, Profile } from '../../components/Demo';
+import { Logout } from '../../components/Identity';
 
 const Page = () => {
   return (

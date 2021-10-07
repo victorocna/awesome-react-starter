@@ -1,61 +1,56 @@
 export default [
   {
     name: 'Dashboard',
-    href: '/demo',
+    href: '/admin',
   },
   {
     name: 'My todos',
-    href: '/todo',
-  },
-  {
-    name: 'Settings',
-    href: '/settings',
+    href: '/examples/todos',
   },
   {
     name: 'Profile',
-    href: '/profile',
+    href: '/examples/profile',
+  },
+  {
+    name: 'Multistep form',
+    href: '/examples/multi-step',
   },
   {
     name: 'Components',
     items: [
       {
         name: 'Buttons',
-        href: '/demo/buttons',
+        href: '/examples/buttons',
       },
       {
         name: 'Modals',
-        href: '/demo/modals',
+        href: '/examples/modals',
       },
       {
         name: 'Overflow',
-        href: '/demo/overflow',
+        href: '/examples/overflow',
       },
       {
         name: 'Pills',
-        href: '/demo/pill',
+        href: '/examples/pill',
       },
       {
         name: 'Show more',
-        href: '/demo/show-more',
+        href: '/examples/show-more',
       },
       {
         name: 'Forms',
-        href: '/demo/forms',
+        href: '/examples/forms',
       },
     ],
   },
   {
-    name: 'Identity',
-    items: [
-      {
-        name: 'Login page',
-        href: '/login',
-      },
-      {
-        name: 'Signup page',
-        href: '/signup',
-      },
-    ],
+    name: 'Login page',
+    href: '/login',
+  },
+  {
+    name: 'Signup page',
+    href: '/signup',
   },
   {
     name: '404 Page',

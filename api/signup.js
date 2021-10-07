@@ -1,6 +1,4 @@
-import router from 'next/router';
-import { toaster } from '../functions';
-import { axios } from '../services/api';
+import { axios, router, toaster } from '../lib';
 
 const signup = async (ref, data) => {
   try {
@@ -13,8 +11,8 @@ const signup = async (ref, data) => {
     // notify user and other actions
     toaster.success('Your account has been created');
     router.push('/thank-you');
-  } catch ({ message }) {
-    toaster.error(message);
+  } catch (err) {
+    toaster.error(err.message);
 
     // reset google recaptcha on invalid login
     ref.current.reset();

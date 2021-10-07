@@ -1,5 +1,4 @@
-import { toaster } from '../functions';
-import { axios } from '../services/api';
+import { axios, toaster } from '../lib';
 
 const reset = async (ref, hash, data) => {
   try {
@@ -11,8 +10,8 @@ const reset = async (ref, hash, data) => {
 
     // notify user and other actions
     toaster.success('Your password has been changed');
-  } catch ({ message }) {
-    toaster.error(message);
+  } catch (err) {
+    toaster.error(err.message);
 
     // reset google recaptcha on invalid login
     ref.current.reset();

@@ -1,12 +1,13 @@
-import { checkAuth, withAuth } from '../../services/auth';
-import { Layout, Logout, Profile } from '../../components/Demo';
+import { checkAuth, withAuth } from '../../auth';
+import { Layout } from '../../components';
 
 const Page = () => {
   return (
     <Layout>
-      <h1 className="font-semibold mb-4">Admin homepage</h1>
-      <Profile />
-      <Logout />
+      <div className="prose max-w-full">
+        <h2 className="font-semibold mb-4">Hello world</h2>
+        <p>This is a secured admin page. Modify it as you wish.</p>
+      </div>
     </Layout>
   );
 };

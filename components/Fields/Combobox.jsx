@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useCombobox } from 'downshift';
-import { classnames } from '../../functions';
+import { classnames } from '../../lib';
 
 const Combobox = ({ children }) => {
   const newones = children.map(({ props: { value, defaultSelected, children } }) => ({

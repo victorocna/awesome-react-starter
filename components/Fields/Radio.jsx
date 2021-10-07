@@ -10,7 +10,7 @@ const Radio = ({ children, ...props }) => {
   props.onChange = onChange;
 
   return (
-    <label className="inline-flex items-center relative cursor-pointer space-x-1 mr-2 max-w-full">
+    <label className="inline-flex items-center relative cursor-pointer gap-1 mr-2 max-w-full">
       <input type="radio" role="radio" className="form-radio" {...props} />
       <span className="min-w-14 inline-block text-center truncate">{children}</span>
     </label>

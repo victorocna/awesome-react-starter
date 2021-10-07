@@ -1,5 +1,5 @@
-import { axios } from '../services/api';
-import { store } from '../services/auth';
+import { axios } from '../lib';
+import { store } from '../auth';
 
 const refreshToken = async (cookie) => {
   const { token } = await axios.post('refresh-token', null, {

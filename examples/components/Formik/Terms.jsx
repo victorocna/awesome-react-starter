@@ -14,13 +14,9 @@ const Terms = () => {
   return (
     <Fieldset
       name="terms"
-      help={
-        <p className="text-gray-600">
-          For more info about these terms and conditions, visit our dedicated page
-        </p>
-      }
+      help="For more info about these terms and conditions, visit our dedicated page"
     >
-      <Field name="terms" as={TermsCheckbox} />
+      <Field id="termns" name="terms" as={TermsCheckbox} />
     </Fieldset>
   );
 };

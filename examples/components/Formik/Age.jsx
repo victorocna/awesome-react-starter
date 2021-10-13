@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { differenceInYears } from 'date-fns';
 import { Field, useFormikContext } from 'formik';
-import { Input } from '../../../components/Fields';
+import { Number } from '../../../components/Fields';
 import { Fieldset } from '../../../components/Formik';
 
 const Age = () => {
@@ -17,12 +17,8 @@ const Age = () => {
   }, [values.dateOfBirth]);
 
   return (
-    <Fieldset
-      name="age"
-      label={<div className="text-gray-800 font-semibold">Age</div>}
-      help={<p className="text-gray-600">Computed from your date of birth</p>}
-    >
-      <Field name="age" type="number" readOnly as={Input} />
+    <Fieldset name="age" label="Age" help="Computed from your date of birth">
+      <Field id="age" name="age" as={Number} readOnly />
     </Fieldset>
   );
 };

@@ -48,3 +48,14 @@ button:disabled {
 input[type='number'] {
   appearance: textfield !important;
 }
+
+.has-error .form-input,
+.has-error .form-select,
+.has-error .form-textarea {
+  @apply border-red-500;
+}
+
+.has-error .form-label,
+.has-error .form-help {
+  @apply text-red-600 !important;
+}

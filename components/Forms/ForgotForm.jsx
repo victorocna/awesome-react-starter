@@ -17,15 +17,11 @@ const ForgotForm = () => {
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
-      <Form>
-        <Fieldset
-          name="email"
-          className="mb-2"
-          label={<div className="text-gray-800">Your email</div>}
-        >
-          <Field name="email" as={Email} autoFocus />
+      <Form className="space-y-4">
+        <Fieldset name="email" label="Your email">
+          <Field id="email" name="email" as={Email} autoFocus />
         </Fieldset>
-        <Submit onlyOnce>Send password reset email</Submit>
+        <Submit className="button full primary">Send password reset email</Submit>
         <Recaptcha ref={ref} />
       </Form>
     </Formik>

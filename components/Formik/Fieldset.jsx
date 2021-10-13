@@ -1,13 +1,19 @@
-import { Help } from '.';
+import { useFormikContext } from 'formik';
+import { classnames } from '../../lib';
 
-const Fieldset = ({ label, help, name, className, ...props }) => {
+const Fieldset = ({ label, help, name, children }) => {
+  const { submitCount, touched, errors } = useFormikContext();
+  const hasError = touched[name] && errors[name] && submitCount > 0;
+
   return (
-    <fieldset className={className}>
-      <label className="w-full cursor-pointer">
+    <fieldset className={classnames(hasError && 'has-error')}>
+      <label htmlFor={name} className="form-label w-full cursor-pointer mb-0">
         {label}
-        {props.children}
-        <Help name={name} help={help} />
       </label>
+      {children}
+      <div className="form-help text-sm text-secondary first-letter">
+        {hasError ? errors[name] : help}
+      </div>
     </fieldset>
   );
 };

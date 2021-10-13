@@ -17,15 +17,12 @@ const ResetForm = ({ hash }) => {
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
-      <Form>
-        <Fieldset
-          name="password"
-          className="mb-2"
-          label={<div className="text-gray-800">Your new password</div>}
-        >
-          <Field name="password" as={Password} autoFocus />
+      <Form className="space-y-4">
+        <Fieldset name="password" label="Your new password">
+          <Field id="password" name="password" as={Password} autoFocus />
         </Fieldset>
-        <Submit onlyOnce>Reset password</Submit>
+
+        <Submit className="button full primary">Reset password</Submit>
         <Recaptcha ref={ref} />
       </Form>
     </Formik>

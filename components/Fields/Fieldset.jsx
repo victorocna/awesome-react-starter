@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Fieldset = ({ label, help, children }) => {
+const Fieldset = ({ label, name, help, children }) => {
   return (
     <fieldset>
-      <label className="w-full cursor-pointer mb-0">
+      <label htmlFor={name} className="form-label w-full cursor-pointer mb-0">
         {label}
-        {children}
       </label>
-      {help && <div className="text-gray-700 text-sm">{help}</div>}
+      {children}
+      {help && <div className="form-help text-sm text-secondary">{help}</div>}
     </fieldset>
   );
 };

@@ -17,29 +17,20 @@ const SignupForm = () => {
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
-      <Form>
-        <Fieldset
-          name="name"
-          className="mb-2"
-          label={<div className="text-gray-800">Your name</div>}
-        >
-          <Field name="name" as={Input} autoFocus />
+      <Form className="space-y-4">
+        <Fieldset name="name" label="Your name">
+          <Field id="name" name="name" as={Input} autoFocus />
         </Fieldset>
-        <Fieldset
-          name="email"
-          className="mb-2"
-          label={<div className="text-gray-800">Your email</div>}
-        >
-          <Field name="email" as={Email} />
+
+        <Fieldset name="email" label="Your email">
+          <Field id="email" name="email" as={Email} />
         </Fieldset>
-        <Fieldset
-          name="password"
-          className="mb-2"
-          label={<div className="text-gray-800">Your password</div>}
-        >
-          <Field name="password" as={Password} />
+
+        <Fieldset name="password" label="Your password">
+          <Field id="password" name="password" as={Password} />
         </Fieldset>
-        <Submit>Signup</Submit>
+
+        <Submit className="button full primary">Signup</Submit>
         <Recaptcha ref={ref} />
       </Form>
     </Formik>

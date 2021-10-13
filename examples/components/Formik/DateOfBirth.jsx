@@ -1,14 +1,12 @@
 import { Field } from 'formik';
 import { Datepicker, Fieldset } from '../../../components/Formik';
 
-const DateOfBirth = () => (
-  <Fieldset
-    name="dateOfBirth"
-    label={<div className="text-gray-800 font-semibold">Date of birth</div>}
-    help={<p className="text-gray-600">Optional info</p>}
-  >
-    <Field name="dateOfBirth" as={Datepicker} />
-  </Fieldset>
-);
+const DateOfBirth = () => {
+  return (
+    <Fieldset name="dateOfBirth" label="Date of birth" help="Optional info">
+      <Field id="dateOfBirth" name="dateOfBirth" as={Datepicker} />
+    </Fieldset>
+  );
+};
 
 export default DateOfBirth;

@@ -22,12 +22,14 @@ const UsState = () => {
   }, [country]);
 
   return (
-    <Fieldset
-      name="state"
-      label={<div className="text-gray-800 font-semibold">US State</div>}
-      help={<p className="text-gray-600">Uses default select tag</p>}
-    >
-      <Field name="state" disabled={disabled} placeholder="Select your state" as={UsStateSelect} />
+    <Fieldset name="state" label="US State" help="Uses default select tag">
+      <Field
+        id="state"
+        name="state"
+        disabled={disabled}
+        placeholder="Select your state"
+        as={UsStateSelect}
+      />
     </Fieldset>
   );
 };

@@ -11,12 +11,8 @@ const Country = () => {
   );
 
   return (
-    <Fieldset
-      name="country"
-      label={<div className="text-gray-800 font-semibold">Country</div>}
-      help={<p className="text-gray-600">Uses custom dropdown</p>}
-    >
-      <Field name="country" placeholder="Select your country" as={Dropdown}>
+    <Fieldset name="country" label="Country" help="Uses custom dropdown">
+      <Field id="country" name="country" placeholder="Select your country" as={Dropdown}>
         {countries.map(showCountries)}
       </Field>
     </Fieldset>

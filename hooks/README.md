@@ -1,5 +1,11 @@
 # React Hooks
 
+## useArray
+
+Array state helpers.
+
+Useful for scenarios like pushing a new item in an array, removing an item from an array and others.
+
 ## useCollapsible
 
 Determines from local storage if a collapsible section is opened or closed.

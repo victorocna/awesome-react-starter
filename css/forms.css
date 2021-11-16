@@ -4,6 +4,11 @@ select {
   width: 100%;
 }
 
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
 input:disabled,
 textarea:disabled,
 select:disabled {

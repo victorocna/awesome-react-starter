@@ -16,6 +16,11 @@
     "authentication"
   ],
   "author": "victorocna <victor@chesscoders.com> (https://chesscoders.com)",
+  "license": "MIT",
+  "engines": {
+    "npm": ">= 7",
+    "node": ">= 15"
+  },
   "dependencies": {
     "@tailwindcss/forms": "^0.3.2",
     "@tailwindcss/typography": "^0.4.0",

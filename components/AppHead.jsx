@@ -1,10 +1,8 @@
-import React, { useContext } from 'react';
-import Head from 'next/head';
-import { AppContext } from '.';
+import * as config from '../site.config';
 import { Favicon, OpenGraph } from '.';
 
 const AppHead = () => {
-  const { sitename, description, stylesheets, scripts } = useContext(AppContext);
+  const { sitename, description, stylesheets, scripts } = config;
   const showStylesheets = (href) => {
     return <link key={href} rel="stylesheet" href={href} />;
   };
@@ -14,12 +12,10 @@ const AppHead = () => {
 
   return (
     <>
-      <Head>
-        <title>{sitename}</title>
-        <meta name="description" content={description} />
-        {stylesheets.map(showStylesheets)}
-        {scripts.map(showScripts)}
-      </Head>
+      <title>{sitename}</title>
+      <meta name="description" content={description} />
+      {stylesheets.map(showStylesheets)}
+      {scripts.map(showScripts)}
       <Favicon />
       <OpenGraph />
     </>

@@ -1,9 +1,7 @@
-import { useContext } from 'react';
-import { AppContext, Link } from '.';
+import { Link } from '.';
+import { sitename } from '../site.config';
 
 const Logo = () => {
-  const { sitename } = useContext(AppContext);
-
   return (
     <Link href="/">
       <div className="logo flex items-start mb-12 cursor-pointer">

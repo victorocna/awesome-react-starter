@@ -1,4 +1,3 @@
-import AppContext from './app-context';
 import AppHead from './AppHead';
 import AreYouSure from './AreYouSure';
 import Button from './Button';
@@ -26,7 +25,6 @@ import Tooltip from './Tooltip';
 import withRouter from './withRouter';
 
 export {
-  AppContext,
   AppHead,
   AreYouSure,
   Button,

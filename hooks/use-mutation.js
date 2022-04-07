@@ -11,34 +11,35 @@ import { toaster } from '../lib';
  * @returns {Object} Returns the mutation function, status and others
  * @see https://react-query.tanstack.com/reference/useMutation
  */
-const useMutation = (key, fn, options = {}) => {
+const useMutation = (fn, options = {}) => {
   const {
-    success,
     successCallback,
-    error,
     errorCallback,
-    redirect,
+    redirectOnSuccess,
+    invalidateQueries,
     ...rest // pass your own options
   } = options;
 
   const router = useRouter();
   const queryClient = useQueryClient();
   const mutation = useQueryMutation(fn, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(key);
-      if (success) {
-        toaster.success(success);
+    onSuccess: (data) => {
+      if (invalidateQueries) {
+        queryClient.invalidateQueries(invalidateQueries);
       }
-      if (redirect) {
-        router.push(redirect);
+      if (data?.message) {
+        toaster.success(data?.message);
+      }
+      if (redirectOnSuccess) {
+        router.push(redirectOnSuccess);
       }
       if (typeof successCallback === 'function') {
         successCallback();
       }
     },
-    onError: () => {
-      if (error) {
-        toaster.error(error);
+    onError: (err) => {
+      if (err?.message) {
+        toaster.error(err?.message);
       }
       if (typeof errorCallback === 'function') {
         errorCallback();

@@ -6,9 +6,8 @@ import { createTodo } from '../../api/todo';
 import { useMutation } from '../../../hooks';
 
 const AddTodoForm = () => {
-  const mutation = useMutation('todos', createTodo, {
-    success: 'Todo added successfully',
-    error: 'Error! Cannot add your todo',
+  const mutation = useMutation(createTodo, {
+    invalidateQueries: 'todos',
   });
 
   const handleSubmit = (data, formik) => {

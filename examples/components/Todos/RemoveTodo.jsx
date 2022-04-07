@@ -2,9 +2,8 @@ import { useMutation } from '../../../hooks';
 import { deleteTodo } from '../../api/todo';
 
 const RemoveTodo = ({ id }) => {
-  const mutation = useMutation('todos', deleteTodo, {
-    success: 'Todo removed successfully',
-    error: 'Error! Cannot remove your todo',
+  const mutation = useMutation(deleteTodo, {
+    invalidateQueries: 'todos',
   });
 
   const handleDelete = () => {

@@ -3,9 +3,8 @@ import { checkTodo } from '../../api/todo';
 import { useMutation } from '../../../hooks';
 
 const CheckTodo = ({ id, done }) => {
-  const mutation = useMutation('todos', checkTodo, {
-    success: 'Todo status updated',
-    error: 'Error! Cannot update todo status',
+  const mutation = useMutation(checkTodo, {
+    invalidateQueries: 'todos',
   });
   const handleClick = () => {
     mutation.mutate({ id, done });

@@ -3,18 +3,14 @@ import { pages } from '../data';
 
 const Menu = () => {
   const showPages = ({ name, href, items }) => {
-    return (
-      <>
-        {items ? (
-          <MenuGroup key={name} name={name} items={items} level={1}>
-            {name}
-          </MenuGroup>
-        ) : (
-          <MenuItem key={name} href={href} level={1}>
-            {name}
-          </MenuItem>
-        )}
-      </>
+    return items ? (
+      <MenuGroup key={name} name={name} items={items} level={1}>
+        {name}
+      </MenuGroup>
+    ) : (
+      <MenuItem key={name} href={href} level={1}>
+        {name}
+      </MenuItem>
     );
   };
 

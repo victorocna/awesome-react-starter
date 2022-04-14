@@ -1,29 +1,16 @@
 import { useSelect } from '../../hooks';
 import { classnames } from '../../lib';
+import DropdownList from './DropdownList';
 
-const Dropdown = ({ placeholder, onSelect, children }) => {
+const Dropdown = ({ children, onSelect, defaultSelected, placeholder }) => {
   const {
-    selectedItem,
     isOpen,
+    selectedItem,
     getToggleButtonProps,
     getMenuProps,
     highlightedIndex,
     getItemProps,
-  } = useSelect({ children, onSelect });
-
-  const showItems = ({ props: { value, children } }, index) => {
-    const isHover = highlightedIndex === index;
-
-    return (
-      <li
-        key={`${value}${index}`}
-        className={classnames('py-1 px-3', isHover && 'bg-gray-400')}
-        {...getItemProps({ value, index })}
-      >
-        {children}
-      </li>
-    );
-  };
+  } = useSelect({ children, onSelect, defaultSelected });
 
   return (
     <div className="relative">
@@ -31,17 +18,14 @@ const Dropdown = ({ placeholder, onSelect, children }) => {
         className={classnames('form-dropdown', isOpen && 'rounded-b-none')}
         {...getToggleButtonProps()}
       >
-        <span>{(selectedItem && selectedItem.verbose) || placeholder}</span>
+        <span>{(selectedItem && selectedItem.label) || placeholder}</span>
         <span>
           <i className="fas fa-chevron-down" />
         </span>
       </div>
-      <ul
-        className={classnames('outline-none my-0', isOpen && 'form-dropdown-list')}
-        {...getMenuProps()}
-      >
-        {isOpen && children.map(showItems)}
-      </ul>
+      <DropdownList {...{ onSelect, isOpen, getMenuProps, highlightedIndex, getItemProps }}>
+        {children}
+      </DropdownList>
     </div>
   );
 };

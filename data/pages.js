@@ -23,6 +23,10 @@ export default [
         href: '/examples/buttons',
       },
       {
+        name: 'Dropdown',
+        href: '/examples/dropdown',
+      },
+      {
         name: 'Modals',
         href: '/examples/modals',
       },

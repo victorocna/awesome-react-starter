@@ -1,23 +1,22 @@
-import { useSelect as select } from 'downshift';
+import { useSelect as useDownshiftSelect } from 'downshift';
 
-const useSelect = ({ children, onSelect, ...props }) => {
+const useSelect = ({ children, onSelect, defaultSelected }) => {
   const prepareItems = (children = [], onSelect = () => {}) => {
-    const items = children.map(({ props: { value, defaultSelected, children } }) => ({
+    const items = children.map(({ props: { value, children } }) => ({
       value,
-      defaultSelected,
       label: children,
     }));
 
     return {
       items,
-      defaultSelectedItem: items.find(({ defaultSelected }) => defaultSelected) || null,
-      itemToString: ({ label }) => label,
+      defaultSelectedItem: items.find((item) => item?.value === defaultSelected) || null,
+      itemToString: (item) => item?.label || item,
       onSelectedItemChange: ({ selectedItem = {} }) => onSelect(selectedItem.value),
     };
   };
   const preparedItems = prepareItems(children, onSelect);
 
-  return select({ ...preparedItems, ...props });
+  return useDownshiftSelect(preparedItems);
 };
 
 export default useSelect;

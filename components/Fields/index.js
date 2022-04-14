@@ -2,6 +2,7 @@ import Checkbox from './Checkbox';
 import Combobox from './Combobox';
 import Datepicker from './Datepicker';
 import Dropdown from './Dropdown';
+import DropdownList from './DropdownList';
 import Email from './Email';
 import Field from './Field';
 import Fieldset from './Fieldset';
@@ -21,6 +22,7 @@ export {
   Combobox,
   Datepicker,
   Dropdown,
+  DropdownList,
   Email,
   Field,
   Fieldset,

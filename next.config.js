@@ -19,6 +19,8 @@ module.exports = {
       },
     ];
   },
+  generateEtags: false,
+  poweredByHeader: false,
   compiler: {
     styledComponents: true,
   },

@@ -18,6 +18,10 @@ import Percent from './Percent';
 import Pill from './Pill';
 import Plural from './Plural';
 import Price from './Price';
+import Profile from './Profile';
+import ProfileLoading from './ProfileLoading';
+import ProfileMenu from './ProfileMenu';
+import ProfileSuccess from './ProfileSuccess';
 import ShowMore from './ShowMore';
 import Spinner from './Spinner';
 import Toaster from './Toaster';
@@ -45,6 +49,10 @@ export {
   Pill,
   Plural,
   Price,
+  Profile,
+  ProfileLoading,
+  ProfileMenu,
+  ProfileSuccess,
   ShowMore,
   Spinner,
   Toaster,

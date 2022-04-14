@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProfileSuccess = ({ name, email }) => (
+const MyProfileSuccess = ({ name, email }) => (
   <>
     <div className="flex flex-col px-4 lg:px-8 bg-white py-2">
       <dt className="lg:w-1/4">Name: </dt>
@@ -13,4 +13,4 @@ const ProfileSuccess = ({ name, email }) => (
   </>
 );
 
-export default ProfileSuccess;
+export default MyProfileSuccess;

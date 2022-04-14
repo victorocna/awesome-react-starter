@@ -1,7 +1,7 @@
 import { useQuery } from '../../hooks';
-import { ProfileSuccess, ProfileError, ProfileLoading } from '.';
+import { MyProfileSuccess, MyProfileError, MyProfileLoading } from '.';
 
-const Profile = () => {
+const MyProfile = () => {
   const { data, status } = useQuery(`/profile`);
 
   return (
@@ -10,11 +10,11 @@ const Profile = () => {
         <h1 className="font-bold text-xl">My profile</h1>
       </div>
 
-      {status === 'loading' && <ProfileLoading />}
-      {status === 'error' && <ProfileError />}
-      {status === 'success' && <ProfileSuccess {...data} />}
+      {status === 'loading' && <MyProfileLoading />}
+      {status === 'error' && <MyProfileError />}
+      {status === 'success' && <MyProfileSuccess {...data} />}
     </article>
   );
 };
 
-export default Profile;
+export default MyProfile;

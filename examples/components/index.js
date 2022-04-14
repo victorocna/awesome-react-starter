@@ -2,10 +2,10 @@ import Footer from './Footer';
 import Header from './Header';
 import Layout from './Layout';
 import Menu from './Menu';
-import Profile from './Profile';
-import ProfileError from './ProfileError';
-import ProfileLoading from './ProfileLoading';
-import ProfileSuccess from './ProfileSuccess';
+import MyProfile from './MyProfile';
+import MyProfileError from './MyProfileError';
+import MyProfileLoading from './MyProfileLoading';
+import MyProfileSuccess from './MyProfileSuccess';
 import Quote from './Quote';
 import QuoteError from './QuoteError';
 import QuoteLoading from './QuoteLoading';
@@ -18,10 +18,10 @@ export {
   Header,
   Layout,
   Menu,
-  Profile,
-  ProfileError,
-  ProfileLoading,
-  ProfileSuccess,
+  MyProfile,
+  MyProfileError,
+  MyProfileLoading,
+  MyProfileSuccess,
   Quote,
   QuoteSuccess,
   QuoteError,

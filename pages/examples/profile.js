@@ -1,11 +1,11 @@
 import { checkAuth, withAuth } from '../../auth';
 import { Layout } from '../../components';
-import { Profile } from '../../examples/components';
+import { MyProfile } from '../../examples/components';
 
 const Page = () => {
   return (
     <Layout title="My profile">
-      <Profile />
+      <MyProfile />
     </Layout>
   );
 };

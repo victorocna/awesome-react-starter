@@ -1,4 +1,4 @@
-import { Menu, MenuButton } from '.';
+import { Menu, MenuButton, Profile } from '.';
 
 const Layout = ({ title, children }) => {
   return (
@@ -9,6 +9,7 @@ const Layout = ({ title, children }) => {
           <div className="flex flex-1">
             <h3 className="text-2xl font-semibold">{title}</h3>
           </div>
+          <Profile />
           <MenuButton />
         </div>
         <div className="grid gap-4">

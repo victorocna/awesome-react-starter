@@ -27,6 +27,10 @@ export default [
         href: '/examples/dropdown',
       },
       {
+        name: 'Combobox',
+        href: '/examples/combobox',
+      },
+      {
         name: 'Modals',
         href: '/examples/modals',
       },

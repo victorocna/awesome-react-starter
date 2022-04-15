@@ -1,5 +1,7 @@
 import useArray from './use-array'
+import useChildren from './use-children'
 import useCollapsible from './use-collapsible';
+import useCombobox from './use-combobox';
 import useDebounce from './use-debounce';
 import useDisclosure from './use-disclosure';
 import useInfiniteQuery from './use-infinite-query';
@@ -12,7 +14,9 @@ import useSelect from './use-select';
 
 export {
   useArray,
+  useChildren,
   useCollapsible,
+  useCombobox,
   useDebounce,
   useDisclosure,
   useInfiniteQuery,

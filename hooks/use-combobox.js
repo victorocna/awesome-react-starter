@@ -1,7 +1,7 @@
 import { isFunction } from 'lodash';
-import { useSelect as useDownshift } from 'downshift';
+import { useCombobox as useDownshift } from 'downshift';
 
-const useSelect = ({ children, onSelect, defaultSelected }) => {
+const useCombobox = ({ children, onSelect, defaultSelected, setInputItems }) => {
   const prepareItems = (children = [], onSelect = () => {}) => {
     const items = children.map(({ props: { value, children } }) => ({
       value,
@@ -17,6 +17,11 @@ const useSelect = ({ children, onSelect, defaultSelected }) => {
           return onSelect(selectedItem.value);
         }
       },
+      onInputValueChange: ({ inputValue }) => {
+        setInputItems(
+          items.filter((item) => item.label.toLowerCase().includes(inputValue.toLowerCase()))
+        );
+      },
     };
   };
   const preparedItems = prepareItems(children, onSelect);
@@ -24,4 +29,4 @@ const useSelect = ({ children, onSelect, defaultSelected }) => {
   return useDownshift(preparedItems);
 };
 
-export default useSelect;
+export default useCombobox;

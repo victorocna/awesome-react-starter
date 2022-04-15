@@ -1,31 +1,25 @@
-import { useSelect } from '../../hooks';
 import { classnames } from '../../lib';
-import DropdownList from './DropdownList';
+import { useChildren, useSelect } from '../../hooks';
+import OptionList from './OptionList';
 
 const Dropdown = ({ children, onSelect, defaultSelected, placeholder }) => {
-  const {
-    isOpen,
-    selectedItem,
-    getToggleButtonProps,
-    getMenuProps,
-    highlightedIndex,
-    getItemProps,
-  } = useSelect({ children, onSelect, defaultSelected });
+  const items = useChildren(children);
+  const downshift = useSelect({ children, onSelect, defaultSelected });
 
   return (
     <div className="relative">
       <div
-        className={classnames('form-dropdown', isOpen && 'rounded-b-none')}
-        {...getToggleButtonProps()}
+        className={classnames('form-dropdown', downshift.isOpen && 'rounded-b-none')}
+        {...downshift.getToggleButtonProps()}
       >
-        <span>{(selectedItem && selectedItem.label) || placeholder}</span>
+        <span>{(downshift.selectedItem && downshift.selectedItem.label) || placeholder}</span>
         <span>
           <i className="fas fa-chevron-down" />
         </span>
       </div>
-      <DropdownList {...{ onSelect, isOpen, getMenuProps, highlightedIndex, getItemProps }}>
-        {children}
-      </DropdownList>
+      <OptionList onSelect={onSelect} {...downshift}>
+        {items}
+      </OptionList>
     </div>
   );
 };

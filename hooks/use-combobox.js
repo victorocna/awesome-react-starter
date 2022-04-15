@@ -1,32 +1,30 @@
+import { useState } from 'react';
 import { isFunction } from 'lodash';
 import { useCombobox as useDownshift } from 'downshift';
 
-const useCombobox = ({ children, onSelect, defaultSelected, setInputItems }) => {
-  const prepareItems = (children = [], onSelect = () => {}) => {
-    const items = children.map(({ props: { value, children } }) => ({
-      value,
-      label: children,
-    }));
+const useCombobox = ({ items, onSelect, defaultSelected }) => {
+  const [inputItems, setInputItems] = useState(items);
 
-    return {
-      items,
-      defaultSelectedItem: items.find((item) => item?.value === defaultSelected) || null,
-      itemToString: (item) => item?.label || item,
-      onSelectedItemChange: ({ selectedItem = {} }) => {
-        if (isFunction(onSelect)) {
-          return onSelect(selectedItem.value);
-        }
-      },
-      onInputValueChange: ({ inputValue }) => {
-        setInputItems(
-          items.filter((item) => item.label.toLowerCase().includes(inputValue.toLowerCase()))
-        );
-      },
-    };
+  const downshift = useDownshift({
+    items: inputItems,
+    itemToString: (item) => item?.label || item,
+    defaultSelectedItem: items.find((item) => item?.value === defaultSelected) || null,
+    onInputValueChange: ({ inputValue }) => {
+      setInputItems(
+        items.filter((item) => item.label.toLowerCase().includes(inputValue.toLowerCase()))
+      );
+    },
+    onSelectedItemChange: ({ selectedItem }) => {
+      if (isFunction(onSelect)) {
+        return onSelect(selectedItem?.value);
+      }
+    },
+  });
+
+  return {
+    inputItems,
+    ...downshift,
   };
-  const preparedItems = prepareItems(children, onSelect);
-
-  return useDownshift(preparedItems);
 };
 
 export default useCombobox;

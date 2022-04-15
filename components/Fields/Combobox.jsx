@@ -1,13 +1,10 @@
-import { useState } from 'react';
 import { classnames } from '../../lib';
 import { useChildren, useCombobox } from '../../hooks';
 import OptionList from './OptionList';
 
 const Combobox = ({ children, onSelect, defaultSelected }) => {
   const items = useChildren(children);
-
-  const [inputItems, setInputItems] = useState(items);
-  const downshift = useCombobox({ children, onSelect, defaultSelected, setInputItems });
+  const { inputItems, ...downshift } = useCombobox({ items, onSelect, defaultSelected });
 
   return (
     <div className="relative">

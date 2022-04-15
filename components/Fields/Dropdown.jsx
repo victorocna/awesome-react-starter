@@ -4,7 +4,7 @@ import OptionList from './OptionList';
 
 const Dropdown = ({ children, onSelect, defaultSelected, placeholder }) => {
   const items = useChildren(children);
-  const downshift = useSelect({ children, onSelect, defaultSelected });
+  const downshift = useSelect({ items, onSelect, defaultSelected });
 
   return (
     <div className="relative">
@@ -12,7 +12,11 @@ const Dropdown = ({ children, onSelect, defaultSelected, placeholder }) => {
         className={classnames('form-dropdown', downshift.isOpen && 'rounded-b-none')}
         {...downshift.getToggleButtonProps()}
       >
-        <span>{(downshift.selectedItem && downshift.selectedItem.label) || placeholder}</span>
+        <input
+          value={downshift?.selectedItem?.label || placeholder}
+          className="-my-2 outline-none w-full bg-transparent"
+          readOnly={true}
+        />
         <span>
           <i className="fas fa-chevron-down" />
         </span>

@@ -7,9 +7,11 @@ const Fieldset = ({ label, help, name, children }) => {
 
   return (
     <fieldset className={classnames(hasError && 'has-error')}>
-      <label htmlFor={name} className="form-label w-full cursor-pointer mb-0">
-        {label}
-      </label>
+      {label && (
+        <label htmlFor={name} className="form-label w-full cursor-pointer mb-0">
+          {label}
+        </label>
+      )}
       {children}
       <div className="form-help text-sm text-secondary first-letter">
         {hasError ? errors[name] : help}

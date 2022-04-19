@@ -3,12 +3,12 @@ import { Form as FormikForm } from 'formik';
 
 const Form = ({ children, debug, ...props }) => {
   const isProduction = process.env.NODE_ENV === 'production';
-  const showDebug = debug && !isProduction;
+  const showDebug = debug || process.env.SHOW_FORMIK_DEBUG === 'yes';
 
   return (
     <FormikForm {...props}>
       {children}
-      {showDebug && <Debug />}
+      {showDebug && !isProduction && <Debug />}
     </FormikForm>
   );
 };

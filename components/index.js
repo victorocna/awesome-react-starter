@@ -24,6 +24,7 @@ import ProfileMenu from './ProfileMenu';
 import ProfileSuccess from './ProfileSuccess';
 import ShowMore from './ShowMore';
 import Spinner from './Spinner';
+import Time from './Time';
 import Toaster from './Toaster';
 import Tooltip from './Tooltip';
 import withRouter from './withRouter';
@@ -55,6 +56,7 @@ export {
   ProfileSuccess,
   ShowMore,
   Spinner,
+  Time,
   Toaster,
   Tooltip,
   withRouter,

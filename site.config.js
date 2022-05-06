@@ -7,7 +7,7 @@ module.exports = {
   stylesheets: [
     'https://use.fontawesome.com/releases/v5.6.3/css/all.css',
     'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500',
-    'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css',
+    'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
   ],
   scripts: [
     // eg: tracking scripts

@@ -1,9 +1,10 @@
 import { useFormikContext } from 'formik';
 import { classnames } from '../../lib';
+import { get } from 'lodash';
 
 const Fieldset = ({ label, help, name, children }) => {
   const { submitCount, touched, errors } = useFormikContext();
-  const hasError = touched[name] && errors[name] && submitCount > 0;
+  const hasError = get(touched, name) && get(errors, name) && submitCount > 0;
 
   return (
     <fieldset className={classnames(hasError && 'has-error')}>
@@ -14,7 +15,7 @@ const Fieldset = ({ label, help, name, children }) => {
       )}
       {children}
       <div className="form-help text-sm text-secondary first-letter">
-        {hasError ? errors[name] : help}
+      {hasError ? get(errors, name) : help}
       </div>
     </fieldset>
   );

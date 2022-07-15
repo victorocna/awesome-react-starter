@@ -5,6 +5,7 @@ import useCombobox from './use-combobox';
 import useDebounce from './use-debounce';
 import useDisclosure from './use-disclosure';
 import useInfiniteQuery from './use-infinite-query';
+import useIntersectionObserver from './use-intersection-observer';
 import useMutation from './use-mutation';
 import useOnClickOutside from './use-onclick-outside';
 import useProfile from './use-profile';
@@ -20,6 +21,7 @@ export {
   useDebounce,
   useDisclosure,
   useInfiniteQuery,
+  useIntersectionObserver,
   useMutation,
   useOnClickOutside,
   useProfile,

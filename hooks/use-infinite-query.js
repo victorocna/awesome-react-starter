@@ -11,15 +11,22 @@ import { axiosAuth } from '../lib';
  * @see https://react-query.tanstack.com/reference/useInfiniteQuery
  */
 const useInfiniteQuery = (url, options = {}) => {
-  const limit = 30;
-  const getNextPageParam = ({ hasNext, offset }) => {
-    return hasNext && offset;
+  const per_page = 30;
+  const getNextPageParam = ({ pageParams }) => {
+    if (!pageParams?.hasNext) {
+      return false;
+    }
+    return pageParams?.page + 1;
   };
 
-  const fetcher = ({ pageParam: offset }) => {
-    return axiosAuth(stringifyUrl({ url, query: { limit, ...options, offset } }));
+  const fetcher = ({ pageParam: page }) => {
+    const query = { per_page, ...options };
+    if (page) {
+      query.page = page;
+    }
+    return axiosAuth(stringifyUrl({ url, query }));
   };
-  const config = { getNextPageParam, limit, ...options };
+  const config = { getNextPageParam, per_page, ...options };
 
   const response = infiniteQuery([url, options], fetcher, config);
   if (response.status !== 'success') {

@@ -13,14 +13,10 @@ module.exports = {
       },
     },
   },
-  purge: [
+  content: [
     './components/**/*.jsx', // all components
     './pages/**/*.js', // all pages as well
   ],
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
   plugins: [
     require('@tailwindcss/forms')({
       strategy: 'class',

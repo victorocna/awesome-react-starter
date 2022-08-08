@@ -16,6 +16,7 @@ import Modal from './Modal';
 import NoSsr from './NoSsr';
 import OpenGraph from './OpenGraph';
 import Overflow from './Overflow';
+import Pages from './Pages';
 import Percent from './Percent';
 import Pill from './Pill';
 import Plural from './Plural';
@@ -50,6 +51,7 @@ export {
   NoSsr,
   OpenGraph,
   Overflow,
+  Pages,
   Percent,
   Pill,
   Plural,

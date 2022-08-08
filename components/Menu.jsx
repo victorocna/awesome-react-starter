@@ -1,19 +1,6 @@
-import { Logo, MenuGroup, MenuItem } from '.';
-import { pages } from '../data';
+import { Logo, Pages } from '.';
 
 const Menu = () => {
-  const showPages = ({ name, href, items }) => {
-    return items ? (
-      <MenuGroup key={name} name={name} items={items} level={1}>
-        {name}
-      </MenuGroup>
-    ) : (
-      <MenuItem key={name} href={href} level={1}>
-        {name}
-      </MenuItem>
-    );
-  };
-
   return (
     <>
       <input type="checkbox" id="menu" className="hidden" aria-label="Menu open/close" />
@@ -27,7 +14,7 @@ const Menu = () => {
           <div className="px-8">
             <Logo />
           </div>
-          {pages.map(showPages)}
+          <Pages />
         </div>
       </nav>
     </>

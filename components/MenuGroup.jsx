@@ -1,18 +1,8 @@
-import { MenuItem } from '.';
 import { classnames } from '../lib';
 import { useCollapsible } from '../hooks';
 
-const MenuGroup = ({ name, items, children, level }) => {
+const MenuGroup = ({ name, label, children, level = 1 }) => {
   const { isOpen, toggle } = useCollapsible(`menu.${name}`);
-
-  // only one level deep
-  const showItems = ({ name, href }) => {
-    return (
-      <MenuItem key={name} href={href} level="2">
-        {name}
-      </MenuItem>
-    );
-  };
 
   return (
     <>
@@ -23,17 +13,12 @@ const MenuGroup = ({ name, items, children, level }) => {
         )}
         onClick={toggle}
       >
-        {children}
-        <i
-          className={classnames(
-            'pl-1 text-gray-600',
-            isOpen ? 'fas fa-angle-down' : 'fas fa-angle-up'
-          )}
-        />
+        <span>{label}</span>
+        <span className="pl-1 text-gray-600">
+          <i className={classnames(isOpen ? 'fas fa-angle-down' : 'fas fa-angle-up')} />
+        </span>
       </div>
-      <div className={classnames('flex flex-col py-2', !isOpen && 'hidden')}>
-        {items.map(showItems)}
-      </div>
+      <div className={classnames('flex flex-col py-2', !isOpen && 'hidden')}>{children}</div>
     </>
   );
 };

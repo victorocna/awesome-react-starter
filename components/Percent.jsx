@@ -1,9 +1,9 @@
-import numeral from 'numeral';
+import { formatNumber } from 'accounting';
 
-const Percent = ({ value, ...props }) => {
+const Percent = ({ value, precision = 0 }) => {
   return (
-    <h3 className="font-medium" {...props}>
-      {numeral(value / 100).format('0%') || 'N/A'}
+    <h3 datatype="number">
+      {formatNumber(value / 100, { decimal: ',', thousand: '.', precision }) || 'N/A'}%
     </h3>
   );
 };

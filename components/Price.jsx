@@ -1,9 +1,9 @@
-import numeral from 'numeral';
+import { formatNumber } from 'accounting';
 
-const Price = ({ value, ...props }) => {
+const Price = ({ value, precision = 0 }) => {
   return (
-    <h3 className="font-medium" {...props}>
-      {numeral(value).format('0,0.00') || 'N/A'}
+    <h3 datatype="number">
+      {formatNumber(value, { decimal: ',', thousand: '.', precision }) || 'N/A'}
     </h3>
   );
 };

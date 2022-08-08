@@ -12,7 +12,6 @@ module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  webpack5: true,
   async headers() {
     return [
       {

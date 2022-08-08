@@ -1,4 +1,4 @@
-import { checkAuth, withAuth } from '../../auth';
+import { withAuth } from '../../auth';
 import { Menu, MenuButton, Tooltip } from '../../components';
 import { TodoBox } from '../../examples/components/Todos';
 
@@ -31,8 +31,17 @@ const Page = () => (
   </div>
 );
 
-export async function getServerSideProps(context) {
-  return await checkAuth(context);
+export async function getStaticProps() {
+  // hide page on production environments
+  if (process.env.NODE_ENV === 'production') {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {},
+  };
 }
 
 export default withAuth(Page);

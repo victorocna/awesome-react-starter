@@ -1,11 +1,13 @@
-import { Layout, ShowMore } from '../../components';
+import { Layout } from '../../examples/components';
+import { ShowMore } from '../../components';
 
 const Page = () => {
   return (
     <Layout title="Components">
-      <div className="prose max-w-full">
-        <h3>Show more</h3>
-        <p>A quick element you can use to temporarly hide content from your interface.</p>
+      <div className="prose-sm">
+        <p role="description" className="mt-0">
+          A quick element you can use to temporarly hide content from your interface.
+        </p>
         <div className="prose-sm">
           <ShowMore>
             <div>Hidden at first, viewable after you click on show more</div>

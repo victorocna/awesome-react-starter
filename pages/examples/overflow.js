@@ -1,11 +1,11 @@
-import { Layout, Overflow } from '../../components';
+import { Layout } from '../../examples/components';
+import { Overflow } from '../../components';
 
 const Page = () => {
   return (
-    <Layout title="Components">
-      <div className="prose max-w-full">
-        <h3>Overflow</h3>
-        <p role="description">
+    <Layout title="Overflow">
+      <div className="prose-sm">
+        <p role="description" className="mt-0">
           Overflow components help you truncate a very long text. <br /> They should be used for
           user generated text that needs to have a maximum width.
         </p>

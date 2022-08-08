@@ -1,14 +1,14 @@
-import { Layout, Button, Modal } from '../../components';
+import { Layout } from '../../examples/components';
+import { Button, Modal } from '../../components';
 import { useDisclosure } from '../../hooks';
 
 const Page = () => {
   const { isOpen, show, hide } = useDisclosure();
 
   return (
-    <Layout title="Components">
-      <div className="prose max-w-full">
-        <h3>Modals</h3>
-        <p role="description">
+    <Layout title="Modals">
+      <div className="prose-sm">
+        <p role="description" className="mt-0">
           Modal components help you notify the user. <br /> Modals are positioned over everything
           else in the pages.
         </p>

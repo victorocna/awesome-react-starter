@@ -22,9 +22,6 @@ const Pages = () => {
         <MenuItem href="/examples/dropdown" level="2">
           Dropdown
         </MenuItem>
-        <MenuItem href="/examples/dropdown" level="2">
-          Dropdown
-        </MenuItem>
         <MenuItem href="/examples/combobox" level="2">
           Combobox
         </MenuItem>

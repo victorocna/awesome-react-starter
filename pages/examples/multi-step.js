@@ -1,4 +1,4 @@
-import { checkAuth, withAuth } from '../../auth';
+import { withAuth } from '../../auth';
 import { Layout } from '../../components';
 import { MultistepForm } from '../../examples/components/Forms';
 
@@ -10,8 +10,17 @@ const Page = () => {
   );
 };
 
-export async function getServerSideProps(context) {
-  return await checkAuth(context);
+export async function getStaticProps() {
+  // hide page on production environments
+  if (process.env.NODE_ENV === 'production') {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {},
+  };
 }
 
 export default withAuth(Page);

@@ -2,6 +2,8 @@ import AppHead from './AppHead';
 import AreYouSure from './AreYouSure';
 import Button from './Button';
 import EmailMask from './EmailMask';
+import ErrorBoundary from './ErrorBoundary';
+import ErrorFallback from './ErrorFallback';
 import Favicon from './Favicon';
 import Layout from './Layout';
 import Link from './Link';
@@ -37,6 +39,8 @@ export {
   AreYouSure,
   Button,
   EmailMask,
+  ErrorBoundary,
+  ErrorFallback,
   Favicon,
   Layout,
   Link,

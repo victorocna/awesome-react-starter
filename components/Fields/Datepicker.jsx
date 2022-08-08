@@ -1,32 +1,49 @@
-import { useRef } from 'react';
-import DayPickerInput from 'react-day-picker/DayPickerInput';
+import React, { useEffect, useState } from 'react';
+import Calendar from 'react-calendar';
+import { Modal } from 'react-bootstrap';
 import { format as dateFormat } from 'date-fns';
+import { Input } from '.';
+import { useDisclosure } from '../../hooks';
+import { isValidDate } from '../../functions';
 
-const Datepicker = (props) => {
-  const inputProps = { className: 'outline-none' };
-  const dayPickerProps = { firstDayOfWeek: 1 };
+const Datepicker = ({ value: initialValue, onChange, ...props }) => {
+  const [value, setValue] = useState(initialValue);
+  const { isOpen, show, hide } = useDisclosure();
 
-  const formatDate = (date, format = 'dd/MM/yyyy') => {
-    return dateFormat(date, format);
+  const onClickDay = (value) => {
+    setValue(dateFormat(value, 'yyyy-MM-dd'));
+    hide();
+  };
+  const handleChange = (event) => {
+    setValue(event.target.value);
   };
 
-  const ref = useRef();
-  const openPicker = () => {
-    ref.current.input.focus();
-  };
+  useEffect(() => {
+    if (typeof onChange === 'function') {
+      onChange(value);
+    }
+  }, [value]);
+
+  const calendarProps = {};
+  if (isValidDate(new Date(initialValue))) {
+    calendarProps.defaultValue = new Date(initialValue);
+  }
 
   return (
-    <div className="flex form-input bg-white cursor-pointer" onClick={openPicker}>
-      <DayPickerInput
-        ref={ref}
-        inputProps={inputProps}
-        dayPickerProps={dayPickerProps}
-        placeholder="dd/MM/yyyy"
-        format="dd/MM/yyyy"
-        formatDate={formatDate}
-        {...props}
-      />
-      <i className="my-auto far fa-calendar-alt text-primary" />
+    <div className="relative">
+      <Input {...props} value={value} onChange={handleChange} />
+      <div
+        className="absolute h-full top-0 right-0 p-2.5 outline-none cursor-pointer grid place-items-center"
+        onClick={show}
+      >
+        <i className="far fa-calendar-alt text-orange" />
+      </div>
+
+      {isOpen && (
+        <Modal centered show={true} onHide={hide}>
+          <Calendar onClickDay={onClickDay} {...calendarProps} />
+        </Modal>
+      )}
     </div>
   );
 };

@@ -117,7 +117,7 @@ const Page = () => {
                   datepicker should be.
                 </p>
                 <div className="mb-4 grid md:grid-cols-3 gap-4">
-                  <Datepicker format="dd-MM-yyyy" placeholder="dd-MM-yyyy" />
+                  <Datepicker name="datepicker" placeholder="yyyy-MM-dd" />
                 </div>
               </div>
               <div className="mb-4">
@@ -126,7 +126,7 @@ const Page = () => {
                   Password inputs should always have the option of toggling the password visibility.
                 </p>
                 <div className="mb-4 grid md:grid-cols-3 gap-4">
-                  <Password />
+                  <Password autoComplete="one-time-code" placeholder="**********" />
                 </div>
               </div>
               <div className="mb-4">

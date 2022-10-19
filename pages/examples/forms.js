@@ -1,19 +1,20 @@
 import { useState } from 'react';
-import { Layout } from '../../examples/components';
 import { Button, Spinner } from '../../components';
 import {
   Checkbox,
   Combobox,
   Datepicker,
   Dropdown,
+  Fieldset,
   Input,
+  Password,
+  PlusMinus,
+  Radio,
+  RadioGroup,
   Select,
   Textarea,
-  RadioGroup,
-  Radio,
-  Fieldset,
-  Password,
 } from '../../components/Fields';
+import { Layout } from '../../examples/components';
 
 const Page = () => {
   const [isLoading, setLoading] = useState(false);
@@ -150,6 +151,10 @@ const Page = () => {
             </Radio>
             <Radio value="purple">Purple</Radio>
           </RadioGroup>
+        </div>
+        <div className="mb-4">
+          <h3>Basic plus-minus field</h3>
+          <PlusMinus value={1} min={0} max={100} />
         </div>
         <div className="mb-4">
           <h3>The submit button</h3>

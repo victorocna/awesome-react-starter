@@ -8,6 +8,7 @@ import Fieldset from './Fieldset';
 import Input from './Input';
 import Number from './Number';
 import Password from './Password';
+import PlusMinus from './PlusMinus';
 import Radio from './Radio';
 import RadioContext from './RadioContext';
 import RadioGroup from './RadioGroup';
@@ -27,6 +28,7 @@ export {
   Input,
   Number,
   Password,
+  PlusMinus,
   Radio,
   RadioContext,
   RadioGroup,

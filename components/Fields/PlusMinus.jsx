@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 
-const PlusMinus = ({ handleChange, max = null, min = 0, value: initialValue, ...props }) => {
+const PlusMinus = ({ handleChange, max = null, min = 0, value: initialValue }) => {
   const [value, setValue] = useState(initialValue || 0);
 
   const incrementValue = () => {
-    if (max && Number(value) >= max) return;
+    if (max && Number(value) >= max) {
+      return;
+    }
     setValue(Number(value) + 1);
   };
 
@@ -21,26 +23,22 @@ const PlusMinus = ({ handleChange, max = null, min = 0, value: initialValue, ...
   }, [value]);
 
   return (
-    <div className="flex items-center box-border w-40">
-      <div
-        className="flex justify-center items-center w-10 border form-input rounded-none bg-white rounded-l-md cursor-pointer select-none"
+    <div className="flex items-center">
+      <button
+        className="flex justify-center items-center w-10 border h-10 rounded-none bg-white rounded-l-md"
         onClick={decrementValue}
       >
-        -
+        <i className="fas fa-minus"></i>
+      </button>
+      <div className="w-16 flex flex-col justify-center text-center border form-input h-10 rounded-none cursor-default">
+        {value}
       </div>
-      <input
-        className="border form-input rounded-none disabled:bg-white disabled:cursor-not-allowed"
-        disabled
-        type="text"
-        value={value}
-        {...props}
-      />
-      <div
-        className="flex justify-center items-center w-10 border form-input rounded-none bg-white rounded-r-md cursor-pointer select-none"
+      <button
+        className="flex justify-center items-center w-10 border h-10 rounded-none bg-white rounded-r-md"
         onClick={incrementValue}
       >
-        +
-      </div>
+        <i className="fas fa-plus"></i>
+      </button>
     </div>
   );
 };

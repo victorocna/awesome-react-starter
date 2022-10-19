@@ -4,8 +4,8 @@ import { PlusMinus as PlusMinusField } from '../Fields';
 const PlusMinus = ({ name, ...props }) => {
   const { setFieldValue } = useFormikContext();
 
-  const handleChange = (e) => {
-    setFieldValue(name, e.target.value);
+  const handleChange = (value) => {
+    setFieldValue(name, value);
   };
 
   return <PlusMinusField {...props} handleChange={handleChange} />;

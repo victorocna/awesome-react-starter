@@ -16,7 +16,7 @@ const PlusMinus = ({ handleChange, max = null, min = 0, value: initialValue, ...
 
   useEffect(() => {
     if (typeof handleChange === 'function') {
-      handleChange({ target: { value } });
+      handleChange(value);
     }
   }, [value]);
 

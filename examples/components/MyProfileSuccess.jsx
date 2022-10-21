@@ -1,15 +1,18 @@
 import React from 'react';
+import { Tab, Tabs } from 'react-bootstrap';
+import MyProfileChangePassword from './MyProfileChangePassword';
+import MyProfileDetails from './MyProfileDetails';
 
 const MyProfileSuccess = ({ name, email }) => (
   <>
-    <div className="flex flex-col px-4 lg:px-8 bg-white py-2">
-      <dt className="lg:w-1/4">Name: </dt>
-      <dd className="font-semibold">{name}</dd>
-    </div>
-    <div className="flex flex-col px-4 lg:px-8 bg-white py-2">
-      <dt className="lg:w-1/4">Email: </dt>
-      <dd className="font-semibold">{email}</dd>
-    </div>
+    <Tabs className="profile-tabs" defaultActiveKey="1">
+      <Tab eventKey="1" title={<p>Account</p>}>
+        <MyProfileDetails {...{ name, email }} />
+      </Tab>
+      <Tab eventKey="2" title={<p>Change Password</p>}>
+        <MyProfileChangePassword />
+      </Tab>
+    </Tabs>
   </>
 );
 

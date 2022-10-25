@@ -1,5 +1,6 @@
 import AppHead from './AppHead';
 import AreYouSure from './AreYouSure';
+import Bone from './Bone';
 import Button from './Button';
 import EmailMask from './EmailMask';
 import ErrorBoundary from './ErrorBoundary';
@@ -37,6 +38,7 @@ import withRouter from './withRouter';
 export {
   AppHead,
   AreYouSure,
+  Bone,
   Button,
   EmailMask,
   ErrorBoundary,

@@ -2,7 +2,7 @@ import { useQuery } from '../../hooks';
 import { MyProfileSuccess, MyProfileError, MyProfileLoading } from '.';
 
 const MyProfile = () => {
-  const { data, status } = useQuery(`/profile`);
+  const { data, status } = useQuery(`/admin/profile`);
 
   return (
     <article className="bg-white py-4">

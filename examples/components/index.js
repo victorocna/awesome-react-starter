@@ -3,6 +3,8 @@ import Header from './Header';
 import Layout from './Layout';
 import Menu from './Menu';
 import MyProfile from './MyProfile';
+import MyProfileChangePassword from './MyProfileChangePassword';
+import MyProfileDetails from './MyProfileDetails';
 import MyProfileError from './MyProfileError';
 import MyProfileLoading from './MyProfileLoading';
 import MyProfileSuccess from './MyProfileSuccess';
@@ -19,6 +21,8 @@ export {
   Layout,
   Menu,
   MyProfile,
+  MyProfileChangePassword,
+  MyProfileDetails,
   MyProfileError,
   MyProfileLoading,
   MyProfileSuccess,

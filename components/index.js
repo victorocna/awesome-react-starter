@@ -10,6 +10,7 @@ import Layout from './Layout';
 import Link from './Link';
 import Loading from './Loading';
 import LoadMore from './LoadMore';
+import LoadMuchMore from './LoadMuchMore';
 import Logo from './Logo';
 import Menu from './Menu';
 import MenuButton from './MenuButton';
@@ -48,6 +49,7 @@ export {
   Link,
   Loading,
   LoadMore,
+  LoadMuchMore,
   Logo,
   Menu,
   MenuButton,

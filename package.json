@@ -34,7 +34,7 @@
     "js-file-download": "^0.4.12",
     "jsonwebtoken": "^8.5.1",
     "merge-class-names": "^1.4.2",
-    "next": "^12.2.4",
+    "next": "^12.3.4",
     "pino": "^8.4.0",
     "query-string": "^7.0.0",
     "react": "^17.0.2",

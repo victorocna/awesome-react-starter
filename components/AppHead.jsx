@@ -1,8 +1,7 @@
-import * as config from '../site.config';
 import { Favicon, OpenGraph } from '.';
+import { description, scripts, stylesheets } from '../site.config';
 
 const AppHead = () => {
-  const { sitename, description, stylesheets, scripts } = config;
   const showStylesheets = (href) => {
     return <link key={href} rel="stylesheet" href={href} />;
   };
@@ -12,7 +11,6 @@ const AppHead = () => {
 
   return (
     <>
-      <title>{sitename}</title>
       <meta name="description" content={description} />
       {stylesheets.map(showStylesheets)}
       {scripts.map(showScripts)}

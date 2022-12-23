@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from '../../../hooks';
 import { TodoListError, TodoListLoading, TodoListSuccess } from '.';
-import { LoadMore } from '../../../components';
+import { LoadMoreOnClick } from '../../../components/Buttons';
 
 const TodoList = ({ options }) => {
   const { data, status, ...props } = useInfiniteQuery('todos', options);
@@ -12,7 +12,7 @@ const TodoList = ({ options }) => {
       {status === 'success' && (
         <>
           <TodoListSuccess {...data} />
-          <LoadMore {...props} />
+          <LoadMoreOnClick {...props} />
         </>
       )}
     </div>

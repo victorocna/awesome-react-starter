@@ -1,6 +1,6 @@
-import { Button } from '.';
+import { Button } from '..';
 
-const LoadMore = ({ fetchNextPage, hasNextPage, isFetchingNextPage }) => {
+const LoadMoreOnClick = ({ fetchNextPage, hasNextPage, isFetchingNextPage }) => {
   if (!hasNextPage) {
     return null;
   }
@@ -23,4 +23,4 @@ const LoadMore = ({ fetchNextPage, hasNextPage, isFetchingNextPage }) => {
   );
 };
 
-export default LoadMore;
+export default LoadMoreOnClick;

@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import { useIntersectionObserver } from '../hooks';
-import { Button } from '.';
+import { Button } from '..';
 
-const LoadMuchMore = ({ fetchNextPage, hasNextPage, isFetchingNextPage }) => {
+const LoadMoreOnScroll = ({ fetchNextPage, hasNextPage, isFetchingNextPage }) => {
   const ref = useRef(null);
   useIntersectionObserver({
     target: ref,
@@ -32,4 +32,4 @@ const LoadMuchMore = ({ fetchNextPage, hasNextPage, isFetchingNextPage }) => {
   );
 };
 
-export default LoadMuchMore;
+export default LoadMoreOnScroll;

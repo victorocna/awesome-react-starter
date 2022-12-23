@@ -12,6 +12,7 @@ import useProfile from './use-profile';
 import useQuery from './use-query';
 import useRerender from './use-rerender';
 import useSelect from './use-select';
+import useToggle from './use-toggle';
 
 export {
   useArray,
@@ -28,4 +29,5 @@ export {
   useQuery,
   useRerender,
   useSelect,
+  useToggle,
 };

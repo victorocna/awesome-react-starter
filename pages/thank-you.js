@@ -3,8 +3,8 @@ import { Link } from '../components';
 const ThankYouPage = () => (
   <main className="cover min-h-screen px-4 py-8 flex flex-col items-center justify-center">
     <div className="flex flex-col w-full px-4 lg:px-12 py-8 my-8 bg-white rounded-lg max-w-xl">
-      <Link href="/login">
-        <a className="hover:underline">← back to login</a>
+      <Link href="/login" className="hover:underline">
+        ← back to login
       </Link>
       <h2 className="font-bold text-2xl mb-4">Thank you for creating a new account</h2>
       <img

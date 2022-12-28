@@ -7,16 +7,14 @@ const LoginPage = () => (
       <h2 className="font-bold text-2xl mb-4">Login</h2>
       <LoginForm />
       <div className="mt-2">
-        <Link href="/forgot">
-          <a className="text-gray-600 hover:underline">Forgot password?</a>
+        <Link href="/forgot" className="text-gray-600 hover:underline">
+          Forgot password?
         </Link>
       </div>
       <div className="mt-2">
-        <Link href="/signup">
-          <a className="text-gray-600 hover:underline">
-            <span className="mr-1">No account yet?</span>
-            <span className="text-purple-800 font-bold">Signup now</span>
-          </a>
+        <Link href="/signup" className="text-gray-600 hover:underline">
+          <span className="mr-1">No account yet?</span>
+          <span className="text-purple-800 font-bold">Signup now</span>
         </Link>
       </div>
     </div>

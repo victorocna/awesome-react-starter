@@ -7,15 +7,14 @@ const IndexPage = () => (
       <h2 className="font-bold text-2xl mb-4">Login</h2>
       <LoginForm />
       <div className="mt-2">
-        <Link href="/forgot">
-          <a className="text-gray-600">Forgot password?</a>
+        <Link href="/forgot" className="text-gray-600">
+          Forgot password?
         </Link>
       </div>
       <div className="mt-2">
-        <Link href="/signup">
-          <a className="text-gray-600">
-            You don't have an account? <span className="text-purple-800 font-bold">Signup now</span>
-          </a>
+        <Link href="/signup" className="text-gray-600">
+          <span className="mr-1">No account yet?</span>
+          <span className="text-purple-800 font-bold">Signup now</span>
         </Link>
       </div>
     </div>

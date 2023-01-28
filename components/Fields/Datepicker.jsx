@@ -6,7 +6,7 @@ import { Input } from '.';
 import { useDisclosure } from '../../hooks';
 import { isValidDate } from '../../functions';
 
-const Datepicker = ({ value: initialValue, onChange, ...props }) => {
+const Datepicker = ({ value: initialValue, onChange, calendarProps = {}, ...props }) => {
   const [value, setValue] = useState(initialValue);
   const { isOpen, show, hide } = useDisclosure();
 
@@ -19,12 +19,11 @@ const Datepicker = ({ value: initialValue, onChange, ...props }) => {
   };
 
   useEffect(() => {
-    if (typeof onChange === 'function') {
+    if (isValidDate(value) && typeof onChange === 'function') {
       onChange(value);
     }
   }, [value]);
 
-  const calendarProps = {};
   if (isValidDate(new Date(initialValue))) {
     calendarProps.defaultValue = new Date(initialValue);
   }
@@ -36,7 +35,7 @@ const Datepicker = ({ value: initialValue, onChange, ...props }) => {
         className="absolute h-full top-0 right-0 p-2.5 outline-none cursor-pointer grid place-items-center"
         onClick={show}
       >
-        <i className="far fa-calendar-alt text-orange" />
+        <i className="fas fa-calendar-alt text-primary" />
       </div>
 
       {isOpen && (

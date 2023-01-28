@@ -1,5 +1,5 @@
 import { Field, Formik } from 'formik';
-import { Fieldset, Form, PlusMinus, Submit } from '../../components/Formik';
+import { Fieldset, Form, PlusMinus, Submit, Datepicker } from '../../components/Formik';
 import { Layout } from '../../examples/components';
 import { initialValues, validationSchema } from '../../examples/models/form';
 
@@ -21,7 +21,13 @@ const Page = () => {
               <Field id="quantity" name="quantity" as={PlusMinus} />
             </Fieldset>
 
-            <Submit className="button full primary">Signup</Submit>
+            <div className="w-80">
+              <Fieldset name="checkIn" label="Check-in datepicker">
+                <Field id="checkIn" name="checkIn" as={Datepicker} />
+              </Fieldset>
+            </div>
+
+            <Submit className="button full primary">Submit</Submit>
           </Form>
         </Formik>
       </div>

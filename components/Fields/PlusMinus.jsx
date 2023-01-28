@@ -25,6 +25,7 @@ const PlusMinus = ({ handleChange, max = null, min = 0, value: initialValue }) =
   return (
     <div className="flex items-center">
       <button
+        type="button"
         className="flex justify-center items-center w-10 border h-10 rounded-none bg-white rounded-l-md"
         onClick={decrementValue}
       >
@@ -34,6 +35,7 @@ const PlusMinus = ({ handleChange, max = null, min = 0, value: initialValue }) =
         {value}
       </div>
       <button
+        type="button"
         className="flex justify-center items-center w-10 border h-10 rounded-none bg-white rounded-r-md"
         onClick={incrementValue}
       >

@@ -40,7 +40,7 @@ const Page = () => {
           </label>
           <Textarea id="bio" placeholder="Bio, notes, you name it!" />
         </div>
-        <div className="bg-primary text-white -mx-6 px-6 py-2 mb-4">
+        <div className="bg-primary text-white -mx-4 px-6 py-2 mb-4">
           Now what we covered the simple form elements, let's get into the more complex ones.
           <br />
           Also notice how this element defies its parent padding class. Inspect it to see how its
@@ -61,7 +61,7 @@ const Page = () => {
             <Input type="number" inputMode="number" />
           </Fieldset>
         </div>
-        <div className="bg-secondary text-white -mx-6 px-6 py-2 mb-4">
+        <div className="bg-secondary text-white -mx-4 px-6 py-2 mb-4">
           Enough inputs for now. We still have many other form elements.
           <br />
           Next stop, select boxes with some funky variations

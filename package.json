@@ -41,7 +41,6 @@
     "react-bootstrap": "^2.5.0",
     "react-calendar": "^3.7.0",
     "react-dom": "^18.2.0",
-    "react-file-drop": "^3.1.6",
     "react-google-recaptcha": "^2.1.0",
     "react-hot-toast": "^2.4.0",
     "react-query": "^3.39.2",

@@ -6,6 +6,7 @@ import EmailMask from './EmailMask';
 import ErrorBoundary from './ErrorBoundary';
 import ErrorFallback from './ErrorFallback';
 import Favicon from './Favicon';
+import FileUpload from './FileUpload';
 import Layout from './Layout';
 import Link from './Link';
 import Loading from './Loading';
@@ -43,6 +44,7 @@ export {
   ErrorBoundary,
   ErrorFallback,
   Favicon,
+  FileUpload,
   Layout,
   Link,
   Loading,

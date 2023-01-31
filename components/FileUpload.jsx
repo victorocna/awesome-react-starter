@@ -25,19 +25,25 @@ const FileUpload = ({ text, accept = '.jpg, .jpeg, .png', setFile, file }) => {
 
   return (
     <div>
-      <div className="py-8 border-dashed border-2 border-gray-400 flex flex-col items-center gap-4">
-        <div className="h-1 my-2">
-          <p>{fileName}</p>
+      <div className="py-8 border border-solid border-gray-300 flex flex-col items-center gap-4">
+        <div className="flex flex-col">
+          <h3 className="text-base md:text-lg mb-2 text-gray-700">{text}</h3>
+          <div className="flex border rounded-md w-96">
+            <Button className="button full secondary h-fit" onClick={handleClick}>
+              <span className="flex gap-2">
+                Selecteaza <i className="my-auto far fa-file"></i>
+              </span>
+            </Button>
+            <input
+              ref={ref}
+              className="hidden"
+              type="file"
+              accept={accept}
+              onChange={handleUpload}
+            />
+            <h4 className="mt-2 ml-2 truncate">{fileName}</h4>
+          </div>
         </div>
-        <div>
-          <input ref={ref} className="hidden" type="file" accept={accept} onChange={handleUpload} />
-          <h3 className="text-base md:text-xl font-semibold">{text}</h3>
-        </div>
-        <Button className="mt-2 button full secondary" onClick={handleClick}>
-          <span>
-            Selecteaza <i className="ml-2 far fa-file"></i>
-          </span>
-        </Button>
       </div>
     </div>
   );

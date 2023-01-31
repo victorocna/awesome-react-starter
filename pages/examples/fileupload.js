@@ -11,11 +11,7 @@ const Page = () => {
   const [loading, setLoading] = useState(false);
 
   const sendFile = () => {
-    const allData = new FormData();
-    allData.append('file', file);
-    axios.post((req, res) => {
-      return res.status(200);
-    }, allData);
+    axios.get(`https://dog.ceo/api/breeds/image/random`);
   };
 
   const mutation = useMutation(sendFile, {

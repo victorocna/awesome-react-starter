@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from '.';
 
-const FileUpload = ({ text, accept = '.jpg, .jpeg, .png', setFile, file }) => {
+const FileUpload = ({ accept, file, setFile  }) => {
   const [fileName, setFileName] = useState('');
   const ref = useRef();
 
@@ -24,27 +24,14 @@ const FileUpload = ({ text, accept = '.jpg, .jpeg, .png', setFile, file }) => {
   };
 
   return (
-    <div>
-      <div className="py-8 border border-solid border-gray-300 flex flex-col items-center gap-4">
-        <div className="flex flex-col">
-          <h3 className="text-base md:text-lg mb-2 text-gray-700">{text}</h3>
-          <div className="flex border rounded-md w-96">
-            <Button className="button full secondary h-fit" onClick={handleClick}>
-              <span className="flex gap-2">
-                Selecteaza <i className="my-auto far fa-file"></i>
-              </span>
-            </Button>
-            <input
-              ref={ref}
-              className="hidden"
-              type="file"
-              accept={accept}
-              onChange={handleUpload}
-            />
-            <h4 className="mt-2 ml-2 truncate">{fileName}</h4>
-          </div>
-        </div>
-      </div>
+    <div className="flex border rounded-md">
+      <Button className="button full secondary h-fit" onClick={handleClick}>
+        <span className="flex gap-2">
+          Selecteaza <i className="my-auto far fa-file"></i>
+        </span>
+      </Button>
+      <input ref={ref} className="hidden" type="file" accept={accept} onChange={handleUpload} />
+      <h4 className="mt-2 ml-2 truncate">{fileName}</h4>
     </div>
   );
 };

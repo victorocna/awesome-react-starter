@@ -10,7 +10,6 @@ import Layout from './Layout';
 import Link from './Link';
 import Loading from './Loading';
 import Logo from './Logo';
-import Map from './Map';
 import Menu from './Menu';
 import MenuButton from './MenuButton';
 import MenuGroup from './MenuGroup';
@@ -48,7 +47,6 @@ export {
   Link,
   Loading,
   Logo,
-  Map,
   Menu,
   MenuButton,
   MenuGroup,

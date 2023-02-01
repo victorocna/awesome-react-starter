@@ -31,7 +31,6 @@
     "dotenv": "^16.0.1",
     "downshift": "^6.1.7",
     "formik": "^2.2.9",
-    "google-map-react": "^2.2.0",
     "js-file-download": "^0.4.12",
     "jsonwebtoken": "^9.0.0",
     "merge-class-names": "^1.4.2",

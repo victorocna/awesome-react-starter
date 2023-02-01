@@ -46,9 +46,6 @@ const Pages = () => {
         <MenuItem href="/examples/formik" level="2">
           Formik forms
         </MenuItem>
-        <MenuItem href="/examples/google-map-react" level="2">
-          Google Map React
-        </MenuItem>
       </MenuGroup>
       <MenuItem href="/login" level="1">
         Login page

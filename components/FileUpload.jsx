@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from '.';
+import { getFileName } from '../functions';
 
-const FileUpload = ({ accept, file, setFile  }) => {
+const FileUpload = ({ accept, file, setFile, ...props }) => {
   const [fileName, setFileName] = useState('');
   const ref = useRef();
 
@@ -13,8 +14,8 @@ const FileUpload = ({ accept, file, setFile  }) => {
 
   const handleUpload = (event) => {
     event.preventDefault();
-    const file = event?.target?.files?.[0] ?? null;
-    setFileName(event?.target?.files?.[0]?.name ?? '');
+    const file = event?.target?.files ?? null;
+    setFileName(getFileName(file));
     setFile(file);
   };
 
@@ -25,12 +26,23 @@ const FileUpload = ({ accept, file, setFile  }) => {
 
   return (
     <div className="flex border rounded-md">
-      <Button className="button full secondary h-fit" onClick={handleClick}>
+      <Button
+        className="button full secondary h-fit"
+        onClick={handleClick}
+        disabled={props.disabled ? 'disabled' : ''}
+      >
         <span className="flex gap-2">
           Selecteaza <i className="my-auto far fa-file"></i>
         </span>
       </Button>
-      <input ref={ref} className="hidden" type="file" accept={accept} onChange={handleUpload} />
+      <input
+        ref={ref}
+        className="hidden"
+        type="file"
+        accept={accept}
+        onChange={handleUpload}
+        {...props}
+      />
       <h4 className="mt-2 ml-2 truncate">{fileName}</h4>
     </div>
   );

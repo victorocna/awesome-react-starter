@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 import { FileUpload } from '../../components';
 import { Submit } from '../../components/Fields';
 import { Layout } from '../../examples/components';
+import { getFileName } from '../../functions';
 import { useMutation } from '../../hooks';
 import { toaster } from '../../lib';
 
 const Page = () => {
-  const [file, setFile] = useState('');
+  const [file, setFile] = useState();
   const [disabled, setDisabled] = useState(true);
   const [isLoading, setLoading] = useState(false);
 
@@ -43,9 +44,27 @@ const Page = () => {
         <div className="w-1/2">
           <p>Default file input example</p>
           <FileUpload setFile={setFile} file={file} />
+
+          <div className="prose-sm">
+            <h3>Other examples</h3>
+            <div className="w-1/2">
+              <p className="mb-1">File input upload (accepts only PDF files)</p>
+              <FileUpload accept=".pdf" setFile={setFile} file={file} />
+            </div>
+
+            <div className="w-1/2">
+              <p className="mb-1">Multiple file input upload</p>
+              <FileUpload multiple setFile={setFile} file={file} />
+            </div>
+
+            <div className="w-1/2">
+              <p className="mb-1">Disabled file input upload</p>
+              <FileUpload disabled setFile={setFile} file={file} />
+            </div>
+          </div>
           <p className="mb-2">
             <span>Filename outside component (demonstrates useState in react): </span>
-            <strong>{file?.name}</strong>
+            {file && <strong>{getFileName(file)}</strong>}
           </p>
         </div>
         <div className="flex">
@@ -57,24 +76,6 @@ const Page = () => {
           >
             Submit
           </Submit>
-        </div>
-      </div>
-
-      <div className="prose-sm">
-        <h3>Other examples</h3>
-        <div className="w-1/2">
-          <p className="mb-1">File input upload (accepts only PDF files)</p>
-          <FileUpload accept=".pdf" />
-        </div>
-
-        <div className="w-1/2">
-          <p className="mb-1">Multiple file input upload</p>
-          <FileUpload disabled={true} />
-        </div>
-
-        <div className="w-1/2">
-          <p className="mb-1">Disabled file input upload</p>
-          <FileUpload disabled={true} />
         </div>
       </div>
     </Layout>

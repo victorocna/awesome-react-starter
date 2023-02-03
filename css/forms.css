@@ -91,3 +91,8 @@ input::-webkit-inner-spin-button {
 .dropdown-list {
   @apply z-10 bg-white shadow-sm w-full max-h-80 outline-none absolute top-full border border-t-0 rounded-b-lg border-neutral-300 !important;
 }
+
+input[type='password'] {
+  font-family: Verdana;
+  letter-spacing: 0.125em;
+}

@@ -10,7 +10,7 @@ const Number = (props) => {
     <input
       type="number"
       inputMode="number"
-      className="form-input"
+      className="input"
       onWheel={handleWheel}
       {...props}
     />

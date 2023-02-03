@@ -31,7 +31,7 @@ const PlusMinus = ({ handleChange, max = null, min = 0, value: initialValue }) =
       >
         <i className="fas fa-minus"></i>
       </button>
-      <div className="w-16 flex flex-col justify-center text-center border form-input h-10 rounded-none cursor-default">
+      <div className="w-16 flex flex-col justify-center text-center border input h-10 rounded-none cursor-default">
         {value}
       </div>
       <button

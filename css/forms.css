@@ -62,13 +62,18 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-.has-error .form-input,
+.has-error .input,
 .has-error .form-select,
 .has-error .form-textarea {
-  @apply border-red-500;
+  @apply border-red-500 !important;
 }
 
 .has-error .form-label,
 .has-error .form-help {
   @apply text-red-600 !important;
 }
+
+.input{
+  @apply py-2 px-3 border border-neutral-300 shadow-sm rounded-lg focus:outline-primary !important;
+}
+

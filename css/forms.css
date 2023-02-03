@@ -64,7 +64,7 @@ input::-webkit-inner-spin-button {
 
 .has-error .input,
 .has-error .form-select,
-.has-error .form-textarea {
+.has-error .textarea {
   @apply border-red-500 !important;
 }
 
@@ -74,6 +74,9 @@ input::-webkit-inner-spin-button {
 }
 
 .input{
-  @apply py-2 px-3 border border-neutral-300 shadow-sm rounded-lg focus:outline-primary !important;
+  @apply py-2 px-3 border border-neutral-300 shadow-sm rounded-lg focus:outline-primary/75 !important;
 }
 
+.textarea{
+  @apply py-2 px-3 w-full border border-neutral-300 shadow-sm rounded-lg focus:outline-primary/75 !important;
+}

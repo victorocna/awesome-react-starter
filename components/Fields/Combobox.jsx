@@ -10,7 +10,7 @@ const Combobox = ({ children, onSelect, defaultSelected }) => {
     <div className="relative">
       <div
         className={classnames(
-          'form-dropdown',
+          'dropdown',
           downshift.isOpen && inputItems.length && 'rounded-b-none'
         )}
         {...downshift.getComboboxProps()}

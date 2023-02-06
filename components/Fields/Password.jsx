@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const Password = (props) => {
   const [showPassword, toggle] = useState(false);
   const type = showPassword ? 'text' : 'password';
-  const action = showPassword ? 'far fa-eye' : 'far fa-eye-slash';
+  const action = showPassword ? 'far fa-eye text-primary' : 'far fa-eye-slash text-primary';
 
   return (
     <div className="relative">

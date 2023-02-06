@@ -104,3 +104,7 @@ input[type='password'] {
 .radio {
   @apply w-5 h-5 p-2 cursor-pointer accent-purple-500 !important;
 }
+
+.plusminus{
+  @apply inline-flex items-center justify-center shadow-sm border border-neutral-300 divide-x divide-neutral-300 rounded-lg !important;
+}

@@ -35,8 +35,8 @@ button:disabled {
   filter: opacity(0.75);
 }
 
-.form-checkbox:disabled,
-.form-checkbox:disabled ~ div,
+.checkbox:disabled,
+.checkbox:disabled ~ div,
 .form-radio:disabled,
 .form-radio:disabled ~ span {
   cursor: not-allowed !important;
@@ -95,4 +95,12 @@ input::-webkit-inner-spin-button {
 input[type='password'] {
   font-family: Verdana;
   letter-spacing: 0.125em;
+}
+
+.checkbox {
+  @apply w-5 h-5 cursor-pointer accent-pink-500 !important;
+}
+
+.radio {
+  @apply w-5 h-5 p-2 cursor-pointer accent-purple-500 !important;
 }

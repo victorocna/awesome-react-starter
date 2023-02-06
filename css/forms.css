@@ -106,5 +106,5 @@ input[type='password'] {
 }
 
 .plusminus{
-  @apply inline-flex items-center justify-center shadow-sm border border-neutral-300 divide-x divide-neutral-300 rounded-lg !important;
+  @apply inline-flex text-center shadow-sm border border-neutral-300 divide-x divide-neutral-300 rounded-lg !important;
 }

@@ -24,11 +24,11 @@ const PlusMinus = ({ handleChange, max = null, min = 0, value: initialValue }) =
 
   return (
     <div className="plusminus">
-      <button type="button" className="px-3 p-2" onClick={decrementValue}>
+      <button type="button" className="px-3 py-2" onClick={decrementValue}>
         <i className="fas fa-minus"></i>
       </button>
-      <div className="flex px-5 py-2 cursor-default">{value}</div>
-      <button type="button" className="px-3 p-2" onClick={incrementValue}>
+      <div className="border-x border-neutral-300 w-14 px-3 py-2 cursor-default">{value}</div>
+      <button type="button" className="px-3 py-2" onClick={incrementValue}>
         <i className="fas fa-plus"></i>
       </button>
     </div>

@@ -11,9 +11,9 @@ const Radio = ({ children, ...props }) => {
 
   return (
       <div class="mt-2 ">
-        <label class="inline-flex items-center ">
-          <input  type="radio" role="radio" class="radio" {...props} />
-          <span class="ml-2">{children}</span>
+        <label className="inline-flex items-center ">
+          <input  type="radio" role="radio" className="radio" {...props} />
+          <span className="ml-2">{children}</span>
         </label>
       </div>
   );

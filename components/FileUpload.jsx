@@ -27,13 +27,11 @@ const FileUpload = ({ accept, file, setFile, ...props }) => {
   return (
     <div className="flex border rounded-md">
       <Button
-        className="button full secondary h-fit"
+        className="button full secondary rounded-r-none h-fit"
         onClick={handleClick}
         disabled={props.disabled ? 'disabled' : ''}
       >
-        <span className="flex gap-2">
-          Selecteaza <i className="my-auto far fa-file"></i>
-        </span>
+        <span>Select</span>
       </Button>
       <input
         ref={ref}

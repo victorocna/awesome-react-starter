@@ -1,21 +1,15 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Button } from '.';
-import { getFileName } from '../functions';
+import { formatFileName } from '../functions';
 
-const FileUpload = ({ accept, file, setFile, ...props }) => {
+const FileUpload = ({ accept, file, setFile, disabled, ...props }) => {
   const [fileName, setFileName] = useState('');
   const ref = useRef();
 
-  useEffect(() => {
-    if (!file) {
-      return setFileName('');
-    }
-  }, [file]);
-
   const handleUpload = (event) => {
     event.preventDefault();
-    const file = event?.target?.files ?? null;
-    setFileName(getFileName(file));
+    const file = event.target.files || null;
+    setFileName(formatFileName(file));
     setFile(file);
   };
 
@@ -29,7 +23,7 @@ const FileUpload = ({ accept, file, setFile, ...props }) => {
       <Button
         className="button full secondary rounded-r-none h-fit"
         onClick={handleClick}
-        disabled={props.disabled ? 'disabled' : ''}
+        disabled={disabled}
       >
         <span>Select</span>
       </Button>
@@ -41,7 +35,7 @@ const FileUpload = ({ accept, file, setFile, ...props }) => {
         onChange={handleUpload}
         {...props}
       />
-      <h4 className="mt-2 ml-2 truncate">{fileName}</h4>
+      <p className="m-0 truncate px-2 py-1">{fileName}</p>
     </div>
   );
 };

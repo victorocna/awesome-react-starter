@@ -2,7 +2,7 @@ const getFileName = (files) => {
   if (Object.keys(files).length === 1) {
     return files[0].name;
   }
-  var nameString = '';
+  let nameString = '';
   Object.values(files).forEach((item) => {
     nameString = nameString + ', ' + item.name;
   });

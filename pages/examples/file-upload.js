@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { FileUpload } from '../../components';
 import { Submit } from '../../components/Fields';
 import { Layout } from '../../examples/components';
-import { getFileName } from '../../functions';
+import { formatFileName } from '../../functions';
 import { useMutation } from '../../hooks';
 import { toaster } from '../../lib';
 
@@ -64,7 +64,7 @@ const Page = () => {
           </div>
           <p className="mb-2">
             <span>Filename outside component (demonstrates useState in react): </span>
-            {file && <strong>{getFileName(file)}</strong>}
+            {file && <strong>{formatFileName(file)}</strong>}
           </p>
         </div>
         <div className="flex">

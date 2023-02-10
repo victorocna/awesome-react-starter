@@ -74,9 +74,8 @@ input::-webkit-inner-spin-button {
   @apply appearance-none py-2 px-3 border border-neutral-300 shadow-sm rounded-lg focus:outline-blue-300 !important;
 }
 
-/* customize default select arrow */
 .select {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.75' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-image: url("/icons/select.svg");
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: calc(100% - 8px) center;
@@ -93,18 +92,17 @@ input::-webkit-inner-spin-button {
 }
 
 input[type='password'] {
-  font-family: Verdana;
   letter-spacing: 0.125em;
 }
 
 .checkbox {
-  @apply w-5 h-5 cursor-pointer accent-pink-500 !important;
+  @apply w-5 h-5 cursor-pointer bg-primary !important;
 }
 
 .radio {
-  @apply w-5 h-5 p-2 cursor-pointer accent-purple-500 !important;
+  @apply w-5 h-5 p-2 cursor-pointer bg-primary !important;
 }
 
-.plusminus{
+.plusminus {
   @apply inline-flex text-center shadow-sm border border-neutral-300 divide-x divide-neutral-300 rounded-lg !important;
 }

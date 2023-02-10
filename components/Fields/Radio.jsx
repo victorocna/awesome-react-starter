@@ -10,12 +10,12 @@ const Radio = ({ children, ...props }) => {
   props.onChange = onChange;
 
   return (
-      <div className="mt-2 ">
-        <label className="inline-flex items-center ">
-          <input  type="radio" role="radio" className="radio" {...props} />
-          <span className="ml-2">{children}</span>
-        </label>
-      </div>
+    <div className="mt-2 ">
+      <label className="inline-flex items-center ">
+        <input type="radio" role="radio" className="radio" {...props} />
+        <span className="ml-2">{children}</span>
+      </label>
+    </div>
   );
 };
 

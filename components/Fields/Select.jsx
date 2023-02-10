@@ -2,7 +2,7 @@ import React from 'react';
 
 const Select = ({ children, placeholder, ...props }) => {
   return (
-    <select className="form-select" {...props}>
+    <select className="select" {...props}>
       {placeholder && (
         <option value="" hidden>
           {placeholder}

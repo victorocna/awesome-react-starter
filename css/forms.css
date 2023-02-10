@@ -35,19 +35,8 @@ button:disabled {
   filter: opacity(0.75);
 }
 
-.form-dropdown {
-  @apply border border-gray-500 flex justify-between py-2 px-3 w-full bg-white;
-}
-.form-dropdown:focus-within {
-  @apply ring-1 ring-blue-500 border-blue-500;
-}
-.form-dropdown-list {
-  @apply z-10 bg-white w-full outline-none absolute top-full border-b border-r border-l border-gray-500;
-  max-height: 22rem;
-}
-
-.form-checkbox:disabled,
-.form-checkbox:disabled ~ div,
+.checkbox:disabled,
+.checkbox:disabled ~ div,
 .form-radio:disabled,
 .form-radio:disabled ~ span {
   cursor: not-allowed !important;
@@ -62,13 +51,58 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-.has-error .form-input,
-.has-error .form-select,
-.has-error .form-textarea {
-  @apply border-red-500;
+.has-error .input,
+.has-error .select,
+.has-error .textarea {
+  @apply border-red-500 !important;
 }
 
 .has-error .form-label,
 .has-error .form-help {
   @apply text-red-600 !important;
+}
+
+.input {
+  @apply py-2 px-3 border border-neutral-300 shadow-sm rounded-lg focus:outline-blue-300 !important;
+}
+
+.textarea {
+  @apply py-2 px-3 border border-neutral-300 shadow-sm rounded-lg focus:outline-blue-300 !important;
+}
+
+.select {
+  @apply appearance-none py-2 px-3 border border-neutral-300 shadow-sm rounded-lg focus:outline-blue-300 !important;
+}
+
+.select {
+  background-image: url("/icons/select.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 8px) center;
+}
+
+.dropdown {
+  @apply border border-neutral-300 shadow-sm rounded-lg flex justify-between py-2 px-3 w-full bg-white !important;
+}
+.dropdown:focus-within {
+  @apply ring-1 ring-blue-300 border-blue-300 !important;
+}
+.dropdown-list {
+  @apply z-10 bg-white shadow-sm w-full max-h-80 outline-none absolute top-full border border-t-0 rounded-b-lg border-neutral-300 !important;
+}
+
+input[type='password'] {
+  letter-spacing: 0.125em;
+}
+
+.checkbox {
+  @apply w-5 h-5 cursor-pointer bg-primary !important;
+}
+
+.radio {
+  @apply w-5 h-5 p-2 cursor-pointer bg-primary !important;
+}
+
+.plusminus {
+  @apply inline-flex text-center shadow-sm border border-neutral-300 divide-x divide-neutral-300 rounded-lg !important;
 }

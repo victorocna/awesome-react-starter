@@ -9,7 +9,7 @@ const Dropdown = ({ children, onSelect, defaultSelected, placeholder }) => {
   return (
     <div className="relative">
       <div
-        className={classnames('form-dropdown', downshift.isOpen && 'rounded-b-none')}
+        className={classnames('dropdown', downshift.isOpen && 'rounded-b-none')}
         {...downshift.getToggleButtonProps()}
       >
         <input

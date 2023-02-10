@@ -23,22 +23,12 @@ const PlusMinus = ({ handleChange, max = null, min = 0, value: initialValue }) =
   }, [value]);
 
   return (
-    <div className="flex items-center">
-      <button
-        type="button"
-        className="flex justify-center items-center w-10 border h-10 rounded-none bg-white rounded-l-md"
-        onClick={decrementValue}
-      >
+    <div className="plusminus">
+      <button type="button" className="px-3 py-2" onClick={decrementValue}>
         <i className="fas fa-minus"></i>
       </button>
-      <div className="w-16 flex flex-col justify-center text-center border form-input h-10 rounded-none cursor-default">
-        {value}
-      </div>
-      <button
-        type="button"
-        className="flex justify-center items-center w-10 border h-10 rounded-none bg-white rounded-r-md"
-        onClick={incrementValue}
-      >
+      <div className="border-x border-neutral-300 w-14 px-3 py-2 cursor-default">{value}</div>
+      <button type="button" className="px-3 py-2" onClick={incrementValue}>
         <i className="fas fa-plus"></i>
       </button>
     </div>

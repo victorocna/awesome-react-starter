@@ -25,7 +25,7 @@
     "@tailwindcss/forms": "^0.5.2",
     "@tailwindcss/typography": "^0.5.4",
     "accounting": "^0.4.1",
-    "autoprefixer": "^10.4.8",
+    "autoprefixer": "^10.4.13",
     "axios": "^0.27.2",
     "date-fns": "^2.21.1",
     "dotenv": "^16.0.1",
@@ -46,7 +46,7 @@
     "react-query": "^3.39.2",
     "redux": "^4.1.0",
     "store2": "^2.14.2",
-    "tailwindcss": "^3.1.7",
+    "tailwindcss": "^3.2.6",
     "yup": "^0.32.11"
   },
   "devDependencies": {
@@ -54,6 +54,7 @@
     "eslint": "^7.25.0",
     "eslint-plugin-react": "^7.23.2",
     "pino-pretty": "^4.7.1",
+    "postcss": "^8.4.21",
     "prettier": "^2.2.1"
   }
 }

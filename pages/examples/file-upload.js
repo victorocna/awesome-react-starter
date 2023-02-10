@@ -25,14 +25,11 @@ const Page = () => {
   });
 
   useEffect(() => {
-    if (file) {
-      return setDisabled(false);
-    }
-    return setDisabled(true);
+    setDisabled(!file);
   }, [file]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     setLoading(true);
     mutation.mutateAsync();
   };

@@ -63,15 +63,15 @@ input::-webkit-inner-spin-button {
 }
 
 .input {
-  @apply py-2 px-3 border border-neutral-300 shadow-sm rounded-lg focus:outline-blue-300 !important;
+  @apply py-2 px-3 border border-neutral-300 shadow-sm rounded-lg outline-none focus:ring-1 focus:ring-blue-300 !important;
 }
 
 .textarea {
-  @apply py-2 px-3 border border-neutral-300 shadow-sm rounded-lg focus:outline-blue-300 !important;
+  @apply py-2 px-3 border border-neutral-300 shadow-sm rounded-lg outline-none focus:ring-1 focus:ring-blue-300 !important;
 }
 
 .select {
-  @apply appearance-none py-2 px-3 border border-neutral-300 shadow-sm rounded-lg focus:outline-blue-300 !important;
+  @apply appearance-none py-2 px-3 border border-neutral-300 shadow-sm rounded-lg outline-none focus:ring-1 focus:ring-blue-300 !important;
 }
 
 .select {
@@ -85,7 +85,7 @@ input::-webkit-inner-spin-button {
   @apply border border-neutral-300 shadow-sm rounded-lg flex justify-between py-2 px-3 w-full bg-white !important;
 }
 .dropdown:focus-within {
-  @apply ring-1 ring-blue-300 border-blue-300 !important;
+  @apply ring-1 ring-blue-300 focus:outline-none !important;
 }
 .dropdown-list {
   @apply z-10 bg-white shadow-sm w-full max-h-80 outline-none absolute top-full border border-t-0 rounded-b-lg border-neutral-300 !important;
@@ -104,5 +104,5 @@ input[type='password'] {
 }
 
 .plusminus {
-  @apply inline-flex text-center shadow-sm border border-neutral-300 divide-x divide-neutral-300 rounded-lg !important;
+  @apply inline-flex bg-white text-center shadow-sm border border-neutral-300 divide-x divide-neutral-300 rounded-lg  !important;
 }

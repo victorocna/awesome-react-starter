@@ -96,11 +96,11 @@ input[type='password'] {
 }
 
 .checkbox {
-  @apply w-5 h-5 cursor-pointer bg-primary !important;
+  @apply w-5 h-5 cursor-pointer accent-primary !important;
 }
 
 .radio {
-  @apply w-5 h-5 p-2 cursor-pointer bg-primary !important;
+  @apply w-5 h-5 p-2 cursor-pointer accent-primary !important;
 }
 
 .plusminus {

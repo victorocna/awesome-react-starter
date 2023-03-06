@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import Calendar from 'react-calendar';
-import { Modal } from 'react-bootstrap';
 import { format as dateFormat } from 'date-fns';
+import React, { useEffect, useState } from 'react';
+import { Modal } from 'react-bootstrap';
+import Calendar from 'react-calendar';
 import { Input } from '.';
-import { useDisclosure } from '../../hooks';
 import { isValidDate } from '../../functions';
+import { useDisclosure } from '../../hooks';
 
 const Datepicker = ({ value: initialValue, onChange, calendarProps = {}, ...props }) => {
   const [value, setValue] = useState(initialValue);
@@ -26,6 +26,8 @@ const Datepicker = ({ value: initialValue, onChange, calendarProps = {}, ...prop
 
   if (isValidDate(new Date(initialValue))) {
     calendarProps.defaultValue = new Date(initialValue);
+  } else {
+    calendarProps.defaultValue = new Date();
   }
 
   return (

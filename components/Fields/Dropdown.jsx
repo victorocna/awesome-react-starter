@@ -13,7 +13,8 @@ const Dropdown = ({ children, onSelect, defaultSelected, placeholder }) => {
         {...downshift.getToggleButtonProps()}
       >
         <input
-          value={downshift?.selectedItem?.label || placeholder}
+          value={downshift?.selectedItem?.label}
+          placeholder={placeholder}
           className="-my-2 outline-none w-full bg-transparent"
           readOnly={true}
         />

@@ -1,6 +1,7 @@
 import { Layout } from '../../examples/components';
 import { Combobox } from '../../components/Fields';
 import { countries } from '../../data';
+import { useQuery } from '../../hooks';
 
 const Page = () => {
   const showCountries = (country) => (
@@ -8,6 +9,9 @@ const Page = () => {
       {country.label}
     </option>
   );
+
+  // Dynamic combobox with cryptocurrencies
+  const { data, status } = useQuery('https://api.coincap.io/v2/assets?limit=5');
 
   return (
     <Layout title="Combobox">
@@ -49,6 +53,42 @@ const Page = () => {
             Country combobox with default selection
           </label>
           <Combobox defaultSelected="DEU">{countries.map(showCountries)}</Combobox>
+        </div>
+
+        <p className="mt-0">
+          <strong>More complex implementations</strong>
+        </p>
+
+        <div className="mb-4 w-80">
+          <label htmlFor="#" className="cursor-pointer mb-0">
+            Dynamic combobox with cryptocurrencies
+          </label>
+          {status === 'loading' && <Combobox></Combobox>}
+          {status === 'success' && (
+            <Combobox>
+              {data?.data?.map((coin) => (
+                <option key={coin.symbol} value={coin.symbol}>
+                  {coin.name}
+                </option>
+              ))}
+            </Combobox>
+          )}
+        </div>
+
+        <div className="mb-4 w-80">
+          <label htmlFor="#" className="cursor-pointer mb-0">
+            Dynamic combobox with default selected
+          </label>
+          {status === 'loading' && <Combobox></Combobox>}
+          {status === 'success' && (
+            <Combobox>
+              {data?.data?.map((coin) => (
+                <option key={coin.symbol} value={coin.symbol}>
+                  {coin.name}
+                </option>
+              ))}
+            </Combobox>
+          )}
         </div>
       </div>
     </Layout>

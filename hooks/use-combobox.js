@@ -10,22 +10,38 @@ import { useCombobox as useDownshift } from 'downshift';
  * @see https://www.downshift-js.com/use-combobox
  */
 const useCombobox = ({ items, onSelect, defaultSelected }) => {
+  // Find the default selected item by value
+  const isDefaultSelected = (item) => {
+    return item?.value === defaultSelected;
+  };
+  const defaultSelectedItem = items.find(isDefaultSelected) || null;
+
+  // Show a string or an object label
+  const itemToString = (item) => {
+    return item?.label || item;
+  };
+
+  // Handle the selection
+  const onSelectedItemChange = ({ selectedItem }) => {
+    if (isFunction(onSelect)) {
+      return onSelect(selectedItem?.value);
+    }
+  };
+
+  // Filter the items based on the inputValue
   const [inputItems, setInputItems] = useState(items);
+  const onInputValueChange = ({ inputValue }) => {
+    setInputItems(
+      items.filter((item) => item.label.toLowerCase().includes(inputValue.toLowerCase()))
+    );
+  };
 
   const downshift = useDownshift({
     items: inputItems,
-    itemToString: (item) => item?.label || item,
-    defaultSelectedItem: items.find((item) => item?.value === defaultSelected) || null,
-    onInputValueChange: ({ inputValue }) => {
-      setInputItems(
-        items.filter((item) => item.label.toLowerCase().includes(inputValue.toLowerCase()))
-      );
-    },
-    onSelectedItemChange: ({ selectedItem }) => {
-      if (isFunction(onSelect)) {
-        return onSelect(selectedItem?.value);
-      }
-    },
+    itemToString,
+    defaultSelectedItem,
+    onInputValueChange,
+    onSelectedItemChange,
   });
 
   return {

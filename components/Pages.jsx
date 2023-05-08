@@ -31,6 +31,9 @@ const Pages = () => {
         <MenuItem href="/examples/combobox" level="2">
           Combobox
         </MenuItem>
+        <MenuItem href="/examples/async-combobox" level="2">
+          Async Combobox
+        </MenuItem>
         <MenuItem href="/examples/modals" level="2">
           Modals
         </MenuItem>

@@ -1,5 +1,5 @@
 import { Layout } from '../../examples/components';
-import { AsyncDropdown } from '../../components/Fields';
+import { AsyncCombobox } from '../../components/Fields';
 import { useQuery } from '../../hooks';
 
 const Page = () => {
@@ -11,12 +11,12 @@ const Page = () => {
   );
 
   return (
-    <Layout title="Async Dropdown">
+    <Layout title="Async Combobox">
       <div className="prose-sm">
         <p className="mt-0">
-          <strong>Dynamic values for the Dropdown element</strong>
+          <strong>Dynamic values for the Combobox element</strong>
           <br />
-          Dropdown elements are an extended version of the HTML select based on the awesome NPM
+          Combobox elements are an extended version of the dropdown element based on the awesome NPM
           package <code>downshift</code>
         </p>
 
@@ -25,9 +25,9 @@ const Page = () => {
             Async crypto dropdown with placeholder
           </label>
           <div className="w-80">
-            <AsyncDropdown id="crypto01" status={status} placeholder="Select your favorite crypto">
+            <AsyncCombobox id="crypto01" status={status} placeholder="Select your favorite crypto">
               {data?.data?.map(showCripto)}
-            </AsyncDropdown>
+            </AsyncCombobox>
           </div>
         </div>
 
@@ -36,9 +36,9 @@ const Page = () => {
             Async crypto dropdown with default selection
           </label>
           <div className="w-80">
-            <AsyncDropdown id="crypto02" status={status} defaultSelected="BTC">
+            <AsyncCombobox id="crypto02" status={status} defaultSelected="BTC">
               {data?.data?.map(showCripto)}
-            </AsyncDropdown>
+            </AsyncCombobox>
           </div>
         </div>
       </div>

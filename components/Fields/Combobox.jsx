@@ -2,7 +2,7 @@ import { classnames } from '../../lib';
 import { useChildren, useCombobox } from '../../hooks';
 import OptionList from './OptionList';
 
-const Combobox = ({ children, onSelect, defaultSelected }) => {
+const Combobox = ({ children, onSelect, defaultSelected, placeholder }) => {
   const items = useChildren(children);
   const { inputItems, ...downshift } = useCombobox({ items, onSelect, defaultSelected });
 
@@ -17,6 +17,7 @@ const Combobox = ({ children, onSelect, defaultSelected }) => {
       >
         <input
           className="-my-2 outline-none w-full bg-transparent"
+          placeholder={placeholder}
           {...downshift.getInputProps()}
         />
         <span role="button" {...downshift.getToggleButtonProps()}>

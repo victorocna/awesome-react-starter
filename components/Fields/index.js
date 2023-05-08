@@ -1,3 +1,4 @@
+import AsyncCombobox from './AsyncCombobox';
 import AsyncDropdown from './AsyncDropdown';
 import Checkbox from './Checkbox';
 import Combobox from './Combobox';
@@ -20,6 +21,7 @@ import Submit from './Submit';
 import Textarea from './Textarea';
 
 export {
+  AsyncCombobox,
   AsyncDropdown,
   Checkbox,
   Combobox,

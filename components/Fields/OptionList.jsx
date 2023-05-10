@@ -1,5 +1,5 @@
 import { classnames } from '../../lib';
-import Option from './Option';
+import { Option } from '.';
 
 const OptionList = ({ children, isOpen, getMenuProps, highlightedIndex, getItemProps }) => {
   const showItems = (item, index) => {

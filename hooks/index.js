@@ -4,6 +4,7 @@ import useCollapsible from './use-collapsible';
 import useCombobox from './use-combobox';
 import useDebounce from './use-debounce';
 import useDisclosure from './use-disclosure';
+import useDropdown from './use-dropdown';
 import useInfiniteQuery from './use-infinite-query';
 import useIntersectionObserver from './use-intersection-observer';
 import useMutation from './use-mutation';
@@ -21,6 +22,7 @@ export {
   useCombobox,
   useDebounce,
   useDisclosure,
+  useDropdown,
   useInfiniteQuery,
   useIntersectionObserver,
   useMutation,

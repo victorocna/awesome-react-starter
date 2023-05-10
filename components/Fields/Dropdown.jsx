@@ -10,7 +10,7 @@ const Dropdown = ({ children, defaultSelected, placeholder = '', disabled, onSel
       <div
         className={classnames(
           'dropdown',
-          downshift.isOpen && 'rounded-b-none rounded-t-[20px]',
+          downshift.isOpen && 'rounded-b-none',
           disabled && 'bg-gray-200 pointer-events-none'
         )}
         {...downshift.getToggleButtonProps()}

@@ -17,7 +17,7 @@ const Combobox = ({
       <div
         className={classnames(
           'dropdown',
-          downshift.isOpen && inputItems.length && 'rounded-b-none rounded-b-none rounded-t-[20px]',
+          downshift.isOpen && inputItems.length && 'rounded-b-none rounded-b-none',
           disabled && 'bg-gray-200'
         )}
         {...downshift.getComboboxProps()}

@@ -4,7 +4,7 @@ const AsyncCombobox = ({ children, status, id, ...props }) => {
   const key = `async-combobox-${id}-${status}`;
   if (status === 'loading') {
     return (
-      <Combobox key={key} disabled={true}>
+      <Combobox key={key} readOnly={true}>
         <option value="">Loading...</option>
       </Combobox>
     );
@@ -12,7 +12,7 @@ const AsyncCombobox = ({ children, status, id, ...props }) => {
 
   if (status === 'error') {
     return (
-      <Combobox key={key} disabled={true}>
+      <Combobox key={key} readOnly={true}>
         <option value="">Error...</option>
       </Combobox>
     );

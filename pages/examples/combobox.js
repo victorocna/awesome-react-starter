@@ -50,6 +50,15 @@ const Page = () => {
           </label>
           <Combobox defaultSelected="DEU">{countries.map(showCountries)}</Combobox>
         </div>
+
+        <div className="mb-4 w-80">
+          <label htmlFor="#" className="cursor-pointer mb-0">
+            Disabled combobox with default selection
+          </label>
+          <Combobox defaultSelected="DEU" disabled={true}>
+            {countries.map(showCountries)}
+          </Combobox>
+        </div>
       </div>
     </Layout>
   );

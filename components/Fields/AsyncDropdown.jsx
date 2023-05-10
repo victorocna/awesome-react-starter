@@ -4,7 +4,7 @@ const AsyncDropdown = ({ children, status, id, ...props }) => {
   const key = `async-dropdown-${id}-${status}`;
   if (status === 'loading') {
     return (
-      <Dropdown key={key} disabled={true}>
+      <Dropdown key={key} readOnly={true}>
         <option value="">Loading...</option>
       </Dropdown>
     );
@@ -12,7 +12,7 @@ const AsyncDropdown = ({ children, status, id, ...props }) => {
 
   if (status === 'error') {
     return (
-      <Dropdown key={key} disabled={true}>
+      <Dropdown key={key} readOnly={true}>
         <option value="">Error...</option>
       </Dropdown>
     );

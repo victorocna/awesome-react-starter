@@ -61,6 +61,17 @@ const Page = () => {
             </Dropdown>
           </div>
         </div>
+
+        <div className="mb-4">
+          <label htmlFor="#" className="cursor-pointer mb-0">
+            Disabled dropdown with default selection
+          </label>
+          <div className="w-80">
+            <Dropdown defaultSelected="USA" disabled={true}>
+              {countries.map(showCountries)}
+            </Dropdown>
+          </div>
+        </div>
       </div>
     </Layout>
   );

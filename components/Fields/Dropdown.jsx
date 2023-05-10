@@ -1,28 +1,33 @@
 import { classnames } from '../../lib';
-import { useChildren, useSelect } from '../../hooks';
-import OptionList from './OptionList';
+import { useSelect } from '../../hooks';
+import { OptionList } from '.';
 
-const Dropdown = ({ children, onSelect, defaultSelected, placeholder }) => {
-  const items = useChildren(children);
-  const downshift = useSelect({ items, onSelect, defaultSelected });
+const Dropdown = ({ children, defaultSelected, placeholder = '', disabled, onSelect }) => {
+  const { inputItems, ...downshift } = useSelect({ children, onSelect, defaultSelected });
 
   return (
     <div className="relative">
       <div
-        className={classnames('dropdown', downshift.isOpen && 'rounded-b-none')}
+        className={classnames(
+          'dropdown',
+          downshift.isOpen && 'rounded-b-none',
+          disabled && 'bg-gray-200 pointer-events-none'
+        )}
         {...downshift.getToggleButtonProps()}
       >
         <input
-          value={downshift?.selectedItem?.label || placeholder}
+          value={!disabled ? downshift.selectedItem?.label || '' : ''}
           className="-my-2 outline-none w-full bg-transparent"
           readOnly={true}
+          placeholder={placeholder}
+          disabled={disabled}
         />
         <span>
           <i className="fas fa-chevron-down" />
         </span>
       </div>
       <OptionList onSelect={onSelect} {...downshift}>
-        {items}
+        {inputItems}
       </OptionList>
     </div>
   );

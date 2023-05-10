@@ -1,3 +1,5 @@
+import AsyncCombobox from './AsyncCombobox';
+import AsyncDropdown from './AsyncDropdown';
 import Checkbox from './Checkbox';
 import Combobox from './Combobox';
 import Datepicker from './Datepicker';
@@ -7,6 +9,8 @@ import Field from './Field';
 import Fieldset from './Fieldset';
 import Input from './Input';
 import Number from './Number';
+import Option from './Option';
+import OptionList from './OptionList';
 import Password from './Password';
 import Phone from './Phone';
 import PlusMinus from './PlusMinus';
@@ -19,6 +23,8 @@ import Submit from './Submit';
 import Textarea from './Textarea';
 
 export {
+  AsyncCombobox,
+  AsyncDropdown,
   Checkbox,
   Combobox,
   Datepicker,
@@ -28,6 +34,8 @@ export {
   Fieldset,
   Input,
   Number,
+  Option,
+  OptionList,
   Password,
   Phone,
   PlusMinus,

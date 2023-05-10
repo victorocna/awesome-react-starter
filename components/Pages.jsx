@@ -25,8 +25,14 @@ const Pages = () => {
         <MenuItem href="/examples/dropdown" level="2">
           Dropdown
         </MenuItem>
+        <MenuItem href="/examples/async-dropdown" level="2">
+          Async Dropdown
+        </MenuItem>
         <MenuItem href="/examples/combobox" level="2">
           Combobox
+        </MenuItem>
+        <MenuItem href="/examples/async-combobox" level="2">
+          Async Combobox
         </MenuItem>
         <MenuItem href="/examples/modals" level="2">
           Modals

@@ -6,10 +6,10 @@ const useChildren = (children) => {
   const elements = flatten(childrenArray).filter(isValidElement);
 
   return Children.map(elements, ({ props }) => {
-    const { value, children, ...rest } = props;
+    const { value, label, children, ...rest } = props;
     return {
       value: value || children,
-      label: children,
+      label: label || children,
       ...rest,
     };
   }).filter(({ hidden }) => !hidden);

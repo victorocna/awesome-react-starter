@@ -9,6 +9,8 @@ import Field from './Field';
 import Fieldset from './Fieldset';
 import Input from './Input';
 import Number from './Number';
+import Option from './Option';
+import OptionList from './OptionList';
 import Password from './Password';
 import Phone from './Phone';
 import PlusMinus from './PlusMinus';
@@ -32,6 +34,8 @@ export {
   Fieldset,
   Input,
   Number,
+  Option,
+  OptionList,
   Password,
   Phone,
   PlusMinus,

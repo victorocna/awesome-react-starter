@@ -62,6 +62,9 @@ const Pages = () => {
       <MenuItem href="/404" level="1">
         404 Page
       </MenuItem>
+      <MenuItem href="/examples/videoplayer" level="1">
+        Videoplayer
+      </MenuItem>
     </>
   );
 };

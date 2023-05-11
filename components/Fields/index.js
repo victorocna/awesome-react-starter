@@ -8,6 +8,7 @@ import Email from './Email';
 import Field from './Field';
 import Fieldset from './Fieldset';
 import Input from './Input';
+import LimitCombobox from './LimitCombobox';
 import Number from './Number';
 import Option from './Option';
 import OptionList from './OptionList';
@@ -33,6 +34,7 @@ export {
   Field,
   Fieldset,
   Input,
+  LimitCombobox,
   Number,
   Option,
   OptionList,

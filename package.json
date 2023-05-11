@@ -18,8 +18,8 @@
   "author": "victorocna <victor@chesscoders.com> (https://chesscoders.com)",
   "license": "MIT",
   "engines": {
-    "npm": ">= 7",
-    "node": ">= 14"
+    "npm": ">=7",
+    "node": ">=15 <=18"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.2",

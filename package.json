@@ -4,9 +4,9 @@
   "description": "Starter for Next.js projects with authentication",
   "main": "index.js",
   "scripts": {
-    "dev": "next -p 8080",
+    "dev": "next dev --port ${PORT-8080}",
     "build": "next build",
-    "start": "next start -p 8080",
+    "start": "next start --port ${PORT-8080}",
     "export": "next build && next export",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

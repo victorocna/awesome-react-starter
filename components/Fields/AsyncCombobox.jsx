@@ -1,25 +1,29 @@
+import { useState } from 'react';
 import Combobox from './Combobox';
 
-const AsyncCombobox = ({ children, status, id, ...props }) => {
-  const key = `async-combobox-${id}-${status}`;
-  if (status === 'loading') {
-    return (
-      <Combobox key={key} readOnly={true}>
-        <option value="">Loading...</option>
-      </Combobox>
-    );
-  }
+const AsyncCombobox = ({ children, status, ...props }) => {
+  const [selected, setSelected] = useState(false);
+  const handleSelect = () => {
+    setSelected(true);
+  };
 
-  if (status === 'error') {
+  const Icon = () => {
+    // Show default icon if the user has just selected an item
+    if (selected) {
+      return <i className="fas fa-chevron-down" />;
+    }
+    // Show icons based on status
     return (
-      <Combobox key={key} readOnly={true}>
-        <option value="">Error...</option>
-      </Combobox>
+      <>
+        {status === 'loading' && <img src="/icons/loading.gif" className="w-6 h-6 m-0" />}
+        {status === 'error' && <i className="fas fa-exclamation-triangle text-red-600"></i>}
+        {status === 'success' && <i className="fas fa-chevron-down" />}
+      </>
     );
-  }
+  };
 
   return (
-    <Combobox key={key} {...props}>
+    <Combobox icon={<Icon />} status={status} onSelect={handleSelect} {...props}>
       {children}
     </Combobox>
   );

@@ -3,16 +3,16 @@ import { useEffect, useState } from 'react';
 import { useQuery } from '../../hooks';
 import AsyncCombobox from './AsyncCombobox';
 
-const Autocomplete = ({ url, limit, optionValue, optionLabel, searchKey }) => {
-  // Set search value with debounce
-  const [value, setValue] = useState('');
+const Autocomplete = ({ url, limit, optionValue, optionLabel, searchKey, ...props }) => {
+  // Set input value with debounce
+  const [inputValue, setInputValue] = useState('');
   const handleChange = (event) => {
-    setValue(event.target.value);
+    setInputValue(event.target.value);
   };
   const debouncedChange = debounce(handleChange, 500);
 
   // Fetch data from API
-  const { data, status } = useQuery(url, { limit, [searchKey]: value });
+  const { data, status } = useQuery(url, { limit, [searchKey]: inputValue });
 
   // Format items for the combobox
   const formatItems = (item) => ({
@@ -26,10 +26,10 @@ const Autocomplete = ({ url, limit, optionValue, optionLabel, searchKey }) => {
     if (status === 'success') {
       setItems(data?.data?.map(formatItems) || []);
     }
-  }, [value]);
+  }, [inputValue, status]);
 
   return (
-    <AsyncCombobox onKeyUp={debouncedChange} status={status}>
+    <AsyncCombobox onKeyUp={debouncedChange} status={status} {...props}>
       {items.map((item) => (
         <option key={item.value} value={item.value}>
           {item.label}

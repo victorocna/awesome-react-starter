@@ -5,12 +5,14 @@ import { OptionList } from '.';
 const Combobox = ({
   children,
   defaultSelected,
-  placeholder = '',
+  placeholder,
   disabled,
   onSelect,
+  icon,
+  status,
   ...props
 }) => {
-  const { inputItems, ...downshift } = useCombobox({ children, onSelect, defaultSelected });
+  const { inputItems, ...downshift } = useCombobox({ children, onSelect, defaultSelected, status });
 
   return (
     <div className="relative">
@@ -32,9 +34,9 @@ const Combobox = ({
         <span
           role="button"
           {...downshift.getToggleButtonProps()}
-          className={disabled ? 'pointer-events-none' : ''}
+          className={classnames(disabled && 'pointer-events-none')}
         >
-          <i className="fas fa-chevron-down" />
+          {icon || <i className="fas fa-chevron-down" />}
         </span>
       </div>
       <OptionList onSelect={onSelect} {...downshift}>

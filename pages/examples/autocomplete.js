@@ -23,6 +23,7 @@ const Page = () => {
               searchKey="search"
               optionValue="symbol"
               optionLabel="name"
+              placeholder="Search your favorite crypto"
             />
           </div>
         </div>

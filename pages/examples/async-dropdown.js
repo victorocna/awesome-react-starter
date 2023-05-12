@@ -25,7 +25,7 @@ const Page = () => {
             Async crypto dropdown with placeholder
           </label>
           <div className="w-80">
-            <AsyncDropdown id="crypto01" status={status} placeholder="Select your favorite crypto">
+            <AsyncDropdown status={status} placeholder="Select your favorite crypto">
               {data?.data?.map(showCripto)}
             </AsyncDropdown>
           </div>
@@ -36,7 +36,7 @@ const Page = () => {
             Async crypto dropdown with default selection
           </label>
           <div className="w-80">
-            <AsyncDropdown id="crypto02" status={status} defaultSelected="BTC">
+            <AsyncDropdown status={status} defaultSelected="BTC">
               {data?.data?.map(showCripto)}
             </AsyncDropdown>
           </div>

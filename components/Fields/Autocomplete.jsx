@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useQuery } from '../../hooks';
 import AsyncCombobox from './AsyncCombobox';
 
-const Autocomplete = ({ url, limit, optionValue, optionLabel, searchKey, ...props }) => {
+const Autocomplete = ({ url, optionValue, optionLabel, searchKey, ...props }) => {
   // Set input value with debounce
   const [inputValue, setInputValue] = useState('');
   const handleChange = (event) => {
@@ -12,7 +12,7 @@ const Autocomplete = ({ url, limit, optionValue, optionLabel, searchKey, ...prop
   const debouncedChange = debounce(handleChange, 500);
 
   // Fetch data from API
-  const { data, status } = useQuery(url, { limit, [searchKey]: inputValue });
+  const { data, status } = useQuery(url, { [searchKey]: inputValue });
 
   // Format items for the combobox
   const formatItems = (item) => ({

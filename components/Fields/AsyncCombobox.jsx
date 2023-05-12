@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NoSsr } from '..';
 import Combobox from './Combobox';
 
 const AsyncCombobox = ({ children, status, ...props }) => {
@@ -23,9 +24,11 @@ const AsyncCombobox = ({ children, status, ...props }) => {
   };
 
   return (
-    <Combobox icon={<Icon />} status={status} onSelect={handleSelect} {...props}>
-      {children}
-    </Combobox>
+    <NoSsr>
+      <Combobox icon={<Icon />} status={status} onSelect={handleSelect} {...props}>
+        {children}
+      </Combobox>
+    </NoSsr>
   );
 };
 

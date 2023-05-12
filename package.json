@@ -29,7 +29,7 @@
     "axios": "^0.27.2",
     "date-fns": "^2.21.1",
     "dotenv": "^16.0.1",
-    "downshift": "^6.1.7",
+    "downshift": "^6.1.12",
     "formik": "^2.2.9",
     "js-file-download": "^0.4.12",
     "jsonwebtoken": "^9.0.0",

@@ -1,3 +1,4 @@
+import { NoSsr } from '..';
 import Dropdown from './Dropdown';
 
 const AsyncDropdown = ({ children, status, ...props }) => {
@@ -10,9 +11,11 @@ const AsyncDropdown = ({ children, status, ...props }) => {
   );
 
   return (
-    <Dropdown icon={icon} {...props}>
-      {children}
-    </Dropdown>
+    <NoSsr>
+      <Dropdown icon={icon} {...props}>
+        {children}
+      </Dropdown>
+    </NoSsr>
   );
 };
 

@@ -3,10 +3,10 @@ import { Autocomplete } from '../../components/Fields';
 
 const Page = () => {
   return (
-    <Layout title="Async Combobox">
+    <Layout title="Autocomplete">
       <div className="prose-sm">
         <p className="mt-0">
-          <strong>Dynamic values for the Combobox element</strong>
+          <strong>Autocomplete values for the Combobox element</strong>
           <br />
           Combobox elements are an extended version of the dropdown element based on the awesome NPM
           package <code>downshift</code>
@@ -14,16 +14,15 @@ const Page = () => {
 
         <div className="mb-4">
           <label htmlFor="#" className="cursor-pointer mb-0">
-            Async crypto dropdown with placeholder
+            Async crypto autocomplete with placeholder
           </label>
           <div className="w-80">
             <Autocomplete
-              url="https://api.coincap.io/v2/assets"
-              limit="5"
+              url="https://api.coincap.io/v2/assets?limit=5"
+              placeholder="Search your favorite crypto"
               searchKey="search"
               optionValue="symbol"
               optionLabel="name"
-              placeholder="Search your favorite crypto"
             />
           </div>
         </div>

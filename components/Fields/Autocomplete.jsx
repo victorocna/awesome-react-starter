@@ -1,4 +1,4 @@
-import { debounce } from 'lodash';
+import { debounce, has } from 'lodash';
 import { useEffect, useState } from 'react';
 import { useQuery } from '../../hooks';
 import AsyncCombobox from './AsyncCombobox';
@@ -24,7 +24,12 @@ const Autocomplete = ({ url, optionValue, optionLabel, searchKey, ...props }) =>
   const [items, setItems] = useState([]);
   useEffect(() => {
     if (status === 'success') {
-      setItems(data?.data?.map(formatItems) || []);
+      // dirty hack to handle both array and object responses
+      if (has(data, 'data')) {
+        setItems(data?.data?.map(formatItems) || []);
+      } else {
+        setItems(data?.map(formatItems) || []);
+      }
     }
   }, [inputValue, status]);
 

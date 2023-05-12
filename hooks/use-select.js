@@ -1,7 +1,8 @@
-import { isFunction, isEqual } from 'lodash';
 import { useSelect as useDownshift } from 'downshift';
-import { useChildren } from '.';
+import { isEqual, isFunction } from 'lodash';
+import { MD5 } from 'object-hash';
 import { useEffect, useState } from 'react';
+import { useChildren } from '.';
 
 /**
  * Custom hook that enhances downshift useSelect
@@ -15,12 +16,6 @@ import { useEffect, useState } from 'react';
 const useSelect = ({ children, onSelect, defaultSelected }) => {
   // Convert Dropdown's component children to Downshift items
   const items = useChildren(children);
-
-  // Find the default selected item by value
-  const isDefaultSelected = (item) => {
-    return isEqual(item.value, defaultSelected);
-  };
-  const defaultSelectedItem = items.find(isDefaultSelected) || null;
 
   // Show an object label
   const itemToString = (item) => {
@@ -39,16 +34,28 @@ const useSelect = ({ children, onSelect, defaultSelected }) => {
   useEffect(() => {
     // Change the input items whenever the items prop changes
     setInputItems(items);
-  }, [JSON.stringify(items)]);
+  }, [MD5(items)]);
   // Using `items` only as a dependency won't trigger the useEffect because it is a reference,
-  // so we stringify it instead.
+  // so we hash it instead.
 
   const downshift = useDownshift({
     items: inputItems,
     itemToString,
-    defaultSelectedItem,
     onSelectedItemChange,
   });
+
+  // Find the default selected item by value
+  const isDefaultSelected = (item) => {
+    return isEqual(item.value, defaultSelected);
+  };
+  const defaultSelectedItem = items.find(isDefaultSelected) || null;
+
+  // Select the default item if any
+  useEffect(() => {
+    if (defaultSelectedItem) {
+      downshift?.selectItem(defaultSelectedItem);
+    }
+  }, [MD5(items)]);
 
   return { inputItems, ...downshift };
 };

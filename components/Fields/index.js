@@ -1,5 +1,6 @@
 import AsyncCombobox from './AsyncCombobox';
 import AsyncDropdown from './AsyncDropdown';
+import Autocomplete from './Autocomplete';
 import Checkbox from './Checkbox';
 import Combobox from './Combobox';
 import Datepicker from './Datepicker';
@@ -25,6 +26,7 @@ import Textarea from './Textarea';
 export {
   AsyncCombobox,
   AsyncDropdown,
+  Autocomplete,
   Checkbox,
   Combobox,
   Datepicker,

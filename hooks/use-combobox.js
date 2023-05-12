@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
-import { isFunction, isEqual } from 'lodash';
 import { useCombobox as useDownshift } from 'downshift';
+import { isEqual, isFunction } from 'lodash';
+import { MD5 } from 'object-hash';
+import { useEffect, useState } from 'react';
 import { useChildren } from '.';
 
 /**
@@ -15,12 +16,6 @@ import { useChildren } from '.';
 const useCombobox = ({ children, onSelect, defaultSelected }) => {
   // Convert Combobox's component children to Downshift items
   const items = useChildren(children);
-
-  // Find the default selected item by value
-  const isDefaultSelected = (item) => {
-    return isEqual(item.value, defaultSelected);
-  };
-  const defaultSelectedItem = items.find(isDefaultSelected) || null;
 
   // Show an object label
   const itemToString = (item) => {
@@ -51,17 +46,29 @@ const useCombobox = ({ children, onSelect, defaultSelected }) => {
   useEffect(() => {
     // Change the input items whenever the items prop changes
     setInputItems(items);
-  }, [JSON.stringify(items)]);
+  }, [MD5(items)]);
   // Using `items` only as a dependency won't trigger the useEffect because it is a reference,
-  // so we stringify it instead.
+  // so we hash it instead.
 
   const downshift = useDownshift({
     items: inputItems,
     itemToString,
-    defaultSelectedItem,
     onInputValueChange,
     onSelectedItemChange,
   });
+
+  // Find the default selected item by value
+  const isDefaultSelected = (item) => {
+    return isEqual(item.value, defaultSelected);
+  };
+  const defaultSelectedItem = items.find(isDefaultSelected) || null;
+
+  // Select the default item if any
+  useEffect(() => {
+    if (defaultSelectedItem) {
+      downshift?.selectItem(defaultSelectedItem);
+    }
+  }, [MD5(items)]);
 
   return { inputItems, ...downshift };
 };

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useQuery } from '../../hooks';
 import AsyncCombobox from './AsyncCombobox';
 
-const LimitCombobox = ({ url, limit, optionValue, optionLabel, searchKey }) => {
+const Autocomplete = ({ url, limit, optionValue, optionLabel, searchKey }) => {
   // Set search value with debounce
   const [value, setValue] = useState('');
   const handleChange = (event) => {
@@ -24,11 +24,19 @@ const LimitCombobox = ({ url, limit, optionValue, optionLabel, searchKey }) => {
   const [items, setItems] = useState([]);
   useEffect(() => {
     if (status === 'success') {
-      setItems(data?.data?.map(formatItems));
+      setItems(data?.data?.map(formatItems) || []);
     }
-  }, [status, value]);
+  }, [value]);
 
-  return <AsyncCombobox status={status} onKeyUp={debouncedChange} items={items} />;
+  return (
+    <AsyncCombobox onKeyUp={debouncedChange} status={status}>
+      {items.map((item) => (
+        <option key={item.value} value={item.value}>
+          {item.label}
+        </option>
+      ))}
+    </AsyncCombobox>
+  );
 };
 
-export default LimitCombobox;
+export default Autocomplete;

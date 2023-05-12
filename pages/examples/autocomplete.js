@@ -1,5 +1,5 @@
 import { Layout } from '../../examples/components';
-import { LimitCombobox } from '../../components/Fields';
+import { Autocomplete } from '../../components/Fields';
 
 const Page = () => {
   return (
@@ -17,7 +17,7 @@ const Page = () => {
             Async crypto dropdown with placeholder
           </label>
           <div className="w-80">
-            <LimitCombobox
+            <Autocomplete
               url="https://api.coincap.io/v2/assets"
               limit="5"
               searchKey="search"

@@ -4,9 +4,9 @@ import { useQuery as query } from 'react-query';
 import { axiosAuth } from '../lib';
 
 const useQuery = (url, options) => {
-  const queryFn = () => {
-    const fullUrl = stringifyUrl({ url, query: options });
+  const fullUrl = stringifyUrl({ url, query: options });
 
+  const queryFn = () => {
     // Handle external API calls
     if (url.startsWith('http')) {
       return axios.get(fullUrl).then((res) => res.data);
@@ -16,7 +16,7 @@ const useQuery = (url, options) => {
     return axiosAuth(fullUrl);
   };
 
-  return query(url, queryFn, options);
+  return query(fullUrl, queryFn, options);
 };
 
 export default useQuery;

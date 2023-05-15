@@ -52,6 +52,9 @@ const Pages = () => {
         <MenuItem href="/examples/formik" level="2">
           Formik forms
         </MenuItem>
+        <MenuItem href="/examples/video" level="1">
+          Video
+        </MenuItem>
       </MenuGroup>
       <MenuItem href="/login" level="1">
         Login page
@@ -61,9 +64,6 @@ const Pages = () => {
       </MenuItem>
       <MenuItem href="/404" level="1">
         404 Page
-      </MenuItem>
-      <MenuItem href="/examples/videoplayer" level="1">
-        Videoplayer
       </MenuItem>
     </>
   );

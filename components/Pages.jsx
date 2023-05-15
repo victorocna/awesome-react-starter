@@ -52,7 +52,7 @@ const Pages = () => {
         <MenuItem href="/examples/formik" level="2">
           Formik forms
         </MenuItem>
-        <MenuItem href="/examples/video" level="1">
+        <MenuItem href="/examples/video" level="2">
           Video
         </MenuItem>
       </MenuGroup>

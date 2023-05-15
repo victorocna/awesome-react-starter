@@ -13,3 +13,52 @@
 .first-letter::first-letter {
   text-transform: uppercase;
 }
+
+@-webkit-keyframes fadeinout {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeinout {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.icon-wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 60px; /* Adjust the width as needed */
+  height: 60px; /* Adjust the height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+}
+
+.icon-wrapper.show {
+  animation-name: fadeinout;
+}
+
+.icon-wrapper.hide {
+  animation-name: fadeinout;
+  animation-direction: reverse;
+}

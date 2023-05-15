@@ -1,10 +1,10 @@
 import { checkAuth, withAuth } from '../../auth';
-import { Layout, Videoplayer } from '../../components';
+import { Layout, Video } from '../../components';
 
 const Page = () => {
   return (
     <Layout>
-      <Videoplayer video="/videos/videoplayback.mp4" />
+      <Video video="/videos/videoplayback.mp4" />
     </Layout>
   );
 };

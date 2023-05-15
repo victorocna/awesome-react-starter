@@ -32,7 +32,7 @@ import Spinner from './Spinner';
 import Time from './Time';
 import Toaster from './Toaster';
 import Tooltip from './Tooltip';
-import Video from './Videoplayer';
+import Video from './Video';
 import withRouter from './withRouter';
 
 export {

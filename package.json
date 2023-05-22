@@ -4,9 +4,9 @@
   "description": "Starter for Next.js projects with authentication",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev --port ${PORT-8080}",
+    "dev": "node next/dev",
     "build": "next build",
-    "start": "next start --port ${PORT-8080}",
+    "start": "node next/start",
     "export": "next build && next export",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -34,7 +34,7 @@
     "js-file-download": "^0.4.12",
     "jsonwebtoken": "^9.0.0",
     "merge-class-names": "^1.4.2",
-    "next": "^13.1.0",
+    "next": "^13.4.3",
     "object-hash": "^3.0.0",
     "pino": "^8.4.0",
     "query-string": "^7.0.0",

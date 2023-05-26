@@ -14,6 +14,7 @@ const AppHead = () => {
       <meta name="description" content={description} />
       {stylesheets.map(showStylesheets)}
       {scripts.map(showScripts)}
+      <img src="/icons/loading.gif" alt="loading" className="hidden" />
       <Favicon />
       <OpenGraph />
     </>

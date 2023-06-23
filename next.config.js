@@ -5,6 +5,7 @@ module.exports = {
   env: {
     API_BASE_URL: process.env.API_BASE_URL,
     APP_BASE_URL: process.env.APP_BASE_URL,
+    LANGUAGE_KEY: process.env.LANGUAGE_KEY,
     RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY,
     SHOW_FORMIK_DEBUG: process.env.SHOW_FORMIK_DEBUG,
     SHOW_LOGS_EVERYWHERE: process.env.SHOW_LOGS_EVERYWHERE,

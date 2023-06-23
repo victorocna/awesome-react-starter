@@ -1,3 +1,11 @@
 {
-  "Hello world": "Salutare lume"
+  "Add the TranslateAll component to the page.": "Adaugă componenta TranslateAll în pagina.",
+  "Code": "Cod",
+  "Hello world": "Salutare lume",
+  "How to use": "Cum să folosești",
+  "Import the TranslateAll component from the components folder.": "Importă componenta TranslateAll din folderul components.",
+  "Select a language:": "Selectează o limbă:",
+  "This is a simple example of how to translate all text in the page.": "Acesta este un exemplu simplu de cum să traduci tot textul din pagina.",
+  "Translate all text in the page": "Tradu tot textul din pagina",
+  "Translate all": "Tradu tot"
 }

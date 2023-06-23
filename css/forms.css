@@ -24,12 +24,14 @@ select:read-only {
 button:focus {
   outline: 0 !important;
 }
+
 button:active,
 a[role='button']:active {
   outline: 0 !important;
   position: relative;
   top: 1px;
 }
+
 button:disabled {
   cursor: not-allowed;
   filter: opacity(0.75);
@@ -46,6 +48,7 @@ input[type='number'] {
   appearance: textfield;
   -moz-appearance: textfield;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -75,7 +78,7 @@ input::-webkit-inner-spin-button {
 }
 
 .select {
-  background-image: url("/icons/select.svg");
+  background-image: url('/icons/select.svg');
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: calc(100% - 8px) center;
@@ -84,9 +87,11 @@ input::-webkit-inner-spin-button {
 .dropdown {
   @apply border border-neutral-300 shadow-sm rounded-lg flex justify-between py-2 px-3 w-full bg-white !important;
 }
+
 .dropdown:focus-within {
   @apply ring-1 ring-blue-300 focus:outline-none !important;
 }
+
 .dropdown-list {
   @apply z-10 bg-white shadow-sm w-full max-h-80 outline-none absolute top-full border border-t-0 rounded-b-lg border-neutral-300 !important;
 }
@@ -104,5 +109,5 @@ input[type='password'] {
 }
 
 .plusminus {
-  @apply inline-flex bg-white text-center shadow-sm border border-neutral-300 divide-x divide-neutral-300 rounded-lg  !important;
+  @apply inline-flex bg-white text-center shadow-sm border border-neutral-300 divide-x divide-neutral-300 rounded-lg !important;
 }

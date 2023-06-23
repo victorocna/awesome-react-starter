@@ -1,5 +1,5 @@
 import { useSelect as useDownshift } from 'downshift';
-import { isEqual, isFunction } from 'lodash';
+import { isEqual, isFunction, pick } from 'lodash';
 import { MD5 } from 'object-hash';
 import { useEffect, useState } from 'react';
 import { useChildren } from '.';
@@ -34,7 +34,7 @@ const useSelect = ({ children, onSelect, defaultSelected }) => {
   useEffect(() => {
     // Change the input items whenever the items prop changes
     setInputItems(items);
-  }, [MD5(items)]);
+  }, [MD5(items.map((item) => pick(item, ['value'])))]);
   // Using `items` only as a dependency won't trigger the useEffect because it is a reference,
   // so we hash it instead.
 
@@ -55,7 +55,7 @@ const useSelect = ({ children, onSelect, defaultSelected }) => {
     if (defaultSelectedItem) {
       downshift?.selectItem(defaultSelectedItem);
     }
-  }, [MD5(items)]);
+  }, [MD5(items.map((item) => pick(item, ['value'])))]);
 
   return { inputItems, ...downshift };
 };

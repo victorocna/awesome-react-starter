@@ -15,6 +15,7 @@ import MenuButton from './MenuButton';
 import MenuGroup from './MenuGroup';
 import MenuItem from './MenuItem';
 import Modal from './Modal';
+import NoIndex from './NoIndex';
 import NoSsr from './NoSsr';
 import OpenGraph from './OpenGraph';
 import Overflow from './Overflow';
@@ -52,6 +53,7 @@ export {
   MenuGroup,
   MenuItem,
   Modal,
+  NoIndex,
   NoSsr,
   OpenGraph,
   Overflow,

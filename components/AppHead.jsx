@@ -1,4 +1,4 @@
-import { Favicon, OpenGraph } from '.';
+import { Favicon, OpenGraph, NoIndex } from '.';
 import { description, scripts, stylesheets } from '../site.config';
 
 const AppHead = () => {
@@ -17,6 +17,7 @@ const AppHead = () => {
       <img src="/icons/loading.gif" alt="loading" className="hidden" />
       <Favicon />
       <OpenGraph />
+      <NoIndex />
     </>
   );
 };

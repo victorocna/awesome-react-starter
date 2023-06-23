@@ -2,18 +2,20 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { local } from 'store2';
 import { NoSsr } from '..';
-import { languages } from '../../languages';
+import { sitename, languages } from '../../site.config';
 import DropdownWithImage from './DropdownWithImage';
 
 const DropdownLanguage = () => {
-  if (!local.get(process.env.LANGUAGE_KEY)) {
-    local.set(process.env.LANGUAGE_KEY, 'en');
+  // Set default language to English
+  if (!local.get(sitename)) {
+    local.set(sitename, 'en');
   }
-  const [language, setLanguage] = useState(local.get(process.env.LANGUAGE_KEY));
+
+  const [language, setLanguage] = useState(local.get(sitename));
   const router = useRouter();
 
   const handleSelect = (value) => {
-    local.set(process.env.LANGUAGE_KEY, value);
+    local.set(sitename, value);
     setLanguage(value);
     router.reload();
   };

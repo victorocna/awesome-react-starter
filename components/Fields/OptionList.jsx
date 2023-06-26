@@ -1,7 +1,7 @@
-import { classnames } from '../../lib';
 import { Option } from '.';
+import { classnames } from '../../lib';
 
-const OptionList = ({ children, isOpen, getMenuProps, highlightedIndex, getItemProps }) => {
+const OptionList = ({ children, getItemProps, getMenuProps, highlightedIndex, isOpen }) => {
   const showItems = (item, index) => {
     const props = getItemProps({ item, index });
     const isHover = highlightedIndex === index;

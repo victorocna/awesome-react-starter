@@ -8,6 +8,7 @@ import useDropdown from './use-dropdown';
 import useInfiniteQuery from './use-infinite-query';
 import useIntersectionObserver from './use-intersection-observer';
 import useMutation from './use-mutation';
+import useObserver from './use-observer';
 import useOnClickOutside from './use-onclick-outside';
 import useProfile from './use-profile';
 import useQuery from './use-query';
@@ -26,6 +27,7 @@ export {
   useInfiniteQuery,
   useIntersectionObserver,
   useMutation,
+  useObserver,
   useOnClickOutside,
   useProfile,
   useQuery,

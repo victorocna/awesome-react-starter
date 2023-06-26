@@ -33,6 +33,7 @@ import Spinner from './Spinner';
 import Time from './Time';
 import Toaster from './Toaster';
 import Tooltip from './Tooltip';
+import TranslateAll from './TranslateAll';
 import withRouter from './withRouter';
 
 export {
@@ -71,5 +72,6 @@ export {
   Time,
   Toaster,
   Tooltip,
+  TranslateAll,
   withRouter,
 };

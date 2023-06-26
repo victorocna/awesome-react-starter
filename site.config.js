@@ -12,4 +12,8 @@ module.exports = {
   scripts: [
     // eg: tracking scripts
   ],
+  languages: [
+    'en', // add any other languages here
+    'ro',
+  ],
 };

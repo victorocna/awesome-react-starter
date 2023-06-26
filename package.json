@@ -1,6 +1,6 @@
 {
   "name": "awesome-react-starter",
-  "version": "0.25.2",
+  "version": "1.0.0",
   "description": "Starter for Next.js projects with authentication",
   "main": "index.js",
   "scripts": {

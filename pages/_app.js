@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { NoSsr, Toaster, TranslateAll } from '../components';
+import { Toaster } from '../components';
 import '../css/index.css';
 import { sitename } from '../site.config';
 
@@ -16,9 +16,6 @@ const Root = (props) => {
       </Head>
       <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
-        <NoSsr>
-          <TranslateAll />
-        </NoSsr>
         <Toaster />
       </QueryClientProvider>
     </>

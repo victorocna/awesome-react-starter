@@ -1,4 +1,4 @@
-import { Menu, MenuButton, NoSsr, TranslateAll } from '../../components';
+import { Menu, MenuButton } from '../../components';
 import { DropdownLanguage } from '../../components/Fields';
 
 const Page = () => {
@@ -28,24 +28,8 @@ const Page = () => {
           </div>
         </div>
       </main>
-      <NoSsr>
-        <TranslateAll />
-      </NoSsr>
     </div>
   );
 };
-
-export async function getStaticProps() {
-  // hide page on production environments
-  if (process.env.NODE_ENV === 'production') {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: {},
-  };
-}
 
 export default Page;

@@ -20,8 +20,8 @@ const useObserver = (target, callback) => {
           observer.disconnect();
         }
       };
-    } catch {
-      // do nothing
+    } catch (error) {
+      console.error('MutationObserver error:', error);
     }
   }, [observer, target]);
 };

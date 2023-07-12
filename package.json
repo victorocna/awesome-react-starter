@@ -11,9 +11,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "next",
+    "react",
     "nextjs",
-    "authentication"
+    "tailwindcss",
+    "starter"
   ],
   "author": "victorocna <victor@chesscoders.com> (https://chesscoders.com)",
   "license": "MIT",

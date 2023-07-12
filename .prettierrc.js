@@ -4,4 +4,6 @@ module.exports = {
   semi: true,
   singleQuote: true,
   arrowParens: 'always',
+  importTypeOrder: ['NPMPackages', 'localImports'],
+  sortingMethod: 'alphabetical',
 };

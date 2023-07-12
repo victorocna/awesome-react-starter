@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { logout } from '../api';
+import { logout } from '../api/identity';
 import { useOnClickOutside, useDisclosure } from '../hooks';
 
 const ProfileMenu = () => {

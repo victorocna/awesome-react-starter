@@ -1,5 +1,5 @@
 import { axiosAuth } from '../lib';
 
-export const updatePassword = (data) => {
+export const changePassword = (data) => {
   return axiosAuth.post('/admin/change-password', data);
 };

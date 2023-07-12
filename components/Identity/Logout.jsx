@@ -1,5 +1,5 @@
 import { Button } from '..';
-import { logout } from '../../api';
+import { logout } from '../../api/identity';
 
 const Logout = () => {
   return (

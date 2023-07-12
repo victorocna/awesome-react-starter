@@ -1,6 +1,6 @@
 import { Formik, Form, Field } from 'formik';
 import { useRef } from 'react';
-import { login } from '../../api';
+import { login } from '../../api/identity';
 import { validationSchema, initialValues } from '../../models/login';
 import { Email, Password, Recaptcha } from '../Fields';
 import { Fieldset, Submit } from '../Formik';

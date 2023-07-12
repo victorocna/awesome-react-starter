@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 import { Loading } from '..';
-import { confirm } from '../../api';
+import { confirm } from '../../api/identity';
 
 const Confirm = ({ hash }) => {
   const { status } = useQuery(`confirm/${hash}`, () => confirm(hash));

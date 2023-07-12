@@ -5,7 +5,7 @@ const Page = () => {
   return (
     <Layout>
       <div className="prose max-w-full">
-        <h2 className="font-semibold mb-4">Hello world</h2>
+        <h2 className="mb-4 font-semibold">Hello world</h2>
         <p>This is a secured admin page. Modify it as you wish.</p>
       </div>
     </Layout>

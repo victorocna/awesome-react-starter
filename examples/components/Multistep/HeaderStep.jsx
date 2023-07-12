@@ -4,14 +4,14 @@ const HeaderStep = ({ isActive, children }) => (
   <>
     {isActive && (
       <div className="flex flex-col justify-between">
-        <h4 className="text-green-500 text-sm mb-2">{children}</h4>
-        <div className="bg-green-500 rounded-full h-2 w-full"></div>
+        <h4 className="mb-2 text-sm text-green-500">{children}</h4>
+        <div className="h-2 w-full rounded-full bg-green-500"></div>
       </div>
     )}
     {!isActive && (
       <div className="flex flex-col justify-between">
-        <h4 className="text-gray-500 text-sm mb-2">{children}</h4>
-        <div className="bg-gray-400 rounded-full h-2 w-full"></div>
+        <h4 className="mb-2 text-sm text-gray-500">{children}</h4>
+        <div className="h-2 w-full rounded-full bg-gray-400"></div>
       </div>
     )}
   </>

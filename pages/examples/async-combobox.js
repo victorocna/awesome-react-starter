@@ -21,7 +21,7 @@ const Page = () => {
         </p>
 
         <div className="mb-4">
-          <label htmlFor="#" className="cursor-pointer mb-0">
+          <label htmlFor="#" className="mb-0 cursor-pointer">
             Async crypto dropdown with placeholder
           </label>
           <div className="w-80">
@@ -32,7 +32,7 @@ const Page = () => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="#" className="cursor-pointer mb-0">
+          <label htmlFor="#" className="mb-0 cursor-pointer">
             Async crypto dropdown with default selection
           </label>
           <div className="w-80">

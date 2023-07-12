@@ -4,7 +4,7 @@ import { Bio } from '../Formik';
 const StepThree = ({ previous }) => {
   return (
     <div className="grid gap-4">
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid gap-4 md:grid-cols-2">
         <Bio />
       </div>
       <Button className="mr-4" onClick={previous}>

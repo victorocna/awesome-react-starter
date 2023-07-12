@@ -10,17 +10,17 @@ const Profile = () => {
   useOnClickOutside(ref, hide);
 
   return (
-    <div ref={ref} className="flex items-center gap-4 relative">
+    <div ref={ref} className="relative flex items-center gap-4">
       <div
-        className="hidden md:flex items-center space-x-2 cursor-pointer"
+        className="hidden cursor-pointer items-center space-x-2 md:flex"
         onClick={toggle}
         role="button"
       >
         <div className="flex items-center gap-2">
           {status === 'loading' && <ProfileLoading />}
           {status === 'success' && <ProfileSuccess {...me} />}
-          <div className="w-10 h-10 rounded-full flex justify-center items-center bg-secondary">
-            <i className="text-lg text-white fas fa-user"></i>
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
+            <i className="fas fa-user text-lg text-white"></i>
           </div>
         </div>
         {isOpen ? (
@@ -30,7 +30,7 @@ const Profile = () => {
         )}
       </div>
       {isOpen && (
-        <div className="absolute top-12 right-2 bg-white rounded-lg shadow-xl z-50">
+        <div className="absolute top-12 right-2 z-50 rounded-lg bg-white shadow-xl">
           <ProfileMenu />
         </div>
       )}

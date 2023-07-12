@@ -11,12 +11,12 @@ const Page = () => {
         </p>
         <section className="flex gap-2">
           <Overflow>
-            <div className="w-60 bg-purple-800 text-white px-2 rounded">
+            <div className="w-60 rounded bg-purple-800 px-2 text-white">
               A very very long text wrapped in the overflow element
             </div>
           </Overflow>
           <Overflow>
-            <div className="w-60 bg-yellow-200 text-black px-2 rounded">
+            <div className="w-60 rounded bg-yellow-200 px-2 text-black">
               Another overflowing element that should be truncated
             </div>
           </Overflow>

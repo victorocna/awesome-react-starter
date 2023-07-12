@@ -22,7 +22,7 @@ const DropdownLanguage = () => {
 
   const showLanguage = (lang) => (
     <option key={lang} value={lang}>
-      <div className="flex gap-2 items-center w-full">
+      <div className="flex w-full items-center gap-2">
         <img
           alt={lang}
           className="rounded-full"

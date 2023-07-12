@@ -4,9 +4,9 @@ const TodoListLoading = () => {
   const mock = [1, 2, 3]; // dummy data
   const showTodo = (mock) => {
     return (
-      <div key={`todo-list-loading-${mock}`} className="flex items-center gap-2 animate-pulse">
+      <div key={`todo-list-loading-${mock}`} className="flex animate-pulse items-center gap-2">
         <Checkbox />
-        <div className="h-4 my-1 bg-gray-300 rounded-lg w-1/2"></div>
+        <div className="my-1 h-4 w-1/2 rounded-lg bg-gray-300"></div>
       </div>
     );
   };

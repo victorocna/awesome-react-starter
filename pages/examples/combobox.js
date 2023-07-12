@@ -20,7 +20,7 @@ const Page = () => {
         </p>
 
         <div className="mb-4 w-80">
-          <label htmlFor="#" className="cursor-pointer mb-0">
+          <label htmlFor="#" className="mb-0 cursor-pointer">
             Simple combobox
           </label>
           <Combobox>
@@ -31,28 +31,28 @@ const Page = () => {
         </div>
 
         <div className="mb-4 w-80">
-          <label htmlFor="#" className="cursor-pointer mb-0">
+          <label htmlFor="#" className="mb-0 cursor-pointer">
             Combobox with countries
           </label>
           <Combobox>{countries.map(showCountries)}</Combobox>
         </div>
 
         <div className="mb-4 w-80">
-          <label htmlFor="#" className="cursor-pointer mb-0">
+          <label htmlFor="#" className="mb-0 cursor-pointer">
             Country combobox with placeholder
           </label>
           <Combobox placeholder="Select a country">{countries.map(showCountries)}</Combobox>
         </div>
 
         <div className="mb-4 w-80">
-          <label htmlFor="#" className="cursor-pointer mb-0">
+          <label htmlFor="#" className="mb-0 cursor-pointer">
             Country combobox with default selection
           </label>
           <Combobox defaultSelected="DEU">{countries.map(showCountries)}</Combobox>
         </div>
 
         <div className="mb-4 w-80">
-          <label htmlFor="#" className="cursor-pointer mb-0">
+          <label htmlFor="#" className="mb-0 cursor-pointer">
             Disabled combobox with default selection
           </label>
           <Combobox defaultSelected="DEU" disabled={true}>

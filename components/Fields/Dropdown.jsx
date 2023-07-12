@@ -11,13 +11,13 @@ const Dropdown = ({ children, defaultSelected, placeholder, disabled, onSelect, 
         className={classnames(
           'dropdown',
           downshift.isOpen && 'rounded-b-none',
-          disabled && 'bg-gray-200 pointer-events-none'
+          disabled && 'pointer-events-none bg-gray-200'
         )}
         {...downshift.getToggleButtonProps()}
       >
         <input
           value={downshift.selectedItem?.label || ''}
-          className="-my-2 outline-none w-full bg-transparent"
+          className="-my-2 w-full bg-transparent outline-none"
           readOnly={true}
           placeholder={placeholder}
           disabled={disabled}

@@ -25,7 +25,7 @@ const Combobox = ({
         {...downshift.getComboboxProps()}
       >
         <input
-          className="-my-2 outline-none w-full bg-transparent"
+          className="-my-2 w-full bg-transparent outline-none"
           {...downshift.getInputProps()}
           placeholder={placeholder}
           disabled={disabled}

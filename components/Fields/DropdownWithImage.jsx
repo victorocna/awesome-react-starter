@@ -17,9 +17,9 @@ const DropdownWithImage = ({
     <div className="relative">
       <div
         className={classnames(
-          'bg-lightblue dropdown flex focus-within:ring-0 input items-center justify-center p-0',
+          'bg-lightblue dropdown input flex items-center justify-center p-0 focus-within:ring-0',
           downshift.isOpen && 'rounded-b-none',
-          disabled && 'bg-gray-200 pointer-events-none'
+          disabled && 'pointer-events-none bg-gray-200'
         )}
         {...downshift.getToggleButtonProps()}
       >
@@ -34,7 +34,7 @@ const DropdownWithImage = ({
             />
           </span>
           <input
-            className="bg-transparent border-0 cursor-pointer dropdown focus-within:ring-0 font-bold outline-none p-0 uppercase w-full"
+            className="dropdown w-full cursor-pointer border-0 bg-transparent p-0 font-bold uppercase outline-none focus-within:ring-0"
             disabled={disabled}
             placeholder={placeholder}
             readOnly={true}

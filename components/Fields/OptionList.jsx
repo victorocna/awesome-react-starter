@@ -16,7 +16,7 @@ const OptionList = ({ children, getItemProps, getMenuProps, highlightedIndex, is
   return (
     <ul
       className={classnames(
-        'outline-none my-0 p-0 overflow-y-auto',
+        'my-0 overflow-y-auto p-0 outline-none',
         isOpen && children.length && 'dropdown-list'
       )}
       {...getMenuProps()}

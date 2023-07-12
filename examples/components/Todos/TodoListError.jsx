@@ -6,7 +6,7 @@ const TodoListError = () => {
     return (
       <div key={`todo-list-error-${mock}`} className="flex items-center gap-2">
         <Checkbox />
-        <div className="h-4 my-1 bg-gray-300 rounded-lg w-1/2"></div>
+        <div className="my-1 h-4 w-1/2 rounded-lg bg-gray-300"></div>
       </div>
     );
   };
@@ -14,7 +14,7 @@ const TodoListError = () => {
   return (
     <div className="grid gap-2">
       {mock.map(showTodo)}
-      <h2 className="text-red-600 font-semibold">Error! Cannot read todo list</h2>
+      <h2 className="font-semibold text-red-600">Error! Cannot read todo list</h2>
     </div>
   );
 };

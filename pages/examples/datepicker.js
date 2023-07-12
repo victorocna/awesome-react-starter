@@ -15,7 +15,7 @@ const Page = () => {
         <p className="mb-1">Classic datepicker with default value</p>
         <div className="flex gap-2">
           <div className="w-80">
-            <label htmlFor="checkIn" className="cursor-pointer mb-0">
+            <label htmlFor="checkIn" className="mb-0 cursor-pointer">
               Check-in date
             </label>
             <Datepicker id="checkIn" value={checkIn} onChange={setCheckIn} />
@@ -27,7 +27,7 @@ const Page = () => {
         <p className="mb-1">Read only datepicker without default value and minimum date</p>
         <div className="flex gap-2">
           <div className="w-80">
-            <label htmlFor="checkOut" className="cursor-pointer mb-0">
+            <label htmlFor="checkOut" className="mb-0 cursor-pointer">
               Check-out date
             </label>
             <Datepicker

@@ -3,16 +3,16 @@ import { DropdownLanguage } from '../../components/Fields';
 
 const Page = () => {
   return (
-    <div className="font-body text-sm min-h-screen bg-gray-100 flex">
+    <div className="flex min-h-screen bg-gray-100 font-body text-sm">
       <Menu />
-      <main className="max w-full lg:col-span-5 p-4 lg:p-8 xl:px-12">
-        <div className="flex items-center mb-12">
+      <main className="max w-full p-4 lg:col-span-5 lg:p-8 xl:px-12">
+        <div className="mb-12 flex items-center">
           <div className="flex flex-1">
             <h3 className="text-2xl font-semibold">Translate all</h3>
           </div>
           <MenuButton />
         </div>
-        <div className="bg-white rounded shadow p-4 grid gap-4">
+        <div className="grid gap-4 rounded bg-white p-4 shadow">
           <div className="flex flex-col">
             <h4 className="mb-2 text-lg">Translate all text in the page</h4>
             <p className="mb-2">Hello world</p>
@@ -33,7 +33,7 @@ const Page = () => {
               prevent the component from rendering on the server.
             </p>
           </div>
-          <div className="flex flex-col gap-4 text-primary mt-2">
+          <div className="mt-2 flex flex-col gap-4 text-primary">
             <p className="font-medium">Select a language:</p>
             <DropdownLanguage />
           </div>

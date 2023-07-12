@@ -9,15 +9,4 @@ import SomeFilter from './SomeFilter';
 import Terms from './Terms';
 import UsState from './UsState';
 
-export {
-  Age,
-  Bio,
-  Country,
-  County,
-  DateOfBirth,
-  Email,
-  Fullname,
-  SomeFilter,
-  Terms,
-  UsState,
-};
+export { Age, Bio, Country, County, DateOfBirth, Email, Fullname, SomeFilter, Terms, UsState };

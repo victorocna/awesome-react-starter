@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
 import Router from 'next/router';
-import store from './store';
+import React, { useEffect } from 'react';
 import ensureUser from './ensure-user';
+import store from './store';
 
 /**
  * @see https://github.com/zeit/next.js/issues/153#issuecomment-257924301

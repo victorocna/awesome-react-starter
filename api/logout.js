@@ -1,5 +1,5 @@
-import { axios, router, toaster } from '../lib';
 import { store } from '../auth';
+import { axios, router, toaster } from '../lib';
 
 const logout = async () => {
   try {

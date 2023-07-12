@@ -1,5 +1,5 @@
-import { Debug } from '.';
 import { Form as FormikForm } from 'formik';
+import { Debug } from '.';
 
 const Form = ({ children, debug, ...props }) => {
   const isProduction = process.env.NODE_ENV === 'production';

@@ -1,5 +1,5 @@
-import { useQuery } from '../../hooks';
 import { QuoteSuccess, QuoteError, QuoteLoading } from '.';
+import { useQuery } from '../../hooks';
 
 const Quote = () => {
   const { data, status } = useQuery(`https://api.quotable.io/random`);

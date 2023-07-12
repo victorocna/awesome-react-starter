@@ -6,12 +6,4 @@ import refreshUser from './refresh-user';
 import store from './store';
 import withAuth from './withAuth';
 
-export {
-  checkAuth,
-  ensureUser,
-  isLoggedIn,
-  isTokenExpired,
-  refreshUser,
-  store,
-  withAuth,
-};
+export { checkAuth, ensureUser, isLoggedIn, isTokenExpired, refreshUser, store, withAuth };

@@ -1,6 +1,6 @@
-import { Layout } from '../../examples/components';
 import { Dropdown } from '../../components/Fields';
 import { countries } from '../../data';
+import { Layout } from '../../examples/components';
 
 const Page = () => {
   const showCountries = (country) => (

@@ -2,7 +2,15 @@ import { OptionList } from '.';
 import { useDropdown } from '../../hooks';
 import { classnames } from '../../lib';
 
-const DropdownWithImage = ({ children, defaultSelected, disabled, icon, onSelect, placeholder, value }) => {
+const DropdownWithImage = ({
+  children,
+  defaultSelected,
+  disabled,
+  icon,
+  onSelect,
+  placeholder,
+  value,
+}) => {
   const { inputItems, ...downshift } = useDropdown({ children, onSelect, defaultSelected });
 
   return (

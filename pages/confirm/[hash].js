@@ -1,5 +1,5 @@
-import { Confirm } from '../../components/Identity';
 import { Link, withRouter } from '../../components';
+import { Confirm } from '../../components/Identity';
 
 const ConfirmPage = ({ hash }) => (
   <main className="cover min-h-screen px-4 py-8 flex flex-col items-center justify-center">

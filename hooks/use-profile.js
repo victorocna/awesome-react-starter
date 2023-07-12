@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { whoami } from '../functions';
 import { store } from '../auth';
+import { whoami } from '../functions';
 
 const useProfile = () => {
   const [status, setStatus] = useState('idle');

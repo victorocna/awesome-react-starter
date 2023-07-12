@@ -1,5 +1,5 @@
-import useArray from './use-array'
-import useChildren from './use-children'
+import useArray from './use-array';
+import useChildren from './use-children';
 import useCollapsible from './use-collapsible';
 import useCombobox from './use-combobox';
 import useDebounce from './use-debounce';

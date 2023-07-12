@@ -1,5 +1,5 @@
-import { Layout } from '../../examples/components';
 import { Button, Modal } from '../../components';
+import { Layout } from '../../examples/components';
 import { useDisclosure } from '../../hooks';
 
 const Page = () => {

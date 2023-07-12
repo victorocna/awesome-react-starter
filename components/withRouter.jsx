@@ -1,5 +1,5 @@
-import { isEmpty } from 'lodash';
 import { useRouter } from 'next/router';
+import { isEmpty } from 'lodash';
 
 /**
  * @see https://reactjs.org/docs/higher-order-components.html

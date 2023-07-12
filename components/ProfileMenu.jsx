@@ -1,6 +1,6 @@
 import { useRef } from 'react';
-import { useOnClickOutside, useDisclosure } from '../hooks';
 import { logout } from '../api';
+import { useOnClickOutside, useDisclosure } from '../hooks';
 
 const ProfileMenu = () => {
   const { hide } = useDisclosure();

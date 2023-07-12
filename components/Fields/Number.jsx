@@ -7,13 +7,7 @@ const Number = (props) => {
   };
 
   return (
-    <input
-      type="number"
-      inputMode="number"
-      className="input"
-      onWheel={handleWheel}
-      {...props}
-    />
+    <input type="number" inputMode="number" className="input" onWheel={handleWheel} {...props} />
   );
 };
 

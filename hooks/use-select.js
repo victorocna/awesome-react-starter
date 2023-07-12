@@ -1,8 +1,8 @@
 import { useSelect as useDownshift } from 'downshift';
-import { isEqual, isFunction, pick } from 'lodash';
 import { MD5 } from 'object-hash';
 import { useEffect, useState } from 'react';
 import { useChildren } from '.';
+import { isEqual, isFunction, pick } from 'lodash';
 
 /**
  * Custom hook that enhances downshift useSelect

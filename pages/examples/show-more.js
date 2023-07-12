@@ -1,5 +1,5 @@
-import { Layout } from '../../examples/components';
 import { ShowMore } from '../../components';
+import { Layout } from '../../examples/components';
 
 const Page = () => {
   return (

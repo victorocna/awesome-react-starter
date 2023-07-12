@@ -1,8 +1,8 @@
-import { useState } from 'react';
 import { Formik, Form } from 'formik';
-import { HeaderSteps, StepOne, StepTwo, StepThree } from '../Multistep';
-import { validationSchema, initialValues } from '../../models/multi-step';
+import { useState } from 'react';
 import { toaster } from '../../../lib';
+import { validationSchema, initialValues } from '../../models/multi-step';
+import { HeaderSteps, StepOne, StepTwo, StepThree } from '../Multistep';
 
 const MultistepForm = () => {
   const [step, setStep] = useState(0);

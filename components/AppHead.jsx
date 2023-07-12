@@ -1,5 +1,5 @@
-import { Favicon, OpenGraph, NoIndex } from '.';
-import { description, scripts, stylesheets } from '../site.config';
+import { Favicon, OpenGraph, NoIndex } from '@components';
+import { description, scripts, stylesheets } from '@site.config';
 
 const AppHead = () => {
   const showStylesheets = (href) => {

@@ -1,5 +1,5 @@
 import { useFormikContext } from 'formik';
-import { classnames } from '../../lib';
+import { classnames } from '@lib';
 import { get } from 'lodash';
 
 const Fieldset = ({ label, help, name, children }) => {

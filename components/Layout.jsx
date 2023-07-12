@@ -1,4 +1,4 @@
-import { Menu, MenuButton, Profile, ErrorBoundary } from '.';
+import { Menu, MenuButton, Profile, ErrorBoundary } from '@components';
 
 const Layout = ({ title, children }) => {
   return (

@@ -1,5 +1,5 @@
 import { Modal } from 'react-bootstrap';
-import { Button } from '.';
+import { Button } from '@components';
 
 const AreYouSure = ({ isOpen, hide, iAmSure, children }) => {
   return (

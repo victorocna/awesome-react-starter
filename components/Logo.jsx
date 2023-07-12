@@ -1,5 +1,5 @@
-import { Link } from '.';
-import { sitename } from '../site.config';
+import { Link } from '@components';
+import { sitename } from '@site.config';
 
 const Logo = () => {
   return (

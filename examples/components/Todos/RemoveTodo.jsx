@@ -1,4 +1,4 @@
-import { useMutation } from '../../../hooks';
+import { useMutation } from '@hooks';
 import { deleteTodo } from '../../api/todo';
 
 const RemoveTodo = ({ id }) => {

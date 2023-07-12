@@ -1,5 +1,5 @@
-import { Button } from '../../components';
-import { Layout } from '../../examples/components';
+import { Button } from '@components';
+import { Layout } from '@examples/components';
 
 const Page = () => {
   return (

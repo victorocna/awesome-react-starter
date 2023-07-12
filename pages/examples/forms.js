@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Spinner } from '../../components';
+import { Button, Spinner } from '@components';
 import {
   Checkbox,
   Combobox,
@@ -13,8 +13,8 @@ import {
   RadioGroup,
   Select,
   Textarea,
-} from '../../components/Fields';
-import { Layout } from '../../examples/components';
+} from '@components/Fields';
+import { Layout } from '@examples/components';
 
 const Page = () => {
   const [isLoading, setLoading] = useState(false);

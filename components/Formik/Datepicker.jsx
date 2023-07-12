@@ -1,6 +1,6 @@
 import { format as dateFormat } from 'date-fns';
 import { useFormikContext } from 'formik';
-import { Datepicker as DatePicker } from '../Fields';
+import { Datepicker as DatePicker } from '@components/Fields';
 
 const Datepicker = ({ name, onChange, ...props }) => {
   const { setFieldValue } = useFormikContext();

@@ -1,5 +1,5 @@
-import { Menu, MenuButton, NoSsr, TranslateAll } from '../../components';
-import { DropdownLanguage } from '../../components/Fields';
+import { Menu, MenuButton, NoSsr, TranslateAll } from '@components';
+import { DropdownLanguage } from '@components/Fields';
 
 const Page = () => {
   return (

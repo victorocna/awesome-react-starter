@@ -1,4 +1,4 @@
-import { Select } from '../../../components/Fields';
+import { Select } from '@components/Fields';
 
 const SortTodos = ({ setOptions }) => {
   const rearrange = (event) => {

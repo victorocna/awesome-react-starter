@@ -1,4 +1,4 @@
-import { axios, toaster } from '../lib';
+import { axios, toaster } from '@lib';
 
 const forgot = async (ref, data) => {
   try {

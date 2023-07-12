@@ -1,6 +1,6 @@
-import { AsyncDropdown } from '../../components/Fields';
-import { Layout } from '../../examples/components';
-import { useQuery } from '../../hooks';
+import { AsyncDropdown } from '@components/Fields';
+import { Layout } from '@examples/components';
+import { useQuery } from '@hooks';
 
 const Page = () => {
   const { data, status } = useQuery('https://api.coincap.io/v2/assets?limit=5');

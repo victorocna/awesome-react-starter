@@ -1,6 +1,6 @@
-import { OptionList } from '.';
-import { useDropdown } from '../../hooks';
-import { classnames } from '../../lib';
+import OptionList from './OptionList';
+import { useDropdown } from '@hooks';
+import { classnames } from '@lib';
 
 const Dropdown = ({ children, defaultSelected, placeholder, disabled, onSelect, icon }) => {
   const { inputItems, ...downshift } = useDropdown({ children, onSelect, defaultSelected });

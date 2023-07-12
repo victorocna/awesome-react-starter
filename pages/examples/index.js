@@ -1,5 +1,5 @@
-import { Menu, Tooltip, MenuButton } from '../../components';
-import { SayGoodbye, SayHello } from '../../examples/components';
+import { Menu, Tooltip, MenuButton } from '@components';
+import { SayGoodbye, SayHello } from '@examples/components';
 
 const Page = () => {
   return (

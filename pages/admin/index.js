@@ -1,5 +1,5 @@
-import { checkAuth, withAuth } from '../../auth';
-import { Layout } from '../../components';
+import { checkAuth, withAuth } from '@auth';
+import { Layout } from '@components';
 
 const Page = () => {
   return (

@@ -1,7 +1,7 @@
 import { Field, Formik } from 'formik';
-import { Fieldset, Form, PlusMinus, Submit, Datepicker } from '../../components/Formik';
-import { Layout } from '../../examples/components';
-import { initialValues, validationSchema } from '../../examples/models/form';
+import { Fieldset, Form, PlusMinus, Submit, Datepicker } from '@components/Formik';
+import { Layout } from '@examples/components';
+import { initialValues, validationSchema } from '@examples/models/form';
 
 const Page = () => {
   const handleSubmit = (values, actions) => {

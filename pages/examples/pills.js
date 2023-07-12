@@ -1,5 +1,5 @@
-import { Pill } from '../../components';
-import { Layout } from '../../examples/components';
+import { Pill } from '@components';
+import { Layout } from '@examples/components';
 
 const Page = () => {
   return (

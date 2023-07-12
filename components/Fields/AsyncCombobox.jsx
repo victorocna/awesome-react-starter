@@ -1,5 +1,5 @@
+import { NoSsr } from '@components';
 import { useState } from 'react';
-import { NoSsr } from '..';
 import Combobox from './Combobox';
 
 const AsyncCombobox = ({ children, status, ...props }) => {

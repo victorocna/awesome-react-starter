@@ -1,4 +1,4 @@
-import { MenuGroup, MenuItem } from '.';
+import { MenuGroup, MenuItem } from '@components';
 
 const Pages = () => {
   return (

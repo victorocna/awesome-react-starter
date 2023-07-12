@@ -1,6 +1,6 @@
-import { withAuth } from '../../auth';
-import { Menu, MenuButton, Tooltip } from '../../components';
-import { TodoBox } from '../../examples/components/Todos';
+import { withAuth } from '@auth';
+import { Menu, MenuButton, Tooltip } from '@components';
+import { TodoBox } from '@examples/components/Todos';
 
 const Page = () => (
   <div className="flex min-h-screen bg-gray-100 font-body text-sm">

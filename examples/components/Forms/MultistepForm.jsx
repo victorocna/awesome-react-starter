@@ -1,6 +1,6 @@
 import { Formik, Form } from 'formik';
 import { useState } from 'react';
-import { toaster } from '../../../lib';
+import { toaster } from '@lib';
 import { validationSchema, initialValues } from '../../models/multi-step';
 import { HeaderSteps, StepOne, StepTwo, StepThree } from '../Multistep';
 

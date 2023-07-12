@@ -1,4 +1,4 @@
-import { RadioContext } from '.';
+import RadioContext from './RadioContext';
 
 const RadioGroup = ({ name, selectedValue, onChange, className, children }) => {
   return (

@@ -1,4 +1,4 @@
-import { axios, toaster } from '../lib';
+import { axios, toaster } from '@lib';
 
 const reset = async (ref, hash, data) => {
   try {

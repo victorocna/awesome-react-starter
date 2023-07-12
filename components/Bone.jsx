@@ -1,4 +1,4 @@
-import { classnames } from '../lib';
+import { classnames } from '@lib';
 
 const Bone = ({ type, extraClass }) => {
   return (

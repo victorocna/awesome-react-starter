@@ -1,5 +1,5 @@
-import { Link } from '../components';
-import { LoginForm } from '../components/Forms';
+import { Link } from '@components';
+import { LoginForm } from '@components/Forms';
 
 const LoginPage = () => (
   <main className="cover flex min-h-screen flex-col items-center justify-center px-4 py-8">

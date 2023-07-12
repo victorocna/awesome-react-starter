@@ -1,6 +1,6 @@
-import { OptionList } from '.';
-import { useCombobox } from '../../hooks';
-import { classnames } from '../../lib';
+import { useCombobox } from '@hooks';
+import { classnames } from '@lib';
+import OptionList from './OptionList';
 
 const Combobox = ({
   children,

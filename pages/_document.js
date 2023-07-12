@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-import { AppHead } from '../components';
+import { AppHead } from '@components';
 
 const Document = () => {
   return (

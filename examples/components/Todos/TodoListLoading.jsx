@@ -1,4 +1,4 @@
-import { Checkbox } from '../../../components/Fields';
+import { Checkbox } from '@components/Fields';
 
 const TodoListLoading = () => {
   const mock = [1, 2, 3]; // dummy data

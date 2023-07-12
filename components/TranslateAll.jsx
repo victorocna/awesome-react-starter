@@ -1,5 +1,5 @@
-import { translate } from '../functions';
-import { useObserver } from '../hooks';
+import { translate } from '@functions';
+import { useObserver } from '@hooks';
 
 const TranslateAll = () => {
   // Translate all text of the given node recursively

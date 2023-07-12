@@ -1,4 +1,4 @@
-import { NoSsr } from '..';
+import { NoSsr } from '@components';
 import Dropdown from './Dropdown';
 
 const AsyncDropdown = ({ children, status, ...props }) => {

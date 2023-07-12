@@ -1,5 +1,5 @@
 import { useFormikContext } from 'formik';
-import { Button } from '..';
+import { Button } from '@components';
 
 const Submit = ({ children, isLoading, ...props }) => {
   const { isValid, validateOnMount } = useFormikContext();

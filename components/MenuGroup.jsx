@@ -1,5 +1,5 @@
-import { useCollapsible } from '../hooks';
-import { classnames } from '../lib';
+import { useCollapsible } from '@hooks';
+import { classnames } from '@lib';
 
 const MenuGroup = ({ name, label, children, level = 1 }) => {
   const { isOpen, toggle } = useCollapsible(`menu.${name}`);

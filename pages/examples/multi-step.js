@@ -1,6 +1,6 @@
-import { withAuth } from '../../auth';
-import { Layout } from '../../components';
-import { MultistepForm } from '../../examples/components/Forms';
+import { withAuth } from '@auth';
+import { Layout } from '@components';
+import { MultistepForm } from '@examples/components/Forms';
 
 const Page = () => {
   return (

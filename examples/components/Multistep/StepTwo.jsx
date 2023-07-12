@@ -1,4 +1,4 @@
-import { Button } from '../../../components';
+import { Button } from '@components';
 import { Age, Country, DateOfBirth, UsState } from '../Formik';
 
 const StepTwo = ({ previous }) => {

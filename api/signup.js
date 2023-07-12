@@ -1,4 +1,4 @@
-import { axios, router, toaster } from '../lib';
+import { axios, router, toaster } from '@lib';
 
 const signup = async (ref, data) => {
   try {

@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import { useState } from 'react';
-import { Datepicker } from '../../components/Fields';
-import { Layout } from '../../examples/components';
+import { Datepicker } from '@components/Fields';
+import { Layout } from '@examples/components';
 
 const Page = () => {
   const today = format(new Date(), 'yyyy-MM-dd');

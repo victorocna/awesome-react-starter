@@ -1,4 +1,4 @@
-import { Button } from '..';
+import { Button } from '@components';
 
 const Submit = ({ children, isLoading, ...props }) => {
   return (

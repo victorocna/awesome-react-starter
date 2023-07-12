@@ -1,4 +1,4 @@
-import { classnames } from '../lib';
+import { classnames } from '@lib';
 
 const Pill = ({ children, className }) => {
   return (

@@ -1,4 +1,4 @@
-import { sitename, title, description, image, baseurl } from '../site.config';
+import { sitename, title, description, image, baseurl } from '@site.config';
 
 const OpenGraph = () => {
   return (

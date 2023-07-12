@@ -1,5 +1,5 @@
-import { Link, withRouter } from '../../components';
-import { ResetForm } from '../../components/Forms';
+import { Link, withRouter } from '@components';
+import { ResetForm } from '@components/Forms';
 
 const ResetPage = ({ hash }) => (
   <main className="cover flex min-h-screen flex-col items-center justify-center px-4 py-8">

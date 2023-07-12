@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { Toaster } from '../components';
+import { Toaster } from '@components';
+import { sitename } from '@site.config';
 import '../css/index.css';
-import { sitename } from '../site.config';
 
 const Root = (props) => {
   const { Component, pageProps } = props;

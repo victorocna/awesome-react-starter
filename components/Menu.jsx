@@ -1,4 +1,4 @@
-import { Logo, Pages } from '.';
+import { Logo, Pages } from '@components';
 
 const Menu = () => {
   return (

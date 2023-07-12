@@ -1,6 +1,6 @@
 import { Field } from 'formik';
-import { Email } from '../../../components/Fields';
-import { Fieldset } from '../../../components/Formik';
+import { Email } from '@components/Fields';
+import { Fieldset } from '@components/Formik';
 
 const FormikEmail = () => {
   return (

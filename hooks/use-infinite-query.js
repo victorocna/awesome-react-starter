@@ -1,6 +1,6 @@
 import { stringifyUrl } from 'query-string';
 import { useInfiniteQuery as infiniteQuery } from 'react-query';
-import { axiosAuth } from '../lib';
+import { axiosAuth } from '@lib';
 
 /**
  * Custom hook for useInfiniteQuery

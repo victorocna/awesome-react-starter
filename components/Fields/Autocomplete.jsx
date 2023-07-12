@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useQuery } from '../../hooks';
-import AsyncCombobox from './AsyncCombobox';
+import { useQuery } from '@hooks';
 import { debounce, has } from 'lodash';
+import { useEffect, useState } from 'react';
+import AsyncCombobox from './AsyncCombobox';
 
 const Autocomplete = ({ url, optionValue, optionLabel, searchKey, ...props }) => {
   // Set input value with debounce

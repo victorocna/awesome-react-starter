@@ -1,4 +1,4 @@
-import { axiosAuth } from '../../lib';
+import { axiosAuth } from '@lib';
 
 export const createTodo = (data) => {
   return axiosAuth.post('todos', data);

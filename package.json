@@ -1,7 +1,7 @@
 {
   "name": "awesome-react-starter",
   "version": "1.1.1",
-  "description": "Starter for Next.js projects with authentication",
+  "description": "The awesome React and Next.js starter project from Chess Coders",
   "main": "index.js",
   "scripts": {
     "dev": "node next/dev",

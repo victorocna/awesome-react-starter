@@ -1,6 +1,6 @@
-import { useRouter } from 'next/router';
 import { Link } from '@components';
 import { classnames } from '@lib';
+import { useRouter } from 'next/router';
 
 const MenuItem = ({ href, children, level = 1 }) => {
   const router = useRouter();

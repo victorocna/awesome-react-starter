@@ -1,6 +1,6 @@
-import OptionList from './OptionList';
 import { useDropdown } from '@hooks';
 import { classnames } from '@lib';
+import OptionList from './OptionList';
 
 const DropdownWithImage = ({
   children,

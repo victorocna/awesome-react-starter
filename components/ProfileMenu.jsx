@@ -1,6 +1,6 @@
-import { useRef } from 'react';
 import { logout } from '@api/identity';
-import { useOnClickOutside, useDisclosure } from '@hooks';
+import { useDisclosure, useOnClickOutside } from '@hooks';
+import { useRef } from 'react';
 
 const ProfileMenu = () => {
   const { hide } = useDisclosure();

@@ -15,10 +15,10 @@
 }
 
 .flex-item {
-  @apply mr-2 my-1;
+  @apply my-1 mr-2;
 }
 .flex-item-lg {
-  @apply mr-2 my-2;
+  @apply my-2 mr-2;
 }
 .max-h-50 {
   max-height: 50vh;

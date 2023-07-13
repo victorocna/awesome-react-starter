@@ -1,6 +1,6 @@
+import { sitename } from '@site.config';
 import { local } from 'store2';
 import * as languages from '../languages';
-import { sitename } from '@site.config';
 
 const translate = (text) => {
   const language = local.get(sitename) || 'en';

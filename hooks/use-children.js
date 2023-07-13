@@ -1,5 +1,5 @@
-import { Children, isValidElement } from 'react';
 import { flatten, isArray } from 'lodash';
+import { Children, isValidElement } from 'react';
 
 const useChildren = (children) => {
   const childrenArray = isArray(children) ? children : [children];

@@ -1,4 +1,4 @@
-import { Favicon, OpenGraph, NoIndex } from '@components';
+import { Favicon, NoIndex, OpenGraph } from '@components';
 import { description, scripts, stylesheets } from '@site.config';
 
 const AppHead = () => {

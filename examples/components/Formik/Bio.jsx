@@ -1,6 +1,6 @@
-import { Field } from 'formik';
 import { Textarea } from '@components/Fields';
 import { Fieldset } from '@components/Formik';
+import { Field } from 'formik';
 
 const Bio = () => {
   return (

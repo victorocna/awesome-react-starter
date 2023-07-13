@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Button, Spinner } from '@components';
 import {
   Checkbox,
@@ -15,6 +14,7 @@ import {
   Textarea,
 } from '@components/Fields';
 import { Layout } from '@examples/components';
+import { useState } from 'react';
 
 const Page = () => {
   const [isLoading, setLoading] = useState(false);

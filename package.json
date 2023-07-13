@@ -52,13 +52,12 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.25.0",
     "eslint-plugin-react": "^7.23.2",
     "pino-pretty": "^4.7.1",
     "postcss": "^8.4.21",
-    "prettier": "^2.8.8",
-    "prettier-plugin-sort-imports": "^1.7.2",
     "prettier-plugin-tailwindcss": "^0.4.0"
   }
 }

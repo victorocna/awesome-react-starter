@@ -1,6 +1,6 @@
-import { Field } from 'formik';
 import { Input } from '@components/Fields';
 import { Fieldset } from '@components/Formik';
+import { Field } from 'formik';
 
 const Fullname = () => {
   return (

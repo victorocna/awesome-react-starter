@@ -1,6 +1,6 @@
-import { useRef } from 'react';
 import { Button } from '@components';
 import { useIntersectionObserver } from '@hooks';
+import { useRef } from 'react';
 
 const LoadMoreOnScroll = ({ fetchNextPage, hasNextPage, isFetchingNextPage }) => {
   const ref = useRef(null);

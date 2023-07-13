@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import { QueryClient, QueryClientProvider } from 'react-query';
 import { Toaster } from '@components';
 import { sitename } from '@site.config';
+import Head from 'next/head';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import '../css/index.css';
 
 const Root = (props) => {

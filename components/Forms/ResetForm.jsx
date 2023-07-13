@@ -1,9 +1,9 @@
-import { Formik, Form, Field } from 'formik';
-import { useRef } from 'react';
 import { reset } from '@api/identity';
-import { validationSchema, initialValues } from '@models/reset';
 import { Password, Recaptcha } from '@components/Fields';
 import { Fieldset, Submit } from '@components/Formik';
+import { initialValues, validationSchema } from '@models/reset';
+import { Field, Form, Formik } from 'formik';
+import { useRef } from 'react';
 
 const ResetForm = ({ hash }) => {
   const ref = useRef(null);

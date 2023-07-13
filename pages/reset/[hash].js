@@ -14,6 +14,6 @@ const Page = ({ hash }) => {
       </div>
     </main>
   );
-}
+};
 
 export default withRouter(Page);

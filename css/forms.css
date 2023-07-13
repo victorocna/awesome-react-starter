@@ -66,15 +66,15 @@ input::-webkit-inner-spin-button {
 }
 
 .input {
-  @apply py-2 px-3 border border-neutral-300 shadow-sm rounded-lg outline-none focus:ring-1 focus:ring-blue-300 !important;
+  @apply rounded-lg border border-neutral-300 py-2 px-3 shadow-sm outline-none focus:ring-1 focus:ring-blue-300 !important;
 }
 
 .textarea {
-  @apply py-2 px-3 border border-neutral-300 shadow-sm rounded-lg outline-none focus:ring-1 focus:ring-blue-300 !important;
+  @apply rounded-lg border border-neutral-300 py-2 px-3 shadow-sm outline-none focus:ring-1 focus:ring-blue-300 !important;
 }
 
 .select {
-  @apply appearance-none py-2 px-3 border border-neutral-300 shadow-sm rounded-lg outline-none focus:ring-1 focus:ring-blue-300 !important;
+  @apply appearance-none rounded-lg border border-neutral-300 py-2 px-3 shadow-sm outline-none focus:ring-1 focus:ring-blue-300 !important;
 }
 
 .select {
@@ -85,7 +85,7 @@ input::-webkit-inner-spin-button {
 }
 
 .dropdown {
-  @apply border border-neutral-300 shadow-sm rounded-lg flex justify-between py-2 px-3 w-full bg-white !important;
+  @apply flex w-full justify-between rounded-lg border border-neutral-300 bg-white py-2 px-3 shadow-sm !important;
 }
 
 .dropdown:focus-within {
@@ -93,7 +93,7 @@ input::-webkit-inner-spin-button {
 }
 
 .dropdown-list {
-  @apply z-10 bg-white shadow-sm w-full max-h-80 outline-none absolute top-full border border-t-0 rounded-b-lg border-neutral-300 !important;
+  @apply absolute top-full z-10 max-h-80 w-full rounded-b-lg border border-t-0 border-neutral-300 bg-white shadow-sm outline-none !important;
 }
 
 input[type='password'] {
@@ -101,13 +101,13 @@ input[type='password'] {
 }
 
 .checkbox {
-  @apply w-5 h-5 cursor-pointer accent-primary !important;
+  @apply h-5 w-5 cursor-pointer accent-primary !important;
 }
 
 .radio {
-  @apply w-5 h-5 p-2 cursor-pointer accent-primary !important;
+  @apply h-5 w-5 cursor-pointer p-2 accent-primary !important;
 }
 
 .plusminus {
-  @apply inline-flex bg-white text-center shadow-sm border border-neutral-300 divide-x divide-neutral-300 rounded-lg !important;
+  @apply inline-flex divide-x divide-neutral-300 rounded-lg border border-neutral-300 bg-white text-center shadow-sm !important;
 }

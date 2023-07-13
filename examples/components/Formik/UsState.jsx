@@ -1,7 +1,7 @@
-import { Field, useFormikContext } from 'formik';
-import { useState, useEffect } from 'react';
 import { Select } from '@components/Fields';
 import { Fieldset } from '@components/Formik';
+import { Field, useFormikContext } from 'formik';
+import { useEffect, useState } from 'react';
 import { states } from '../../../data';
 
 const UsState = () => {

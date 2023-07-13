@@ -1,6 +1,6 @@
-import { Field } from 'formik';
 import { Dropdown } from '@components/Fields';
 import { Fieldset } from '@components/Formik';
+import { Field } from 'formik';
 
 const SomeFilter = () => {
   return (

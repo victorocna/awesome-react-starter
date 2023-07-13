@@ -1,5 +1,5 @@
-import { Button } from '@components';
 import { logout } from '@api/identity';
+import { Button } from '@components';
 
 const Logout = () => {
   return (

@@ -1,9 +1,9 @@
-import { Formik, Form, Field } from 'formik';
-import { useRef } from 'react';
 import { signup } from '@api/identity';
-import { validationSchema, initialValues } from '@models/signup';
 import { Email, Input, Password, Recaptcha } from '@components/Fields';
 import { Fieldset, Submit } from '@components/Formik';
+import { initialValues, validationSchema } from '@models/signup';
+import { Field, Form, Formik } from 'formik';
+import { useRef } from 'react';
 
 const SignupForm = () => {
   const ref = useRef(null);

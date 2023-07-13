@@ -1,5 +1,5 @@
 .button {
-  @apply relative rounded inline-block cursor-pointer;
+  @apply relative inline-block cursor-pointer rounded;
 }
 
 .button:hover {
@@ -28,7 +28,7 @@ button:disabled {
 }
 
 .button.mini {
-  @apply border py-1 px-3 text-sm bg-white;
+  @apply border bg-white py-1 px-3 text-sm;
 }
 
 .button.full.primary {
@@ -59,7 +59,7 @@ button:disabled {
 }
 
 #language-dd {
-  @apply px-2 py-1 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary cursor-pointer;
+  @apply cursor-pointer rounded-md border border-gray-300 bg-white px-2 py-1 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
   position: relative !important;
 }
 

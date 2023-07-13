@@ -1,8 +1,8 @@
+import { NoSsr } from '@components';
+import { languages, sitename } from '@site.config';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { local } from 'store2';
-import { NoSsr } from '@components';
-import { languages, sitename } from '@site.config';
 import DropdownWithImage from './DropdownWithImage';
 
 const DropdownLanguage = () => {

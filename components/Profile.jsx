@@ -1,6 +1,6 @@
+import { ProfileLoading, ProfileMenu, ProfileSuccess } from '@components';
+import { useDisclosure, useOnClickOutside, useProfile } from '@hooks';
 import { useRef } from 'react';
-import { ProfileSuccess, ProfileLoading, ProfileMenu } from '@components';
-import { useOnClickOutside, useDisclosure, useProfile } from '@hooks';
 
 const Profile = () => {
   const { status, me } = useProfile();

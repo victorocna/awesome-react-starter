@@ -1,9 +1,9 @@
-import { Formik } from 'formik';
 import { changePassword } from '@api/admin';
 import { Form, Submit } from '@components/Formik';
 import { ChangePasswordForm } from '@components/Forms';
 import { useMutation } from '@hooks';
 import { initialValues, validationSchema } from '@models/change-password';
+import { Formik } from 'formik';
 
 const MyProfileChangePassword = () => {
   const mutation = useMutation(changePassword, {

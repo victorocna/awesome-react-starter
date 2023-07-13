@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { classnames } from '@lib';
+import { useState } from 'react';
 
 const ShowMore = ({ children, label = 'Show more', visible = false }) => {
   const [show, setShow] = useState(visible);

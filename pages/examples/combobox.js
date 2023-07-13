@@ -1,6 +1,6 @@
 import { Combobox } from '@components/Fields';
-import { countries } from '../../data';
 import { Layout } from '@examples/components';
+import { countries } from '../../data';
 
 const Page = () => {
   const showCountries = (country) => (

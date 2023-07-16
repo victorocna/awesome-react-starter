@@ -1,18 +1,22 @@
 module.exports = {
   // Prettier default config
-  arrowParens: 'always',
+  trailingComma: 'es5',
+  tabWidth: 2,
   semi: true,
   singleQuote: true,
-  tabWidth: 2,
-  trailingComma: 'es5',
+  arrowParens: 'always',
 
   // Prettier sort imports and tailwind css
   plugins: [
     '@trivago/prettier-plugin-sort-imports',
     'prettier-plugin-tailwindcss', // order really matters
   ],
-  pluginSearchDirs: false,
-  importOrder: ['^@(.*)/(.*)$', '^[./]'], // similar to Alt+Shift+O in VS Code
+  // similar to Alt+Shift+O in VS Code
+  importOrder: [
+    '^@(.*)$', // @hooks, @components
+    '<THIRD_PARTY_MODULES>', // react, lodash
+    '^[./]', // everything else
+  ],
   importOrderSortSpecifiers: true,
   tailwindFunctions: ['classnames'],
 };

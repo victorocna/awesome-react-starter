@@ -6,7 +6,7 @@ const AsyncDropdown = ({ children, status, ...props }) => {
     <>
       {status === 'loading' && <img src="/icons/loading.gif" className="m-0 h-6 w-6" />}
       {status === 'error' && <i className="fas fa-exclamation-triangle text-red-600"></i>}
-      {status === 'success' && <i className="fas fa-chevron-down" />}
+      {status === 'success' && <i className="fas fa-chevron-down"></i>}
     </>
   );
 

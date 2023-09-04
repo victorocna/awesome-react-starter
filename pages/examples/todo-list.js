@@ -1,18 +1,10 @@
 import { withAuth } from '@auth';
-import { Menu, MenuButton, Tooltip } from '@components';
+import { Layout } from '@components';
 import { TodoBox } from '@examples/components/Todos';
 
-const Page = () => (
-  <div className="flex min-h-screen bg-gray-100 font-body text-sm">
-    <Menu />
-    <main className="max w-full p-4 lg:col-span-5 lg:p-8 xl:px-12">
-      <div className="mb-12 flex items-center">
-        <div className="flex flex-1">
-          <h3 className="text-2xl font-semibold">Todo list</h3>
-          <Tooltip placement="bottom">Manage your todo list with this simple interface</Tooltip>
-        </div>
-        <MenuButton />
-      </div>
+const Page = () => {
+  return (
+    <Layout title="To Do List">
       <div className="grid gap-4 md:grid-cols-2">
         <TodoBox />
         <section>
@@ -29,9 +21,9 @@ const Page = () => (
           </div>
         </section>
       </div>
-    </main>
-  </div>
-);
+    </Layout>
+  );
+};
 
 export async function getStaticProps() {
   // hide page on production environments

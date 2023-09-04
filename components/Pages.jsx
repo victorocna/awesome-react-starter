@@ -6,8 +6,8 @@ const Pages = () => {
       <MenuItem href="/admin" level="1">
         Dashboard
       </MenuItem>
-      <MenuItem href="/examples/todos" level="1">
-        My todos
+      <MenuItem href="/examples/todo-list" level="1">
+        To Do List
       </MenuItem>
       <MenuItem href="/examples/todo-table" level="1">
         To Do Table

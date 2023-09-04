@@ -3,7 +3,7 @@ import { Layout } from '@components';
 
 const Page = () => {
   return (
-    <Layout>
+    <Layout title="Dashboard">
       <div className="prose max-w-full">
         <h2 className="mb-4 font-semibold">Hello world</h2>
         <p>This is a secured admin page. Modify it as you wish.</p>

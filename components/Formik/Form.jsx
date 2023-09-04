@@ -1,7 +1,7 @@
+import { AutoSubmit, Debug } from '@components/Formik';
 import { Form as FormikForm } from 'formik';
-import Debug from './Debug';
 
-const Form = ({ children, debug, ...props }) => {
+const Form = ({ children, autoSubmit, debug, ...props }) => {
   const isProduction = process.env.NODE_ENV === 'production';
   const showDebug = debug || process.env.SHOW_FORMIK_DEBUG === 'yes';
 
@@ -9,6 +9,7 @@ const Form = ({ children, debug, ...props }) => {
     <FormikForm {...props}>
       {children}
       {showDebug && !isProduction && <Debug />}
+      {autoSubmit && <AutoSubmit />}
     </FormikForm>
   );
 };

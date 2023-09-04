@@ -4,8 +4,7 @@ import { todoColumns } from '@examples/data';
 import { useInfiniteQuery } from '@hooks';
 
 const TodoTable = ({ options }) => {
-  // Query the API for data with a long loading state for demonstration purposes
-  const { data, status, ...props } = useInfiniteQuery('admin/todos?test=loading', options);
+  const { data, status, ...props } = useInfiniteQuery('admin/todos', options);
 
   return (
     <>

@@ -25,11 +25,17 @@ const Pages = () => {
         <MenuItem href="/examples/datepicker" level="2">
           Datepicker
         </MenuItem>
+        <MenuItem href="/examples/date-of-birth" level="2">
+          Date of birth
+        </MenuItem>
         <MenuItem href="/examples/dropdown" level="2">
           Dropdown
         </MenuItem>
         <MenuItem href="/examples/async-dropdown" level="2">
           Async Dropdown
+        </MenuItem>
+        <MenuItem href="/examples/async-multiselect" level="2">
+          Async MultiSelect
         </MenuItem>
         <MenuItem href="/examples/combobox" level="2">
           Combobox

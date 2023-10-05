@@ -3,6 +3,7 @@ import AsyncDropdown from './AsyncDropdown';
 import Autocomplete from './Autocomplete';
 import Checkbox from './Checkbox';
 import Combobox from './Combobox';
+import DateOfBirth from './DateOfBirth';
 import Datepicker from './Datepicker';
 import Dropdown from './Dropdown';
 import DropdownLanguage from './DropdownLanguage';
@@ -10,6 +11,7 @@ import Email from './Email';
 import Field from './Field';
 import Fieldset from './Fieldset';
 import Input from './Input';
+import MultiSelectAsync from './MultiSelectAsync';
 import Number from './Number';
 import Option from './Option';
 import OptionList from './OptionList';
@@ -31,6 +33,7 @@ export {
   Autocomplete,
   Checkbox,
   Combobox,
+  DateOfBirth,
   Datepicker,
   Dropdown,
   DropdownLanguage,
@@ -38,6 +41,7 @@ export {
   Field,
   Fieldset,
   Input,
+  MultiSelectAsync,
   Number,
   Option,
   OptionList,

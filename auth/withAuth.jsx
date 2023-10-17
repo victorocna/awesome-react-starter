@@ -19,8 +19,8 @@ const withAuth = (WrappedComponent) => {
   const Wrapper = (props) => {
     useEffect(() => {
       const handleFocus = async () => {
-        const token = await ensureUser();
-        store.dispatch({ type: 'SET', jwt: token });
+        const refresh = await ensureUser();
+        store.dispatch({ type: 'SET', jwt: refresh });
       };
 
       verifyUser();

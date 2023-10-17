@@ -1,5 +1,5 @@
 import Router from 'next/router';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import ensureUser from './ensure-user';
 import store from './store';
 
@@ -18,7 +18,18 @@ const withAuth = (WrappedComponent) => {
 
   const Wrapper = (props) => {
     useEffect(() => {
+      const handleFocus = async () => {
+        const token = await ensureUser();
+        store.dispatch({ type: 'SET', jwt: token });
+      };
+
       verifyUser();
+
+      window.addEventListener('focus', handleFocus);
+
+      return () => {
+        window.removeEventListener('focus', handleFocus);
+      };
     }, []);
 
     return <WrappedComponent withAuth {...props} />;

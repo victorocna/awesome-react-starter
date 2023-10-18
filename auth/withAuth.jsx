@@ -25,8 +25,8 @@ const withAuth = (WrappedComponent) => {
 
       verifyUser();
 
+      // Refresh JWT token when window is focused
       window.addEventListener('focus', handleFocus);
-
       return () => {
         window.removeEventListener('focus', handleFocus);
       };

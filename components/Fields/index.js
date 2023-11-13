@@ -26,6 +26,7 @@ import Search from './Search';
 import Select from './Select';
 import Submit from './Submit';
 import Textarea from './Textarea';
+import TimePicker from './TimePicker';
 
 export {
   AsyncCombobox,
@@ -56,4 +57,5 @@ export {
   Select,
   Submit,
   Textarea,
+  TimePicker,
 };

@@ -4,7 +4,7 @@
   "description": "Starter for Next.js projects with authentication",
   "main": "index.js",
   "scripts": {
-    "dev": "next -p 8080",
+    "dev": "next -p 8090",
     "build": "next build",
     "start": "next start -p 8080",
     "export": "next build && next export",

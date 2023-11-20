@@ -15,6 +15,9 @@ const Pages = () => {
       <MenuItem href="/examples/multi-step" level="1">
         Multistep form
       </MenuItem>
+      <MenuItem href="/examples/complex-form" level="1">
+        Complex form
+      </MenuItem>
       <MenuGroup label="Components">
         <MenuItem href="/examples/buttons" level="2">
           Buttons

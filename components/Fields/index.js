@@ -17,6 +17,7 @@ import Recaptcha from './Recaptcha';
 import Select from './Select';
 import Submit from './Submit';
 import Textarea from './Textarea';
+import UploadInput from './UploadInput';
 
 export {
   Checkbox,
@@ -33,6 +34,7 @@ export {
   PlusMinus,
   Radio,
   RadioContext,
+  UploadInput,
   RadioGroup,
   Recaptcha,
   Select,

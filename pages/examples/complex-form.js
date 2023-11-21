@@ -31,8 +31,13 @@ const Page = () => {
   });
 
   const handleSubmit = async (values, actions) => {
-    await uploadDocumentMutation.mutateAsync(file);
-    await uploadDocumentMutation.mutateAsync(video);
+    if (file) {
+      await uploadDocumentMutation.mutateAsync(file);
+    }
+
+    if (video) {
+      await uploadDocumentMutation.mutateAsync(video);
+    }
     //eslint-disable-next-line
     console.log(values);
     actions.setSubmitting(false);

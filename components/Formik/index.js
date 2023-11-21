@@ -3,6 +3,7 @@ import DateOfBirth from './DateOfBirth';
 import Datepicker from './Datepicker';
 import Debug from './Debug';
 import Fieldset from './Fieldset';
+import FileUpload from './FileUpload';
 import Form from './Form';
 import MultiSelectAsync from './MultiSelectAsync';
 import PlusMinus from './PlusMinus';
@@ -15,6 +16,7 @@ export {
   Datepicker,
   Debug,
   Fieldset,
+  FileUpload,
   Form,
   MultiSelectAsync,
   PlusMinus,

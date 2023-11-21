@@ -3,6 +3,7 @@ import coffee from './coffee';
 import extractId from './extract-id';
 import falsy from './falsy';
 import isValidDate from './is-valid-date';
+import removeDiacritics from './remove-diacritics';
 import safeNumber from './safe-number';
 import safeString from './safe-string';
 import time from './time';
@@ -16,6 +17,7 @@ export {
   extractId,
   falsy,
   isValidDate,
+  removeDiacritics,
   safeNumber,
   safeString,
   time,

@@ -26,6 +26,7 @@ import Search from './Search';
 import Select from './Select';
 import Submit from './Submit';
 import Textarea from './Textarea';
+import TimePicker from './TimePicker';
 import UploadInput from './UploadInput';
 
 export {
@@ -51,11 +52,12 @@ export {
   PlusMinus,
   Radio,
   RadioContext,
-  UploadInput,
   RadioGroup,
   Recaptcha,
   Search,
   Select,
   Submit,
   Textarea,
+  TimePicker,
+  UploadInput,
 };

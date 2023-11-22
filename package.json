@@ -27,7 +27,7 @@
     "@tailwindcss/typography": "^0.5.4",
     "accounting": "^0.4.1",
     "autoprefixer": "10.4.5",
-    "axios": "^0.27.2",
+    "axios": "^1.6.2",
     "date-fns": "^2.21.1",
     "dotenv": "^16.0.1",
     "downshift": "^6.1.12",

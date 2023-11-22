@@ -28,6 +28,9 @@ const Pages = () => {
         <MenuItem href="/examples/datepicker" level="2">
           Datepicker
         </MenuItem>
+        <MenuItem href="/examples/timepicker" level="2">
+          Timepicker
+        </MenuItem>
         <MenuItem href="/examples/date-of-birth" level="2">
           Date of birth
         </MenuItem>

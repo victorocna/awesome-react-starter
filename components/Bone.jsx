@@ -1,4 +1,4 @@
-import { classnames } from '../lib';
+import { classnames } from '@lib';
 
 const Bone = ({ type, extraClass }) => {
   return (
@@ -6,7 +6,7 @@ const Bone = ({ type, extraClass }) => {
       className={classnames(
         'h-4 rounded-full',
         extraClass || 'w-12',
-        type === 'loading' && 'bg-gray-300 animate-pulse',
+        type === 'loading' && 'animate-pulse bg-gray-300',
         type === 'error' && 'bg-red-300'
       )}
     ></dd>

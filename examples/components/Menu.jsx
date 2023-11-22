@@ -1,4 +1,4 @@
-import { Link } from '../../components';
+import { Link } from '@components';
 
 const Menu = () => (
   <div className="flex items-center">

@@ -1,6 +1,6 @@
+import { Button } from '@components';
+import { useIntersectionObserver } from '@hooks';
 import { useRef } from 'react';
-import { useIntersectionObserver } from '../../hooks';
-import { Button } from '..';
 
 const LoadMoreOnScroll = ({ fetchNextPage, hasNextPage, isFetchingNextPage }) => {
   const ref = useRef(null);
@@ -22,7 +22,7 @@ const LoadMoreOnScroll = ({ fetchNextPage, hasNextPage, isFetchingNextPage }) =>
   return (
     <div className="py-4" ref={ref}>
       <Button
-        className="button full secondary text-xs hover-transition"
+        className="button full secondary hover-transition text-xs"
         onClick={handleClick}
         disabled={isFetchingNextPage}
       >

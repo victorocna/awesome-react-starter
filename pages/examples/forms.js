@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Button, Spinner } from '../../components';
+import { Button, Spinner } from '@components';
 import {
   Checkbox,
   Combobox,
@@ -13,8 +12,9 @@ import {
   RadioGroup,
   Select,
   Textarea,
-} from '../../components/Fields';
-import { Layout } from '../../examples/components';
+} from '@components/Fields';
+import { Layout } from '@examples/components';
+import { useState } from 'react';
 
 const Page = () => {
   const [isLoading, setLoading] = useState(false);
@@ -29,18 +29,18 @@ const Page = () => {
           more, nothing less.
         </p>
         <div className="mb-4">
-          <label htmlFor="easy" className="cursor-pointer mb-0">
+          <label htmlFor="easy" className="mb-0 cursor-pointer">
             Basic input field
           </label>
           <Input id="easy" placeholder="Well, this was easy" />
         </div>
         <div className="mb-4">
-          <label htmlFor="bio" className="cursor-pointer mb-0">
+          <label htmlFor="bio" className="mb-0 cursor-pointer">
             Basic textarea field
           </label>
           <Textarea id="bio" placeholder="Bio, notes, you name it!" />
         </div>
-        <div className="bg-primary text-white -mx-4 px-6 py-2 mb-4">
+        <div className="-mx-4 mb-4 bg-primary px-6 py-2 text-white">
           Now what we covered the simple form elements, let's get into the more complex ones.
           <br />
           Also notice how this element defies its parent padding class. Inspect it to see how its
@@ -50,7 +50,7 @@ const Page = () => {
           <h3>Fieldsets</h3>
           <p>Next we have some inputs with label and help sections called fieldsets.</p>
         </div>
-        <div className="mb-4 grid md:grid-cols-3 gap-4">
+        <div className="mb-4 grid gap-4 md:grid-cols-3">
           <Fieldset label="Your email" help="Give your users a helping hand">
             <Input type="email" inputMode="email" />
           </Fieldset>
@@ -61,12 +61,12 @@ const Page = () => {
             <Input type="number" inputMode="number" />
           </Fieldset>
         </div>
-        <div className="bg-secondary text-white -mx-4 px-6 py-2 mb-4">
+        <div className="-mx-4 mb-4 bg-secondary px-6 py-2 text-white">
           Enough inputs for now. We still have many other form elements.
           <br />
           Next stop, select boxes with some funky variations
         </div>
-        <div className="mb-4 grid md:grid-cols-3 gap-4">
+        <div className="mb-4 grid gap-4 md:grid-cols-3">
           <div>
             <label className="mb-0">Basic select</label>
             <Select placeholder="Where are you from?">
@@ -107,14 +107,14 @@ const Page = () => {
             Pick or write any date and display them in any format. That's how versatile a datepicker
             should be.
           </p>
-          <div className="mb-4 grid md:grid-cols-3 gap-4">
+          <div className="mb-4 grid gap-4 md:grid-cols-3">
             <Datepicker name="datepicker" placeholder="yyyy-MM-dd" />
           </div>
         </div>
         <div className="mb-4">
           <h3>Passwords</h3>
           <p>Password inputs should always have the option of toggling the password visibility.</p>
-          <div className="mb-4 grid md:grid-cols-3 gap-4">
+          <div className="mb-4 grid gap-4 md:grid-cols-3">
             <Password autoComplete="one-time-code" placeholder="**********" />
           </div>
         </div>

@@ -142,3 +142,41 @@ const DueDate = () => {
   return <Datepicker key={key} name="dueDate" format="yyyy-MM-dd" />;
 };
 ```
+
+### useSwipeable
+
+This hook is used to swipe the menu on mobile devices. It can be used only for the menu that is opened by a checkbox.
+
+BEFORE using this hook, you need to add the following CSS (usually in menu.css file):
+
+```css
+.is-dragged {
+  transition: none !important;
+}
+```
+
+Example usage:
+
+```jsx
+<input
+  type="checkbox"
+  id="menu"
+  className="hidden"
+  aria-label="Menu open/close"
+  ref={inputRef}
+/>
+<label
+  htmlFor="menu"
+  aria-label="Menu open/close"
+  className="backdrop fixed inset-0 h-screen w-screen bg-gray-300 lg:hidden"
+/>
+<nav
+  className="nav-menu overflow-y-auto bg-primary text-white"
+  ref={navRef}
+  onTouchStart={(e) => onTouchStart(e.touches[0].clientX)}
+  onTouchMove={(e) => onTouchMove(e.touches[0].clientX)}
+  onTouchEnd={onTouchEnd}
+>
+...
+</nav>
+```

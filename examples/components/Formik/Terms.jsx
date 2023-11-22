@@ -1,11 +1,11 @@
+import { Checkbox } from '@components/Fields';
+import { Fieldset } from '@components/Formik';
 import { Field } from 'formik';
-import { Checkbox } from '../../../components/Fields';
-import { Fieldset } from '../../../components/Formik';
 
 const Terms = () => {
   const TermsCheckbox = (props) => (
     <Checkbox {...props}>
-      <div className="text-gray-800 font-semibold">
+      <div className="font-semibold text-gray-800">
         I accept the terms and conditions of this application
       </div>
     </Checkbox>

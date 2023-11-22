@@ -1,12 +1,12 @@
+import { changePassword } from '@api/admin';
+import { Form, Submit } from '@components/Formik';
+import { ChangePasswordForm } from '@components/Forms';
+import { useMutation } from '@hooks';
+import { initialValues, validationSchema } from '@models/change-password';
 import { Formik } from 'formik';
-import { updatePassword } from '../../api/update-password';
-import { Form, Submit } from '../../components/Formik';
-import { ChangePasswordForm } from '../../components/Forms';
-import { useMutation } from '../../hooks';
-import { initialValues, validationSchema } from '../../models/change-password';
 
 const MyProfileChangePassword = () => {
-  const mutation = useMutation(updatePassword, {
+  const mutation = useMutation(changePassword, {
     successMessage: 'Success! The password has changed!',
     redirectOnSuccess: '/admin',
   });

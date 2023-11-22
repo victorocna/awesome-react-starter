@@ -4,7 +4,7 @@ const Debug = () => {
   const formikContext = useFormikContext();
 
   return (
-    <pre className="text-sm font-mono p-4 lg:px-8 bg-red-200">
+    <pre className="bg-red-200 p-4 font-mono text-sm lg:px-8">
       {JSON.stringify(formikContext, null, 2)}
     </pre>
   );

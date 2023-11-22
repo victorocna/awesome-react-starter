@@ -1,11 +1,11 @@
-import { classnames } from '../lib';
+import { classnames } from '@lib';
 
 const Pill = ({ children, className }) => {
   return (
     <div className="inline-block">
       <div
         className={classnames(
-          'text-xs rounded-full px-3 py-1 font-medium leading-tight',
+          'rounded-full px-3 py-1 text-xs font-medium leading-tight',
           className || 'bg-gray-200'
         )}
       >

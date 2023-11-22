@@ -1,16 +1,18 @@
-import { Link } from '../components';
-import { ForgotForm } from '../components/Forms';
+import { Link } from '@components';
+import { ForgotForm } from '@components/Forms';
 
-const ForgotPage = () => (
-  <main className="cover min-h-screen px-4 py-8 flex flex-col items-center justify-center">
-    <div className="flex flex-col w-full px-4 lg:px-12 py-8 my-8 bg-white rounded-lg max-w-xl">
-      <Link href="/login">
-        <a className="hover:underline">← back to login</a>
-      </Link>
-      <h2 className="font-bold text-2xl mb-4">Password recovery</h2>
-      <ForgotForm />
-    </div>
-  </main>
-);
+const Page = () => {
+  return (
+    <main className="cover flex min-h-screen flex-col items-center justify-center px-4 py-8">
+      <div className="my-8 flex w-full max-w-xl flex-col rounded-lg bg-white px-4 py-8 lg:px-12">
+        <Link href="/login">
+          <a className="hover:underline">← back to login</a>
+        </Link>
+        <h2 className="mb-4 text-2xl font-bold">Password recovery</h2>
+        <ForgotForm />
+      </div>
+    </main>
+  );
+};
 
-export default ForgotPage;
+export default Page;

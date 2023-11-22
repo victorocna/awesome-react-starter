@@ -1,5 +1,5 @@
+import { Button } from '@components';
 import { County, Email, Fullname, SomeFilter, Terms } from '../Formik';
-import { Button } from '../../../components';
 
 const StepOne = () => {
   return (

@@ -1,3 +1,7 @@
+.is-dragged {
+  transition: none !important;
+}
+
 .nav-menu {
   width: 16rem;
   min-width: 16rem;

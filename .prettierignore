@@ -1,0 +1,8 @@
+# Ignore artifacts:
+build
+coverage
+.next
+
+# Next.js build output
+.next
+out/

@@ -1,14 +1,14 @@
+import { Button } from '@components';
 import { Age, Country, DateOfBirth, UsState } from '../Formik';
-import { Button } from '../../../components';
 
 const StepTwo = ({ previous }) => {
   return (
     <div className="grid gap-4">
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid gap-4 md:grid-cols-2">
         <Country />
         <UsState />
       </div>
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid gap-4 md:grid-cols-2">
         <DateOfBirth />
         <Age />
       </div>

@@ -1,4 +1,4 @@
-import { time } from '../functions';
+import { time } from '@functions';
 
 const Time = ({ value }) => {
   return time(value);

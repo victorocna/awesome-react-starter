@@ -1,4 +1,4 @@
-import { Dropdown } from '../../../components/Fields';
+import { Dropdown } from '@components/Fields';
 
 const FilterTodos = ({ setOptions }) => {
   const handleChange = (value) => {

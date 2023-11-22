@@ -1,18 +1,22 @@
 .button {
-  @apply relative rounded inline-block cursor-pointer;
+  @apply relative inline-block cursor-pointer rounded;
 }
+
 .button:hover {
   text-decoration: none;
 }
+
 button:focus {
   outline: 0 !important;
 }
+
 button:active,
 a[role='button']:active {
   outline: 0 !important;
   position: relative;
   top: 1px;
 }
+
 button:disabled {
   cursor: not-allowed;
   filter: opacity(0.75);
@@ -24,15 +28,17 @@ button:disabled {
 }
 
 .button.mini {
-  @apply border py-1 px-3 text-sm bg-white;
+  @apply border bg-white py-1 px-3 text-sm;
 }
 
 .button.full.primary {
   @apply border-primary bg-primary text-white;
 }
+
 .button.full.secondary {
   @apply border border-secondary bg-secondary text-white;
 }
+
 .button.full.accent {
   @apply border-accent bg-accent text-white;
 }
@@ -41,11 +47,36 @@ button:disabled {
 .button.mini.primary {
   @apply border-primary text-primary;
 }
+
 .button.square.secondary,
 .button.mini.secondary {
   @apply border-secondary text-secondary;
 }
+
 .button.square.accent,
 .button.mini.accent {
   @apply border-accent text-accent;
+}
+
+#language-dd {
+  @apply cursor-pointer rounded-md border border-gray-300 bg-white px-2 py-1 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  position: relative !important;
+}
+
+#language-dd .input {
+  background-color: transparent !important;
+  border: none !important;
+  color: #50618d !important;
+  width: 80px !important;
+}
+
+#language-dd .dropdown-list {
+  border-radius: 5px !important;
+  border: 1px solid #50618d !important;
+  box-shadow: 1px 1px 2px rgba(141, 141, 141, 0.575) !important;
+  color: rgb(36, 32, 32) !important;
+  margin-top: 10px !important;
+  width: 96px !important;
+  left: 0 !important;
+  top: 36 !important;
 }

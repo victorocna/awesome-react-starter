@@ -1,6 +1,6 @@
+import { store } from '@auth';
+import { axios, router, toaster } from '@lib';
 import { decode } from 'jsonwebtoken';
-import { axios, router, toaster } from '../lib';
-import { store } from '../auth';
 
 const login = async (ref, data) => {
   try {

@@ -1,9 +1,9 @@
+import { forgot } from '@api/identity';
+import { Email, Recaptcha } from '@components/Fields';
+import { Fieldset, Submit } from '@components/Formik';
+import { initialValues, validationSchema } from '@models/forgot';
+import { Field, Form, Formik } from 'formik';
 import { useRef } from 'react';
-import { Formik, Form, Field } from 'formik';
-import { Email, Recaptcha } from '../Fields';
-import { Fieldset, Submit } from '../Formik';
-import { validationSchema, initialValues } from '../../models/forgot';
-import { forgot } from '../../api';
 
 const ForgotForm = () => {
   const ref = useRef(null);

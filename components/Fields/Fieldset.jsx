@@ -4,7 +4,7 @@ const Fieldset = ({ label, name, help, children }) => {
   return (
     <fieldset>
       {label && (
-        <label htmlFor={name} className="form-label w-full cursor-pointer mb-0">
+        <label htmlFor={name} className="form-label mb-0 w-full cursor-pointer">
           {label}
         </label>
       )}

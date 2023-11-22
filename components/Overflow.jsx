@@ -1,5 +1,5 @@
-import { cloneElement, Children } from 'react';
-import { classnames } from '../lib';
+import { classnames } from '@lib';
+import { Children, cloneElement } from 'react';
 
 const Overflow = ({ children }) => {
   const append = (child) => {

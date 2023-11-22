@@ -1,5 +1,6 @@
 import AddTodoForm from './AddTodoForm';
-import MultistepForm from './MultistepForm';
 import ComplexForm from './ComplexForm';
+import MultistepForm from './MultistepForm';
+import TodoFilter from './TodoFilter';
 
-export { AddTodoForm, MultistepForm, ComplexForm };
+export { AddTodoForm, ComplexForm, MultistepForm, TodoFilter };

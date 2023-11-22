@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
 import Router from 'next/router';
-import store from './store';
+import { useEffect } from 'react';
 import ensureUser from './ensure-user';
+import store from './store';
 
 /**
  * @see https://github.com/zeit/next.js/issues/153#issuecomment-257924301
@@ -18,7 +18,18 @@ const withAuth = (WrappedComponent) => {
 
   const Wrapper = (props) => {
     useEffect(() => {
+      const handleFocus = async () => {
+        const refresh = await ensureUser();
+        store.dispatch({ type: 'SET', jwt: refresh });
+      };
+
       verifyUser();
+
+      // Refresh JWT token when window is focused
+      window.addEventListener('focus', handleFocus);
+      return () => {
+        window.removeEventListener('focus', handleFocus);
+      };
     }, []);
 
     return <WrappedComponent withAuth {...props} />;

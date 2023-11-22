@@ -1,5 +1,5 @@
+import { classnames } from '@lib';
 import { useFormikContext } from 'formik';
-import { classnames } from '../../lib';
 import { get } from 'lodash';
 
 const Fieldset = ({ label, help, name, children }) => {
@@ -9,12 +9,12 @@ const Fieldset = ({ label, help, name, children }) => {
   return (
     <fieldset className={classnames(hasError && 'has-error')}>
       {label && (
-        <label htmlFor={name} className="form-label w-full cursor-pointer mb-0">
+        <label htmlFor={name} className="form-label mb-0 w-full cursor-pointer">
           {label}
         </label>
       )}
       {children}
-      <div className="form-help text-sm text-secondary first-letter">
+      <div className="form-help first-letter text-sm text-secondary">
         {hasError ? get(errors, name) : help}
       </div>
     </fieldset>

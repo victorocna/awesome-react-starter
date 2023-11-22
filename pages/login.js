@@ -1,24 +1,26 @@
-import { Link } from '../components';
-import { LoginForm } from '../components/Forms';
+import { Link } from '@components';
+import { LoginForm } from '@components/Forms';
 
-const LoginPage = () => (
-  <main className="cover min-h-screen px-4 py-8 flex flex-col items-center justify-center">
-    <div className="flex flex-col w-full px-4 lg:px-12 py-8 my-8 bg-white rounded-lg max-w-xl">
-      <h2 className="font-bold text-2xl mb-4">Login</h2>
-      <LoginForm />
-      <div className="mt-2">
-        <Link href="/forgot" className="text-gray-600 hover:underline">
-          Forgot password?
-        </Link>
+const Page = () => {
+  return (
+    <main className="cover flex min-h-screen flex-col items-center justify-center px-4 py-8">
+      <div className="my-8 flex w-full max-w-xl flex-col rounded-lg bg-white px-4 py-8 lg:px-12">
+        <h2 className="mb-4 text-2xl font-bold">Login</h2>
+        <LoginForm />
+        <div className="mt-2">
+          <Link href="/forgot" className="text-gray-600 hover:underline">
+            Forgot password?
+          </Link>
+        </div>
+        <div className="mt-2">
+          <Link href="/signup" className="text-gray-600 hover:underline">
+            <span className="mr-1">No account yet?</span>
+            <span className="font-bold text-purple-800">Signup now</span>
+          </Link>
+        </div>
       </div>
-      <div className="mt-2">
-        <Link href="/signup" className="text-gray-600 hover:underline">
-          <span className="mr-1">No account yet?</span>
-          <span className="text-purple-800 font-bold">Signup now</span>
-        </Link>
-      </div>
-    </div>
-  </main>
-);
+    </main>
+  );
+};
 
-export default LoginPage;
+export default Page;

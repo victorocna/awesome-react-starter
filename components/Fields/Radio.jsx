@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { RadioContext } from '.';
+import RadioContext from './RadioContext';
 
 const Radio = ({ children, ...props }) => {
   const { name, selectedValue, onChange } = useContext(RadioContext);

@@ -8,7 +8,7 @@ const whoami = () => {
 
     return decoded;
   } catch (err) {
-    return undefined;
+    return {};
   }
 };
 

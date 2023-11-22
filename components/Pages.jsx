@@ -1,4 +1,4 @@
-import { MenuGroup, MenuItem } from '.';
+import { MenuGroup, MenuItem } from '@components';
 
 const Pages = () => {
   return (
@@ -6,8 +6,11 @@ const Pages = () => {
       <MenuItem href="/admin" level="1">
         Dashboard
       </MenuItem>
-      <MenuItem href="/examples/todos" level="1">
-        My todos
+      <MenuItem href="/examples/todo-list" level="1">
+        To Do List
+      </MenuItem>
+      <MenuItem href="/examples/todo-table" level="1">
+        To Do Table
       </MenuItem>
       <MenuItem href="/examples/profile" level="1">
         Profile
@@ -25,11 +28,26 @@ const Pages = () => {
         <MenuItem href="/examples/datepicker" level="2">
           Datepicker
         </MenuItem>
+        <MenuItem href="/examples/date-of-birth" level="2">
+          Date of birth
+        </MenuItem>
         <MenuItem href="/examples/dropdown" level="2">
           Dropdown
         </MenuItem>
+        <MenuItem href="/examples/async-dropdown" level="2">
+          Async Dropdown
+        </MenuItem>
+        <MenuItem href="/examples/async-multiselect" level="2">
+          Async MultiSelect
+        </MenuItem>
         <MenuItem href="/examples/combobox" level="2">
           Combobox
+        </MenuItem>
+        <MenuItem href="/examples/async-combobox" level="2">
+          Async Combobox
+        </MenuItem>
+        <MenuItem href="/examples/autocomplete" level="2">
+          Autocomplete
         </MenuItem>
         <MenuItem href="/examples/modals" level="2">
           Modals
@@ -48,6 +66,9 @@ const Pages = () => {
         </MenuItem>
         <MenuItem href="/examples/formik" level="2">
           Formik forms
+        </MenuItem>
+        <MenuItem href="/examples/translate-all" level="2">
+          Translate all
         </MenuItem>
       </MenuGroup>
       <MenuItem href="/login" level="1">

@@ -1,10 +1,10 @@
-import { Link } from '.';
-import { sitename } from '../site.config';
+import { Link } from '@components';
+import { sitename } from '@site.config';
 
 const Logo = () => {
   return (
     <Link href="/">
-      <div className="logo flex items-start mb-12 cursor-pointer">
+      <div className="logo mb-12 flex cursor-pointer items-start">
         <img src="/images/logo.png" alt={sitename} />
       </div>
     </Link>

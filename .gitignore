@@ -1,7 +1,6 @@
 # User specific
 NOTES.txt
-.env.production
-.idea
+.env.productio
 yarn.lock
 .DS_Store
 
@@ -103,4 +102,5 @@ build/
 .netlify
 
 # vscode
-.vscode
+.vscode/*
+!.vscode/settings.json

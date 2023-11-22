@@ -1,10 +1,10 @@
+import { isValidDate } from '@functions';
+import { useDisclosure } from '@hooks';
 import { format as dateFormat } from 'date-fns';
 import React, { useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import Calendar from 'react-calendar';
-import { Input } from '.';
-import { isValidDate } from '../../functions';
-import { useDisclosure } from '../../hooks';
+import Input from './Input';
 
 const Datepicker = ({ value: initialValue, onChange, calendarProps = {}, ...props }) => {
   const [value, setValue] = useState(initialValue);
@@ -34,7 +34,7 @@ const Datepicker = ({ value: initialValue, onChange, calendarProps = {}, ...prop
     <div className="relative">
       <Input {...props} value={value} onChange={handleChange} />
       <div
-        className="absolute h-full top-0 right-0 p-2.5 outline-none cursor-pointer grid place-items-center"
+        className="absolute top-0 right-0 grid h-full cursor-pointer place-items-center p-2.5 outline-none"
         onClick={show}
       >
         <i className="fas fa-calendar-alt text-primary" />

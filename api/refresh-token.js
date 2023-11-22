@@ -1,6 +1,6 @@
+import { store } from '@auth';
+import { axios } from '@lib';
 import { decode } from 'jsonwebtoken';
-import { axios } from '../lib';
-import { store } from '../auth';
 
 const refreshToken = async (cookie) => {
   const { token } = await axios.post('refresh-token', null, {

@@ -1,5 +1,5 @@
-import { classnames } from '../lib';
-import { useCollapsible } from '../hooks';
+import { useCollapsible } from '@hooks';
+import { classnames } from '@lib';
 
 const MenuGroup = ({ name, label, children, level = 1 }) => {
   const { isOpen, toggle } = useCollapsible(`menu.${name}`);
@@ -8,7 +8,7 @@ const MenuGroup = ({ name, label, children, level = 1 }) => {
     <>
       <div
         className={classnames(
-          'flex items-center py-2 text-gray-900 hover:bg-gray-100 cursor-pointer',
+          'flex cursor-pointer items-center py-2 text-gray-900 hover:bg-gray-100',
           level === 1 ? 'pl-8' : 'pl-12'
         )}
         onClick={toggle}

@@ -13,3 +13,13 @@
 .first-letter::first-letter {
   text-transform: uppercase;
 }
+
+.btn-close {
+  display: grid;
+  place-content: center;
+}
+.btn-close:before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f00d';
+}

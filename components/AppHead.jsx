@@ -1,5 +1,5 @@
-import { Favicon, OpenGraph } from '.';
-import { description, scripts, stylesheets } from '../site.config';
+import { Favicon, NoIndex, OpenGraph } from '@components';
+import { description, scripts, stylesheets } from '@site.config';
 
 const AppHead = () => {
   const showStylesheets = (href) => {
@@ -14,8 +14,10 @@ const AppHead = () => {
       <meta name="description" content={description} />
       {stylesheets.map(showStylesheets)}
       {scripts.map(showScripts)}
+      <img src="/icons/loading.gif" alt="loading" className="hidden" />
       <Favicon />
       <OpenGraph />
+      <NoIndex />
     </>
   );
 };

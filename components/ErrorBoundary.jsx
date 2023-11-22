@@ -1,5 +1,5 @@
+import { ErrorFallback } from '@components';
 import { Component } from 'react';
-import { ErrorFallback } from '.';
 
 class ErrorBoundary extends Component {
   constructor(props) {

@@ -1,6 +1,6 @@
-import { Layout } from '../../examples/components';
-import { Button, Modal } from '../../components';
-import { useDisclosure } from '../../hooks';
+import { Button, Modal } from '@components';
+import { Layout } from '@examples/components';
+import { useDisclosure } from '@hooks';
 
 const Page = () => {
   const { isOpen, show, hide } = useDisclosure();

@@ -1,6 +1,6 @@
-import { Checkbox } from '../../../components/Fields';
+import { Checkbox } from '@components/Fields';
+import { useMutation } from '@hooks';
 import { checkTodo } from '../../api/todo';
-import { useMutation } from '../../../hooks';
 
 const CheckTodo = ({ id, done }) => {
   const mutation = useMutation(checkTodo, {

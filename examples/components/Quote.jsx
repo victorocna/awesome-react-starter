@@ -1,13 +1,13 @@
-import { useQuery } from '../../hooks';
-import { QuoteSuccess, QuoteError, QuoteLoading } from '.';
+import { useQuery } from '@hooks';
+import { QuoteError, QuoteLoading, QuoteSuccess } from '.';
 
 const Quote = () => {
   const { data, status } = useQuery(`https://api.quotable.io/random`);
 
   return (
-    <article className="bg-white border border-gray-400 rounded-lg py-4 lg:py-8 mb-4">
-      <div className="flex items-center mb-4 px-4 lg:px-8">
-        <h1 className="font-bold text-xl">Random quote</h1>
+    <article className="mb-4 rounded-lg border border-gray-400 bg-white py-4 lg:py-8">
+      <div className="mb-4 flex items-center px-4 lg:px-8">
+        <h1 className="text-xl font-bold">Random quote</h1>
       </div>
 
       {status === 'loading' && <QuoteLoading />}

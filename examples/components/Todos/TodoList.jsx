@@ -1,9 +1,9 @@
-import { useInfiniteQuery } from '../../../hooks';
+import { LoadMoreOnClick } from '@components/Buttons';
+import { useInfiniteQuery } from '@hooks';
 import { TodoListError, TodoListLoading, TodoListSuccess } from '.';
-import { LoadMoreOnClick } from '../../../components/Buttons';
 
 const TodoList = ({ options }) => {
-  const { data, status, ...props } = useInfiniteQuery('todos', options);
+  const { data, status, ...props } = useInfiniteQuery('admin/todos', options);
 
   return (
     <div className="flex-1">

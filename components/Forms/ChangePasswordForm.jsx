@@ -1,6 +1,6 @@
+import { Password } from '@components/Fields';
+import { Fieldset } from '@components/Formik';
 import { Field } from 'formik';
-import { Password } from '../Fields';
-import { Fieldset } from '../Formik';
 
 const ChangePasswordForm = () => {
   return (

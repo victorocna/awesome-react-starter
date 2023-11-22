@@ -1,6 +1,6 @@
-import { withAuth } from '../../auth';
-import { Layout } from '../../components';
-import { MyProfile } from '../../examples/components';
+import { withAuth } from '@auth';
+import { Layout } from '@components';
+import { MyProfile } from '@examples/components';
 
 const Page = () => {
   return (

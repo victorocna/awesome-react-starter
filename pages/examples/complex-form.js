@@ -1,4 +1,4 @@
-import { uploadDocument } from '@api/example';
+import { complexForm, uploadDocument } from '@api/example';
 import {
   Checkbox,
   Combobox,
@@ -15,8 +15,9 @@ import {
 } from '@components/Fields';
 import { Datepicker, Fieldset, FileUpload, Form, PlusMinus, Submit } from '@components/Formik';
 import { Layout } from '@examples/components';
-import { initialValues, validationSchema } from '@examples/models/form';
+import { initialValues, validationSchema } from '@examples/models/complex-form';
 import { useMutation } from '@hooks';
+import { toaster } from '@lib';
 import { Field, Formik } from 'formik';
 import { useState } from 'react';
 
@@ -30,14 +31,22 @@ const Page = () => {
     },
   });
 
-  const handleSubmit = async (values, actions) => {
-    if (file) {
-      await uploadDocumentMutation.mutateAsync(file);
-    }
+  const complexFormMutation = useMutation(complexForm, {
+    onSuccess: async () => {
+      if (file) {
+        await uploadDocumentMutation.mutateAsync(file);
+      }
 
-    if (video) {
-      await uploadDocumentMutation.mutateAsync(video);
-    }
+      if (video) {
+        await uploadDocumentMutation.mutateAsync(video);
+      }
+
+      return toaster.success('Form submitted successfully');
+    },
+  });
+
+  const handleSubmit = async (values, actions) => {
+    await complexFormMutation.mutateAsync(values);
     //eslint-disable-next-line
     console.log(values);
     actions.setSubmitting(false);

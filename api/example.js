@@ -6,3 +6,7 @@ export const uploadDocument = (file) => {
 
   return axiosAuth.post('/file/upload', formData);
 };
+
+export const complexForm = (data) => {
+  return axiosAuth.post('/file/complex-form', data);
+};

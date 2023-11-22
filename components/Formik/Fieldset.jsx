@@ -5,7 +5,7 @@ import { get } from 'lodash';
 const Fieldset = ({ label, help, name, children }) => {
   const { submitCount, touched, errors } = useFormikContext();
   const hasError = get(touched, name) && get(errors, name) && submitCount > 0;
-
+  console.log(get(touched, name), get(errors, name), submitCount);
   return (
     <fieldset className={classnames(hasError && 'has-error')}>
       {label && (

@@ -35,7 +35,7 @@ const ComplexForm = () => {
       {({ isSubmitting }) => (
         <Form encType="multipart/form-data" className="flex gap-4">
           <div className="flex flex-col gap-5">
-            <Fieldset label="Name input">
+            <Fieldset label="Name input" name="name">
               <Field name="name" as={Input} autoFocus autoComplete="off" />
             </Fieldset>
             <Fieldset label="Document upload">

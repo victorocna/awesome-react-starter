@@ -33,6 +33,8 @@ import Time from './Time';
 import Toaster from './Toaster';
 import Tooltip from './Tooltip';
 import withRouter from './withRouter';
+import VideoPreview from './VideoPreview';
+import VideoToImage from './VideoToImage';
 
 export {
   AppHead,
@@ -41,6 +43,8 @@ export {
   Button,
   EmailMask,
   ErrorBoundary,
+  VideoPreview,
+  VideoToImage,
   ErrorFallback,
   Favicon,
   Layout,

@@ -2,24 +2,19 @@ import { Formik, Form, Field } from 'formik';
 import { Input, UploadInput } from '../../../components/Fields';
 import { Submit, Fieldset } from '../../../components/Formik';
 import { validationSchema, initialValues } from '../../models/complex-form';
-import { createComplexForm } from '../../api/complex-form';
-import { useMutation } from '../../../hooks';
+import { VideoPreview } from '../../../components';
 
 const ComplexForm = () => {
-  const mutation = useMutation(createComplexForm, {});
-
   const handleSubmit = (data, formik) => {
     const formData = new FormData();
     Object.keys(data).forEach((key) => {
-      console.log(typeof data[key]);
       if (data[key] instanceof File) {
         formData.append(key, data[key]);
       } else {
         formData.append(key, data[key]);
       }
     });
-    console.log(formData);
-    //mutation.mutate(formData);
+
     fetch('http://localhost:9000/complex-forms', {
       method: 'POST',
       body: formData, // No headers field here, let the browser set it
@@ -49,6 +44,7 @@ const ComplexForm = () => {
             <Fieldset label="Video upload">
               <Field name="video" as={UploadInput} />
             </Fieldset>
+            <VideoPreview />
             <Fieldset label="Photo upload">
               <Field name="photo" as={UploadInput} />
             </Fieldset>

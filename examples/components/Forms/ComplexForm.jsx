@@ -1,8 +1,8 @@
-import { Formik, Form, Field } from 'formik';
+import { Field, Form, Formik } from 'formik';
+import { VideoThumbnailInput } from '../../../components';
 import { Input, UploadInput } from '../../../components/Fields';
-import { Submit, Fieldset } from '../../../components/Formik';
-import { validationSchema, initialValues } from '../../models/complex-form';
-import { VideoPreview } from '../../../components';
+import { Fieldset, Submit } from '../../../components/Formik';
+import { initialValues, validationSchema } from '../../models/complex-form';
 
 const ComplexForm = () => {
   const handleSubmit = (data, formik) => {
@@ -33,7 +33,7 @@ const ComplexForm = () => {
       debug={true}
     >
       {({ isSubmitting }) => (
-        <Form enctype="multipart/form-data" className="flex gap-4">
+        <Form encType="multipart/form-data" className="flex gap-4">
           <div className="flex flex-col gap-5">
             <Fieldset label="Name input">
               <Field name="name" as={Input} autoFocus autoComplete="off" />
@@ -41,10 +41,7 @@ const ComplexForm = () => {
             <Fieldset label="Document upload">
               <Field name="document" as={UploadInput} />
             </Fieldset>
-            <Fieldset label="Video upload">
-              <Field name="video" as={UploadInput} />
-            </Fieldset>
-            <VideoPreview />
+            <VideoThumbnailInput />
             <Fieldset label="Photo upload">
               <Field name="photo" as={UploadInput} />
             </Fieldset>

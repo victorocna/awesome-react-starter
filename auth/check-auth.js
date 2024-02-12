@@ -1,6 +1,6 @@
 import ensureUser from './ensure-user';
 
-const checkAuth = async (context) => {
+const checkAuth = async (context, callback) => {
   try {
     await ensureUser(context.req.headers.cookie);
   } catch (err) {
@@ -15,8 +15,14 @@ const checkAuth = async (context) => {
     };
   }
 
+  if (!callback) {
+    return {
+      props: {},
+    };
+  }
+  // Add props from callback
   return {
-    props: {},
+    props: (await callback()) || {},
   };
 };
 

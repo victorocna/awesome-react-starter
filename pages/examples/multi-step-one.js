@@ -1,11 +1,18 @@
 import { withAuth } from '@auth';
 import { Layout } from '@components';
-import { MultistepForm } from '@examples/components/Forms';
+import { Documentation } from '@examples/components';
+import { HeaderSteps, StepOne } from '@examples/components/Multistep';
 
 const Page = () => {
   return (
     <Layout title="Multi step Formik form">
-      <MultistepForm />
+      <div className="grid md:grid-cols-3 gap-4">
+        <article className="md:col-span-2 bg-white p-4 rounded-md">
+          <HeaderSteps step="1" />
+          <StepOne />
+        </article>
+        <Documentation />
+      </div>
     </Layout>
   );
 };

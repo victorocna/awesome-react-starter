@@ -1,3 +1,5 @@
+import Countries from './Countries';
+import Documentation from './Documentation';
 import Footer from './Footer';
 import Header from './Header';
 import Layout from './Layout';
@@ -16,6 +18,8 @@ import SayGoodbye from './SayGoodbye';
 import SayHello from './SayHello';
 
 export {
+  Countries,
+  Documentation,
   Footer,
   Header,
   Layout,
@@ -27,9 +31,9 @@ export {
   MyProfileLoading,
   MyProfileSuccess,
   Quote,
-  QuoteSuccess,
   QuoteError,
   QuoteLoading,
+  QuoteSuccess,
   SayGoodbye,
   SayHello,
 };

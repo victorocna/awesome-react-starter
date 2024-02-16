@@ -34,6 +34,9 @@ import Time from './Time';
 import Toaster from './Toaster';
 import Tooltip from './Tooltip';
 import TranslateAll from './TranslateAll';
+import VideoPreview from './VideoPreview';
+import VideoThumbnailInput from './VideoThumbnailInput';
+import VideoToImage from './VideoToImage';
 import withRouter from './withRouter';
 
 export {
@@ -73,5 +76,8 @@ export {
   Toaster,
   Tooltip,
   TranslateAll,
+  VideoPreview,
+  VideoThumbnailInput,
+  VideoToImage,
   withRouter,
 };

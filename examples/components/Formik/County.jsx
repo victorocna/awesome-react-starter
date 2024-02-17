@@ -1,5 +1,4 @@
-import { Combobox } from '@components/Fields';
-import { Fieldset } from '@components/Formik';
+import { Combobox, Fieldset } from '@components/Formik';
 import { Field } from 'formik';
 
 const County = () => {
@@ -13,6 +12,10 @@ const County = () => {
         <option value="40">Bucuresti</option>
         <option value="41">Bucuresti Sector 1</option>
         <option value="42">Bucuresti Sector 2</option>
+        <option value="43">Bucuresti Sector 3</option>
+        <option value="44">Bucuresti Sector 4</option>
+        <option value="45">Bucuresti Sector 5</option>
+        <option value="46">Bucuresti Sector 6</option>
       </Field>
     </Fieldset>
   );

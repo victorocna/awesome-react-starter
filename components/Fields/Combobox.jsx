@@ -2,34 +2,25 @@ import { useCombobox } from '@hooks';
 import { classnames } from '@lib';
 import OptionList from './OptionList';
 
-const Combobox = ({
-  children,
-  defaultSelected,
-  placeholder,
-  disabled,
-  onSelect,
-  icon,
-  status,
-  ...props
-}) => {
-  const { inputItems, ...downshift } = useCombobox({ children, onSelect, defaultSelected, status });
+const Combobox = ({ children, defaultSelected, placeholder, disabled, onSelect, icon }) => {
+  const { inputItems, ...downshift } = useCombobox({ children, onSelect, defaultSelected });
 
   return (
     <div className="relative">
       <div
         className={classnames(
           'dropdown',
-          downshift.isOpen && inputItems.length && 'rounded-b-none rounded-b-none',
-          disabled && 'bg-gray-200'
+          downshift.isOpen && inputItems.length && 'rounded-b-none',
+          disabled && 'pointer-events-none bg-gray-200'
         )}
         {...downshift.getComboboxProps()}
       >
         <input
+          value={downshift.selectedItem?.label || ''}
           className="-my-2 w-full bg-transparent outline-none"
           {...downshift.getInputProps()}
           placeholder={placeholder}
           disabled={disabled}
-          {...props}
         />
         <span
           role="button"

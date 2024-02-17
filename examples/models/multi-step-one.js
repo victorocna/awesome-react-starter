@@ -9,7 +9,7 @@ export const validationSchema = Yup.object().shape({
 export const initialValues = {
   fullname: '',
   email: '',
-  filter: '',
+  filter: 'all',
   county: '',
   terms: false,
 };

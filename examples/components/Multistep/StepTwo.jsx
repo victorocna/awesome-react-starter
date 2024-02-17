@@ -2,25 +2,28 @@ import { Button } from '@components';
 import { Form } from '@components/Formik';
 import { formCookie, router } from '@lib';
 import { Formik } from 'formik';
+import { merge } from 'lodash';
 import { initialValues, validationSchema } from '../../models/multi-step-two';
 import { Age, Country, DateOfBirth, UsState } from '../Formik';
 
 const StepTwo = () => {
+  const cookieValues = formCookie.get('multi-step-form');
+
   const handleSubmit = (data) => {
     // Save values in a persistent store and move to next step
     formCookie.append('multi-step-form', data);
     // Move to next step
-    router.push('/examples/multi-step-three');
+    router.push('/examples/multi-step-form#step3');
   };
   const handlePrevious = () => {
     // Move to previous step
-    router.push('/examples/multi-step-one');
+    router.push('/examples/multi-step-form#step1');
   };
 
   return (
     <Formik
       validationSchema={validationSchema}
-      initialValues={initialValues}
+      initialValues={merge(initialValues, cookieValues)}
       onSubmit={handleSubmit}
     >
       <Form className="grid gap-4" debug={true}>

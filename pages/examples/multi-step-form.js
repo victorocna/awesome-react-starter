@@ -1,5 +1,5 @@
 import { withAuth } from '@auth';
-import { Layout } from '@components';
+import { Layout, NoSsr } from '@components';
 import { Documentation } from '@examples/components';
 import { MultiStepForm } from '@examples/components/Multistep';
 
@@ -7,7 +7,9 @@ const Page = () => {
   return (
     <Layout title="Multi step Formik form">
       <div className="grid md:grid-cols-3 gap-4">
-        <MultiStepForm />
+        <NoSsr>
+          <MultiStepForm />
+        </NoSsr>
         <Documentation />
       </div>
     </Layout>

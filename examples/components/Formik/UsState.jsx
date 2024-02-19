@@ -13,16 +13,18 @@ const UsState = () => {
   const UsStateSelect = (props) => <Select {...props}>{states.map(showUsStates)}</Select>;
 
   const [disabled, setDisabled] = useState(true);
-  const {
-    values: { country },
-  } = useFormikContext();
+  const { values, setFieldValue } = useFormikContext();
 
   useEffect(() => {
-    setDisabled(country !== 'USA');
-  }, [country]);
+    const isUsa = values?.country === 'USA';
+    setDisabled(!isUsa);
+    if (!isUsa) {
+      setFieldValue('state', '');
+    }
+  }, [values?.country]);
 
   return (
-    <Fieldset name="state" label="US State" help="Uses default select tag">
+    <Fieldset name="state" label="US State" help="Active only when you choose USA">
       <Field
         id="state"
         name="state"

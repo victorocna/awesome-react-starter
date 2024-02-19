@@ -1,5 +1,6 @@
 .button {
   @apply relative inline-block cursor-pointer rounded;
+  width: fit-content;
 }
 
 .button:hover {

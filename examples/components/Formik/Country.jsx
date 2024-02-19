@@ -1,12 +1,11 @@
-import { Dropdown } from '@components/Fields';
-import { Fieldset } from '@components/Formik';
+import { Dropdown, Fieldset } from '@components/Formik';
 import { Field } from 'formik';
 import { countries } from '../../../data';
 
 const Country = () => {
-  const showCountries = ({ name, value }) => (
+  const showCountries = ({ label, value }) => (
     <option key={value} value={value}>
-      {name}
+      {label}
     </option>
   );
 

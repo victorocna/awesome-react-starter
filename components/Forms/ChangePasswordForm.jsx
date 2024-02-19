@@ -6,7 +6,7 @@ const ChangePasswordForm = () => {
   return (
     <div className="space-y-6">
       <Fieldset name="changePassword" label="Password" help="Required info">
-        <Field as={Password} name="changePassword" id="changePassword" autofocus />
+        <Field as={Password} name="changePassword" id="changePassword" autoFocus />
       </Fieldset>
 
       <Fieldset name="confirmPassword" label="Confirm Password" help="Required info">

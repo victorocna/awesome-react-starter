@@ -15,6 +15,7 @@ module.exports = {
   },
   content: [
     './components/**/*.jsx', // all components
+    './examples/**/*.jsx', // all examples
     './pages/**/*.js', // all pages as well
   ],
   plugins: [

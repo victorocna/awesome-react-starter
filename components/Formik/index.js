@@ -5,6 +5,7 @@ import Datepicker from './Datepicker';
 import Debug from './Debug';
 import Dropdown from './Dropdown';
 import Fieldset from './Fieldset';
+import FileUpload from './FileUpload';
 import Form from './Form';
 import MultiSelectAsync from './MultiSelectAsync';
 import PlusMinus from './PlusMinus';
@@ -19,6 +20,7 @@ export {
   Debug,
   Dropdown,
   Fieldset,
+  FileUpload,
   Form,
   MultiSelectAsync,
   PlusMinus,

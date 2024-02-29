@@ -9,7 +9,7 @@ const TodoFilters = ({ setOptions }) => {
 
   return (
     <Formik initialValues={initialValues} onSubmit={setOptions}>
-      <Form autoSubmit={true} className="flex gap-4">
+      <Form autoSubmit={true} className="flex gap-4 sm:flex-row flex-col">
         <Fieldset
           label="Search your todos"
           name="search"

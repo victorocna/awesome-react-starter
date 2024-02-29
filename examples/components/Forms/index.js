@@ -1,4 +1,4 @@
 import AddTodoForm from './AddTodoForm';
-import TodoFilter from './TodoFilter';
+import TodoFilters from './TodoFilters';
 
-export { AddTodoForm, TodoFilter };
+export { AddTodoForm, TodoFilters };

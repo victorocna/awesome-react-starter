@@ -1,12 +1,8 @@
 import { Dropdown, Fieldset, Form, Search } from '@components/Formik';
+import { initialValues } from '@examples/models/todo-filters';
 import { Field, Formik } from 'formik';
 
 const TodoFilters = ({ setOptions }) => {
-  const initialValues = {
-    search: '',
-    only: '',
-  };
-
   return (
     <Formik initialValues={initialValues} onSubmit={setOptions}>
       <Form autoSubmit={true} className="flex gap-4 sm:flex-row flex-col">

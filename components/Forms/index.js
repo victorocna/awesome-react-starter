@@ -1,7 +1,5 @@
-import ChangePasswordForm from './ChangePasswordForm';
-import ForgotForm from './ForgotForm';
-import LoginForm from './LoginForm';
-import ResetForm from './ResetForm';
-import SignupForm from './SignupForm';
-
-export { ChangePasswordForm, ForgotForm, LoginForm, ResetForm, SignupForm };
+export { default as ChangePasswordForm } from './ChangePasswordForm';
+export { default as ForgotForm } from './ForgotForm';
+export { default as LoginForm } from './LoginForm';
+export { default as ResetForm } from './ResetForm';
+export { default as SignupForm } from './SignupForm';

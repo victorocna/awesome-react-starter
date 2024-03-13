@@ -1,3 +1,1 @@
-import ro from './ro.json';
-
-export { ro };
+export { default as ro } from './ro.json';

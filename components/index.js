@@ -1,77 +1,37 @@
-import AppHead from './AppHead';
-import AreYouSure from './AreYouSure';
-import Bone from './Bone';
-import Button from './Button';
-import EmailMask from './EmailMask';
-import ErrorBoundary from './ErrorBoundary';
-import ErrorFallback from './ErrorFallback';
-import Favicon from './Favicon';
-import Layout from './Layout';
-import Link from './Link';
-import Loading from './Loading';
-import Logo from './Logo';
-import Menu from './Menu';
-import MenuButton from './MenuButton';
-import MenuGroup from './MenuGroup';
-import MenuItem from './MenuItem';
-import Modal from './Modal';
-import NoIndex from './NoIndex';
-import NoSsr from './NoSsr';
-import OpenGraph from './OpenGraph';
-import Overflow from './Overflow';
-import Pages from './Pages';
-import Percent from './Percent';
-import Pill from './Pill';
-import Plural from './Plural';
-import Price from './Price';
-import Profile from './Profile';
-import ProfileLoading from './ProfileLoading';
-import ProfileMenu from './ProfileMenu';
-import ProfileSuccess from './ProfileSuccess';
-import ShowMore from './ShowMore';
-import Spinner from './Spinner';
-import Time from './Time';
-import Toaster from './Toaster';
-import Tooltip from './Tooltip';
-import TranslateAll from './TranslateAll';
-import withRouter from './withRouter';
-
-export {
-  AppHead,
-  AreYouSure,
-  Bone,
-  Button,
-  EmailMask,
-  ErrorBoundary,
-  ErrorFallback,
-  Favicon,
-  Layout,
-  Link,
-  Loading,
-  Logo,
-  Menu,
-  MenuButton,
-  MenuGroup,
-  MenuItem,
-  Modal,
-  NoIndex,
-  NoSsr,
-  OpenGraph,
-  Overflow,
-  Pages,
-  Percent,
-  Pill,
-  Plural,
-  Price,
-  Profile,
-  ProfileLoading,
-  ProfileMenu,
-  ProfileSuccess,
-  ShowMore,
-  Spinner,
-  Time,
-  Toaster,
-  Tooltip,
-  TranslateAll,
-  withRouter,
-};
+export { default as AppHead } from './AppHead';
+export { default as AreYouSure } from './AreYouSure';
+export { default as Bone } from './Bone';
+export { default as Button } from './Button';
+export { default as EmailMask } from './EmailMask';
+export { default as ErrorBoundary } from './ErrorBoundary';
+export { default as ErrorFallback } from './ErrorFallback';
+export { default as Favicon } from './Favicon';
+export { default as Layout } from './Layout';
+export { default as Link } from './Link';
+export { default as Loading } from './Loading';
+export { default as Logo } from './Logo';
+export { default as Menu } from './Menu';
+export { default as MenuButton } from './MenuButton';
+export { default as MenuGroup } from './MenuGroup';
+export { default as MenuItem } from './MenuItem';
+export { default as Modal } from './Modal';
+export { default as NoIndex } from './NoIndex';
+export { default as NoSsr } from './NoSsr';
+export { default as OpenGraph } from './OpenGraph';
+export { default as Overflow } from './Overflow';
+export { default as Pages } from './Pages';
+export { default as Percent } from './Percent';
+export { default as Pill } from './Pill';
+export { default as Plural } from './Plural';
+export { default as Price } from './Price';
+export { default as Profile } from './Profile';
+export { default as ProfileLoading } from './ProfileLoading';
+export { default as ProfileMenu } from './ProfileMenu';
+export { default as ProfileSuccess } from './ProfileSuccess';
+export { default as ShowMore } from './ShowMore';
+export { default as Spinner } from './Spinner';
+export { default as Time } from './Time';
+export { default as Toaster } from './Toaster';
+export { default as Tooltip } from './Tooltip';
+export { default as TranslateAll } from './TranslateAll';
+export { default as withRouter } from './withRouter';

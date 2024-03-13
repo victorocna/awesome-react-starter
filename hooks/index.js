@@ -1,39 +1,18 @@
-import useArray from './use-array';
-import useChildren from './use-children';
-import useCollapsible from './use-collapsible';
-import useCombobox from './use-combobox';
-import useDebounce from './use-debounce';
-import useDisclosure from './use-disclosure';
-import useDropdown from './use-dropdown';
-import useInfiniteQuery from './use-infinite-query';
-import useIntersectionObserver from './use-intersection-observer';
-import useMutation from './use-mutation';
-import useObserver from './use-observer';
-import useOnClickOutside from './use-onclick-outside';
-import useProfile from './use-profile';
-import useQuery from './use-query';
-import useRerender from './use-rerender';
-import useSelect from './use-select';
-import useSwipeable from './use-swipeable';
-import useToggle from './use-toggle';
-
-export {
-  useArray,
-  useChildren,
-  useCollapsible,
-  useCombobox,
-  useDebounce,
-  useDisclosure,
-  useDropdown,
-  useInfiniteQuery,
-  useIntersectionObserver,
-  useMutation,
-  useObserver,
-  useOnClickOutside,
-  useProfile,
-  useQuery,
-  useRerender,
-  useSelect,
-  useSwipeable,
-  useToggle,
-};
+export { default as useArray } from './use-array';
+export { default as useChildren } from './use-children';
+export { default as useCollapsible } from './use-collapsible';
+export { default as useCombobox } from './use-combobox';
+export { default as useDebounce } from './use-debounce';
+export { default as useDisclosure } from './use-disclosure';
+export { default as useDropdown } from './use-dropdown';
+export { default as useInfiniteQuery } from './use-infinite-query';
+export { default as useIntersectionObserver } from './use-intersection-observer';
+export { default as useMutation } from './use-mutation';
+export { default as useObserver } from './use-observer';
+export { default as useOnClickOutside } from './use-onclick-outside';
+export { default as useProfile } from './use-profile';
+export { default as useQuery } from './use-query';
+export { default as useRerender } from './use-rerender';
+export { default as useSelect } from './use-select';
+export { default as useSwipeable } from './use-swipeable';
+export { default as useToggle } from './use-toggle';

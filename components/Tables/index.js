@@ -1,15 +1,6 @@
-import TableColumns from './TableColumns';
-import TableError from './TableError';
-import TableHeader from './TableHeader';
-import TableLoading from './TableLoading';
-import TableRow from './TableRow';
-import TableSuccess from './TableSuccess';
-
-export {
-  TableColumns,
-  TableError,
-  TableHeader,
-  TableLoading,
-  TableRow,
-  TableSuccess,
-}
+export { default as TableColumns } from './TableColumns';
+export { default as TableError } from './TableError';
+export { default as TableHeader } from './TableHeader';
+export { default as TableLoading } from './TableLoading';
+export { default as TableRow } from './TableRow';
+export { default as TableSuccess } from './TableSuccess';

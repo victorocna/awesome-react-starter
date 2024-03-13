@@ -1,4 +1,2 @@
-import countries from './countries';
-import states from './states';
-
-export { countries, states };
+export { default as countries } from './countries';
+export { default as states } from './states';

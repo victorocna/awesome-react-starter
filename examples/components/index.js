@@ -1,39 +1,18 @@
-import Countries from './Countries';
-import Documentation from './Documentation';
-import Footer from './Footer';
-import Header from './Header';
-import Layout from './Layout';
-import Menu from './Menu';
-import MyProfile from './MyProfile';
-import MyProfileChangePassword from './MyProfileChangePassword';
-import MyProfileDetails from './MyProfileDetails';
-import MyProfileError from './MyProfileError';
-import MyProfileLoading from './MyProfileLoading';
-import MyProfileSuccess from './MyProfileSuccess';
-import Quote from './Quote';
-import QuoteError from './QuoteError';
-import QuoteLoading from './QuoteLoading';
-import QuoteSuccess from './QuoteSuccess';
-import SayGoodbye from './SayGoodbye';
-import SayHello from './SayHello';
-
-export {
-  Countries,
-  Documentation,
-  Footer,
-  Header,
-  Layout,
-  Menu,
-  MyProfile,
-  MyProfileChangePassword,
-  MyProfileDetails,
-  MyProfileError,
-  MyProfileLoading,
-  MyProfileSuccess,
-  Quote,
-  QuoteError,
-  QuoteLoading,
-  QuoteSuccess,
-  SayGoodbye,
-  SayHello,
-};
+export { default as Countries } from './Countries';
+export { default as Documentation } from './Documentation';
+export { default as Footer } from './Footer';
+export { default as Header } from './Header';
+export { default as Layout } from './Layout';
+export { default as Menu } from './Menu';
+export { default as MyProfile } from './MyProfile';
+export { default as MyProfileChangePassword } from './MyProfileChangePassword';
+export { default as MyProfileDetails } from './MyProfileDetails';
+export { default as MyProfileError } from './MyProfileError';
+export { default as MyProfileLoading } from './MyProfileLoading';
+export { default as MyProfileSuccess } from './MyProfileSuccess';
+export { default as Quote } from './Quote';
+export { default as QuoteError } from './QuoteError';
+export { default as QuoteLoading } from './QuoteLoading';
+export { default as QuoteSuccess } from './QuoteSuccess';
+export { default as SayGoodbye } from './SayGoodbye';
+export { default as SayHello } from './SayHello';

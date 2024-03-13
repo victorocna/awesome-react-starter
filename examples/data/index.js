@@ -1,3 +1,1 @@
-import todoColumns from './todo-columns';
-
-export { todoColumns };
+export { default as todoColumns } from './todo-columns';

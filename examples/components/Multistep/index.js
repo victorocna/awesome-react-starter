@@ -1,8 +1,6 @@
-import HeaderStep from './HeaderStep';
-import HeaderSteps from './HeaderSteps';
-import MultiStepForm from './MultiStepForm';
-import StepOne from './StepOne';
-import StepThree from './StepThree';
-import StepTwo from './StepTwo';
-
-export { HeaderStep, HeaderSteps, MultiStepForm, StepOne, StepThree, StepTwo };
+export { default as HeaderStep } from './HeaderStep';
+export { default as HeaderSteps } from './HeaderSteps';
+export { default as MultiStepForm } from './MultiStepForm';
+export { default as StepOne } from './StepOne';
+export { default as StepThree } from './StepThree';
+export { default as StepTwo } from './StepTwo';

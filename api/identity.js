@@ -1,9 +1,7 @@
-import confirm from './confirm';
-import forgot from './forgot';
-import login from './login';
-import logout from './logout';
-import refreshToken from './refresh-token';
-import reset from './reset';
-import signup from './signup';
-
-export { confirm, forgot, login, logout, refreshToken, reset, signup };
+export { default as confirm } from './confirm';
+export { default as forgot } from './forgot';
+export { default as login } from './login';
+export { default as logout } from './logout';
+export { default as refreshToken } from './refresh-token';
+export { default as reset } from './reset';
+export { default as signup } from './signup';

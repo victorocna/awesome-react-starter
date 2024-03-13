@@ -1,25 +1,11 @@
-import ago from './ago';
-import coffee from './coffee';
-import extractId from './extract-id';
-import falsy from './falsy';
-import isValidDate from './is-valid-date';
-import safeNumber from './safe-number';
-import safeString from './safe-string';
-import time from './time';
-import toJSON from './to-json';
-import translate from './translate';
-import whoami from './whoami';
-
-export {
-  ago,
-  coffee,
-  extractId,
-  falsy,
-  isValidDate,
-  safeNumber,
-  safeString,
-  time,
-  translate,
-  toJSON,
-  whoami,
-};
+export { default as ago } from './ago';
+export { default as coffee } from './coffee';
+export { default as extractId } from './extract-id';
+export { default as falsy } from './falsy';
+export { default as isValidDate } from './is-valid-date';
+export { default as safeNumber } from './safe-number';
+export { default as safeString } from './safe-string';
+export { default as time } from './time';
+export { default as toJSON } from './to-json';
+export { default as translate } from './translate';
+export { default as whoami } from './whoami';

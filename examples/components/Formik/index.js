@@ -1,12 +1,10 @@
-import Age from './Age';
-import Bio from './Bio';
-import Country from './Country';
-import County from './County';
-import DateOfBirth from './DateOfBirth';
-import Email from './Email';
-import Fullname from './Fullname';
-import SomeFilter from './SomeFilter';
-import Terms from './Terms';
-import UsState from './UsState';
-
-export { Age, Bio, Country, County, DateOfBirth, Email, Fullname, SomeFilter, Terms, UsState };
+export { default as Age } from './Age';
+export { default as Bio } from './Bio';
+export { default as Country } from './Country';
+export { default as County } from './County';
+export { default as DateOfBirth } from './DateOfBirth';
+export { default as Email } from './Email';
+export { default as Fullname } from './Fullname';
+export { default as SomeFilter } from './SomeFilter';
+export { default as Terms } from './Terms';
+export { default as UsState } from './UsState';

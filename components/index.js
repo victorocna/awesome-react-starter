@@ -3,7 +3,6 @@ export { default as AreYouSure } from './AreYouSure';
 export { default as Bone } from './Bone';
 export { default as Button } from './Button';
 export { default as EmailMask } from './EmailMask';
-export { default as ErrorBoundary } from './ErrorBoundary';
 export { default as ErrorFallback } from './ErrorFallback';
 export { default as Favicon } from './Favicon';
 export { default as Layout } from './Layout';

@@ -1,4 +1,4 @@
-import { ErrorBoundary, Menu, MenuButton, Profile } from '@components';
+import { Menu, MenuButton, Profile } from '@components';
 
 const Layout = ({ title, children }) => {
   return (
@@ -12,9 +12,7 @@ const Layout = ({ title, children }) => {
           <Profile />
           <MenuButton />
         </div>
-        <div className="grid gap-4">
-          <ErrorBoundary>{children}</ErrorBoundary>
-        </div>
+        <div className="grid gap-4">{children}</div>
       </main>
     </div>
   );

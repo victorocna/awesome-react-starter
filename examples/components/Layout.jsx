@@ -1,4 +1,4 @@
-import { ErrorBoundary, Menu, MenuButton } from '@components';
+import { Menu, MenuButton } from '@components';
 
 const Layout = ({ title, children }) => {
   return (
@@ -12,9 +12,7 @@ const Layout = ({ title, children }) => {
           <MenuButton />
         </div>
         <div className="grid gap-4">
-          <ErrorBoundary>
-            <div className="rounded border border-gray-300 bg-white p-4">{children}</div>
-          </ErrorBoundary>
+          <div className="rounded border border-gray-300 bg-white p-4">{children}</div>
         </div>
       </main>
     </div>

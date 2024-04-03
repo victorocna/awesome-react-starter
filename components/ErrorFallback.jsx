@@ -12,7 +12,6 @@ const ErrorFallback = () => {
 
   // Admin layout should be wrapped in withAuth for security reasons
   const user = whoami();
-  console.log(user);
   if (user?.role === 'admin') {
     ErrorLayout = withAuth(AdminErrorLayout);
   }

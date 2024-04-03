@@ -1,6 +1,10 @@
+# Dotenv files
+.env*
+!.env.example
+!.env.template
+
 # User specific
 NOTES.txt
-.env.productio
 yarn.lock
 .DS_Store
 

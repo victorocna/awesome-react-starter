@@ -6,10 +6,10 @@ const Page = () => {
       <div className="my-8 flex w-full max-w-xl flex-col rounded-lg bg-white px-4 py-8 lg:px-12">
         <div className="text-center">
           <p className="text-lg font-semibold my-4">
-            We are sorry, an error occurred that prevents us from displaying the page correctly.
+            This page does not exist, has been moved or deleted from the website.
           </p>
           <p className="text-lg font-semibold my-4">
-            Please rewrite the link or press the button below.
+            Try to rewrite the link or press the button below.
           </p>
           <Button href="/" className="text-sm p-1.5 ml-[-6px] max-w-fit rounded">
             Back to the main page

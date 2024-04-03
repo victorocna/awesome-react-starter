@@ -11,7 +11,7 @@ const Page = () => {
           <p className="text-lg font-semibold my-4">
             Please rewrite the link or press the button below.
           </p>
-          <Button href="/" className="text-sm p-1.5 ml-[-6px] max-w-fit rounded">
+          <Button href="/" className="button full mt-2 primary">
             Back to the main page
           </Button>
         </div>

@@ -8,13 +8,13 @@ const ErrorLayout = () => {
           <i className="fa-solid fa-circle-xmark text-red-500 text-lg"></i>
           <div className="flex flex-col gap-3 text-red-800">
             <p className="font-medium ">
-              Ne pare rău, a apărut o eroare care ne împiedică să afișăm corect pagina.
+              We are sorry, an error occurred that prevents us from displaying the page correctly.
             </p>
             <Button
               href="/"
               className="text-sm hover:bg-red-300 hover:text-red-800 p-1.5 ml-[-6px] max-w-fit rounded"
             >
-              Înapoi la pagina principală
+              Back to the main page
             </Button>
           </div>
         </div>

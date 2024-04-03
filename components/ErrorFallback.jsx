@@ -1,10 +1,22 @@
-import React from 'react';
+import { withAuth } from '@auth';
+import { NoSsr } from '@components';
+import { whoami } from '@functions';
+import { ErrorLayout as AdminErrorLayout } from './Admin';
+import { ErrorLayout as VisitorErrorLayout } from './Visitor';
 
 const ErrorFallback = () => {
+  // Switch here between user roles if needed
+  let ErrorLayout = VisitorErrorLayout;
+
+  // Admin layout should be wrapped in withAuth for security reasons
+  const user = whoami();
+  if (user?.role === 'admin') {
+    ErrorLayout = withAuth(AdminErrorLayout);
+  }
   return (
-    <div className="rounded border border-gray-300 bg-white p-4">
-      <h2>Something went wrong, please try again!</h2>
-    </div>
+    <NoSsr>
+      <ErrorLayout />
+    </NoSsr>
   );
 };
 

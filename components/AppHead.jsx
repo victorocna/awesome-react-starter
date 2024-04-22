@@ -9,9 +9,14 @@ const AppHead = () => {
     return <script key={src} type="text/javascript" src={src}></script>;
   };
 
+  // Order of the meta tags is important, do NOT change the order
+  // Loading image must be after the stylesheets
+
   return (
     <>
       <meta name="description" content={description} />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
       {stylesheets.map(showStylesheets)}
       {scripts.map(showScripts)}
       <img src="/icons/loading.gif" alt="loading" className="hidden" />

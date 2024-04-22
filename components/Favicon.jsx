@@ -1,13 +1,15 @@
 import React from 'react';
 
 const Favicon = () => {
-  // No need for importing Head from next/head
+  // Favicon must be in the root of the public folder, subfolders are not supported
+  // https://github.com/vercel/next.js/discussions/50704
 
   return (
     <>
-      <link rel="apple-touch-icon" href="/images/favicon.png" />
-      <link rel="shortcut icon" sizes="any" href="/images/favicon.ico" type="image/png" />
-      <link rel="icon" sizes="any" href="/images/favicon.ico" type="image/png" />
+      <link rel="apple-touch-icon" href="/favicon.png" />
+      <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+      <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      <link rel="icon" href="/favicon.png" type="image/png" />
     </>
   );
 }

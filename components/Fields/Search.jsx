@@ -2,7 +2,7 @@ import { classnames } from '@lib';
 import { debounce } from 'lodash';
 import { useCallback, useRef } from 'react';
 
-const Search = ({ setSearch, placeholder, className }) => {
+const Search = ({ className, placeholder, setSearch, value }) => {
   const ref = useRef();
 
   const request = debounce((value) => {
@@ -30,22 +30,23 @@ const Search = ({ setSearch, placeholder, className }) => {
   return (
     <div className={classnames('relative flex items-center', className)}>
       <input
-        type="text"
-        ref={ref}
         className="input pl-8"
-        placeholder={placeholder}
+        defaultValue={value}
         onChange={handleChange}
         onKeyUp={handleKeyUp}
+        placeholder={placeholder}
+        ref={ref}
+        type="text"
       />
       <div className="absolute left-2 px-1">
         <i className="fas fa-search text-gray-500"></i>
       </div>
       {ref?.current?.value && (
         <button
-          tabIndex="-1"
-          type="button"
           className="absolute right-0 top-0 z-30 h-full px-3 py-2 text-gray-500 outline-none"
           onClick={resetInputValue}
+          tabIndex="-1"
+          type="button"
         >
           <i className="fas fa-times"></i>
         </button>

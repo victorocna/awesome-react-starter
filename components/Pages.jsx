@@ -70,6 +70,9 @@ const Pages = () => {
         <MenuItem href="/examples/translate-all" level="2">
           Translate all
         </MenuItem>
+        <MenuItem href="/examples/filter-modal" level="2">
+          Filter modal
+        </MenuItem>
       </MenuGroup>
       <MenuItem href="/login" level="1">
         Login page

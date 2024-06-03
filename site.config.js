@@ -1,7 +1,10 @@
 module.exports = {
-  sitename: 'Your awesome site',
-  title: 'Your awesome site',
-  description: 'Lorem ipsum dolor sin amet',
+  sitename: 'Your Awesome App',
+  title: 'Your Awesome App',
+  description: `
+  Starter template for React and Next.js projects packed with features like authentication,
+  custom hooks, Tailwind support and many more.
+  `,
   baseurl: `${process.env.APP_BASE_URL}`,
   image: `${process.env.APP_BASE_URL}/images/logo.png`,
   stylesheets: [

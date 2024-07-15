@@ -1,7 +1,7 @@
 import { useCombobox as useDownshift } from 'downshift';
 import { isEqual, isFunction } from 'lodash';
 import { MD5 } from 'object-hash';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useChildren } from '.';
 
 /**
@@ -17,15 +17,42 @@ const useCombobox = ({ children, onSelect, defaultSelected }) => {
   // Convert Combobox's component children to Downshift items
   const items = useChildren(children);
 
+  // Custom state reducer customizing the behavior of the Combobox
+  const stateReducer = useCallback((_, actionAndChanges) => {
+    const { type, changes } = actionAndChanges;
+    const isItemSelected = changes?.selectedItem?.label === changes?.inputValue;
+    switch (type) {
+      // Reset the input value to the selected item's label when the input is blurred
+      case useDownshift.stateChangeTypes.InputBlur:
+        return {
+          ...changes,
+          isOpen: false,
+          inputValue: changes?.selectedItem?.label || '',
+        };
+      // If input value is changed, select/unselect the item
+      case useDownshift.stateChangeTypes.InputChange:
+        if (isItemSelected) {
+          return {
+            ...changes,
+            selectedItem: { value: changes?.inputValue },
+          };
+        } else {
+          return { ...changes, selectedItem: { value: '', label: '' } };
+        }
+      default:
+        return changes; // otherwise business as usual.
+    }
+  }, []);
+
   // Show an object label
   const itemToString = (item) => {
-    return item.label;
+    return item?.label;
   };
 
   // Handle the selection
   const onSelectedItemChange = ({ selectedItem }) => {
     if (isFunction(onSelect)) {
-      return onSelect(selectedItem.value);
+      return onSelect(selectedItem?.value);
     }
   };
 
@@ -34,7 +61,7 @@ const useCombobox = ({ children, onSelect, defaultSelected }) => {
   const onInputValueChange = ({ inputValue }) => {
     // Filter the items based on the inputValue
     setInputItems(
-      items.filter((item) => item.label.toLowerCase().includes(inputValue.toLowerCase()))
+      items.filter((item) => item?.label?.toLowerCase().includes(inputValue.toLowerCase()))
     );
 
     // If the value is empty, select an empty string
@@ -55,13 +82,14 @@ const useCombobox = ({ children, onSelect, defaultSelected }) => {
     itemToString,
     onInputValueChange,
     onSelectedItemChange,
+    stateReducer,
   });
 
   // Find the default selected item by value
   const isDefaultSelected = (item) => {
-    return isEqual(item.value, defaultSelected);
+    return isEqual(item?.value, defaultSelected);
   };
-  const defaultSelectedItem = items.find(isDefaultSelected) || null;
+  const defaultSelectedItem = items?.find(isDefaultSelected) || null;
 
   // Select the default item if any
   useEffect(() => {

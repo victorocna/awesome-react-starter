@@ -6,21 +6,31 @@ import store from './store';
 const withoutAuth = (WrappedComponent) => {
   const Wrapper = (props) => {
     const [isLoading, setIsLoading] = useState(true);
+    const verifyUser = async () => {
+      try {
+        setIsLoading(true);
+        const refresh = await ensureUser();
+        // Add authorization logic here if needed
+        Router.push('/admin');
+        store.dispatch({ type: 'SET', jwt: refresh });
+      } catch (err) {
+        Router.push('/login');
+        setIsLoading(false);
+      }
+    };
 
     useEffect(() => {
-      const verifyUser = async () => {
-        try {
-          const refresh = await ensureUser();
-          // Add authorization logic here if needed
-          Router.push('/admin');
-          store.dispatch({ type: 'SET', jwt: refresh });
-        } catch (err) {
-          Router.push('/login');
-          setIsLoading(false);
-        }
+      const handleFocus = async () => {
+        verifyUser();
       };
 
       verifyUser();
+
+      // Refresh JWT token when window is focused
+      window.addEventListener('focus', handleFocus);
+      return () => {
+        window.removeEventListener('focus', handleFocus);
+      };
     }, []);
 
     if (isLoading) {

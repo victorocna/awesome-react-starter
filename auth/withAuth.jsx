@@ -10,8 +10,8 @@ const withAuth = (WrappedComponent) => {
   const Wrapper = (props) => {
     const verifyUser = async () => {
       try {
-        const refresh = await ensureUser();
-        store.dispatch({ type: 'SET', jwt: refresh });
+        const token = await ensureUser();
+        store.dispatch({ type: 'SET', jwt: token });
       } catch (err) {
         Router.push('/login');
       }

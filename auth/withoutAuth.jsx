@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Router from 'next/router';
 import ensureUser from './ensure-user';
 import store from './store';
+import getUserRole from './get-user-role';
 
 const withoutAuth = (WrappedComponent) => {
   const Wrapper = (props) => {
@@ -9,10 +10,11 @@ const withoutAuth = (WrappedComponent) => {
     const verifyUser = async () => {
       try {
         setIsLoading(true);
-        const refresh = await ensureUser();
-        // Add authorization logic here if needed
-        Router.push('/admin');
-        store.dispatch({ type: 'SET', jwt: refresh });
+        const token = await ensureUser();
+        const role = getUserRole(token);
+
+        Router.push(`/${role}`);
+        store.dispatch({ type: 'SET', jwt: token });
       } catch (err) {
         Router.push('/login');
         setIsLoading(false);

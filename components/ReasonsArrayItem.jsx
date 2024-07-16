@@ -27,7 +27,7 @@ const ReasonsArrayItem = ({ name, remove, push, sections, emptyRow }) => {
         </div>
 
         <div>
-          <Fieldset name={`${name}.${index}.reason.`} label="Reason">
+          <Fieldset name={`${name}.${index}.reason`} label="Reason">
             <Field id={`${name}.${index}.reason`} name={`${name}.${index}.reason`} as={Input} />
           </Fieldset>
         </div>

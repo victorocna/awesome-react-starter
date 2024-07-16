@@ -10,7 +10,7 @@ const ReasonsArrayItem = ({ name, remove, push, sections, emptyRow }) => {
         <div className="flex flex-wrap items-center gap-2">
           <h3 className="font-semibold flex-1">
             <span>
-              <span>Secțiunea</span> {index + 1}:
+              <span>Section</span> {index + 1}:
             </span>
           </h3>
           <Button
@@ -19,10 +19,10 @@ const ReasonsArrayItem = ({ name, remove, push, sections, emptyRow }) => {
               push(emptyRow);
             }}
           >
-            Adaugă secțiune
+            Add reason
           </Button>
           <Button className="button mini accent text-xs font-medium" onClick={() => remove(index)}>
-            Șterge
+            Remove
           </Button>
         </div>
 

@@ -1,3 +1,4 @@
+export { default as AddReasonItem } from './AddReasonItem';
 export { default as AppHead } from './AppHead';
 export { default as AreYouSure } from './AreYouSure';
 export { default as Bone } from './Bone';
@@ -28,6 +29,7 @@ export { default as Profile } from './Profile';
 export { default as ProfileLoading } from './ProfileLoading';
 export { default as ProfileMenu } from './ProfileMenu';
 export { default as ProfileSuccess } from './ProfileSuccess';
+export { default as ReasonsArrayItem } from './ReasonsArrayItem';
 export { default as ShowMore } from './ShowMore';
 export { default as Spinner } from './Spinner';
 export { default as Time } from './Time';

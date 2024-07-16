@@ -17,7 +17,7 @@ const ArrayField = ({ AddComponent, SectionComponent, name, emptyRow = {} }) => 
 
   const showSections = ({ remove, push }) => (
     <div className="flex flex-col gap-4">
-      <AddComponent push={push} emptyRow={emptyRow} />
+      <AddComponent push={push} emptyRow={emptyRow} error={hasNoRowRelatedError && errors[name]} />
       <SectionComponent
         name={name}
         remove={remove}
@@ -28,12 +28,7 @@ const ArrayField = ({ AddComponent, SectionComponent, name, emptyRow = {} }) => 
     </div>
   );
 
-  return (
-    <div>
-      <FieldArray name={name} render={showSections} />
-      <p className="text-red-500 text-sm h-5">{hasNoRowRelatedError && errors[name]}</p>
-    </div>
-  );
+  return <FieldArray name={name} render={showSections} />;
 };
 
 export default ArrayField;

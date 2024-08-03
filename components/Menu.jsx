@@ -12,7 +12,7 @@ const Menu = () => {
         className="backdrop fixed inset-0 h-screen w-screen bg-gray-300 lg:hidden"
       />
       <nav
-        className="nav-menu overflow-y-auto border-r border-gray-200 bg-white"
+        className="nav-menu border-r border-gray-200 bg-white"
         ref={navRef}
         onTouchStart={(e) => onTouchStart(e.touches[0].clientX)}
         onTouchMove={(e) => onTouchMove(e.touches[0].clientX)}

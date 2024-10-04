@@ -2,6 +2,10 @@ import { useDisclosure, useOnClickOutside } from '@hooks';
 import { useRef } from 'react';
 import { Button } from '.';
 
+/**Context menu component with customizable button and options list
+ * @param options - Array of objects with label, onClick, href, and renderCondition properties
+ * @param children - Button component
+ */
 const ContextMenu = ({ options, children }) => {
   const { isOpen, show, hide } = useDisclosure();
 

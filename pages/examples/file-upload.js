@@ -6,6 +6,7 @@ import { Layout } from '@examples/components';
 import { formatFileName } from '@functions';
 import { useMutation } from '@hooks';
 import { toaster } from '@lib';
+import { withAuth } from '@auth';
 
 const Page = () => {
   const [file, setFile] = useState();
@@ -96,4 +97,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default withAuth(Page);

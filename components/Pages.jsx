@@ -67,6 +67,9 @@ const Pages = () => {
         <MenuItem href="/examples/formik" level="2">
           Formik forms
         </MenuItem>
+        <MenuItem href="/examples/file-upload" level="2">
+          File Upload
+        </MenuItem>
         <MenuItem href="/examples/translate-all" level="2">
           Translate all
         </MenuItem>

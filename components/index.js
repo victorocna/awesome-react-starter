@@ -3,6 +3,7 @@ export { default as AppHead } from './AppHead';
 export { default as AreYouSure } from './AreYouSure';
 export { default as Bone } from './Bone';
 export { default as Button } from './Button';
+export { default as ContextMenu } from './ContextMenu';
 export { default as EmailMask } from './EmailMask';
 export { default as ErrorBoundary } from './ErrorBoundary';
 export { default as ErrorFallback } from './ErrorFallback';

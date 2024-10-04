@@ -1,4 +1,2 @@
-import LoadMoreOnClick from './LoadMoreOnClick';
-import LoadMoreOnScroll from './LoadMoreOnScroll';
-
-export { LoadMoreOnClick, LoadMoreOnScroll };
+export { default as LoadMoreOnClick } from './LoadMoreOnClick';
+export { default as LoadMoreOnScroll } from './LoadMoreOnScroll';

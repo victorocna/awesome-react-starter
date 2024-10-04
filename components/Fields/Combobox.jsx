@@ -13,7 +13,9 @@ const Combobox = ({ children, defaultSelected, placeholder, disabled, onSelect, 
           downshift.isOpen && inputItems.length && 'rounded-b-none',
           disabled && 'pointer-events-none bg-gray-200'
         )}
+        role="button"
         {...downshift.getComboboxProps()}
+        {...downshift.getToggleButtonProps()}
       >
         <input
           value={downshift.selectedItem?.label || ''}
@@ -22,17 +24,11 @@ const Combobox = ({ children, defaultSelected, placeholder, disabled, onSelect, 
           placeholder={placeholder}
           disabled={disabled}
         />
-        <span
-          role="button"
-          {...downshift.getToggleButtonProps()}
-          className={classnames(disabled && 'pointer-events-none')}
-        >
+        <span className={classnames(disabled && 'pointer-events-none')}>
           {icon || <i className="fas fa-chevron-down" />}
         </span>
       </div>
-      <OptionList onSelect={onSelect} {...downshift}>
-        {inputItems}
-      </OptionList>
+      <OptionList {...downshift}>{inputItems}</OptionList>
     </div>
   );
 };

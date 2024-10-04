@@ -1,27 +1,12 @@
-import AutoSubmit from './AutoSubmit';
-import Combobox from './Combobox';
-import DateOfBirth from './DateOfBirth';
-import Datepicker from './Datepicker';
-import Debug from './Debug';
-import Dropdown from './Dropdown';
-import Fieldset from './Fieldset';
-import Form from './Form';
-import MultiSelectAsync from './MultiSelectAsync';
-import PlusMinus from './PlusMinus';
-import Search from './Search';
-import Submit from './Submit';
-
-export {
-  AutoSubmit,
-  Combobox,
-  DateOfBirth,
-  Datepicker,
-  Debug,
-  Dropdown,
-  Fieldset,
-  Form,
-  MultiSelectAsync,
-  PlusMinus,
-  Search,
-  Submit,
-};
+export { default as AutoSubmit } from './AutoSubmit';
+export { default as Combobox } from './Combobox';
+export { default as DateOfBirth } from './DateOfBirth';
+export { default as Datepicker } from './Datepicker';
+export { default as Debug } from './Debug';
+export { default as Dropdown } from './Dropdown';
+export { default as Fieldset } from './Fieldset';
+export { default as Form } from './Form';
+export { default as MultiSelectAsync } from './MultiSelectAsync';
+export { default as PlusMinus } from './PlusMinus';
+export { default as Search } from './Search';
+export { default as Submit } from './Submit';

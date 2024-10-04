@@ -1,9 +1,9 @@
-import checkAuth from './check-auth';
-import ensureUser from './ensure-user';
-import isLoggedIn from './is-logged-in';
-import isTokenExpired from './is-token-expired';
-import refreshUser from './refresh-user';
-import store from './store';
-import withAuth from './withAuth';
-
-export { checkAuth, ensureUser, isLoggedIn, isTokenExpired, refreshUser, store, withAuth };
+export { default as checkAuth } from './check-auth';
+export { default as ensureUser } from './ensure-user';
+export { default as getUserRole } from './get-user-role';
+export { default as isLoggedIn } from './is-logged-in';
+export { default as isTokenExpired } from './is-token-expired';
+export { default as refreshUser } from './refresh-user';
+export { default as store } from './store';
+export { default as withAuth } from './withAuth';
+export { default as withoutAuth } from './withoutAuth';

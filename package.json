@@ -1,6 +1,6 @@
 {
   "name": "awesome-react-starter",
-  "version": "1.6.1",
+  "version": "1.7.3",
   "description": "The awesome React and Next.js starter project from Chess Coders",
   "main": "index.js",
   "scripts": {
@@ -36,7 +36,7 @@
     "js-file-download": "^0.4.12",
     "jsonwebtoken": "^9.0.0",
     "merge-class-names": "^1.4.2",
-    "next": "^13.5.5",
+    "next": "^14.2.3",
     "object-hash": "^3.0.0",
     "pino": "^8.4.0",
     "query-string": "^7.0.0",

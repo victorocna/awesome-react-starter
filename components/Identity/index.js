@@ -1,4 +1,2 @@
-import Confirm from './Confirm';
-import Logout from './Logout';
-
-export { Confirm, Logout };
+export { default as Confirm } from './Confirm';
+export { default as Logout } from './Logout';

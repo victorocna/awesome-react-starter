@@ -1,25 +1,11 @@
-import AddTodo from './AddTodo';
-import CheckTodo from './CheckTodo';
-import FilterTodos from './FilterTodos';
-import RemoveTodo from './RemoveTodo';
-import SortTodos from './SortTodos';
-import TodoBox from './TodoBox';
-import TodoList from './TodoList';
-import TodoListError from './TodoListError';
-import TodoListLoading from './TodoListLoading';
-import TodoListSuccess from './TodoListSuccess';
-import TodoName from './TodoName';
-
-export {
-  AddTodo,
-  CheckTodo,
-  FilterTodos,
-  RemoveTodo,
-  SortTodos,
-  TodoBox,
-  TodoList,
-  TodoListError,
-  TodoListLoading,
-  TodoListSuccess,
-  TodoName,
-};
+export { default as AddTodo } from './AddTodo';
+export { default as CheckTodo } from './CheckTodo';
+export { default as FilterTodos } from './FilterTodos';
+export { default as RemoveTodo } from './RemoveTodo';
+export { default as SortTodos } from './SortTodos';
+export { default as TodoBox } from './TodoBox';
+export { default as TodoList } from './TodoList';
+export { default as TodoListError } from './TodoListError';
+export { default as TodoListLoading } from './TodoListLoading';
+export { default as TodoListSuccess } from './TodoListSuccess';
+export { default as TodoName } from './TodoName';

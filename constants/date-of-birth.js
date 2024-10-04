@@ -1,6 +1,6 @@
 const { lastDayOfMonth, isLeapYear } = require('date-fns');
 
-const months = [
+export const months = [
   { value: 1, label: 'January' },
   { value: 2, label: 'February' },
   { value: 3, label: 'March' },
@@ -15,7 +15,7 @@ const months = [
   { value: 12, label: 'December' },
 ];
 
-const getDays = (month, year) => {
+export const getDays = (month, year) => {
   let lastDay;
   if (!year) {
     const daysInMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -29,7 +29,7 @@ const getDays = (month, year) => {
 
 const YEARS = 100;
 
-const getYears = (month, day) => {
+export const getYears = (month, day) => {
   const currentYear = new Date().getFullYear();
 
   const years = Array.from({ length: YEARS }, (_, i) => ({
@@ -44,7 +44,7 @@ const getYears = (month, day) => {
   return years;
 };
 
-const isValidDate = (day, month, year) => {
+export const isValidDate = (day, month, year) => {
   if (!day || !month || !year) {
     return false;
   }
@@ -52,5 +52,3 @@ const isValidDate = (day, month, year) => {
   const date = new Date(year, month - 1, day);
   return date.getDate() === Number(day) && date.getMonth() === Number(month) - 1;
 };
-
-export { getDays, getYears, isValidDate, months };

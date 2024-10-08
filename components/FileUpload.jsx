@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { Button } from '.';
 import { formatFileName } from '../functions';
 
-const FileUpload = ({ accept, file, setFile, disabled, enableDrop = false, ...props }) => {
+const FileUpload = ({ accept, setFile, disabled, disableDrop = false, ...props }) => {
   const [fileName, setFileName] = useState('');
   const ref = useRef();
 
@@ -21,7 +21,7 @@ const FileUpload = ({ accept, file, setFile, disabled, enableDrop = false, ...pr
 
   const handleDrop = (event) => {
     event.preventDefault();
-    if (!enableDrop || disabled) {
+    if (disableDrop || disabled) {
       return;
     }
 

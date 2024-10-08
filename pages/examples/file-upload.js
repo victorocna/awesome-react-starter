@@ -42,19 +42,19 @@ const Page = () => {
         <h3 className="mt-0">Main examples</h3>
         <div className="w-1/2">
           <p>Default file input example (with drop enabled)</p>
-          <FileUpload setFile={setFile} file={file} enableDrop />
+          <FileUpload setFile={setFile} file={file} />
 
           <p>File drop (with drop enabled)</p>
-          <FileDrop setFile={setFile} file={file} enableDrop />
+          <FileDrop setFile={setFile} file={file} />
 
           <div className="prose-sm">
             <h3>Other examples</h3>
 
             <p>Default file input example (without drop)</p>
-            <FileUpload setFile={setFile} file={file} />
+            <FileUpload setFile={setFile} file={file} disableDrop/>
             <div>
               <p className="mb-1">File drop (without drop)</p>
-              <FileDrop file={file} setFile={setFile} />
+              <FileDrop file={file} setFile={setFile} disableDrop/>
             </div>
 
             <div className="w-1/2">

@@ -29,6 +29,12 @@ const Page = () => {
         <h3 className="mt-0">Example #6</h3>
         <p className="mb-1">Toggle with custom onTrigger callback</p>
         <Toggle onToggle={onToggle} />
+        <h3 className="mt-0">Example #7</h3>
+        <p className="mb-1">Toggle with custom stlying applied (via extraClass prop)</p>
+        <Toggle
+          extraClass="peer-checked:bg-violet-600 peer-focus:ring-violet-300"
+          label="Violet toggle"
+        />
       </div>
     </Layout>
   );

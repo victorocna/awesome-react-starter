@@ -81,3 +81,15 @@ button:disabled {
   left: 0 !important;
   top: 36 !important;
 }
+
+.cancel {
+  @apply px-5 py-1.5 bg-white border-2 border-gray-200 text-gray-600 hover:text-gray-800 hover:bg-gray-100 text-base rounded-md dark:text-slate-300 dark:hover:text-slate-200 dark:border-slate-600 dark:hover:bg-slate-600 dark:bg-slate-700 !important;
+}
+
+.confirm {
+  @apply px-5 py-1.5 bg-primary border-2 border-primary text-base hover:border-sky-800 hover:bg-sky-800 text-white rounded-md !important;
+}
+
+.delete {
+  @apply px-5 py-1.5 border-2 border-red-600 text-base text-white bg-red-600 hover:border-red-500 hover:bg-red-500 rounded-md !important;
+}

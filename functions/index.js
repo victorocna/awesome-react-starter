@@ -1,5 +1,6 @@
 export { default as ago } from './ago';
 export { default as coffee } from './coffee';
+export { default as dateLocaleRo } from './date-locale-ro';
 export { default as extractId } from './extract-id';
 export { default as falsy } from './falsy';
 export { default as isValidDate } from './is-valid-date';

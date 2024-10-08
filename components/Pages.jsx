@@ -31,6 +31,9 @@ const Pages = () => {
         <MenuItem href="/examples/date-of-birth" level="2">
           Date of birth
         </MenuItem>
+        <MenuItem href="/examples/date-range" level="2">
+          Date Range
+        </MenuItem>
         <MenuItem href="/examples/dropdown" level="2">
           Dropdown
         </MenuItem>

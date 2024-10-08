@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { Button } from '.';
 import { formatFileName } from '@functions';
 
-const FileDrop = ({ accept, setFile, disabled, disableDrop = false, ...props }) => {
+const FileDrop = ({ accept, setFile, disabled, disableDrop = false, multiple }) => {
   const [fileName, setFileName] = useState('');
   const ref = useRef();
 
@@ -66,7 +66,7 @@ const FileDrop = ({ accept, setFile, disabled, disableDrop = false, ...props }) 
         type="file"
         accept={accept}
         onChange={handleFileSelect}
-        {...props}
+        multiple={multiple}
       />
     </div>
   );

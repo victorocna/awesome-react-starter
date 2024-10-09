@@ -70,6 +70,9 @@ const Pages = () => {
         <MenuItem href="/examples/formik-array" level="2">
           Formik Array
         </MenuItem>
+        <MenuItem href="/examples/tabs" level="2">
+          Tabs
+        </MenuItem>
         <MenuItem href="/examples/translate-all" level="2">
           Translate all
         </MenuItem>

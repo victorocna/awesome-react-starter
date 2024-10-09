@@ -32,6 +32,7 @@ export { default as ProfileSuccess } from './ProfileSuccess';
 export { default as ReasonsArrayItem } from './ReasonsArrayItem';
 export { default as ShowMore } from './ShowMore';
 export { default as Spinner } from './Spinner';
+export { default as Tabs } from './Tabs';
 export { default as Time } from './Time';
 export { default as Toaster } from './Toaster';
 export { default as Tooltip } from './Tooltip';

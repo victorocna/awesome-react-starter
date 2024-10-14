@@ -18,6 +18,14 @@ const Pages = () => {
       <MenuItem href="/examples/multi-step-form" level="1">
         Multi step Formik form
       </MenuItem>
+      <MenuGroup label="Data Display">
+        <MenuItem href="/examples/description-lists" level="2">
+          Description Lists
+        </MenuItem>
+        <MenuItem href="/examples/stats" level="2">
+          Stats
+        </MenuItem>
+      </MenuGroup>
       <MenuGroup label="Components">
         <MenuItem href="/examples/buttons" level="2">
           Buttons

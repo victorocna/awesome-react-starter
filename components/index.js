@@ -7,6 +7,8 @@ export { default as EmailMask } from './EmailMask';
 export { default as ErrorBoundary } from './ErrorBoundary';
 export { default as ErrorFallback } from './ErrorFallback';
 export { default as Favicon } from './Favicon';
+export { default as FileDrop } from './FileDrop';
+export { default as FileUpload } from './FileUpload';
 export { default as Layout } from './Layout';
 export { default as Link } from './Link';
 export { default as Loading } from './Loading';

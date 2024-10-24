@@ -20,7 +20,7 @@
   "license": "MIT",
   "engines": {
     "npm": ">= 10",
-    "node": ">= 20"
+    "node": ">= 22.8.0"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.2",

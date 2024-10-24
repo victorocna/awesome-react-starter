@@ -1,8 +1,8 @@
+import { Button } from '@components';
+import { formatFileName } from '@functions';
 import { useRef, useState } from 'react';
-import { Button } from '.';
-import { formatFileName } from '../functions';
 
-const FileUpload = ({ accept, setFile, disabled, disableDrop = false, multiple }) => {
+const FileUpload = ({ accept, setFile, disabled, disableDrop = false, multiple = true }) => {
   const [fileName, setFileName] = useState('');
   const ref = useRef();
 
@@ -25,8 +25,8 @@ const FileUpload = ({ accept, setFile, disabled, disableDrop = false, multiple }
       return;
     }
 
+    // Handle dropped files
     const droppedFiles = event.dataTransfer.files;
-
     if (droppedFiles) {
       setFile(droppedFiles);
       setFileName(formatFileName(droppedFiles));
@@ -47,6 +47,7 @@ const FileUpload = ({ accept, setFile, disabled, disableDrop = false, multiple }
         <span>Select</span>
       </Button>
 
+      {/* Hidden file input */}
       <input
         ref={ref}
         className="hidden"

@@ -1,8 +1,8 @@
-import { useRef, useState } from 'react';
-import { Button } from '.';
+import { Button } from '@components';
 import { formatFileName } from '@functions';
+import { useRef, useState } from 'react';
 
-const FileDrop = ({ accept, setFile, disabled, disableDrop = false, multiple }) => {
+const FileDrop = ({ accept, setFile, disabled, disableDrop = false, multiple = true }) => {
   const [fileName, setFileName] = useState('');
   const ref = useRef();
 
@@ -25,8 +25,8 @@ const FileDrop = ({ accept, setFile, disabled, disableDrop = false, multiple }) 
       return;
     }
 
+    // Handle dropped files
     const droppedFiles = event.dataTransfer.files;
-
     if (droppedFiles) {
       setFile(droppedFiles);
       setFileName(formatFileName(droppedFiles));
@@ -44,9 +44,7 @@ const FileDrop = ({ accept, setFile, disabled, disableDrop = false, multiple }) 
         onDrop={handleDrop}
         onDragOver={handleDragOver}
       >
-        <p className="text-gray-600">
-          {fileName ? fileName : 'Drag and drop files here or click to select'}
-        </p>
+        <p className="text-gray-600">{fileName || 'Drag and drop files here or click to select'}</p>
 
         <div className="mt-4">
           <Button

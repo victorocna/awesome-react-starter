@@ -1,12 +1,12 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { withAuth } from '@auth';
 import { FileDrop, FileUpload } from '@components';
 import { Submit } from '@components/Fields';
 import { Layout } from '@examples/components';
 import { formatFileName } from '@functions';
 import { useMutation } from '@hooks';
 import { toaster } from '@lib';
-import { withAuth } from '@auth';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const Page = () => {
   const [file, setFile] = useState();
@@ -51,10 +51,10 @@ const Page = () => {
             <h3>Other examples</h3>
 
             <p>Default file input example (without drop)</p>
-            <FileUpload setFile={setFile} file={file} disableDrop/>
+            <FileUpload setFile={setFile} file={file} disableDrop />
             <div>
               <p className="mb-1">File drop (without drop)</p>
-              <FileDrop file={file} setFile={setFile} disableDrop/>
+              <FileDrop file={file} setFile={setFile} disableDrop />
             </div>
 
             <div className="w-1/2">
@@ -69,7 +69,7 @@ const Page = () => {
 
             <div className="w-1/2">
               <p className="mb-1">Multiple file input upload</p>
-              <FileUpload multiple setFile={setFile} file={file} />
+              <FileUpload setFile={setFile} file={file} multiple={true} />
             </div>
 
             <div className="w-1/2">

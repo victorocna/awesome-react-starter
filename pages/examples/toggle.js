@@ -10,25 +10,31 @@ const Page = () => {
 
   return (
     <Layout title="Toggle">
-      <div class="prose-sm">
+      <div className="prose-sm">
         <h3 className="mt-0">Example #1</h3>
         <p className="mb-1">Classic toggle with default label</p>
         <Toggle />
+
         <h3 className="mt-0">Example #2</h3>
         <p className="mb-1">Classic toggle with custom label</p>
         <Toggle label="Custom label" />
+
         <h3 className="mt-0">Example #3</h3>
         <p className="mb-1">Disabled toggle</p>
-        <Toggle label="Disabled" initialState={false} disabled />
+        <Toggle label="Disabled" initialState={false} disabled={true} />
+
         <h3 className="mt-0">Example #4</h3>
         <p className="mb-1">Toggle enabled by default</p>
         <Toggle initialState={true} label="Enabled" />
+
         <h3 className="mt-0">Example #5</h3>
         <p className="mb-1">Disabled toggle with initialStae set to true</p>
-        <Toggle initialState={true} label="Disabled enabled" disabled />
+        <Toggle initialState={true} label="Disabled enabled" disabled={true} />
+
         <h3 className="mt-0">Example #6</h3>
         <p className="mb-1">Toggle with custom onTrigger callback</p>
         <Toggle onToggle={onToggle} />
+
         <h3 className="mt-0">Example #7</h3>
         <p className="mb-1">Toggle with custom stlying applied (via extraClass prop)</p>
         <Toggle

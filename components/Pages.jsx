@@ -30,6 +30,9 @@ const Pages = () => {
         <MenuItem href="/examples/buttons" level="2">
           Buttons
         </MenuItem>
+        <MenuItem href="/examples/context-menu" level="2">
+          Context Menu
+        </MenuItem>
         <MenuItem href="/examples/datepicker" level="2">
           Datepicker
         </MenuItem>

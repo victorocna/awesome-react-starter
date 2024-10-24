@@ -5,6 +5,7 @@ export { default as Datepicker } from './Datepicker';
 export { default as Debug } from './Debug';
 export { default as Dropdown } from './Dropdown';
 export { default as Fieldset } from './Fieldset';
+export { default as FilterModal } from './FilterModal';
 export { default as Form } from './Form';
 export { default as MultiSelectAsync } from './MultiSelectAsync';
 export { default as PlusMinus } from './PlusMinus';

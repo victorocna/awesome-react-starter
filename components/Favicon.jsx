@@ -12,6 +12,6 @@ const Favicon = () => {
       <link rel="icon" href="/favicon.png" type="image/png" />
     </>
   );
-}
+};
 
 export default Favicon;

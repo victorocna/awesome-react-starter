@@ -41,7 +41,7 @@
     "pino": "^8.4.0",
     "query-string": "^7.0.0",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.5.0",
+    "react-bootstrap": "^2.10.2",
     "react-calendar": "^3.7.0",
     "react-dom": "^18.2.0",
     "react-google-recaptcha": "^2.1.0",

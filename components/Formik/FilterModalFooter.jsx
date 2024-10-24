@@ -1,13 +1,14 @@
 import { Button } from '@components';
 import { useFormikContext } from 'formik';
+import { omitBy, size } from 'lodash';
 import { useMemo } from 'react';
 import { Modal } from 'react-bootstrap';
 
-const FilterModalFooter = ({
-  calculateActiveFilters = () => {},
-  initialValues = {},
-  onReset = () => {},
-}) => {
+const FilterModalFooter = ({ initialValues = {}, onReset = () => {} }) => {
+  const calculateActiveFilters = (values, initialValues) => {
+    return size(omitBy(values, (v, k) => v === initialValues[k]));
+  };
+
   const { resetForm, values } = useFormikContext();
   const activeFiltersCount = useMemo(
     () => calculateActiveFilters(values, initialValues),

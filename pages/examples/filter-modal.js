@@ -1,6 +1,5 @@
 import { Button } from '@components';
-import { Dropdown, Fieldset, Search } from '@components/Formik';
-import { FilterModal } from '@components/Forms/Filters';
+import { Dropdown, Fieldset, FilterModal, Search } from '@components/Formik';
 import { Layout } from '@examples/components';
 import { initialValues } from '@examples/models/todo-filters';
 import { useDisclosure } from '@hooks';
@@ -11,18 +10,10 @@ const Page = () => {
   const [options, setOptions] = useState({});
   const { hide, isOpen, show } = useDisclosure();
 
-  const applyFilterLogic = (values) => {
+  // Callback function to apply the filter values
+  const filterCallback = (values) => {
     setOptions(values);
     hide();
-  };
-
-  const calculateActiveFilters = (values, initialValues) => {
-    return Object.keys(values).reduce((acc, key) => {
-      if (values[key] !== initialValues[key]) {
-        return acc + 1;
-      }
-      return acc;
-    }, 0);
   };
 
   return (
@@ -43,12 +34,11 @@ const Page = () => {
               Open Filter Modal
             </Button>
             <FilterModal
-              applyFilterLogic={applyFilterLogic}
-              calculateActiveFilters={calculateActiveFilters}
+              filterCallback={filterCallback}
               hide={hide}
               initialValues={initialValues}
               isOpen={isOpen}
-              title="Filtrează căutări"
+              title="Filter Todos"
               values={options}
             >
               <div className="flex flex-col gap-2 px-4 py-3">

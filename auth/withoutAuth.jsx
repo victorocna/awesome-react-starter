@@ -1,19 +1,23 @@
+import { useEffect, useState } from 'react';
 import Router from 'next/router';
-import { useEffect } from 'react';
 import ensureUser from './ensure-user';
 import store from './store';
+import getUserRole from './get-user-role';
 
-/**
- * @see https://github.com/zeit/next.js/issues/153#issuecomment-257924301
- */
-const withAuth = (WrappedComponent) => {
+const withoutAuth = (WrappedComponent) => {
   const Wrapper = (props) => {
+    const [isLoading, setIsLoading] = useState(true);
     const verifyUser = async () => {
       try {
+        setIsLoading(true);
         const token = await ensureUser();
+        const role = getUserRole(token);
+
+        Router.push(`/${role}`);
         store.dispatch({ type: 'SET', jwt: token });
       } catch (err) {
         Router.push('/login');
+        setIsLoading(false);
       }
     };
 
@@ -31,10 +35,14 @@ const withAuth = (WrappedComponent) => {
       };
     }, []);
 
-    return <WrappedComponent withAuth {...props} />;
+    if (isLoading) {
+      return null;
+    }
+
+    return <WrappedComponent withoutAuth {...props} />;
   };
 
   return Wrapper;
 };
 
-export default withAuth;
+export default withoutAuth;

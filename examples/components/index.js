@@ -10,6 +10,7 @@ export { default as MyProfileDetails } from './MyProfileDetails';
 export { default as MyProfileError } from './MyProfileError';
 export { default as MyProfileLoading } from './MyProfileLoading';
 export { default as MyProfileSuccess } from './MyProfileSuccess';
+export { default as Preview } from './Preview';
 export { default as Quote } from './Quote';
 export { default as QuoteError } from './QuoteError';
 export { default as QuoteLoading } from './QuoteLoading';

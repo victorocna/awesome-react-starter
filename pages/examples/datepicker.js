@@ -9,7 +9,7 @@ const Page = () => {
   const [checkOut, setCheckOut] = useState();
 
   return (
-    <Layout title="Buttons">
+    <Layout title="Date picker">
       <div className="prose-sm">
         <h3 className="mt-0">Example #1</h3>
         <p className="mb-1">Classic datepicker with default value</p>

@@ -6,7 +6,8 @@ const checkAuth = async (context, callback) => {
   } = context;
 
   try {
-    const token = await ensureUser(cookies[process.env.JWT_TOKEN_NAME], headers);
+    const cookie = cookies[process.env.JWT_TOKEN_NAME];
+    const token = await ensureUser(cookie, headers);
 
     // Pass the props to the page from the callback or an empty object
     const props = typeof callback === 'function' ? (await callback(token, context)) ?? {} : {};

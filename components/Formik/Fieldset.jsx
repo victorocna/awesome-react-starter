@@ -14,7 +14,7 @@ const Fieldset = ({ label, help, name, children }) => {
         </label>
       )}
       {children}
-      <div className="form-help first-letter text-sm text-secondary h-5">
+      <div className="form-help first-letter text-sm text-secondary">
         {hasError ? get(errors, name) : help}
       </div>
     </fieldset>

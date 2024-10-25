@@ -1,4 +1,3 @@
-import { withoutAuth } from '@auth';
 import { Link } from '@components';
 import { LoginForm } from '@components/Forms';
 
@@ -24,4 +23,4 @@ const Page = () => {
   );
 };
 
-export default withoutAuth(Page);
+export default Page;

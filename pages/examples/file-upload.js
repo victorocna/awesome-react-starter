@@ -1,5 +1,5 @@
 import { withAuth } from '@auth';
-import { FileDrop, FileUpload } from '@components';
+import { FileDrop, FileUpload } from '@components/Fields';
 import { Submit } from '@components/Fields';
 import { Layout } from '@examples/components';
 import { formatFileName } from '@functions';

@@ -11,6 +11,8 @@ export { default as DropdownLanguage } from './DropdownLanguage';
 export { default as Email } from './Email';
 export { default as Field } from './Field';
 export { default as Fieldset } from './Fieldset';
+export { default as FileDrop } from './FileDrop';
+export { default as FileUpload } from './FileUpload';
 export { default as Input } from './Input';
 export { default as MultiSelectAsync } from './MultiSelectAsync';
 export { default as Number } from './Number';

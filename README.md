@@ -1,4 +1,4 @@
-# Awesome React starter
+# Awesome React and Next.js project starter
 
 Starter template for React and Next.js projects packed with features like authentication, custom hooks, Tailwind support and many more.
 
@@ -36,3 +36,14 @@ The authorization process is inspired [by these best practices of using JWT from
 
 These HTTP response headers increase the security of the app and are bundled by default.
 Review and update the security headers in the `headers.js` file and analyse your app [using this tool](https://securityheaders.com).
+
+### Available React form components
+
+- simple input components: text input, email input, number input, phone input, password input
+- simple form components: checkbox, radio buttons, textarea, fieldset
+- complex input components: debounced async search, file upload
+- dropdown form components: classic select, custom dropdown, combobox, async dropdown, async combobox, async multi select
+- for components for dates: date picker, time picker, date of birth
+- other form components: reCAPTCHA, quantity selector (plus/minus)
+
+### Available React components

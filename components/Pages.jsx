@@ -33,11 +33,11 @@ const Pages = () => {
         <MenuItem href="/examples/context-menu" level="2">
           Context Menu
         </MenuItem>
-        <MenuItem href="/examples/datepicker" level="2">
-          Datepicker
+        <MenuItem href="/examples/date-picker" level="2">
+          Date picker
         </MenuItem>
-        <MenuItem href="/examples/timepicker" level="2">
-          Timepicker
+        <MenuItem href="/examples/time-picker" level="2">
+          Time picker
         </MenuItem>
         <MenuItem href="/examples/date-of-birth" level="2">
           Date of birth

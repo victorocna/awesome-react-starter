@@ -1,4 +1,4 @@
-import { Datepicker } from '@components/Fields';
+import { DatePicker } from '@components/Fields';
 import { Layout } from '@examples/components';
 import { format } from 'date-fns';
 import { useState } from 'react';
@@ -12,25 +12,25 @@ const Page = () => {
     <Layout title="Date picker">
       <div className="prose-sm">
         <h3 className="mt-0">Example #1</h3>
-        <p className="mb-1">Classic datepicker with default value</p>
+        <p className="mb-1">Classic date picker with default value</p>
         <div className="flex gap-2">
           <div className="w-80">
             <label htmlFor="checkIn" className="mb-0 cursor-pointer">
               Check-in date
             </label>
-            <Datepicker id="checkIn" value={checkIn} onChange={setCheckIn} />
+            <DatePicker id="checkIn" value={checkIn} onChange={setCheckIn} />
             <span>Selected check-in date: {checkIn}</span>
           </div>
         </div>
 
         <h3 className="mt-4">Example #2</h3>
-        <p className="mb-1">Read only datepicker without default value and minimum date</p>
+        <p className="mb-1">Read only date picker without default value and minimum date</p>
         <div className="flex gap-2">
           <div className="w-80">
             <label htmlFor="checkOut" className="mb-0 cursor-pointer">
               Check-out date
             </label>
-            <Datepicker
+            <DatePicker
               id="checkOut"
               value={checkOut}
               onChange={setCheckOut}

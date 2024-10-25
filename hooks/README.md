@@ -139,7 +139,7 @@ const DueDate = () => {
     }
   }, [values.date]);
 
-  return <Datepicker key={key} name="dueDate" format="yyyy-MM-dd" />;
+  return <DatePicker key={key} name="dueDate" format="yyyy-MM-dd" />;
 };
 ```
 

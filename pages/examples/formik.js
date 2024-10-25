@@ -1,4 +1,4 @@
-import { Datepicker, Fieldset, Form, PlusMinus, Submit } from '@components/Formik';
+import { DatePicker, Fieldset, Form, PlusMinus, Submit } from '@components/Formik';
 import { Layout } from '@examples/components';
 import { initialValues, validationSchema } from '@examples/models/form';
 import { Field, Formik } from 'formik';
@@ -22,8 +22,8 @@ const Page = () => {
             </Fieldset>
 
             <div className="w-80">
-              <Fieldset name="checkIn" label="Check-in datepicker">
-                <Field id="checkIn" name="checkIn" as={Datepicker} />
+              <Fieldset name="checkIn" label="Check-in date picker">
+                <Field id="checkIn" name="checkIn" as={DatePicker} />
               </Fieldset>
             </div>
 

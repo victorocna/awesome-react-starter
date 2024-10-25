@@ -2,7 +2,7 @@ import { Button, Spinner } from '@components';
 import {
   Checkbox,
   Combobox,
-  Datepicker,
+  DatePicker,
   Dropdown,
   Fieldset,
   Input,
@@ -102,13 +102,13 @@ const Page = () => {
           </div>
         </div>
         <div className="mb-4">
-          <h3>Datepickers</h3>
+          <h3>Date pickers</h3>
           <p>
-            Pick or write any date and display them in any format. That's how versatile a datepicker
+            Pick or write any date and display them in any format. That's how versatile a date picker
             should be.
           </p>
           <div className="mb-4 grid gap-4 md:grid-cols-3">
-            <Datepicker name="datepicker" placeholder="yyyy-MM-dd" />
+            <DatePicker name="date-picker" placeholder="yyyy-MM-dd" />
           </div>
         </div>
         <div className="mb-4">

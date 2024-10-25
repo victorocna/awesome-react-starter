@@ -1,7 +1,7 @@
 export { default as AutoSubmit } from './AutoSubmit';
 export { default as Combobox } from './Combobox';
 export { default as DateOfBirth } from './DateOfBirth';
-export { default as Datepicker } from './Datepicker';
+export { default as DatePicker } from './DatePicker';
 export { default as Debug } from './Debug';
 export { default as Dropdown } from './Dropdown';
 export { default as Fieldset } from './Fieldset';

@@ -6,7 +6,7 @@ import { Modal } from 'react-bootstrap';
 import Calendar from 'react-calendar';
 import Input from './Input';
 
-const Datepicker = ({ value: initialValue, onChange, calendarProps = {}, ...props }) => {
+const DatePicker = ({ value: initialValue, onChange, calendarProps = {}, ...props }) => {
   const [value, setValue] = useState(initialValue);
   const { isOpen, show, hide } = useDisclosure();
 
@@ -49,4 +49,4 @@ const Datepicker = ({ value: initialValue, onChange, calendarProps = {}, ...prop
   );
 };
 
-export default Datepicker;
+export default DatePicker;

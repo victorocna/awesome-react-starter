@@ -1,6 +1,6 @@
 import { ArrayField } from '@components/Fields';
 import { Form, Submit } from '@components/Formik';
-import { AddReasonItem, Layout, ReasonsArrayItem } from '@exampeles/components';
+import { AddReasonItem, Layout, ReasonsArrayItem } from '@examples/components';
 import { initialValues, validationSchema } from '@examples/models/array-form';
 import { Formik } from 'formik';
 

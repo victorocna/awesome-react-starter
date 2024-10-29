@@ -12,11 +12,13 @@ const checkAuth = async (context, callback) => {
   }
 
   try {
-    const { token } = await axios.post(
-      '/refresh-token',
-      {},
-      { headers: { cookie: headers.cookie }, withCredentials: true }
-    );
+    const { token } = await axios({
+      method: 'post',
+      url: '/refresh-token',
+      data: {},
+      withCredentials: true,
+      headers: { cookie: headers.cookie },
+    });
 
     if (!isRouteAllowed(context.resolvedUrl, token)) {
       return { redirect: { destination: '/login', permanent: false } };

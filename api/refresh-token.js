@@ -11,7 +11,13 @@ import { axios } from '@lib';
  * @throws {Error} If the request fails.
  */
 const refreshToken = async () => {
-  const { token } = await axios.post('/refresh-token', {}, { withCredentials: true });
+  const { token } = await axios({
+    method: 'post',
+    url: '/refresh-token',
+    data: {},
+    withCredentials: true,
+  });
+
   store.dispatch({ type: 'SET', jwt: token });
   return token;
 };

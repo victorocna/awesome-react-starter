@@ -1,4 +1,4 @@
-import { PlusMinus as PlusMinusField } from '@components/Fields';
+import PlusMinusField from '@components/Fields/PlusMinus';
 import { useFormikContext } from 'formik';
 
 const PlusMinus = ({ name }) => {

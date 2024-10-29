@@ -2,6 +2,7 @@ export { default as ago } from './ago';
 export { default as coffee } from './coffee';
 export { default as extractId } from './extract-id';
 export { default as falsy } from './falsy';
+export { default as formatDate } from './format-date';
 export { default as formatFileName } from './format-file-name';
 export { default as isValidDate } from './is-valid-date';
 export { default as safeNumber } from './safe-number';

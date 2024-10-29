@@ -1,4 +1,4 @@
-import { Combobox as ComboboxField } from '@components/Fields';
+import ComboboxField from '@components/Fields/Combobox';
 import { useFormikContext } from 'formik';
 import { get } from 'lodash';
 

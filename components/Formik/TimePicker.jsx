@@ -1,5 +1,5 @@
+import TimePickerField from '@components/Fields/TimePicker';
 import { useFormikContext } from 'formik';
-import TimePickerField from '../Fields/TimePicker';
 
 const TimePicker = ({ name: field, ...props }) => {
   const { setFieldValue } = useFormikContext();

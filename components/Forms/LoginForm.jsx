@@ -1,6 +1,6 @@
 import { login } from '@api/identity';
-import { Email, Fieldset, Password, Recaptcha } from '@components/Fields';
-import { Field, HookForm, Submit } from '@components/HookForm';
+import { Email, Password, Recaptcha } from '@components/Fields';
+import { Field, Fieldset, HookForm, Submit } from '@components/HookForm';
 import { initialValues, validationSchema } from '@models/login';
 import { useRef } from 'react';
 

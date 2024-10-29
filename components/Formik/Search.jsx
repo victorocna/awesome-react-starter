@@ -1,4 +1,4 @@
-import { Search as SearchField } from '@components/Fields';
+import SearchField from '@components/Fields/Search';
 import { useField, useFormikContext } from 'formik';
 
 const Search = ({ name, ...props }) => {

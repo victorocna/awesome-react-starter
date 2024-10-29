@@ -1,10 +1,6 @@
-import { DateOfBirth as DateOfBirthField } from '@components/Fields';
-import { format } from 'date-fns';
+import DateOfBirthField from '@components/Fields/DateOfBirth';
+import { formatDate } from '@functions';
 import { useFormikContext } from 'formik';
-
-const formatDate = (date, dateFormat = 'yyyy-MM-dd') => {
-  return format(new Date(date), dateFormat);
-};
 
 const DateOfBirth = ({ name, ...props }) => {
   const { setFieldValue } = useFormikContext();

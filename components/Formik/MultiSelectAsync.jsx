@@ -1,4 +1,4 @@
-import { MultiSelectAsync as MultiSelectAsyncField } from '@components/Fields';
+import MultiSelectAsyncField from '@components/Fields/MultiSelectAsync';
 import { useFormikContext } from 'formik';
 import { get } from 'lodash';
 

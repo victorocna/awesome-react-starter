@@ -15,9 +15,6 @@ const Pages = () => {
       <MenuItem href="/examples/profile" level="1">
         Profile
       </MenuItem>
-      <MenuItem href="/examples/multi-step-form" level="1">
-        Multi step Formik form
-      </MenuItem>
       <MenuGroup label="Data Display">
         <MenuItem href="/examples/description-lists" level="2">
           Description Lists
@@ -72,12 +69,6 @@ const Pages = () => {
         <MenuItem href="/examples/show-more" level="2">
           Show more
         </MenuItem>
-        <MenuItem href="/examples/forms" level="2">
-          Forms
-        </MenuItem>
-        <MenuItem href="/examples/formik" level="2">
-          Formik forms
-        </MenuItem>
         <MenuItem href="/examples/file-upload" level="2">
           File Upload
         </MenuItem>
@@ -92,6 +83,20 @@ const Pages = () => {
         </MenuItem>
         <MenuItem href="/examples/filter-modal" level="2">
           Filter modal
+        </MenuItem>
+      </MenuGroup>
+      <MenuGroup label="Forms">
+        <MenuItem href="/examples/forms" level="2">
+          Basic forms
+        </MenuItem>
+        <MenuItem href="/examples/formik" level="2">
+          Formik forms
+        </MenuItem>
+        <MenuItem href="/examples/multi-step-form" level="2">
+          Formik multi step forms
+        </MenuItem>
+        <MenuItem href="/examples/react-hook-form" level="2">
+          React hook forms
         </MenuItem>
       </MenuGroup>
       <MenuItem href="/login" level="1">

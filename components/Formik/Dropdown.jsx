@@ -1,4 +1,4 @@
-import { Dropdown as DropdownField } from '@components/Fields';
+import DropdownField from '@components/Fields/Dropdown';
 import { useFormikContext } from 'formik';
 import { get } from 'lodash';
 

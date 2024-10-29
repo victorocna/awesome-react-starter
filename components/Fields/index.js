@@ -14,6 +14,7 @@ export { default as Fieldset } from './Fieldset';
 export { default as FileDrop } from './FileDrop';
 export { default as FileUpload } from './FileUpload';
 export { default as Input } from './Input';
+export { default as LabeledSelect } from './LabeledSelect';
 export { default as MultiSelectAsync } from './MultiSelectAsync';
 export { default as Number } from './Number';
 export { default as Option } from './Option';

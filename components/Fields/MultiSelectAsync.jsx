@@ -4,7 +4,7 @@ import {
   getValueToOption as defaultGetValueToOption,
 } from '@functions/format-multi-select';
 import { useOnClickOutside, useQuery } from '@hooks';
-import { debounce, has, isEqual, sortBy } from 'lodash';
+import { debounce, has, isEqual, isFunction, sortBy } from 'lodash';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 const MultiSelectAsync = ({
@@ -116,10 +116,9 @@ const MultiSelectAsync = ({
 
   // Call onChange callback when selected options change
   useEffect(() => {
-    if (typeof onChange !== 'function') {
-      return;
+    if (isFunction(onChange)) {
+      onChange(selectedOptions.map(getOptionToValue));
     }
-    onChange(selectedOptions.map(getOptionToValue));
   }, [selectedOptions]);
 
   // Update selectAll state based on selected options and available options

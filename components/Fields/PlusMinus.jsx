@@ -1,3 +1,4 @@
+import { isFunction } from 'lodash';
 import { useEffect, useState } from 'react';
 
 const PlusMinus = ({ onChange, max = null, min = 0, value: initialValue }) => {
@@ -17,7 +18,7 @@ const PlusMinus = ({ onChange, max = null, min = 0, value: initialValue }) => {
   };
 
   useEffect(() => {
-    if (typeof onChange === 'function') {
+    if (isFunction(onChange)) {
       onChange(value);
     }
   }, [value]);

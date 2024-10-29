@@ -1,6 +1,7 @@
 import { isValidDate } from '@functions';
 import { useDisclosure } from '@hooks';
 import { format as dateFormat } from 'date-fns';
+import { isFunction } from 'lodash';
 import { useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import Calendar from 'react-calendar';
@@ -19,7 +20,7 @@ const DatePicker = ({ value: initialValue, onChange, calendarProps = {}, ...prop
   };
 
   useEffect(() => {
-    if (typeof onChange === 'function') {
+    if (isFunction(onChange)) {
       try {
         onChange(isValidDate(value) ? value : '');
       } catch {

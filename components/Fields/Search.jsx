@@ -1,12 +1,12 @@
 import { classnames } from '@lib';
-import { debounce } from 'lodash';
+import { debounce, isFunction } from 'lodash';
 import { useCallback, useRef } from 'react';
 
 const Search = ({ extraClass, placeholder, onChange, value }) => {
   const ref = useRef();
 
   const request = debounce((value) => {
-    if (typeof onChange === 'function') {
+    if (isFunction(onChange)) {
       onChange(value);
     }
   }, 500);
@@ -22,7 +22,7 @@ const Search = ({ extraClass, placeholder, onChange, value }) => {
 
   const resetInputValue = () => {
     ref.current.value = '';
-    if (typeof onChange === 'function') {
+    if (isFunction(onChange)) {
       onChange('');
     }
   };

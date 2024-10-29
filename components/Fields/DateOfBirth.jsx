@@ -1,4 +1,5 @@
 import { getDays, getYears, isValidDate, months } from '@constants/date-of-birth';
+import { formatDate } from '@functions';
 import { classnames } from '@lib';
 import { isValid } from 'date-fns';
 import { isFunction } from 'lodash';
@@ -28,7 +29,7 @@ const Select = ({ extraClass = '', id, label, onChange, options, value }) => {
   );
 };
 
-const DateOfBirth = ({ onChange, value }) => {
+const DateOfBirth = ({ onChange, value, format = 'yyyy-MM-dd' }) => {
   const defaultValue = useMemo(() => (isValid(new Date(value)) ? new Date(value) : null), [value]);
 
   const [day, setDay] = useState(defaultValue?.getDate() || '');
@@ -39,13 +40,12 @@ const DateOfBirth = ({ onChange, value }) => {
   const years = useMemo(() => getYears(month, day), [month, day]);
 
   useEffect(() => {
-    if (!isFunction(onChange)) {
-      return null;
-    }
-    if (day && month && year && isValidDate(day, month, year)) {
-      onChange(new Date(year, month - 1, day));
-    } else {
-      onChange('');
+    if (isFunction(onChange)) {
+      if (day && month && year && isValidDate(day, month, year)) {
+        onChange(formatDate(new Date(year, month - 1, day), format));
+      } else {
+        onChange('');
+      }
     }
   }, [day, month, year]);
 

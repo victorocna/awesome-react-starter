@@ -1,27 +1,35 @@
-import ensureUser from './ensure-user';
+import { axios } from '@lib';
+import isRouteAllowed from './is-route-allowed';
 
 const checkAuth = async (context, callback) => {
   const {
     req: { cookies, headers },
   } = context;
+  const refreshToken = cookies[process.env.JWT_TOKEN_NAME];
+
+  if (!refreshToken) {
+    return { redirect: { destination: '/login', permanent: false } };
+  }
 
   try {
-    const cookie = cookies[process.env.JWT_TOKEN_NAME];
-    const token = await ensureUser(cookie, headers);
+    const { token } = await axios({
+      method: 'post',
+      url: '/refresh-token',
+      data: {},
+      withCredentials: true,
+      headers: { cookie: headers.cookie },
+    });
 
-    // Pass the props to the page from the callback or an empty object
-    const props = typeof callback === 'function' ? (await callback(token, context)) ?? {} : {};
+    if (!isRouteAllowed(context.resolvedUrl, token)) {
+      return { redirect: { destination: '/login', permanent: false } };
+    }
+
+    // Callback function with token for additional props
+    const props = callback ? await callback(token, context) : {};
     return { props };
   } catch (err) {
-    console.error('Could not ensure user is logged in or refresh their token');
-    console.error(err);
-
-    return {
-      redirect: {
-        destination: '/login',
-        permanent: false,
-      },
-    };
+    console.error('Authentication failed:', err);
+    return { redirect: { destination: '/login', permanent: false } };
   }
 };
 

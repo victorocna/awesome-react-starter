@@ -1,37 +1,61 @@
+import refreshToken from '@api/refresh-token';
+import jwt from 'jsonwebtoken';
 import Router from 'next/router';
 import { useEffect } from 'react';
-import ensureUser from './ensure-user';
-import store from './store';
+import isRouteAllowed from './is-route-allowed';
+import isTokenExpired from './is-token-expired';
+import { store } from './store';
 
-/**
- * @see https://github.com/zeit/next.js/issues/153#issuecomment-257924301
- */
+// Helper to verify and refresh the token if expired
+const handleTokenVerification = async () => {
+  let accessToken = store.getState();
+
+  // Verify token validity
+  if (accessToken && !isTokenExpired(jwt.decode(accessToken))) {
+    return accessToken;
+  }
+
+  // Refresh the token if expired
+  try {
+    return await refreshToken();
+  } catch (error) {
+    store.dispatch({ type: 'REMOVE' });
+    Router.push('/login');
+    throw new Error('Failed to refresh token');
+  }
+};
+
+// Helper for redirection based on route authorization
+const handleAuthorization = async (accessToken) => {
+  if (!isRouteAllowed(Router.pathname, accessToken)) {
+    store.dispatch({ type: 'REMOVE' });
+    Router.push('/login');
+    throw new Error('Unauthorized access');
+  }
+};
+
+// HOC for component authorization
 const withAuth = (WrappedComponent) => {
   const Wrapper = (props) => {
-    const verifyUser = async () => {
-      try {
-        const token = await ensureUser();
-        store.dispatch({ type: 'SET', jwt: token });
-      } catch (err) {
-        Router.push('/login');
-      }
-    };
-
     useEffect(() => {
-      const handleFocus = async () => {
-        verifyUser();
+      const verifyUser = async () => {
+        try {
+          const accessToken = await handleTokenVerification();
+          await handleAuthorization(accessToken);
+        } catch (error) {
+          console.error('Authorization failed', error);
+        }
       };
 
       verifyUser();
 
-      // Refresh JWT token when window is focused
+      // Re-run verification when window gains focus
+      const handleFocus = () => verifyUser();
       window.addEventListener('focus', handleFocus);
-      return () => {
-        window.removeEventListener('focus', handleFocus);
-      };
+      return () => window.removeEventListener('focus', handleFocus);
     }, []);
 
-    return <WrappedComponent withAuth {...props} />;
+    return <WrappedComponent {...props} />;
   };
 
   return Wrapper;

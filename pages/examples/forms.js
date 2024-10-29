@@ -104,8 +104,8 @@ const Page = () => {
         <div className="mb-4">
           <h3>Date pickers</h3>
           <p>
-            Pick or write any date and display them in any format. That's how versatile a date picker
-            should be.
+            Pick or write any date and display them in any format. That's how versatile a date
+            picker should be.
           </p>
           <div className="mb-4 grid gap-4 md:grid-cols-3">
             <DatePicker name="date-picker" placeholder="yyyy-MM-dd" />

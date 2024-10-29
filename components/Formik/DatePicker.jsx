@@ -1,8 +1,8 @@
-import DatePickerField from '@components/Fields/DatePick';
+import DatePickerField from '@components/Fields/DatePicker';
 import { format as dateFormat } from 'date-fns';
 import { useFormikContext } from 'formik';
 
-const Datepicker = ({ name, onChange, ...props }) => {
+const DatePicker = ({ name, onChange, ...props }) => {
   const { setFieldValue } = useFormikContext();
 
   const handleChange = (value) => {
@@ -16,4 +16,4 @@ const Datepicker = ({ name, onChange, ...props }) => {
   return <DatePickerField name={name} onChange={handleChange} {...props} />;
 };
 
-export default Datepicker;
+export default DatePicker;

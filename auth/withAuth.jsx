@@ -1,4 +1,4 @@
-import { axios } from '@lib';
+import refreshToken from '@api/refresh-token';
 import jwt from 'jsonwebtoken';
 import Router from 'next/router';
 import { useEffect } from 'react';
@@ -17,9 +17,7 @@ const handleTokenVerification = async () => {
 
   // Refresh the token if expired
   try {
-    const { token: newToken } = await axios.post('/refresh-token', {}, { withCredentials: true });
-    store.dispatch({ type: 'SET', jwt: newToken });
-    return newToken;
+    return await refreshToken();
   } catch (error) {
     store.dispatch({ type: 'REMOVE' });
     Router.push('/login');

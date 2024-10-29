@@ -15,7 +15,7 @@ const checkAuth = async (context, callback) => {
     const { token } = await axios.post(
       '/refresh-token',
       {},
-      { withCredentials: true, headers: { cookie: headers.cookie } }
+      { headers: { cookie: headers.cookie }, withCredentials: true }
     );
 
     if (!isRouteAllowed(context.resolvedUrl, token)) {

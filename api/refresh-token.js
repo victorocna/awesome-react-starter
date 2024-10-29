@@ -1,24 +1,18 @@
 import { store } from '@auth';
 import { axios } from '@lib';
-import { decode } from 'jsonwebtoken';
 
 /**
- * This function handles the token refresh process by making a POST request to the 'refresh-token' endpoint.
- * Since the Next.js server cannot access the client-side React Redux store, we rely on this server-side mechanism
- * to obtain a refreshed token based on the incoming request headers. The refreshed token is then stored
- * using a server-side method, acknowledging the separation between client and server execution environments.
+ * Refreshes the JWT token by making a request to the `/refresh-token` endpoint.
+ * Stores the new token in the application's state.
  *
- * @param {string} headers The request headers
- * @returns {Promise<string>} The refreshed token
+ * @async
+ * @function
+ * @returns {Promise<string>} The refreshed JWT token.
+ * @throws {Error} If the request fails.
  */
-const refreshToken = async (headers) => {
-  const { token } = await axios.post('refresh-token', null, { headers });
-
-  // Store the refreshed token only if the response is valid
-  if (decode(token)) {
-    store.dispatch({ type: 'SET', jwt: token });
-  }
-
+const refreshToken = async () => {
+  const { token } = await axios.post('/refresh-token', {}, { withCredentials: true });
+  store.dispatch({ type: 'SET', jwt: token });
   return token;
 };
 

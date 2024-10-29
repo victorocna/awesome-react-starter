@@ -1,4 +1,4 @@
-import DatePickerField from '@components/Fields/DatePicker';
+import DatePickerField from '@components/Fields/DatePick';
 import { format as dateFormat } from 'date-fns';
 import { useFormikContext } from 'formik';
 

@@ -5,7 +5,7 @@ export { default as Autocomplete } from './Autocomplete';
 export { default as Checkbox } from './Checkbox';
 export { default as Combobox } from './Combobox';
 export { default as DateOfBirth } from './DateOfBirth';
-export { default as DatePicker } from './DatePicker';
+export { default as DatePicker } from './DatePick';
 export { default as Dropdown } from './Dropdown';
 export { default as Email } from './Email';
 export { default as Field } from './Field';

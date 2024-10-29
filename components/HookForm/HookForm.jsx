@@ -6,7 +6,6 @@ const Form = ({ children, initialValues, validationSchema, onSubmit }) => {
   const { handleSubmit, ...methods } = useForm({
     resolver: yupResolver(validationSchema),
     defaultValues: initialValues,
-    mode: 'onChange',
   });
 
   return (

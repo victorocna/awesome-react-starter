@@ -2,8 +2,8 @@ import { useDropdown } from '@hooks';
 import { classnames } from '@lib';
 import OptionList from './OptionList';
 
-const Dropdown = ({ children, defaultSelected, placeholder, disabled, onSelect, icon }) => {
-  const { inputItems, ...downshift } = useDropdown({ children, onSelect, defaultSelected });
+const Dropdown = ({ children, value, onChange, placeholder, disabled, icon }) => {
+  const { inputItems, ...downshift } = useDropdown({ children, value, onChange });
 
   return (
     <div className="relative">
@@ -26,9 +26,7 @@ const Dropdown = ({ children, defaultSelected, placeholder, disabled, onSelect, 
           {icon || <i className="fas fa-chevron-down" />}
         </span>
       </div>
-      <OptionList onSelect={onSelect} {...downshift}>
-        {inputItems}
-      </OptionList>
+      <OptionList {...downshift}>{inputItems}</OptionList>
     </div>
   );
 };

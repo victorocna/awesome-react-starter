@@ -8,7 +8,7 @@ module.exports = {
     FONT_AWESOME_KEY: process.env.FONT_AWESOME_KEY,
     JWT_TOKEN_NAME: process.env.JWT_TOKEN_NAME,
     RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY,
-    SHOW_FORMIK_DEBUG: process.env.SHOW_FORMIK_DEBUG,
+    SHOW_FORM_DEBUG: process.env.SHOW_FORM_DEBUG,
     SHOW_LOGS_EVERYWHERE: process.env.SHOW_LOGS_EVERYWHERE,
   },
   eslint: {

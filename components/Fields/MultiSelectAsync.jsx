@@ -2,7 +2,7 @@ import { Button, NoSsr } from '@components';
 import {
   getOptionToValue as defaultGetOptionToValue,
   getValueToOption as defaultGetValueToOption,
-} from '@functions/formik-multiselect-transformer';
+} from '@functions/format-multi-select';
 import { useOnClickOutside, useQuery } from '@hooks';
 import { debounce, has, isEqual, sortBy } from 'lodash';
 import { useEffect, useMemo, useRef, useState } from 'react';

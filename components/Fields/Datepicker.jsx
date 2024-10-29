@@ -20,7 +20,11 @@ const DatePicker = ({ value: initialValue, onChange, calendarProps = {}, ...prop
 
   useEffect(() => {
     if (typeof onChange === 'function') {
-      onChange(isValidDate(value) ? value : '');
+      try {
+        onChange(isValidDate(value) ? value : '');
+      } catch {
+        onChange('');
+      }
     }
   }, [value]);
 

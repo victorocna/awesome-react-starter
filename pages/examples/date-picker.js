@@ -1,5 +1,6 @@
 import { DatePicker } from '@components/Fields';
 import { Layout } from '@examples/components';
+import { DatePickerForm } from '@examples/components/Forms';
 import { format } from 'date-fns';
 import { useState } from 'react';
 
@@ -9,7 +10,7 @@ const Page = () => {
   const [checkOut, setCheckOut] = useState();
 
   return (
-    <Layout title="Date picker">
+    <Layout title="Date Picker">
       <div className="prose-sm">
         <h3 className="mt-0">Example #1</h3>
         <p className="mb-1">Classic date picker with default value</p>
@@ -39,6 +40,12 @@ const Page = () => {
             />
             <span>Selected check-out date: {checkOut}</span>
           </div>
+        </div>
+
+        <h3 className="mt-4">Example #3</h3>
+        <p className="mb-1">Date Picker in React Hook Form</p>
+        <div className="flex gap-2">
+          <DatePickerForm />
         </div>
       </div>
     </Layout>

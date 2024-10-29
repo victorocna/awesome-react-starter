@@ -81,7 +81,11 @@ const TimePicker = ({ disabled = false, interval = 1, onChange, placeholder, val
     scrollIntoView(newTime);
 
     if (typeof onChange === 'function') {
-      onChange(formatTime(newTime));
+      try {
+        onChange(formatTime(newTime));
+      } catch {
+        onChange('');
+      }
     }
   };
 

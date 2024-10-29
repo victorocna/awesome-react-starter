@@ -31,10 +31,10 @@ const Pages = () => {
           Context Menu
         </MenuItem>
         <MenuItem href="/examples/date-picker" level="2">
-          Date picker
+          Date Picker
         </MenuItem>
         <MenuItem href="/examples/time-picker" level="2">
-          Time picker
+          Time Picker
         </MenuItem>
         <MenuItem href="/examples/date-of-birth" level="2">
           Date of birth

@@ -1,4 +1,3 @@
-import { store } from '@auth';
 import { axios } from '@lib';
 
 /**
@@ -12,13 +11,12 @@ import { axios } from '@lib';
  */
 const refreshToken = async () => {
   const { token } = await axios({
-    method: 'post',
     url: '/refresh-token',
+    method: 'post',
     data: {},
     withCredentials: true,
   });
 
-  store.dispatch({ type: 'SET', jwt: token });
   return token;
 };
 

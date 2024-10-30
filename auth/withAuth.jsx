@@ -42,6 +42,7 @@ const withAuth = (WrappedComponent) => {
         try {
           const accessToken = await handleTokenVerification();
           await handleAuthorization(accessToken);
+          store.dispatch({ type: 'SET', jwt: accessToken });
         } catch (error) {
           console.error('Authorization failed', error);
         }

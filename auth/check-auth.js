@@ -13,11 +13,11 @@ const checkAuth = async (context, callback) => {
 
   try {
     const { token } = await axios({
-      method: 'post',
       url: '/refresh-token',
+      method: 'post',
+      headers: { cookie: headers.cookie },
       data: {},
       withCredentials: true,
-      headers: { cookie: headers.cookie },
     });
 
     if (!isRouteAllowed(context.resolvedUrl, token)) {

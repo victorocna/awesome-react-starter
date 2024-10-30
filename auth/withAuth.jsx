@@ -7,26 +7,21 @@ import isTokenExpired from './is-token-expired';
 import { store } from './store';
 
 const verifyAndRefreshToken = async () => {
-  let accessToken = store.getState();
+  const accessToken = store.getState();
 
-  if (!accessToken || isTokenExpired(jwt.decode(accessToken))) {
-    try {
-      accessToken = await refreshToken();
-      store.dispatch({ type: 'SET', jwt: accessToken });
-    } catch (error) {
-      store.dispatch({ type: 'REMOVE' });
-      Router.push('/login');
-      throw new Error('Token refresh failed');
-    }
+  if (accessToken && !isTokenExpired(jwt.decode(accessToken))) {
+    return accessToken;
   }
 
-  return accessToken;
+  try {
+    return await refreshToken();
+  } catch (error) {
+    throw new Error('Failed to refresh token');
+  }
 };
 
 const authorizeRoute = (accessToken) => {
   if (!isRouteAllowed(Router.pathname, accessToken)) {
-    store.dispatch({ type: 'REMOVE' });
-    Router.push('/login');
     throw new Error('Unauthorized access');
   }
 };
@@ -38,8 +33,11 @@ const withAuth = (WrappedComponent) => {
         try {
           const accessToken = await verifyAndRefreshToken();
           authorizeRoute(accessToken);
+          store.dispatch({ type: 'SET', jwt: accessToken });
         } catch (error) {
           console.error('Authorization failed:', error);
+          store.dispatch({ type: 'REMOVE' });
+          Router.push('/login');
         }
       };
 

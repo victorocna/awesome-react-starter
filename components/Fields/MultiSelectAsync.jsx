@@ -160,7 +160,6 @@ const MultiSelectAsync = ({
                 {/* Search input */}
                 <div className="relative">
                   <input
-                    autoFocus
                     className="w-full rounded border border-gray-300 px-2 py-1 pr-8 transition duration-200 ease-in-out focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                     onChange={handleSearchInputChange}
                     onKeyUp={debouncedKeyUp}

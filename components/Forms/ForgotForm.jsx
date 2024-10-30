@@ -1,8 +1,7 @@
 import { forgot } from '@api/identity';
 import { Email, Recaptcha } from '@components/Fields';
-import { Fieldset, Submit } from '@components/Formik';
+import { Field, Fieldset, Form, HookForm, Submit } from '@components/HookForm';
 import { initialValues, validationSchema } from '@models/forgot';
-import { Field, Form, Formik } from 'formik';
 import { useRef } from 'react';
 
 const ForgotForm = () => {
@@ -12,19 +11,19 @@ const ForgotForm = () => {
   };
 
   return (
-    <Formik
+    <HookForm
       validationSchema={validationSchema}
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
       <Form className="space-y-4">
         <Fieldset name="email" label="Your email">
-          <Field id="email" name="email" as={Email} autoFocus />
+          <Field id="email" name="email" as={Email} autoFocus={true} />
         </Fieldset>
         <Submit className="button full primary">Send password reset email</Submit>
         <Recaptcha ref={ref} />
       </Form>
-    </Formik>
+    </HookForm>
   );
 };
 

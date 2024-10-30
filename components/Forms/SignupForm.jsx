@@ -1,8 +1,7 @@
 import { signup } from '@api/identity';
 import { Email, Input, Password, Recaptcha } from '@components/Fields';
-import { Fieldset, Submit } from '@components/Formik';
+import { Field, Fieldset, Form, HookForm, Submit } from '@components/HookForm';
 import { initialValues, validationSchema } from '@models/signup';
-import { Field, Form, Formik } from 'formik';
 import { useRef } from 'react';
 
 const SignupForm = () => {
@@ -12,14 +11,14 @@ const SignupForm = () => {
   };
 
   return (
-    <Formik
+    <HookForm
       validationSchema={validationSchema}
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
       <Form className="space-y-4">
         <Fieldset name="name" label="Your name">
-          <Field id="name" name="name" as={Input} autoFocus />
+          <Field id="name" name="name" as={Input} autoFocus={true} />
         </Fieldset>
 
         <Fieldset name="email" label="Your email">
@@ -33,7 +32,7 @@ const SignupForm = () => {
         <Submit className="button full primary">Signup</Submit>
         <Recaptcha ref={ref} />
       </Form>
-    </Formik>
+    </HookForm>
   );
 };
 

@@ -1,3 +1,4 @@
+export { default as AddReasonItem } from './AddReasonItem';
 export { default as Age } from './Age';
 export { default as Bio } from './Bio';
 export { default as Country } from './Country';
@@ -5,6 +6,7 @@ export { default as County } from './County';
 export { default as DateOfBirth } from './DateOfBirth';
 export { default as Email } from './Email';
 export { default as Fullname } from './Fullname';
+export { default as ReasonsArrayItem } from './ReasonsArrayItem';
 export { default as SomeFilter } from './SomeFilter';
 export { default as Terms } from './Terms';
 export { default as UsState } from './UsState';

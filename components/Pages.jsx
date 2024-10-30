@@ -72,9 +72,6 @@ const Pages = () => {
         <MenuItem href="/examples/file-upload" level="2">
           File Upload
         </MenuItem>
-        <MenuItem href="/examples/formik-array" level="2">
-          Formik Array
-        </MenuItem>
         <MenuItem href="/examples/toggle" level="2">
           Toggle
         </MenuItem>
@@ -92,11 +89,17 @@ const Pages = () => {
         <MenuItem href="/examples/formik" level="2">
           Formik forms
         </MenuItem>
+        <MenuItem href="/examples/formik-array" level="2">
+          Formik array
+        </MenuItem>
         <MenuItem href="/examples/multi-step-form" level="2">
           Formik multi step forms
         </MenuItem>
         <MenuItem href="/examples/react-hook-form" level="2">
           React hook forms
+        </MenuItem>
+        <MenuItem href="/examples/react-hook-array" level="2">
+          React hook array
         </MenuItem>
       </MenuGroup>
       <MenuItem href="/login" level="1">

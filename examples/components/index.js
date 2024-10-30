@@ -1,4 +1,4 @@
-export { default as AddReasonItem } from './AddReasonItem';
+
 export { default as Countries } from './Countries';
 export { default as Documentation } from './Documentation';
 export { default as Footer } from './Footer';
@@ -16,6 +16,6 @@ export { default as Quote } from './Quote';
 export { default as QuoteError } from './QuoteError';
 export { default as QuoteLoading } from './QuoteLoading';
 export { default as QuoteSuccess } from './QuoteSuccess';
-export { default as ReasonsArrayItem } from './ReasonsArrayItem';
+
 export { default as SayGoodbye } from './SayGoodbye';
 export { default as SayHello } from './SayHello';

@@ -1,4 +1,3 @@
-export { default as ArrayField } from './ArrayField';
 export { default as AsyncCombobox } from './AsyncCombobox';
 export { default as AsyncDropdown } from './AsyncDropdown';
 export { default as Autocomplete } from './Autocomplete';

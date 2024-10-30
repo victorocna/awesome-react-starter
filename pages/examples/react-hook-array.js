@@ -1,8 +1,7 @@
-import { ArrayField, Form, Submit } from '@components/Formik';
+import { ArrayField, Form, HookForm, Submit } from '@components/HookForm';
 import { Layout } from '@examples/components';
-import { AddReasonItem, ReasonsArrayItem } from '@examples/components/Formik';
+import { AddReasonItem, ReasonsArrayItem } from '@examples/components/HookForm';
 import { initialValues, validationSchema } from '@examples/models/array-form';
-import { Formik } from 'formik';
 
 const Page = () => {
   const handleSubmit = (values, actions) => {
@@ -10,14 +9,14 @@ const Page = () => {
   };
 
   return (
-    <Layout title="Formik array">
+    <Layout title="React hook array">
       <div>
-        <Formik
+        <HookForm
           validationSchema={validationSchema}
           initialValues={initialValues}
           onSubmit={handleSubmit}
         >
-          <Form className="space-y-4" debug>
+          <Form className="space-y-4" debug={true}>
             <div className="flex flex-col gap-2">
               <h3 className="text-lg">Add reasons why you like coding (or remove them).</h3>
               <p>
@@ -37,7 +36,7 @@ const Page = () => {
             </div>
             <Submit className="button full primary">Submit</Submit>
           </Form>
-        </Formik>
+        </HookForm>
       </div>
     </Layout>
   );

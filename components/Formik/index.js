@@ -1,3 +1,4 @@
+export { default as ArrayField } from './ArrayField';
 export { default as AutoSubmit } from './AutoSubmit';
 export { default as Combobox } from './Combobox';
 export { default as DateOfBirth } from './DateOfBirth';

@@ -9,7 +9,7 @@ const Page = () => {
   };
 
   return (
-    <Layout title="Formik forms">
+    <Layout title="React hook forms">
       <div className="prose-sm">
         <HookForm
           validationSchema={validationSchema}

@@ -6,27 +6,24 @@ import isRouteAllowed from './is-route-allowed';
 import isTokenExpired from './is-token-expired';
 import { store } from './store';
 
-// Helper to verify and refresh the token if expired
-const handleTokenVerification = async () => {
+const verifyAndRefreshToken = async () => {
   let accessToken = store.getState();
 
-  // Verify token validity
-  if (accessToken && !isTokenExpired(jwt.decode(accessToken))) {
-    return accessToken;
+  if (!accessToken || isTokenExpired(jwt.decode(accessToken))) {
+    try {
+      accessToken = await refreshToken();
+      store.dispatch({ type: 'SET', jwt: accessToken });
+    } catch (error) {
+      store.dispatch({ type: 'REMOVE' });
+      Router.push('/login');
+      throw new Error('Token refresh failed');
+    }
   }
 
-  // Refresh the token if expired
-  try {
-    return await refreshToken();
-  } catch (error) {
-    store.dispatch({ type: 'REMOVE' });
-    Router.push('/login');
-    throw new Error('Failed to refresh token');
-  }
+  return accessToken;
 };
 
-// Helper for redirection based on route authorization
-const handleAuthorization = async (accessToken) => {
+const authorizeRoute = (accessToken) => {
   if (!isRouteAllowed(Router.pathname, accessToken)) {
     store.dispatch({ type: 'REMOVE' });
     Router.push('/login');
@@ -34,26 +31,23 @@ const handleAuthorization = async (accessToken) => {
   }
 };
 
-// HOC for component authorization
 const withAuth = (WrappedComponent) => {
   const Wrapper = (props) => {
     useEffect(() => {
-      const verifyUser = async () => {
+      const authenticateUser = async () => {
         try {
-          const accessToken = await handleTokenVerification();
-          await handleAuthorization(accessToken);
-          store.dispatch({ type: 'SET', jwt: accessToken });
+          const accessToken = await verifyAndRefreshToken();
+          authorizeRoute(accessToken);
         } catch (error) {
-          console.error('Authorization failed', error);
+          console.error('Authorization failed:', error);
         }
       };
 
-      verifyUser();
+      authenticateUser();
 
-      // Re-run verification when window gains focus
-      const handleFocus = () => verifyUser();
-      window.addEventListener('focus', handleFocus);
-      return () => window.removeEventListener('focus', handleFocus);
+      // Re-run verification on window focus
+      window.addEventListener('focus', authenticateUser);
+      return () => window.removeEventListener('focus', authenticateUser);
     }, []);
 
     return <WrappedComponent {...props} />;

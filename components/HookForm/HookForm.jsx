@@ -1,7 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { FormProvider, useForm } from 'react-hook-form';
 
-const Form = ({ children, initialValues, validationSchema, onSubmit }) => {
+const HookForm = ({ children, initialValues, validationSchema, onSubmit }) => {
   // Create a new form context
   const { handleSubmit, ...methods } = useForm({
     resolver: yupResolver(validationSchema),
@@ -10,9 +10,9 @@ const Form = ({ children, initialValues, validationSchema, onSubmit }) => {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)}>{children}</form>
+      <form onSubmit={handleSubmit((data) => onSubmit(data, methods))}>{children}</form>
     </FormProvider>
   );
 };
 
-export default Form;
+export default HookForm;

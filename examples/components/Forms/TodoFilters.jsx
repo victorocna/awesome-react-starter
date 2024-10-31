@@ -1,27 +1,31 @@
-import { Dropdown, Fieldset, Form, Search } from '@components/Formik';
+import { Dropdown, Search } from '@components/Fields';
+import { Field, Form, HookForm } from '@components/HookForm';
 import { initialValues } from '@examples/models/todo-filters';
-import { Field, Formik } from 'formik';
 
 const TodoFilters = ({ setOptions }) => {
   return (
-    <Formik initialValues={initialValues} onSubmit={setOptions}>
+    <HookForm initialValues={initialValues} onSubmit={setOptions}>
       <Form autoSubmit={true} className="flex gap-4 sm:flex-row flex-col">
-        <Fieldset
-          label="Search your todos"
+        <Field
+          as={Search}
           name="search"
+          placeholder="Search by name or #tag"
+          label="Search your todos"
           help="At least 3 characters are required for a search"
+        />
+        <Field
+          as={Dropdown}
+          name="only"
+          placeholder="Search by status"
+          label="Search by todo status"
+          help="Select an item from the dropdown"
         >
-          <Field as={Search} id="search" name="search" placeholder="Search by name or #tag" />
-        </Fieldset>
-        <Fieldset label="Search by todo status" name="only" help="Select an item from the dropdown">
-          <Field as={Dropdown} id="only" name="only" placeholder="Search by status">
-            <option value="">All</option>
-            <option value="completed">Completed</option>
-            <option value="pending">Pending</option>
-          </Field>
-        </Fieldset>
+          <option value="">All</option>
+          <option value="completed">Completed</option>
+          <option value="pending">Pending</option>
+        </Field>
       </Form>
-    </Formik>
+    </HookForm>
   );
 };
 

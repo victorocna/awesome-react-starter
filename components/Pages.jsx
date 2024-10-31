@@ -86,20 +86,14 @@ const Pages = () => {
         <MenuItem href="/examples/forms" level="2">
           Basic forms
         </MenuItem>
-        <MenuItem href="/examples/formik" level="2">
-          Formik forms
-        </MenuItem>
-        <MenuItem href="/examples/formik-array" level="2">
-          Formik array
-        </MenuItem>
-        <MenuItem href="/examples/multi-step-form" level="2">
-          Formik multi step forms
-        </MenuItem>
         <MenuItem href="/examples/react-hook-form" level="2">
           React hook forms
         </MenuItem>
         <MenuItem href="/examples/react-hook-array" level="2">
-          React hook array
+          React hook array field
+        </MenuItem>
+        <MenuItem href="/examples/multi-step-form" level="2">
+          Complex multi step forms
         </MenuItem>
       </MenuGroup>
       <MenuItem href="/login" level="1">

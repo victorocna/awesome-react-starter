@@ -1,12 +1,12 @@
-// These functions are used to switch between multiselect value structure and formik value structure
+// These functions are used to switch between multiselect value structure and form value structure
 
 /**
- * @param {Object} formikValue the value inside the form
+ * @param {Object} item the value inside the form
  * @returns the multiselect option
  */
-export const getValueToOption = (formikValue) => ({
-  value: formikValue?._id,
-  label: formikValue?.name,
+export const getValueToOption = (item) => ({
+  value: item?._id,
+  label: item?.name,
 });
 
 /**

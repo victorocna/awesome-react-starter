@@ -23,7 +23,13 @@ const AddTodoForm = () => {
       onSubmit={handleSubmit}
     >
       <Form className="flex gap-4">
-        <Field as={Input} name="name" autoComplete="off" autoFocus={true} />
+        <Field
+          as={Input}
+          name="name"
+          placeholder="Write something here"
+          autoComplete="off"
+          autoFocus={true}
+        />
         <Submit className="button full accent" isLoading={mutation.isLoading}>
           Add
         </Submit>

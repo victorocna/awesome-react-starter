@@ -13,7 +13,7 @@ import useChildren from './use-children';
  * @returns {Object} Returns downshift props
  * @see https://www.downshift-js.com/use-combobox
  */
-const useSelect = ({ children, onChange, value: initialValue }) => {
+const useSelect = ({ children, value, onChange }) => {
   // Convert Dropdown's component children to Downshift items
   const items = useChildren(children);
 
@@ -46,7 +46,7 @@ const useSelect = ({ children, onChange, value: initialValue }) => {
 
   // Find the default selected item by value
   const isDefaultSelected = (item) => {
-    return isEqual(item.value, initialValue);
+    return isEqual(item.value, value);
   };
   const defaultSelectedItem = items.find(isDefaultSelected) || null;
 

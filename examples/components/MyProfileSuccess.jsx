@@ -1,5 +1,5 @@
 import { Tab, Tabs } from 'react-bootstrap';
-import MyProfileChangePassword from './Forms/ChangePasswordForm';
+import ChangePasswordForm from './Forms/ChangePasswordForm';
 import MyProfileDetails from './MyProfileDetails';
 
 const MyProfileSuccess = ({ name, email }) => (
@@ -9,7 +9,7 @@ const MyProfileSuccess = ({ name, email }) => (
         <MyProfileDetails name={name} email={email} />
       </Tab>
       <Tab eventKey="2" title={<p>Change Password</p>}>
-        <MyProfileChangePassword />
+        <ChangePasswordForm />
       </Tab>
     </Tabs>
   </>

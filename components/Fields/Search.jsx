@@ -2,7 +2,7 @@ import { classnames } from '@lib';
 import { debounce, isFunction } from 'lodash';
 import { useCallback, useRef } from 'react';
 
-const Search = ({ extraClass, placeholder, onChange, value }) => {
+const Search = ({ value, onChange, extraClass, placeholder }) => {
   const ref = useRef();
 
   const request = debounce((value) => {

@@ -5,7 +5,7 @@ import { isFunction } from 'lodash';
 import { useEffect, useMemo, useState } from 'react';
 import LabeledSelect from './LabeledSelect';
 
-const DateOfBirth = ({ onChange, value, format = 'yyyy-MM-dd' }) => {
+const DateOfBirth = ({ value, onChange, format = 'yyyy-MM-dd' }) => {
   const defaultValue = useMemo(() => (isValid(new Date(value)) ? new Date(value) : null), [value]);
 
   const [day, setDay] = useState(defaultValue?.getDate() || '');

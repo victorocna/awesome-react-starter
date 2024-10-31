@@ -1,10 +1,8 @@
-import { Button } from '@components';
-import { Form } from '@components/Formik';
+import { HookForm } from '@components/HookForm';
 import { formCookie, router } from '@lib';
-import { Formik } from 'formik';
 import { merge } from 'lodash';
 import { initialValues, validationSchema } from '../../models/multi-step-one';
-import { County, Email, Fullname, SomeFilter, Terms } from '../Formik';
+import StepOneForm from './StepOneForm';
 
 const StepOne = () => {
   const cookieValues = formCookie.get('multi-step-form');
@@ -17,24 +15,13 @@ const StepOne = () => {
   };
 
   return (
-    <Formik
+    <HookForm
       validationSchema={validationSchema}
       initialValues={merge(initialValues, cookieValues)}
       onSubmit={handleSubmit}
     >
-      <Form className="grid gap-4" debug={true}>
-        <Fullname />
-        <div className="grid gap-4 md:grid-cols-2">
-          <SomeFilter />
-          <County />
-        </div>
-        <Email />
-        <Terms />
-        <Button className="button full primary" type="submit">
-          Continue
-        </Button>
-      </Form>
-    </Formik>
+      <StepOneForm />
+    </HookForm>
   );
 };
 

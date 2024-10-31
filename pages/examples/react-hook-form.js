@@ -18,7 +18,7 @@ const Page = () => {
         >
           <Form className="space-y-4" debug={true}>
             <div className="md:w-1/2">
-              <Field as={Email} name="email" label="Basic email field" />
+              <Field as={Email} name="email" label="Basic email field" help="Required info" />
             </div>
             <div className="w-full">
               <Field as={PlusMinus} name="quantity" label="Basic plus-minus field" />

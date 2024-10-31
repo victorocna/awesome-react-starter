@@ -26,6 +26,9 @@ button:disabled > * {
   pointer-events: none;
   visibility: hidden;
 }
+button:disabled ~ * {
+  cursor: not-allowed;
+}
 
 .button.full,
 .button.square {

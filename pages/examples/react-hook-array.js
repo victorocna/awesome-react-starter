@@ -1,6 +1,6 @@
 import { ArrayField, Form, HookForm, Submit } from '@components/HookForm';
 import { Layout } from '@examples/components';
-import { AddReasonItem, ReasonsArrayItem } from '@examples/components/HookForm';
+import { ArrayAddReasons, ArrayListReasons } from '@examples/components/HookForm';
 import { initialValues, validationSchema } from '@examples/models/array-form';
 
 const Page = () => {
@@ -28,8 +28,8 @@ const Page = () => {
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               <ArrayField
-                AddComponent={AddReasonItem}
-                SectionComponent={ReasonsArrayItem}
+                AddComponent={ArrayAddReasons}
+                SectionComponent={ArrayListReasons}
                 name="reasons"
                 emptyRow={{ reason: '' }}
               />

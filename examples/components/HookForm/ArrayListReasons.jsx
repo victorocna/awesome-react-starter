@@ -3,7 +3,7 @@ import { Input } from '@components/Fields';
 import { Field, Fieldset } from '@components/HookForm';
 import { useFieldArray, useFormContext } from 'react-hook-form';
 
-const ReasonsArrayItem = ({ name, emptyRow, sections }) => {
+const ArrayListReasons = ({ name, emptyRow, sections }) => {
   const { control } = useFormContext();
   const { insert, remove } = useFieldArray({ control, name });
 
@@ -39,4 +39,4 @@ const ReasonsArrayItem = ({ name, emptyRow, sections }) => {
   return sections.map(showSections);
 };
 
-export default ReasonsArrayItem;
+export default ArrayListReasons;

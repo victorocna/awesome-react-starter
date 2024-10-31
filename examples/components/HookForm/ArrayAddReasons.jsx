@@ -1,7 +1,7 @@
 import { Button } from '@components';
 import { useFieldArray, useFormContext } from 'react-hook-form';
 
-const AddReasonItem = ({ name, emptyRow }) => {
+const ArrayAddReasons = ({ name, emptyRow }) => {
   const { control } = useFormContext();
   const { insert } = useFieldArray({ control, name });
 
@@ -25,4 +25,4 @@ const AddReasonItem = ({ name, emptyRow }) => {
   );
 };
 
-export default AddReasonItem;
+export default ArrayAddReasons;

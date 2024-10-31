@@ -1,8 +1,8 @@
 import { useSelect as useDownshift } from 'downshift';
-import { isEqual, isFunction, pick } from 'lodash';
+import { isEqual, isFunction } from 'lodash';
 import { MD5 } from 'object-hash';
 import { useEffect, useState } from 'react';
-import { useChildren } from '.';
+import useChildren from './use-children';
 
 /**
  * Custom hook that enhances downshift useSelect
@@ -13,7 +13,7 @@ import { useChildren } from '.';
  * @returns {Object} Returns downshift props
  * @see https://www.downshift-js.com/use-combobox
  */
-const useSelect = ({ children, onSelect, defaultSelected }) => {
+const useSelect = ({ children, value, onChange }) => {
   // Convert Dropdown's component children to Downshift items
   const items = useChildren(children);
 
@@ -24,8 +24,8 @@ const useSelect = ({ children, onSelect, defaultSelected }) => {
 
   // Handle the selection
   const onSelectedItemChange = ({ selectedItem }) => {
-    if (isFunction(onSelect)) {
-      return onSelect(selectedItem.value);
+    if (isFunction(onChange)) {
+      return onChange(selectedItem.value);
     }
   };
 
@@ -34,7 +34,7 @@ const useSelect = ({ children, onSelect, defaultSelected }) => {
   useEffect(() => {
     // Change the input items whenever the items prop changes
     setInputItems(items);
-  }, [MD5(items.map((item) => pick(item, ['value'])))]);
+  }, [MD5(items)]);
   // Using `items` only as a dependency won't trigger the useEffect because it is a reference,
   // so we hash it instead.
 
@@ -46,7 +46,7 @@ const useSelect = ({ children, onSelect, defaultSelected }) => {
 
   // Find the default selected item by value
   const isDefaultSelected = (item) => {
-    return isEqual(item.value, defaultSelected);
+    return isEqual(item.value, value);
   };
   const defaultSelectedItem = items.find(isDefaultSelected) || null;
 
@@ -55,7 +55,7 @@ const useSelect = ({ children, onSelect, defaultSelected }) => {
     if (defaultSelectedItem) {
       downshift?.selectItem(defaultSelectedItem);
     }
-  }, [MD5(items.map((item) => pick(item, ['value'])))]);
+  }, [MD5(items)]);
 
   return { inputItems, ...downshift };
 };

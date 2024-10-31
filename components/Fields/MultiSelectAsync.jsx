@@ -2,9 +2,9 @@ import { Button, NoSsr } from '@components';
 import {
   getOptionToValue as defaultGetOptionToValue,
   getValueToOption as defaultGetValueToOption,
-} from '@functions/formik-multiselect-transformer';
+} from '@functions/format-multi-select';
 import { useOnClickOutside, useQuery } from '@hooks';
-import { debounce, has, isEqual, sortBy } from 'lodash';
+import { debounce, has, isEqual, isFunction, sortBy } from 'lodash';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 const MultiSelectAsync = ({
@@ -116,10 +116,9 @@ const MultiSelectAsync = ({
 
   // Call onChange callback when selected options change
   useEffect(() => {
-    if (typeof onChange !== 'function') {
-      return;
+    if (isFunction(onChange)) {
+      onChange(selectedOptions.map(getOptionToValue));
     }
-    onChange(selectedOptions.map(getOptionToValue));
   }, [selectedOptions]);
 
   // Update selectAll state based on selected options and available options
@@ -161,7 +160,6 @@ const MultiSelectAsync = ({
                 {/* Search input */}
                 <div className="relative">
                   <input
-                    autoFocus
                     className="w-full rounded border border-gray-300 px-2 py-1 pr-8 transition duration-200 ease-in-out focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
                     onChange={handleSearchInputChange}
                     onKeyUp={debouncedKeyUp}

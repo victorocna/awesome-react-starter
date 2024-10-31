@@ -1,5 +1,6 @@
 import { useDisclosure, useOnClickOutside } from '@hooks';
 import { classnames } from '@lib';
+import { isFunction } from 'lodash';
 import { useMemo, useRef, useState } from 'react';
 
 const TimePicker = ({ disabled = false, interval = 1, onChange, placeholder, value }) => {
@@ -80,8 +81,12 @@ const TimePicker = ({ disabled = false, interval = 1, onChange, placeholder, val
     setTime((prev) => ({ ...prev, ...newTime }));
     scrollIntoView(newTime);
 
-    if (typeof onChange === 'function') {
-      onChange(formatTime(newTime));
+    if (isFunction(onChange)) {
+      try {
+        onChange(formatTime(newTime));
+      } catch {
+        onChange('');
+      }
     }
   };
 

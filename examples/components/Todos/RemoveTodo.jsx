@@ -3,7 +3,7 @@ import { deleteTodo } from '../../api/todo';
 
 const RemoveTodo = ({ id }) => {
   const mutation = useMutation(deleteTodo, {
-    invalidateQueries: 'todos',
+    invalidateQueries: 'admin/todos',
   });
 
   const handleDelete = () => {
@@ -13,10 +13,10 @@ const RemoveTodo = ({ id }) => {
   return (
     <button
       type="button"
-      className="mx-1 flex rounded border px-1 font-semibold text-gray-400 hover:border-accent hover:text-accent"
+      className="mx-1 flex rounded border font-semibold text-gray-400 hover:border-accent hover:text-accent"
       onClick={handleDelete}
     >
-      x
+      <i className="fas fa-times px-2 py-1.5"></i>
     </button>
   );
 };

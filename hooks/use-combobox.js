@@ -2,7 +2,7 @@ import { useCombobox as useDownshift } from 'downshift';
 import { isEqual, isFunction } from 'lodash';
 import { MD5 } from 'object-hash';
 import { useCallback, useEffect, useState } from 'react';
-import { useChildren } from '.';
+import useChildren from './use-children';
 
 /**
  * Custom hook that enhances downshift useCombobox
@@ -13,7 +13,7 @@ import { useChildren } from '.';
  * @returns {Object} Returns downshift props
  * @see https://www.downshift-js.com/use-combobox
  */
-const useCombobox = ({ children, onSelect, defaultSelected }) => {
+const useCombobox = ({ children, value, onChange }) => {
   // Convert Combobox's component children to Downshift items
   const items = useChildren(children);
 
@@ -51,8 +51,8 @@ const useCombobox = ({ children, onSelect, defaultSelected }) => {
 
   // Handle the selection
   const onSelectedItemChange = ({ selectedItem }) => {
-    if (isFunction(onSelect)) {
-      return onSelect(selectedItem?.value);
+    if (isFunction(onChange)) {
+      return onChange(selectedItem?.value);
     }
   };
 
@@ -87,7 +87,7 @@ const useCombobox = ({ children, onSelect, defaultSelected }) => {
 
   // Find the default selected item by value
   const isDefaultSelected = (item) => {
-    return isEqual(item?.value, defaultSelected);
+    return isEqual(item?.value, value);
   };
   const defaultSelectedItem = items?.find(isDefaultSelected) || null;
 

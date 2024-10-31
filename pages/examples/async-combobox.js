@@ -36,7 +36,7 @@ const Page = () => {
             Async crypto dropdown with default selection
           </label>
           <div className="w-80">
-            <AsyncCombobox status={status} defaultSelected="BTC">
+            <AsyncCombobox status={status} value="BTC">
               {data?.data?.map(showCripto)}
             </AsyncCombobox>
           </div>

@@ -1,8 +1,7 @@
 import { reset } from '@api/identity';
 import { Password, Recaptcha } from '@components/Fields';
-import { Fieldset, Submit } from '@components/Formik';
+import { Field, Fieldset, Form, HookForm, Submit } from '@components/HookForm';
 import { initialValues, validationSchema } from '@models/reset';
-import { Field, Form, Formik } from 'formik';
 import { useRef } from 'react';
 
 const ResetForm = ({ hash }) => {
@@ -12,20 +11,20 @@ const ResetForm = ({ hash }) => {
   };
 
   return (
-    <Formik
+    <HookForm
       validationSchema={validationSchema}
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
       <Form className="space-y-4">
         <Fieldset name="password" label="Your new password">
-          <Field id="password" name="password" as={Password} autoFocus />
+          <Field id="password" name="password" as={Password} autoFocus={true} />
         </Fieldset>
 
         <Submit className="button full primary">Reset password</Submit>
         <Recaptcha ref={ref} />
       </Form>
-    </Formik>
+    </HookForm>
   );
 };
 

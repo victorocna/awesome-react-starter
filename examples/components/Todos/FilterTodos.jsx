@@ -6,8 +6,8 @@ const FilterTodos = ({ setOptions }) => {
   };
 
   return (
-    <Dropdown onSelect={handleChange}>
-      <option defaultSelected>View all</option>
+    <Dropdown value="all" onChange={handleChange}>
+      <option value="all">View all</option>
       <option value="completed">Only completed</option>
       <option value="pending">Only pending</option>
     </Dropdown>

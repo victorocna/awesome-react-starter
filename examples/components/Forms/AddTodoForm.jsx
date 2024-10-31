@@ -1,33 +1,40 @@
 import { Input } from '@components/Fields';
-import { Submit } from '@components/Formik';
+import { Field, Form, HookForm, Submit } from '@components/HookForm';
 import { useMutation } from '@hooks';
-import { Field, Form, Formik } from 'formik';
 import { createTodo } from '../../api/todo';
 import { initialValues, validationSchema } from '../../models/todo';
 
 const AddTodoForm = () => {
   const mutation = useMutation(createTodo, {
-    invalidateQueries: 'todos',
+    invalidateQueries: 'admin/todos',
   });
 
-  const handleSubmit = (data, formik) => {
-    mutation.mutate(data);
-    formik.resetForm();
+  // Reset the form after a successful submission
+  const handleSubmit = (data, form) => {
+    mutation.mutate(data, {
+      onSuccess: () => form.reset(),
+    });
   };
 
   return (
-    <Formik
+    <HookForm
       validationSchema={validationSchema}
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
       <Form className="flex gap-4">
-        <Field name="name" as={Input} autoFocus autoComplete="off" />
+        <Field
+          as={Input}
+          name="name"
+          placeholder="Write something here"
+          autoComplete="off"
+          autoFocus={true}
+        />
         <Submit className="button full accent" isLoading={mutation.isLoading}>
           Add
         </Submit>
       </Form>
-    </Formik>
+    </HookForm>
   );
 };
 

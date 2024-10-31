@@ -1,13 +1,13 @@
 import { classnames } from '@lib';
-import { debounce } from 'lodash';
+import { debounce, isFunction } from 'lodash';
 import { useCallback, useRef } from 'react';
 
-const Search = ({ className, placeholder, setSearch, value }) => {
+const Search = ({ value, onChange, extraClass, placeholder }) => {
   const ref = useRef();
 
   const request = debounce((value) => {
-    if (typeof setSearch === 'function') {
-      setSearch(value);
+    if (isFunction(onChange)) {
+      onChange(value);
     }
   }, 500);
   const debounceRequest = useCallback((value) => request(value), []);
@@ -22,13 +22,13 @@ const Search = ({ className, placeholder, setSearch, value }) => {
 
   const resetInputValue = () => {
     ref.current.value = '';
-    if (typeof setSearch === 'function') {
-      setSearch('');
+    if (isFunction(onChange)) {
+      onChange('');
     }
   };
 
   return (
-    <div className={classnames('relative flex items-center', className)}>
+    <div className={classnames('relative flex items-center', extraClass)}>
       <input
         className="input pl-8"
         defaultValue={value}

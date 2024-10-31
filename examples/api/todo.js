@@ -1,16 +1,16 @@
 import { axiosAuth } from '@lib';
 
 export const createTodo = (data) => {
-  return axiosAuth.post('todos', data);
+  return axiosAuth.post('admin/todos', data);
 };
 
 export const deleteTodo = (id) => {
-  return axiosAuth.delete(`todos/${id}`);
+  return axiosAuth.delete(`admin/todos/${id}`);
 };
 
 export const checkTodo = ({ id, done }) => {
   return axiosAuth({
-    url: `todos/${id}/check`,
+    url: `admin/todos/${id}/check`,
     method: done ? 'delete' : 'post',
   });
 };

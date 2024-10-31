@@ -1,5 +1,4 @@
 import { Menu, MenuButton, NoSsr, TranslateAll } from '@components';
-import { DropdownLanguage } from '@components/Fields';
 
 const Page = () => {
   return (
@@ -32,10 +31,6 @@ const Page = () => {
               Wrap the <code>TranslateAll</code> component with the <code>NoSsr</code> component to
               prevent the component from rendering on the server.
             </p>
-          </div>
-          <div className="mt-2 flex flex-col gap-4 text-primary">
-            <p className="font-medium">Select a language:</p>
-            <DropdownLanguage />
           </div>
         </div>
       </main>

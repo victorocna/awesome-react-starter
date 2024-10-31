@@ -2,8 +2,8 @@ import { useCombobox } from '@hooks';
 import { classnames } from '@lib';
 import OptionList from './OptionList';
 
-const Combobox = ({ children, defaultSelected, placeholder, disabled, onSelect, icon }) => {
-  const { inputItems, ...downshift } = useCombobox({ children, onSelect, defaultSelected });
+const Combobox = ({ children, value, onChange, placeholder, disabled, icon }) => {
+  const { inputItems, ...downshift } = useCombobox({ children, value, onChange });
 
   return (
     <div className="relative">

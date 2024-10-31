@@ -22,6 +22,10 @@ button:disabled {
   cursor: not-allowed;
   filter: opacity(0.75);
 }
+button:disabled > * {
+  pointer-events: none;
+  visibility: hidden;
+}
 
 .button.full,
 .button.square {

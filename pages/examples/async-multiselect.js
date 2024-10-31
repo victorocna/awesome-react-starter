@@ -18,9 +18,9 @@ const Page = () => {
                 id: selectValue?.value,
                 name: selectValue?.label,
               })}
-              getValueToOption={(formikValue) => ({
-                value: formikValue?.id,
-                label: formikValue?.name,
+              getValueToOption={(item) => ({
+                value: item?.id,
+                label: item?.name,
               })}
               onChange={() => {}}
               searchKey="search"
@@ -39,9 +39,9 @@ const Page = () => {
                 id: selectValue?.value,
                 name: selectValue?.label,
               })}
-              getValueToOption={(formikValue) => ({
-                value: formikValue?.id,
-                label: formikValue?.name,
+              getValueToOption={(item) => ({
+                value: item?.id,
+                label: item?.name,
               })}
               onChange={() => {}}
               searchKey="search"

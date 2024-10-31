@@ -12,3 +12,4 @@ export { default as MultiSelectAsync } from './MultiSelectAsync';
 export { default as PlusMinus } from './PlusMinus';
 export { default as Search } from './Search';
 export { default as Submit } from './Submit';
+export { default as TimePicker } from './TimePicker';

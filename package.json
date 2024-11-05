@@ -19,7 +19,7 @@
   "author": "victorocna <victor@chesscoders.com> (https://chesscoders.com)",
   "license": "MIT",
   "engines": {
-    "node": ">= 22.8.0",
+    "node": ">= 22.8.0 || 20",
     "npm": ">= 10"
   },
   "dependencies": {

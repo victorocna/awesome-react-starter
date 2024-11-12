@@ -19,8 +19,8 @@
   "author": "victorocna <victor@chesscoders.com> (https://chesscoders.com)",
   "license": "MIT",
   "engines": {
-    "node": ">= 22.8.0 || 20",
-    "npm": ">= 10"
+    "node": "^22.11.0",
+    "npm": "^10.9.0"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

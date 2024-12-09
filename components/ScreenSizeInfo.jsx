@@ -1,5 +1,7 @@
-const TailwindIndicator = () => {
-  if (process.env.NODE_ENV === 'production') return null;
+const ScreenSizeInfo = () => {
+  if (process.env.NODE_ENV === 'production') {
+    return null;
+  }
 
   return (
     <div className="fixed bottom-2 left-2 z-50 flex h-8 w-8 items-center justify-center rounded-full border border-white bg-gray-800 p-4 font-mono text-xs text-white">
@@ -13,4 +15,4 @@ const TailwindIndicator = () => {
   );
 };
 
-export default TailwindIndicator;
+export default ScreenSizeInfo;

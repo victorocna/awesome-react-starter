@@ -1,4 +1,4 @@
-import { ErrorBoundary, TailwindIndicator, Toaster } from '@components';
+import { ErrorBoundary, ScreenSizeInfo, Toaster } from '@components';
 import { sitename } from '@site.config';
 import Head from 'next/head';
 import { QueryClient, QueryClientProvider } from 'react-query';
@@ -19,7 +19,7 @@ const Root = (props) => {
           <Component {...pageProps} />
         </QueryClientProvider>
         <Toaster />
-        <TailwindIndicator />
+        <ScreenSizeInfo />
       </ErrorBoundary>
     </>
   );

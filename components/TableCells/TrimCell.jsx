@@ -1,11 +1,7 @@
-import { Trim } from "@components";
+import { Trim } from '@components';
 
-const TrimCell = ({ column, row: { original } }) => {
-  if (!original) {
-    return '';
-  }
-
-  return <Trim column={column} value={original} />;
+const TrimCell = ({ row }) => {
+  return <Trim extraClass={row?.original?.extraClass} value={row?.original?.value} />;
 };
 
 export default TrimCell;

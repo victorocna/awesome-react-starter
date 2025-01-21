@@ -1,10 +1,9 @@
 import { classnames } from '@lib';
 
-const Trim = ({ column, value }) => {
+const Trim = ({ extraClass, value }) => {
   if (!value) {
     return '';
   }
-  const { extraClass } = column;
 
   const format = (value, limit = 50) => {
     if (value.length < limit) {

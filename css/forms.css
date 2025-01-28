@@ -99,6 +99,7 @@ input::-webkit-inner-spin-button {
 
 input[type='password'] {
   letter-spacing: 0.125em;
+  @apply pr-8 !important;
 }
 
 .checkbox {

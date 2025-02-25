@@ -1,13 +1,6 @@
-import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 
-const NoSsr = ({ children }) => {
-  const [isMounted, setMount] = useState(false);
-
-  useEffect(() => {
-    setMount(true);
-  }, []);
-
-  return <>{isMounted ? children : null}</>;
-};
+const Component = () => Promise.resolve(({ children }) => children);
+const NoSsr = dynamic(Component, { ssr: false });
 
 export default NoSsr;

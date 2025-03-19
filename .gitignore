@@ -4,9 +4,11 @@
 !.env.template
 
 # User specific
+.cursor
+.idea
+.DS_Store
 NOTES.txt
 yarn.lock
-.DS_Store
 
 # Logs
 logs
@@ -71,11 +73,6 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
-
-# dotenv environment variables file
-.env
-.env.test
-.env.build
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache

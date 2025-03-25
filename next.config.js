@@ -27,4 +27,5 @@ module.exports = {
   compiler: {
     styledComponents: true,
   },
+  devIndicators: false,
 };

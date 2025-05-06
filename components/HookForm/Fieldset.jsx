@@ -1,12 +1,14 @@
 import { classnames } from '@lib';
+import { get } from 'lodash';
 import { useFormContext } from 'react-hook-form';
 
 const Fieldset = ({ label, help, name, children }) => {
   const {
-    formState: { errors, touchedFields, isSubmitted },
+    formState: { errors, isSubmitted },
   } = useFormContext();
 
-  const hasError = touchedFields[name] && errors[name] && isSubmitted;
+  const hasError = get(errors, name) && isSubmitted;
+  const showHelp = hasError || Boolean(help);
 
   return (
     <fieldset className={classnames(hasError && 'has-error')}>
@@ -16,9 +18,12 @@ const Fieldset = ({ label, help, name, children }) => {
         </label>
       )}
       {children}
-      <div className="form-help first-letter text-sm text-secondary">
-        {hasError ? errors[name]?.message : help}
-      </div>
+      {showHelp && (
+        <div className="form-help flex gap-1 items-center text-xs text-gray-400">
+          {!hasError && help && <i className="fa-regular fa-circle-info"></i>}
+          <span>{hasError ? get(errors, name).message : help}</span>
+        </div>
+      )}
     </fieldset>
   );
 };

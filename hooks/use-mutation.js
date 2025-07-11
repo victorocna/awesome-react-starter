@@ -5,11 +5,10 @@ import { useRouter } from 'next/router';
 /**
  * Custom hook for useMutation
  *
- * @param {String} key
  * @param {Function} fn
  * @param {Object} options
  * @returns {Object} Returns the mutation function, status and others
- * @see https://react-query.tanstack.com/reference/useMutation
+ * @see https://tanstack.com/query/latest/docs/framework/react/reference/useMutation
  */
 const useMutation = (fn, options = {}) => {
   const {
@@ -22,10 +21,11 @@ const useMutation = (fn, options = {}) => {
 
   const router = useRouter();
   const queryClient = useQueryClient();
-  const mutation = useQueryMutation(fn, {
+  const mutation = useQueryMutation({
+    mutationFn: fn,
     onSuccess: (data) => {
       if (invalidateQueries) {
-        queryClient.invalidateQueries(invalidateQueries);
+        queryClient.invalidateQueries({ queryKey: invalidateQueries });
       }
       if (data?.message) {
         toaster.success(data?.message);
@@ -34,7 +34,7 @@ const useMutation = (fn, options = {}) => {
         router.push(redirectOnSuccess);
       }
       if (typeof successCallback === 'function') {
-        successCallback();
+        successCallback(data);
       }
     },
     onError: (err) => {
@@ -42,7 +42,7 @@ const useMutation = (fn, options = {}) => {
         toaster.error(err?.message);
       }
       if (typeof errorCallback === 'function') {
-        errorCallback();
+        errorCallback(err);
       }
     },
     ...rest,

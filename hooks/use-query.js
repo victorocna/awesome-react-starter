@@ -3,7 +3,7 @@ import { useQuery as query } from '@tanstack/react-query';
 import axios from 'axios';
 import { stringifyUrl } from 'query-string';
 
-const useQuery = (url, options) => {
+const useQuery = (url, options = {}) => {
   const fullUrl = stringifyUrl({ url, query: options });
 
   const queryFn = () => {
@@ -16,7 +16,11 @@ const useQuery = (url, options) => {
     return axiosAuth(fullUrl);
   };
 
-  return query(fullUrl, queryFn, options);
+  return query({
+    queryKey: [fullUrl],
+    queryFn,
+    ...options,
+  });
 };
 
 export default useQuery;

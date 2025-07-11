@@ -2,7 +2,7 @@ import { Bone } from '@components';
 import { TableHeader } from '@components/Tables';
 import { bogus, toaster } from '@lib';
 import { getCoreRowModel, useReactTable } from '@tanstack/react-table';
-import { useEffect, useMemo } from 'react';
+import { useEffect } from 'react';
 
 const TableError = ({ name, columns }) => {
   useEffect(() => {
@@ -10,8 +10,8 @@ const TableError = ({ name, columns }) => {
   }, []);
 
   const table = useReactTable({
-    columns: useMemo(() => columns, [columns]),
-    data: useMemo(() => [], []),
+    columns,
+    data: [],
     getCoreRowModel: getCoreRowModel(),
   });
 

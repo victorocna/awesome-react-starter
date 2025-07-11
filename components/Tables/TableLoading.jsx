@@ -2,12 +2,11 @@ import { Bone } from '@components';
 import { TableHeader } from '@components/Tables';
 import { bogus } from '@lib';
 import { getCoreRowModel, useReactTable } from '@tanstack/react-table';
-import { useMemo } from 'react';
 
 const TableLoading = ({ name, columns }) => {
   const table = useReactTable({
-    columns: useMemo(() => columns, [columns]),
-    data: useMemo(() => [], []),
+    columns,
+    data: [],
     getCoreRowModel: getCoreRowModel(),
   });
 

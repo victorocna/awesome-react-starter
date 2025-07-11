@@ -1,14 +1,13 @@
 import { TableHeader, TableRow } from '@components/Tables';
 import { getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { isEmpty, size } from 'lodash';
-import { useMemo } from 'react';
 
-const TableSuccess = ({ name, columns, data, dataUpdatedAt }) => {
+const TableSuccess = ({ name, columns, data }) => {
   const pages = data.pages.flat();
 
   const table = useReactTable({
-    columns: useMemo(() => columns, [columns]),
-    data: useMemo(() => pages, [dataUpdatedAt]),
+    columns,
+    data: pages,
     getCoreRowModel: getCoreRowModel(),
   });
 

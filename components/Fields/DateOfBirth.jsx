@@ -3,18 +3,18 @@ import { formatDate } from '@functions';
 import { isValid } from 'date-fns';
 import { isFunction } from 'lodash';
 import { MD5 } from 'object-hash';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import LabeledSelect from './LabeledSelect';
 
 const DateOfBirth = ({ value, onChange, format = 'yyyy-MM-dd' }) => {
-  const defaultValue = useMemo(() => (isValid(new Date(value)) ? new Date(value) : null), [value]);
+  const defaultValue = isValid(new Date(value)) ? new Date(value) : null;
 
   const [day, setDay] = useState(defaultValue?.getDate() || '');
   const [month, setMonth] = useState(defaultValue?.getMonth() + 1 || '');
   const [year, setYear] = useState(defaultValue?.getFullYear() || '');
 
-  const days = useMemo(() => getDays(month, year), [month, year]);
-  const years = useMemo(() => getYears(month, day), [month, day]);
+  const days = getDays(month, year);
+  const years = getYears(month, day);
 
   useEffect(() => {
     if (isFunction(onChange)) {

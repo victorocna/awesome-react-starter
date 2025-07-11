@@ -1,6 +1,6 @@
 import { axiosAuth } from '@lib';
+import { useInfiniteQuery as infiniteQuery } from '@tanstack/react-query';
 import { stringifyUrl } from 'query-string';
-import { useInfiniteQuery as infiniteQuery } from 'react-query';
 
 /**
  * Custom hook for useInfiniteQuery

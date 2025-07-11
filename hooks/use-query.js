@@ -1,7 +1,7 @@
 import { axiosAuth } from '@lib';
+import { useQuery as query } from '@tanstack/react-query';
 import axios from 'axios';
 import { stringifyUrl } from 'query-string';
-import { useQuery as query } from 'react-query';
 
 const useQuery = (url, options) => {
   const fullUrl = stringifyUrl({ url, query: options });

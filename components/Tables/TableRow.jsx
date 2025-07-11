@@ -1,12 +1,12 @@
-import React from 'react';
+import { flexRender } from '@tanstack/react-table';
 
 const TableRow = ({ row }) => {
   return (
-    <tr {...row.getRowProps()}>
-      {row.cells.map((cell) => {
+    <tr>
+      {row.getVisibleCells().map((cell) => {
         return (
-          <td key={cell} className="px-4 py-2 group" {...cell.getCellProps()}>
-            {cell.render('Cell')}
+          <td key={cell.id} className="px-4 py-2 group">
+            {flexRender(cell.column.columnDef.cell, cell.getContext())}
           </td>
         );
       })}

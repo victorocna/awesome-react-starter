@@ -1,6 +1,6 @@
 import { confirm } from '@api/identity';
 import { Loading } from '@components';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
 const Confirm = ({ hash }) => {
   const { status } = useQuery(`confirm/${hash}`, () => confirm(hash));

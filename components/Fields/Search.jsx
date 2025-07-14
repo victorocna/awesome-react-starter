@@ -5,12 +5,11 @@ import { useRef } from 'react';
 const Search = ({ value, onChange, extraClass, placeholder }) => {
   const ref = useRef();
 
-  const request = debounce((value) => {
+  const debounceRequest = debounce((value) => {
     if (isFunction(onChange)) {
       onChange(value);
     }
   }, 500);
-  const debounceRequest = (value) => request(value);
 
   const handleChange = (event) => {
     return debounceRequest(event.target.value);

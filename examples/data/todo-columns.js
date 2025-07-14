@@ -3,27 +3,32 @@ import TodoStatusCell from '@examples/components/Todos/TodoStatusCell';
 
 const todoColumns = [
   {
-    Header: '#',
-    accessor: 'no',
+    id: 'no',
+    header: '#',
+    accessorKey: 'no',
     extraClass: 'w-10',
   },
   {
-    Header: 'My To Do',
-    accessor: 'name',
+    id: 'name',
+    header: 'My To Do',
+    accessorKey: 'name',
   },
   {
-    Header: 'Status',
-    accessor: 'done',
-    Cell: TodoStatusCell,
+    id: 'done',
+    header: 'Status',
+    accessorKey: 'done',
+    cell: TodoStatusCell,
   },
   {
-    Header: 'Created At',
-    accessor: 'createdAt',
-    Cell: Time,
+    id: 'createdAt',
+    header: 'Created At',
+    accessorKey: 'createdAt',
+    cell: Time,
   },
   {
-    Header: 'Author',
-    accessor: 'identity.name',
+    id: 'author',
+    header: 'Author',
+    accessorKey: 'identity.name',
   },
 ];
 

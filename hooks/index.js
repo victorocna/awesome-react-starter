@@ -15,4 +15,5 @@ export { default as useQuery } from './use-query';
 export { default as useRerender } from './use-rerender';
 export { default as useSelect } from './use-select';
 export { default as useSwipeable } from './use-swipeable';
+export { default as useTable } from './use-table';
 export { default as useToggle } from './use-toggle';

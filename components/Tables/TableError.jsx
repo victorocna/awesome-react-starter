@@ -1,7 +1,7 @@
 import { Bone } from '@components';
 import { TableHeader } from '@components/Tables';
+import { useTable } from '@hooks';
 import { bogus, toaster } from '@lib';
-import { getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { useEffect } from 'react';
 
 const TableError = ({ name, columns }) => {
@@ -9,11 +9,7 @@ const TableError = ({ name, columns }) => {
     toaster.error('Error! Could not load data');
   }, []);
 
-  const table = useReactTable({
-    columns,
-    data: [],
-    getCoreRowModel: getCoreRowModel(),
-  });
+  const table = useTable({ columns });
 
   const items = bogus.make(name);
   const showRows = (item, i) => {

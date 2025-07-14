@@ -10,7 +10,7 @@ const MyProfile = () => {
         <h1 className="text-xl font-bold">My profile</h1>
       </div>
 
-      {status === 'loading' && <MyProfileLoading />}
+      {status === 'pending' && <MyProfileLoading />}
       {status === 'error' && <MyProfileError />}
       {status === 'success' && <MyProfileSuccess {...data} />}
     </article>

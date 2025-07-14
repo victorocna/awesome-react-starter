@@ -5,7 +5,7 @@ import {
 } from '@functions/format-multi-select';
 import { useOnClickOutside, useQuery } from '@hooks';
 import { debounce, has, isEqual, isFunction, sortBy } from 'lodash';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const MultiSelectAsync = ({
   api = '',
@@ -16,7 +16,7 @@ const MultiSelectAsync = ({
   searchKey = '',
 }) => {
   // Initialize defaultSelected options based on initialValues
-  const defaultSelected = useMemo(() => initialValues?.map(getValueToOption) || [], []);
+  const defaultSelected = initialValues?.map(getValueToOption) || [];
 
   // Define state variables
   const [options, setOptions] = useState([]);
@@ -93,7 +93,7 @@ const MultiSelectAsync = ({
   const debouncedKeyUp = debounce(handleKeyUp, 500);
 
   // Calculate the input value based on selected options
-  const inputValue = useMemo(() => {
+  const inputValue = (() => {
     if (selectedOptions.length === 0) {
       return '';
     } else if (selectedOptions.length === 1) {
@@ -101,7 +101,7 @@ const MultiSelectAsync = ({
     } else {
       return `${selectedOptions.length} selected`;
     }
-  }, [selectedOptions]);
+  })();
 
   // Fetch data from the API based on the search term
   const { data, isLoading, status } = useQuery(api, { [searchKey]: searchTerm });

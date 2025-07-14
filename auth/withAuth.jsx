@@ -1,54 +1,37 @@
-import refreshToken from '@api/refresh-token';
-import jwt from 'jsonwebtoken';
 import Router from 'next/router';
 import { useEffect } from 'react';
-import isRouteAllowed from './is-route-allowed';
-import isTokenExpired from './is-token-expired';
-import { store } from './store';
+import ensureUser from './ensure-user';
+import store from './store';
 
-const verifyAndRefreshToken = async () => {
-  const accessToken = store.getState();
-
-  if (accessToken && !isTokenExpired(jwt.decode(accessToken))) {
-    return accessToken;
-  }
-
-  try {
-    return await refreshToken();
-  } catch (error) {
-    throw new Error('Failed to refresh token');
-  }
-};
-
-const authorizeRoute = (accessToken) => {
-  if (!isRouteAllowed(Router.pathname, accessToken)) {
-    throw new Error('Unauthorized access');
-  }
-};
-
+/**
+ * @see https://github.com/zeit/next.js/issues/153#issuecomment-257924301
+ */
 const withAuth = (WrappedComponent) => {
   const Wrapper = (props) => {
+    const verifyUser = async () => {
+      try {
+        const token = await ensureUser();
+        store.dispatch({ type: 'SET', jwt: token });
+      } catch (err) {
+        Router.push('/login');
+      }
+    };
+
     useEffect(() => {
-      const authenticateUser = async () => {
-        try {
-          const accessToken = await verifyAndRefreshToken();
-          authorizeRoute(accessToken);
-          store.dispatch({ type: 'SET', jwt: accessToken });
-        } catch (error) {
-          console.error('Authorization failed:', error);
-          store.dispatch({ type: 'REMOVE' });
-          Router.push('/login');
-        }
+      const handleFocus = async () => {
+        verifyUser();
       };
 
-      authenticateUser();
+      verifyUser();
 
-      // Re-run verification on window focus
-      window.addEventListener('focus', authenticateUser);
-      return () => window.removeEventListener('focus', authenticateUser);
+      // Refresh JWT token when window is focused
+      window.addEventListener('focus', handleFocus);
+      return () => {
+        window.removeEventListener('focus', handleFocus);
+      };
     }, []);
 
-    return <WrappedComponent {...props} />;
+    return <WrappedComponent withAuth {...props} />;
   };
 
   return Wrapper;

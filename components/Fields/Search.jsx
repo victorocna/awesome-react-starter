@@ -1,6 +1,6 @@
 import { classnames } from '@lib';
 import { debounce, isFunction } from 'lodash';
-import { useCallback, useRef } from 'react';
+import { useRef } from 'react';
 
 const Search = ({ value, onChange, extraClass, placeholder }) => {
   const ref = useRef();
@@ -10,7 +10,7 @@ const Search = ({ value, onChange, extraClass, placeholder }) => {
       onChange(value);
     }
   }, 500);
-  const debounceRequest = useCallback((value) => request(value), []);
+  const debounceRequest = (value) => request(value);
 
   const handleChange = (event) => {
     return debounceRequest(event.target.value);

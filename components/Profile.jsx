@@ -17,7 +17,7 @@ const Profile = () => {
         role="button"
       >
         <div className="flex items-center gap-2">
-          {status === 'loading' && <ProfileLoading />}
+          {status === 'pending' && <ProfileLoading />}
           {status === 'success' && <ProfileSuccess {...me} />}
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary">
             <i className="fas fa-user text-lg text-white"></i>

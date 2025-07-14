@@ -1,7 +1,7 @@
 import { useDisclosure, useOnClickOutside } from '@hooks';
 import { classnames } from '@lib';
 import { isFunction } from 'lodash';
-import { useMemo, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 const TimePicker = ({ disabled = false, interval = 1, onChange, placeholder, value }) => {
   const [time, setTime] = useState({
@@ -24,9 +24,7 @@ const TimePicker = ({ disabled = false, interval = 1, onChange, placeholder, val
     );
   };
 
-  const isTimeInvalid = useMemo(() => {
-    return !isTimeValid(time);
-  }, [time]);
+  const isTimeInvalid = !isTimeValid(time);
 
   const formatTime = (time) => {
     if (!isTimeValid(time)) {
@@ -37,9 +35,7 @@ const TimePicker = ({ disabled = false, interval = 1, onChange, placeholder, val
     }`;
   };
 
-  const formattedTime = useMemo(() => {
-    return formatTime(time);
-  }, [time]);
+  const formattedTime = formatTime(time);
 
   const scrollIntoView = (time) => {
     const { hour, minute } = time;

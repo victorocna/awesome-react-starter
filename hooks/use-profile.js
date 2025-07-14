@@ -7,7 +7,7 @@ const useProfile = () => {
   const me = whoami();
   useEffect(() => {
     if (!me) {
-      setStatus('loading');
+      setStatus('pending');
     }
   }, [me]);
 

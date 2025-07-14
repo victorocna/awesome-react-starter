@@ -16,7 +16,7 @@ const TableLoading = ({ name, columns }) => {
       <tr key={`${name}-${i}`}>
         {table.getAllLeafColumns().map((column, j) => (
           <td key={`${name}-${i}-${j}`} className="whitespace-nowrap p-4">
-            <Bone type="loading" extraClass={column?.extraClass} />
+            <Bone type="pending" extraClass={column?.extraClass} />
           </td>
         ))}
       </tr>

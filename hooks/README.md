@@ -86,7 +86,7 @@ const TodoList = ({ options }) => {
 
   return (
     <article>
-      {status === 'loading' && <TodoListLoading />}
+      {status === 'pending' && <TodoListLoading />}
       {status === 'error' && <TodoListError />}
       {status === 'success' && <TodoListSuccess {...data} />}
     </article>
@@ -112,7 +112,7 @@ const TodoCard = ({ uuid }) => {
 
   return (
     <article>
-      {status === 'loading' && <TodoCardLoading />}
+      {status === 'pending' && <TodoCardLoading />}
       {status === 'error' && <TodoCardError />}
       {status === 'success' && <TodoCardSuccess {...data} />}
     </article>

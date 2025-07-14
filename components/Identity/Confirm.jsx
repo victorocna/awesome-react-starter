@@ -7,7 +7,7 @@ const Confirm = ({ hash }) => {
 
   return (
     <>
-      {status === 'loading' && <Loading />}
+      {status === 'pending' && <Loading />}
       {status === 'error' && (
         <p className="animated fadeIn text-red-600">Error! Your account was not confirmed.</p>
       )}

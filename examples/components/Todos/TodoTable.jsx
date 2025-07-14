@@ -10,7 +10,7 @@ const TodoTable = ({ options }) => {
     <>
       <TableColumns pageParams={data?.pageParams} />
 
-      {status === 'loading' && <TableLoading name="staff" columns={todoColumns} />}
+      {status === 'pending' && <TableLoading name="staff" columns={todoColumns} />}
       {status === 'error' && <TableError name="staff" columns={todoColumns} />}
       {status === 'success' && (
         <>

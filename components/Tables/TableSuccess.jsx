@@ -1,28 +1,21 @@
 import { TableHeader, TableRow } from '@components/Tables';
+import { useTable } from '@hooks';
 import { isEmpty, size } from 'lodash';
-import { useMemo } from 'react';
-import { useTable } from 'react-table';
 
-const TableSuccess = ({ name, columns, data, dataUpdatedAt }) => {
-  const pages = data.pages.flat();
-  const options = {
-    columns: useMemo(() => columns, [columns]),
-    data: useMemo(() => pages, [dataUpdatedAt]),
-  };
-  const table = useTable(options);
+const TableSuccess = ({ name, columns, data }) => {
+  const table = useTable({
+    columns,
+    data: data.pages.flat(),
+  });
 
   return (
-    <table className="w-full table-auto border-collapse" {...table.getTableProps()}>
-      <TableHeader headers={table.visibleColumns} />
-      <tbody
-        className="divide-y whitespace-nowrap text-sm text-gray-500"
-        {...table.getTableBodyProps()}
-      >
-        {table.rows.map((row, i) => {
-          table.prepareRow(row);
-          return <TableRow key={`${name}-row-${i}`} row={row} />;
-        })}
-        {isEmpty(table.rows) && (
+    <table className="w-full table-auto border-collapse">
+      <TableHeader headers={table.getAllLeafColumns()} />
+      <tbody className="divide-y whitespace-nowrap text-sm text-gray-500">
+        {table.getRowModel().rows.map((row, i) => (
+          <TableRow key={`${name}-row-${i}`} row={row} />
+        ))}
+        {isEmpty(table.getRowModel().rows) && (
           <tr>
             <td className="p-4" colSpan={size(columns)}>
               Nothing to show

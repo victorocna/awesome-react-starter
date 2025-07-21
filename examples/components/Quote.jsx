@@ -10,7 +10,7 @@ const Quote = () => {
         <h1 className="text-xl font-bold">Random quote</h1>
       </div>
 
-      {status === 'loading' && <QuoteLoading />}
+      {status === 'pending' && <QuoteLoading />}
       {status === 'error' && <QuoteError />}
       {status === 'success' && <QuoteSuccess {...data} />}
     </article>

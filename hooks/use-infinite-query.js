@@ -1,6 +1,6 @@
 import { axiosAuth } from '@lib';
+import { useInfiniteQuery as infiniteQuery } from '@tanstack/react-query';
 import { stringifyUrl } from 'query-string';
-import { useInfiniteQuery as infiniteQuery } from 'react-query';
 
 /**
  * Custom hook for useInfiniteQuery
@@ -8,27 +8,29 @@ import { useInfiniteQuery as infiniteQuery } from 'react-query';
  * @param {String} url
  * @param {Object} options
  * @returns {Object} Returns query data, status and others
- * @see https://react-query.tanstack.com/reference/useInfiniteQuery
+ * @see https://tanstack.com/query/latest/docs/framework/react/reference/useInfiniteQuery
  */
 const useInfiniteQuery = (url, options = {}) => {
   const per_page = 30;
-  const getNextPageParam = ({ pageParams }) => {
-    if (!pageParams?.hasNext) {
-      return false;
+  const getNextPageParam = (lastPage) => {
+    if (!lastPage?.pageParams?.hasNext) {
+      return undefined;
     }
-    return pageParams?.page + 1;
+    return lastPage.pageParams.page + 1;
   };
 
-  const fetcher = ({ pageParam: page }) => {
-    const query = { per_page, ...options };
-    if (page) {
-      query.page = page;
-    }
+  const queryFn = ({ pageParam = 1 }) => {
+    const query = { per_page, page: pageParam, ...options };
     return axiosAuth(stringifyUrl({ url, query }));
   };
-  const config = { getNextPageParam, per_page, ...options };
 
-  const response = infiniteQuery([url, options], fetcher, config);
+  const response = infiniteQuery({
+    queryKey: [url, options],
+    queryFn,
+    getNextPageParam,
+    initialPageParam: 1,
+    ...options,
+  });
   if (response.status !== 'success') {
     return response;
   }

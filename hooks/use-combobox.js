@@ -1,7 +1,7 @@
 import { useCombobox as useDownshift } from 'downshift';
 import { isEqual, isFunction } from 'lodash';
 import { MD5 } from 'object-hash';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import useChildren from './use-children';
 
 /**
@@ -18,7 +18,7 @@ const useCombobox = ({ children, value, onChange }) => {
   const items = useChildren(children);
 
   // Custom state reducer customizing the behavior of the Combobox
-  const stateReducer = useCallback((_, actionAndChanges) => {
+  const stateReducer = (_, actionAndChanges) => {
     const { type, changes } = actionAndChanges;
     const isItemSelected = changes?.selectedItem?.label === changes?.inputValue;
     switch (type) {
@@ -42,7 +42,7 @@ const useCombobox = ({ children, value, onChange }) => {
       default:
         return changes; // otherwise business as usual.
     }
-  }, []);
+  };
 
   // Show an object label
   const itemToString = (item) => {

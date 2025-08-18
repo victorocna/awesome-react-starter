@@ -2,8 +2,8 @@ import { useDropdown } from '@hooks';
 import { classnames } from '@lib';
 import OptionList from './OptionList';
 
-const Dropdown = ({ children, value, onChange, placeholder, disabled, icon }) => {
-  const { inputItems, ...downshift } = useDropdown({ children, value, onChange });
+const Dropdown = ({ children, value, onChange, placeholder, disabled, icon, id }) => {
+  const { inputItems, ...downshift } = useDropdown({ children, value, onChange, id });
 
   return (
     <div className="relative">

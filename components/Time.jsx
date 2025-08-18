@@ -1,6 +1,8 @@
 import { time } from '@functions';
 
-const Time = ({ value }) => {
+const Time = (info) => {
+  const value = info.getValue();
+
   return time(value);
 };
 

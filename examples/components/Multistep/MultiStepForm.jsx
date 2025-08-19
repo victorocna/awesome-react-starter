@@ -1,5 +1,8 @@
 import { useRouter } from 'next/router';
-import { HeaderSteps, StepOne, StepThree, StepTwo } from '.';
+import HeaderSteps from './HeaderSteps';
+import StepOne from './StepOne';
+import StepThree from './StepThree';
+import StepTwo from './StepTwo';
 
 const MultiStepForm = () => {
   // Switch between URL fragments

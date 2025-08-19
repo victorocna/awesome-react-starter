@@ -27,7 +27,7 @@ const DatePicker = ({ value: initialValue, onChange, calendarProps = {}, ...prop
         onChange('');
       }
     }
-  }, [value]);
+  }, [value, onChange]);
 
   if (isValidDate(new Date(initialValue))) {
     calendarProps.defaultValue = new Date(initialValue);

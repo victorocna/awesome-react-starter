@@ -1,5 +1,7 @@
 import { useQuery } from '@hooks';
-import { MyProfileError, MyProfileLoading, MyProfileSuccess } from '.';
+import MyProfileError from './MyProfileError';
+import MyProfileLoading from './MyProfileLoading';
+import MyProfileSuccess from './MyProfileSuccess';
 
 const MyProfile = () => {
   const { data, status } = useQuery(`/admin/profile`);

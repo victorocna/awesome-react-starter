@@ -1,6 +1,5 @@
 import { useCombobox as useDownshift } from 'downshift';
 import { isEqual, isFunction } from 'lodash';
-import { MD5 } from 'object-hash';
 import { useEffect, useState } from 'react';
 import useChildren from './use-children';
 
@@ -71,11 +70,12 @@ const useCombobox = ({ children, value, onChange }) => {
   };
 
   useEffect(() => {
-    // Change the input items whenever the items prop changes
-    setInputItems(items);
-  }, [MD5(items)]);
-  // Using `items` only as a dependency won't trigger the useEffect because it is a reference,
-  // so we hash it instead.
+    // Change the input items whenever the items prop changes.
+    // Use a functional updater + deep equality check so we don't replace the state
+    // when `items` is a new reference but has the same content. This prevents
+    // a render loop caused by repeatedly setting state to a new-array reference.
+    setInputItems((prev) => (isEqual(prev, items) ? prev : items));
+  }, [items]);
 
   const downshift = useDownshift({
     items: inputItems,
@@ -96,7 +96,7 @@ const useCombobox = ({ children, value, onChange }) => {
     if (defaultSelectedItem) {
       downshift?.selectItem(defaultSelectedItem);
     }
-  }, [MD5(items)]);
+  }, [defaultSelectedItem, downshift]);
 
   return { inputItems, ...downshift };
 };

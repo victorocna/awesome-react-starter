@@ -1,4 +1,4 @@
-import { Menu } from '.';
+import Menu from './Menu';
 
 const Header = () => (
   <div className="flex flex-col bg-green-700 text-white">

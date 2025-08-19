@@ -112,14 +112,14 @@ const MultiSelectAsync = ({
       const values = has(data, 'data') ? data.data : has(data, 'pages') ? data.pages : data;
       setOptions(values.map(getValueToOption) || []);
     }
-  }, [searchTerm, status]);
+  }, [status, data, getValueToOption]);
 
   // Call onChange callback when selected options change
   useEffect(() => {
     if (isFunction(onChange)) {
       onChange(selectedOptions.map(getOptionToValue));
     }
-  }, [selectedOptions]);
+  }, [selectedOptions, getOptionToValue, onChange]);
 
   // Update selectAll state based on selected options and available options
   useEffect(() => {

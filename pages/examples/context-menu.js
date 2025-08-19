@@ -92,7 +92,7 @@ const Page = () => {
         <p>Context menu with custom button (is given as a child of the component)</p>
         <div className="not-prose w-44">
           <ContextMenu options={options}>
-            <Button className="button full primary">Custom button</Button>
+            <div className="button full primary">Custom button</div>
           </ContextMenu>
         </div>
         <h3 className="mt-4">Example #5</h3>

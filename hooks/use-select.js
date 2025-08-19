@@ -1,6 +1,5 @@
 import { useSelect as useDownshift } from 'downshift';
 import { isEqual, isFunction } from 'lodash';
-import { MD5 } from 'object-hash';
 import { useEffect, useId, useState } from 'react';
 import useChildren from './use-children';
 
@@ -20,7 +19,7 @@ const useSelect = ({ children, value, onChange, id }) => {
 
   // Show an object label
   const itemToString = (item) => {
-    return item.label;
+    return item ? item.label : '';
   };
 
   // Handle the selection
@@ -33,11 +32,12 @@ const useSelect = ({ children, value, onChange, id }) => {
   // Keep the items in a state
   const [inputItems, setInputItems] = useState(items);
   useEffect(() => {
-    // Change the input items whenever the items prop changes
-    setInputItems(items);
-  }, [MD5(items)]);
-  // Using `items` only as a dependency won't trigger the useEffect because it is a reference,
-  // so we hash it instead.
+    // Change the input items whenever the items prop changes.
+    // Use a functional updater + deep equality check so we don't replace the state
+    // when `items` is a new reference but has the same content. This prevents
+    // a render loop caused by repeatedly setting state to a new-array reference.
+    setInputItems((prev) => (isEqual(prev, items) ? prev : items));
+  }, [items]);
 
   // Generate a stable ID for consistent server/client rendering
   const generatedId = useId();
@@ -50,6 +50,9 @@ const useSelect = ({ children, value, onChange, id }) => {
     id: stableId,
   });
 
+  // Pull only the pieces we need so we can depend on stable values in effects
+  const { selectedItem, selectItem } = downshift;
+
   // Find the default selected item by value
   const isDefaultSelected = (item) => {
     return isEqual(item.value, value);
@@ -58,10 +61,10 @@ const useSelect = ({ children, value, onChange, id }) => {
 
   // Select the default item if any
   useEffect(() => {
-    if (defaultSelectedItem) {
-      downshift?.selectItem(defaultSelectedItem);
+    if (defaultSelectedItem && !selectedItem && !isEqual(selectedItem, defaultSelectedItem)) {
+      selectItem(defaultSelectedItem);
     }
-  }, [MD5(items)]);
+  }, [defaultSelectedItem, selectedItem, selectItem]);
 
   return { inputItems, ...downshift };
 };

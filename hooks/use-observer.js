@@ -6,15 +6,21 @@ const useObserver = (target, callback) => {
   useEffect(() => {
     const obs = new MutationObserver(callback);
     setObserver(obs);
-  }, []);
+    return () => {
+      if (obs) {
+        obs.disconnect();
+      }
+    };
+  }, [callback]);
 
-  const config = { childList: true, subtree: true };
   useEffect(() => {
     try {
-      if (!observer || !target) {
+      const targetEl = target && target.current ? target.current : target;
+      if (!observer || !targetEl) {
         return;
       }
-      observer.observe(target, config);
+      const config = { childList: true, subtree: true };
+      observer.observe(targetEl, config);
       return () => {
         if (observer) {
           observer.disconnect();
@@ -23,7 +29,7 @@ const useObserver = (target, callback) => {
     } catch (error) {
       console.error('MutationObserver error:', error);
     }
-  }, [observer, target]);
+  }, [observer, target, callback]);
 };
 
 export default useObserver;

@@ -1,5 +1,7 @@
 import { useQuery } from '@hooks';
-import { QuoteError, QuoteLoading, QuoteSuccess } from '.';
+import QuoteError from './QuoteError';
+import QuoteLoading from './QuoteLoading';
+import QuoteSuccess from './QuoteSuccess';
 
 const Quote = () => {
   const { data, status } = useQuery(`https://api.quotable.io/random`);

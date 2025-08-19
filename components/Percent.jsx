@@ -2,7 +2,7 @@ import { formatNumber } from 'accounting';
 
 const Percent = ({ value, precision = 0 }) => {
   return (
-    <h3 datatype="number">
+    <h3 data-type="number">
       {formatNumber(value / 100, { decimal: ',', thousand: '.', precision }) || 'N/A'}%
     </h3>
   );

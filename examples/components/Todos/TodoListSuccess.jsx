@@ -1,4 +1,6 @@
-import { CheckTodo, RemoveTodo, TodoName } from '.';
+import CheckTodo from './CheckTodo';
+import RemoveTodo from './RemoveTodo';
+import TodoName from './TodoName';
 
 const TodoListSuccess = ({ pages }) => {
   const showTodo = ({ _id: id, name, done }) => {

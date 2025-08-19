@@ -21,7 +21,7 @@ const PlusMinus = ({ onChange, max = null, min = 0, value: initialValue }) => {
     if (isFunction(onChange)) {
       onChange(value);
     }
-  }, [value]);
+  }, [value, onChange]);
 
   return (
     <div className="plusminus">

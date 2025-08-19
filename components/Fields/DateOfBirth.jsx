@@ -2,7 +2,6 @@ import { getDays, getYears, isValidDate, months } from '@constants/date-of-birth
 import { formatDate } from '@functions';
 import { isValid } from 'date-fns';
 import { isFunction } from 'lodash';
-import { MD5 } from 'object-hash';
 import { useEffect, useState } from 'react';
 import LabeledSelect from './LabeledSelect';
 
@@ -24,8 +23,7 @@ const DateOfBirth = ({ value, onChange, format = 'yyyy-MM-dd' }) => {
         onChange('');
       }
     }
-  }, [MD5({ day, month, year })]);
-  // MD5 prevents onChange from being called without an actual change
+  }, [day, month, year, format, onChange]);
 
   return (
     <div className="grid w-full grid-cols-12 grid-rows-1 gap-3">

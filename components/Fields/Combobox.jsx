@@ -2,7 +2,7 @@ import { useCombobox } from '@hooks';
 import { classnames } from '@lib';
 import OptionList from './OptionList';
 
-const Combobox = ({ children, value, onChange, placeholder, disabled, icon }) => {
+const Combobox = ({ children, value, onChange, placeholder, disabled, icon, ...props }) => {
   const { inputItems, ...downshift } = useCombobox({ children, value, onChange });
 
   return (
@@ -15,18 +15,21 @@ const Combobox = ({ children, value, onChange, placeholder, disabled, icon }) =>
         )}
         role="button"
         {...downshift.getComboboxProps()}
-        {...downshift.getToggleButtonProps()}
       >
         <input
           value={downshift.selectedItem?.label || ''}
           className="-my-2 w-full bg-transparent outline-none"
-          {...downshift.getInputProps()}
+          {...downshift.getInputProps(props)}
           placeholder={placeholder}
           disabled={disabled}
         />
-        <span className={classnames(disabled && 'pointer-events-none')}>
+        <button
+          type="button"
+          className={classnames(disabled && 'pointer-events-none')}
+          {...downshift.getToggleButtonProps()}
+        >
           {icon || <i className="fas fa-chevron-down" />}
-        </span>
+        </button>
       </div>
       <OptionList {...downshift}>{inputItems}</OptionList>
     </div>

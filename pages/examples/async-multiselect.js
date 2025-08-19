@@ -13,7 +13,7 @@ const Page = () => {
           </label>
           <div className="w-80">
             <MultiSelectAsync
-              api="https://api.coincap.io/v2/assets"
+              api={`${process.env.APP_BASE_URL}/api/mock/assets`}
               getOptionToValue={(selectValue) => ({
                 id: selectValue?.value,
                 name: selectValue?.label,
@@ -34,7 +34,7 @@ const Page = () => {
           </label>
           <div className="w-80">
             <MultiSelectAsync
-              api="https://api.coincap.io/v2/assets"
+              api={`${process.env.APP_BASE_URL}/api/mock/assets`}
               getOptionToValue={(selectValue) => ({
                 id: selectValue?.value,
                 name: selectValue?.label,

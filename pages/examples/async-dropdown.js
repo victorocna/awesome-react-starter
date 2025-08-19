@@ -3,7 +3,7 @@ import { Layout } from '@examples/components';
 import { useQuery } from '@hooks';
 
 const Page = () => {
-  const { data, status } = useQuery('https://api.coincap.io/v2/assets?limit=5');
+  const { data, status } = useQuery(`${process.env.APP_BASE_URL}/api/mock/assets?limit=5`);
   const showCripto = (data) => (
     <option key={data.symbol} value={data.symbol}>
       {data.name}

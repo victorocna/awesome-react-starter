@@ -18,7 +18,7 @@ const Page = () => {
           </label>
           <div className="w-80">
             <Autocomplete
-              url="https://api.coincap.io/v2/assets?limit=5"
+              url={`${process.env.APP_BASE_URL}/api/mock/assets?limit=5`}
               placeholder="Search your favorite crypto"
               searchKey="search"
               optionValue="symbol"

@@ -11,6 +11,15 @@ const Autocomplete = ({ url, optionValue, optionLabel, searchKey, ...props }) =>
   };
   const debouncedChange = debounce(handleChange, 500);
 
+  // Cleanup the debounce function on unmount
+  useEffect(() => {
+    return () => {
+      if (debouncedChange.cancel) {
+        debouncedChange.cancel();
+      }
+    };
+  }, [debouncedChange]);
+
   // Fetch data from API
   const { data, status } = useQuery(url, { [searchKey]: inputValue });
 

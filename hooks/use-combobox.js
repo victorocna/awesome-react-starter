@@ -20,6 +20,7 @@ const useCombobox = ({ children, value, onChange }) => {
   const stateReducer = (_, actionAndChanges) => {
     const { type, changes } = actionAndChanges;
     const isItemSelected = changes?.selectedItem?.label === changes?.inputValue;
+
     switch (type) {
       // Reset the input value to the selected item's label when the input is blurred
       case useDownshift.stateChangeTypes.InputBlur:
@@ -38,6 +39,7 @@ const useCombobox = ({ children, value, onChange }) => {
         } else {
           return { ...changes, selectedItem: { value: '', label: '' } };
         }
+
       default:
         return changes; // otherwise business as usual.
     }
@@ -45,7 +47,7 @@ const useCombobox = ({ children, value, onChange }) => {
 
   // Show an object label
   const itemToString = (item) => {
-    return item?.label;
+    return item?.label || '';
   };
 
   // Handle the selection
@@ -57,10 +59,11 @@ const useCombobox = ({ children, value, onChange }) => {
 
   // Keep the items in a state
   const [inputItems, setInputItems] = useState(items);
+
   const onInputValueChange = ({ inputValue }) => {
     // Filter the items based on the inputValue
     setInputItems(
-      items.filter((item) => item?.label?.toLowerCase().includes(inputValue.toLowerCase()))
+      items.filter((item) => item?.label?.toLowerCase()?.includes(inputValue?.toLowerCase()))
     );
 
     // If the value is empty, select an empty string
@@ -85,18 +88,21 @@ const useCombobox = ({ children, value, onChange }) => {
     stateReducer,
   });
 
+  // Pull only the pieces we need so we can depend on stable values in effects
+  const { selectedItem, selectItem } = downshift;
+
   // Find the default selected item by value
   const isDefaultSelected = (item) => {
     return isEqual(item?.value, value);
   };
-  const defaultSelectedItem = items?.find(isDefaultSelected) || null;
+  const defaultSelectedItem = items?.find?.(isDefaultSelected) || null;
 
   // Select the default item if any
   useEffect(() => {
-    if (defaultSelectedItem) {
-      downshift?.selectItem(defaultSelectedItem);
+    if (defaultSelectedItem && !selectedItem && !isEqual(selectedItem, defaultSelectedItem)) {
+      selectItem?.(defaultSelectedItem);
     }
-  }, [defaultSelectedItem, downshift]);
+  }, [defaultSelectedItem, selectedItem, selectItem]);
 
   return { inputItems, ...downshift };
 };

@@ -1,5 +1,4 @@
 import { Link } from '@components';
-import React from 'react';
 
 const IconsStats = () => {
   return (
@@ -23,7 +22,11 @@ const IconsStats = () => {
             </div>
           </div>
           <div className="bg-gray-50 py-4 px-6">
-            <Link className="text-primary font-medium" href="#">
+            <Link
+              className="text-primary font-medium"
+              href="#"
+              onClick={(e) => e.preventDefault()}
+            >
               View all
             </Link>
           </div>
@@ -45,7 +48,11 @@ const IconsStats = () => {
             </div>
           </div>
           <div className="bg-gray-50 py-4 px-6">
-            <Link className="text-primary font-medium" href="#">
+            <Link
+              className="text-primary font-medium"
+              href="#"
+              onClick={(e) => e.preventDefault()}
+            >
               View all
             </Link>
           </div>
@@ -67,7 +74,11 @@ const IconsStats = () => {
             </div>
           </div>
           <div className="bg-gray-50 py-4 px-6">
-            <Link className="text-primary font-medium" href="#">
+            <Link
+              className="text-primary font-medium"
+              href="#"
+              onClick={(e) => e.preventDefault()}
+            >
               View all
             </Link>
           </div>

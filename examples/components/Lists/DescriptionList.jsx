@@ -50,7 +50,11 @@ const DescriptionList = () => {
                     </div>
                   </div>
                   <div className="ml-4 flex-shrink-0">
-                    <a href="#" className="font-medium text-primary hover:text-primary">
+                    <a
+                      href="#"
+                      className="font-medium text-primary hover:text-primary"
+                      onClick={(e) => e.preventDefault()}
+                    >
                       Download
                     </a>
                   </div>
@@ -66,7 +70,11 @@ const DescriptionList = () => {
                     </div>
                   </div>
                   <div className="ml-4 flex-shrink-0">
-                    <a href="#" className="font-medium text-primary hover:text-primary">
+                    <a
+                      href="#"
+                      className="font-medium text-primary hover:text-primary"
+                      onClick={(e) => e.preventDefault()}
+                    >
                       Download
                     </a>
                   </div>

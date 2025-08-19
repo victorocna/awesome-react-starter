@@ -7,17 +7,17 @@ const Pages = () => {
         Dashboard
       </MenuItem>
       <MenuItem href="/examples/todo-list" level="1">
-        To Do List
+        To do list
       </MenuItem>
       <MenuItem href="/examples/todo-table" level="1">
-        To Do Table
+        To do table
       </MenuItem>
       <MenuItem href="/examples/profile" level="1">
         Profile
       </MenuItem>
       <MenuGroup label="Data Display">
         <MenuItem href="/examples/description-lists" level="2">
-          Description Lists
+          Description lists
         </MenuItem>
         <MenuItem href="/examples/stats" level="2">
           Stats
@@ -28,13 +28,13 @@ const Pages = () => {
           Buttons
         </MenuItem>
         <MenuItem href="/examples/context-menu" level="2">
-          Context Menu
+          Context menu
         </MenuItem>
         <MenuItem href="/examples/date-picker" level="2">
-          Date Picker
+          Date picker
         </MenuItem>
         <MenuItem href="/examples/time-picker" level="2">
-          Time Picker
+          Time picker
         </MenuItem>
         <MenuItem href="/examples/date-of-birth" level="2">
           Date of birth
@@ -43,16 +43,16 @@ const Pages = () => {
           Dropdown
         </MenuItem>
         <MenuItem href="/examples/async-dropdown" level="2">
-          Async Dropdown
+          Async dropdown
         </MenuItem>
         <MenuItem href="/examples/async-multiselect" level="2">
-          Async MultiSelect
+          Async multi select
         </MenuItem>
         <MenuItem href="/examples/combobox" level="2">
           Combobox
         </MenuItem>
         <MenuItem href="/examples/async-combobox" level="2">
-          Async Combobox
+          Async combobox
         </MenuItem>
         <MenuItem href="/examples/autocomplete" level="2">
           Autocomplete
@@ -70,7 +70,7 @@ const Pages = () => {
           Show more
         </MenuItem>
         <MenuItem href="/examples/file-upload" level="2">
-          File Upload
+          File upload
         </MenuItem>
         <MenuItem href="/examples/toggle" level="2">
           Toggle
@@ -103,7 +103,7 @@ const Pages = () => {
         Signup page
       </MenuItem>
       <MenuItem href="/404" level="1">
-        404 Page
+        404 page
       </MenuItem>
     </>
   );

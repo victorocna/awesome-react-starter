@@ -8,7 +8,7 @@ const TodoFilters = ({ setOptions }) => {
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={setOptions}
-      className="flex gap-4 sm:flex-row flex-col"
+      className="flex flex-col gap-4 sm:flex-row"
     >
       <Field
         as={Search}

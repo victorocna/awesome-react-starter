@@ -19,7 +19,7 @@ const Fieldset = ({ label, help, name, children }) => {
       )}
       {children}
       {showHelp && (
-        <div className="form-help flex gap-1 items-center text-xs text-gray-400">
+        <div className="form-help flex items-center gap-1 text-xs text-gray-400">
           <span>{hasError ? get(errors, name).message : help}</span>
         </div>
       )}

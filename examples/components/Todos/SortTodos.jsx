@@ -2,10 +2,10 @@ import { Select } from '@components/Fields';
 
 const SortTodos = ({ setOptions }) => {
   const rearrange = (event) => {
-    const sort = event.target.value.split(',')[0];
+    const order = event.target.value.split(',')[0];
     const direction = event.target.value.split(',')[1];
 
-    setOptions((prev) => ({ ...prev, sort, direction }));
+    setOptions((prev) => ({ ...prev, order, direction }));
   };
 
   return (

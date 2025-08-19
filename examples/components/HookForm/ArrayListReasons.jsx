@@ -11,7 +11,7 @@ const ArrayListReasons = ({ name, emptyRow, sections }) => {
     return (
       <div className="sections sections-border" key={`${section}-${index}`}>
         <div className="flex flex-wrap items-center gap-2">
-          <h3 className="font-semibold flex-1">
+          <h3 className="flex-1 font-semibold">
             <span>
               <span>Section</span> {index + 1}:
             </span>

@@ -5,7 +5,7 @@ const TableRow = ({ row }) => {
     <tr>
       {row.getVisibleCells().map((cell) => {
         return (
-          <td key={cell.id} className="px-4 py-2 group">
+          <td key={cell.id} className="group px-4 py-2">
             {flexRender(cell.column.columnDef.cell, cell.getContext())}
           </td>
         );

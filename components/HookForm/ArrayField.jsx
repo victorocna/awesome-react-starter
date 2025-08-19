@@ -32,7 +32,7 @@ const ArrayField = ({ AddComponent, SectionComponent, name, emptyRow = {} }) => 
       <AddComponent name={name} emptyRow={emptyRow} />
       {hasError && (
         <div>
-          <p className="text-red-500 text-sm h-5">{errors[name]}</p>
+          <p className="h-5 text-sm text-red-500">{errors[name]}</p>
         </div>
       )}
       <SectionComponent key={key} name={name} emptyRow={emptyRow} sections={fieldValues} />

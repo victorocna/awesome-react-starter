@@ -30,7 +30,7 @@ const Profile = () => {
         )}
       </div>
       {isOpen && (
-        <div className="absolute top-12 right-2 z-50 rounded-lg bg-white shadow-xl">
+        <div className="absolute right-2 top-12 z-50 rounded-lg bg-white shadow-xl">
           <ProfileMenu />
         </div>
       )}

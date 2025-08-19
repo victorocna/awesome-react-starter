@@ -10,7 +10,7 @@ const CheckTodo = ({ id, done }) => {
     mutation.mutate({ id, done });
   };
 
-  return <Checkbox value={done} checked={done} onClick={handleClick} />;
+  return <Checkbox value={done} checked={done} onChange={handleClick} />;
 };
 
 export default CheckTodo;

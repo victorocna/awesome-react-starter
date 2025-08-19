@@ -10,12 +10,12 @@ const Submit = ({ children, isLoading, ...props }) => {
   props.disabled = disabled;
 
   return (
-    <div className="inline-flex items-center relative">
+    <div className="relative inline-flex items-center">
       <Button type="submit" className="button full primary" {...props}>
         <div>{children}</div>
       </Button>
       {disabled && (
-        <img src="/icons/loading.gif" alt="loading" className="absolute inset-0 m-auto w-6 h-6" />
+        <img src="/icons/loading.gif" alt="loading" className="absolute inset-0 m-auto h-6 w-6" />
       )}
     </div>
   );

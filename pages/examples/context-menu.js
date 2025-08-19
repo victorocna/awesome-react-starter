@@ -67,14 +67,14 @@ const Page = () => {
       <div className="prose-sm">
         <h3 className="mt-0">Example #1</h3>
         <p>Context menu with options that have onClick (will execute a function when clicked)</p>
-        <div className="w-36 not-prose">
+        <div className="not-prose w-36">
           <ContextMenu options={options}>
             <i className="fa-solid fa-ellipsis-vertical text-xl" />
           </ContextMenu>
         </div>
         <h3 className="mt-4">Example #2</h3>
         <p>Context menu with options that have href (will redirect to a new page when clicked)</p>
-        <div className="w-36 not-prose">
+        <div className="not-prose w-36">
           <ContextMenu options={linkOptions}>
             <i className="fa-solid fa-ellipsis-vertical text-xl" />
           </ContextMenu>
@@ -83,14 +83,14 @@ const Page = () => {
         <p>
           Context menu with mixed options (some have onClick and some have href) and renderCondition
         </p>
-        <div className="w-36 not-prose">
+        <div className="not-prose w-36">
           <ContextMenu options={mixedOptions}>
             <i className="fa-solid fa-ellipsis-vertical text-xl" />
           </ContextMenu>
         </div>
         <h3 className="mt-4">Example #4</h3>
         <p>Context menu with custom button (is given as a child of the component)</p>
-        <div className="w-44 not-prose">
+        <div className="not-prose w-44">
           <ContextMenu options={options}>
             <Button className="button full primary">Custom button</Button>
           </ContextMenu>
@@ -100,7 +100,7 @@ const Page = () => {
           Context menu with options that have renderCondition (will only show options that match the
           condition)
         </p>
-        <div className="w-36 not-prose">
+        <div className="not-prose w-36">
           <ContextMenu options={userAndAdminOptions}>
             <i className="fa-solid fa-ellipsis-vertical text-xl" />
           </ContextMenu>

@@ -38,9 +38,9 @@ const FileUpload = ({ accept, setFile, disabled, disableDrop = false, multiple =
   };
 
   return (
-    <div className="flex border rounded-md" onDrop={handleDrop} onDragOver={handleDragOver}>
+    <div className="flex rounded-md border" onDrop={handleDrop} onDragOver={handleDragOver}>
       <Button
-        className="button full secondary rounded-r-none h-fit"
+        className="button full secondary h-fit rounded-r-none"
         onClick={handleClick}
         disabled={disabled}
       >

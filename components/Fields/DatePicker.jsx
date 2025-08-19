@@ -39,7 +39,7 @@ const DatePicker = ({ value: initialValue, onChange, calendarProps = {}, ...prop
     <div className="relative">
       <Input {...props} value={value} onChange={handleChange} />
       <div
-        className="absolute top-0 right-0 grid h-full cursor-pointer place-items-center p-2.5 outline-none"
+        className="absolute right-0 top-0 grid h-full cursor-pointer place-items-center p-2.5 outline-none"
         onClick={show}
       >
         <i className="fas fa-calendar-alt text-primary" />

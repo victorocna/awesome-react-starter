@@ -100,7 +100,7 @@ const FilterModal = ({
       show={isOpen}
     >
       <FormProvider {...methods}>
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col h-[100dvh]">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex h-[100dvh] flex-col">
           <Modal.Header className="flex justify-between border-b border-gray-300 bg-white px-4 py-3 shadow-sm">
             <p className="text-xl font-semibold">{title}</p>
             <Button

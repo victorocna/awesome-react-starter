@@ -21,7 +21,7 @@ const MultiStepForm = () => {
   const Form = switchStep();
 
   return (
-    <div className="md:col-span-2 bg-white p-4 rounded-md">
+    <div className="rounded-md bg-white p-4 md:col-span-2">
       <HeaderSteps step={fragment} />
       <Form />
     </div>

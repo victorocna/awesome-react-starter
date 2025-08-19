@@ -84,7 +84,7 @@ const Page = () => {
         </div>
         <div className="flex">
           <Submit
-            className="mt-2 button full secondary"
+            className="button full secondary mt-2"
             disabled={disabled}
             onClick={handleSubmit}
             isLoading={isLoading}

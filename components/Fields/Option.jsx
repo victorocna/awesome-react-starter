@@ -1,7 +1,6 @@
 import { classnames } from '@lib';
-import { forwardRef } from 'react';
 
-const Option = ({ children, isHover, ...props }, ref) => {
+const Option = ({ children, isHover, ref, ...props }) => {
   return (
     <li ref={ref} className={classnames('px-3 py-1', isHover && 'bg-gray-200')} {...props}>
       {children}
@@ -9,4 +8,4 @@ const Option = ({ children, isHover, ...props }, ref) => {
   );
 };
 
-export default forwardRef(Option);
+export default Option;

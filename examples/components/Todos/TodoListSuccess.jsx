@@ -13,7 +13,7 @@ const TodoListSuccess = ({ pages }) => {
     );
   };
 
-  return <div className="grid gap-2">{pages.map((page) => page.map(showTodo))}</div>;
+  return <div className="grid gap-2">{pages.map(showTodo)}</div>;
 };
 
 export default TodoListSuccess;

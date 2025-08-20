@@ -1,5 +1,5 @@
-function normalize(input) {
-  function walk(v) {
+const normalize = (input) => {
+  const walk = (v) => {
     if (v == null) {
       return [undefined, undefined];
     }
@@ -48,13 +48,13 @@ function normalize(input) {
       return [out, `{${parts.join(',')}}`];
     }
     return [undefined, undefined];
-  }
+  };
 
   const [norm, key] = walk(input);
   return {
     norm: norm === undefined ? {} : norm,
     key: key || '{}',
   };
-}
+};
 
 export default normalize;

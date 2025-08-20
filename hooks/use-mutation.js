@@ -1,3 +1,4 @@
+import { extractError, isRequestCanceled } from '@functions';
 import { toaster } from '@lib';
 import { useQueryClient, useMutation as useQueryMutation } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
@@ -28,7 +29,7 @@ const useMutation = (fn, options = {}) => {
         queryClient.invalidateQueries({ queryKey: invalidateQueries });
       }
       if (data?.message) {
-        toaster.success(data?.message);
+        toaster.success(data.message);
       }
       if (redirectOnSuccess) {
         router.push(redirectOnSuccess);
@@ -38,8 +39,12 @@ const useMutation = (fn, options = {}) => {
       }
     },
     onError: (err) => {
-      if (err?.message) {
-        toaster.error(err?.message);
+      if (isRequestCanceled(err) || err?.__redirectToLogin) {
+        return;
+      }
+      const { message } = extractError(err);
+      if (message) {
+        toaster.error(message);
       }
       if (typeof errorCallback === 'function') {
         errorCallback(err);

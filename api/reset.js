@@ -1,19 +1,23 @@
+import { extractError } from '@functions';
 import { axios, toaster } from '@lib';
 
 const reset = async (ref, hash, data) => {
   try {
-    // execute google recaptcha
+    // Execute google reCAPTCHA
     data['g-recaptcha-response'] = await ref.current.executeAsync();
 
-    // execute main action
+    // Execute main action
     await axios.post(`reset/${hash}`, data);
 
-    // notify user and other actions
+    // Notify user and other actions
     toaster.success('Your password has been changed');
   } catch (err) {
-    toaster.error(err.message);
+    const { message } = extractError(err);
+    if (message) {
+      toaster.error(message);
+    }
 
-    // reset google recaptcha on invalid login
+    // Reset google reCAPTCHA on invalid login
     ref.current.reset();
   }
 };

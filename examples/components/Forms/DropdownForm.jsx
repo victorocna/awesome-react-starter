@@ -1,5 +1,5 @@
 import { Dropdown } from '@components/Fields';
-import { Field, Fieldset, Form, HookForm } from '@components/HookForm';
+import { Field, Form, HookForm } from '@components/HookForm';
 import * as Yup from 'yup';
 
 const DropdownForm = () => {
@@ -15,15 +15,13 @@ const DropdownForm = () => {
 
   return (
     <HookForm {...formProps}>
-      <Form className="space-y-4" debug={true}>
+      <Form className="space-y-4" debug>
         <div className="w-80">
-          <Fieldset name="gender" label="Pick your gender">
-            <Field id="gender" name="gender" as={Dropdown}>
-              <option value="M">Male</option>
-              <option value="F">Female</option>
-              <option value="O">Other</option>
-            </Field>
-          </Fieldset>
+          <Field as={Dropdown} label="Pick your gender" name="gender">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+            <option value="O">Other</option>
+          </Field>
         </div>
       </Form>
     </HookForm>

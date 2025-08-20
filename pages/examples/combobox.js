@@ -55,7 +55,7 @@ const Page = () => {
           <label htmlFor="#" className="mb-0 cursor-pointer">
             Disabled combobox with default selection
           </label>
-          <Combobox defaultSelected="DEU" disabled={true}>
+          <Combobox defaultSelected="DEU" disabled>
             {countries.map(showCountries)}
           </Combobox>
         </div>

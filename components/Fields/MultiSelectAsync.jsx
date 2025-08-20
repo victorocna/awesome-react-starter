@@ -146,7 +146,7 @@ const MultiSelectAsync = ({
           <div className="dropdown cursor-pointer" onClick={toggleMultiselect}>
             <input
               className="-my-2 w-full cursor-pointer select-none bg-transparent outline-none"
-              readOnly={true}
+              readOnly
               value={inputValue}
             />
             <span role="button">

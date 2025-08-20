@@ -7,12 +7,13 @@ import useChildren from './use-children';
  * Custom hook that enhances downshift useCombobox
  *
  * @param {Object} options
- * @param {Array<Any>} options.children the children of the Combobox component
- *
+ * @param {Array<Any>} options.children The children of the Combobox component
+ * @param {Function} options.onChange Callback fired when the selected item changes
+ * @param {String} options.value The current value of the Combobox
  * @returns {Object} Returns downshift props
  * @see https://www.downshift-js.com/use-combobox
  */
-const useCombobox = ({ children, value, onChange }) => {
+const useCombobox = ({ children, onChange, value }) => {
   // Convert Combobox's component children to Downshift items
   const items = useChildren(children);
 

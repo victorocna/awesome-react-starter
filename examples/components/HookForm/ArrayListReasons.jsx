@@ -1,6 +1,6 @@
 import { Button } from '@components';
 import { Input } from '@components/Fields';
-import { Field, Fieldset } from '@components/HookForm';
+import { Field } from '@components/HookForm';
 import { useFieldArray, useFormContext } from 'react-hook-form';
 
 const ArrayListReasons = ({ name, emptyRow, sections }) => {
@@ -27,11 +27,7 @@ const ArrayListReasons = ({ name, emptyRow, sections }) => {
           </Button>
         </div>
 
-        <div>
-          <Fieldset name={`${name}.${index}.reason`} label="Reason">
-            <Field id={`${name}.${index}.reason`} name={`${name}.${index}.reason`} as={Input} />
-          </Fieldset>
-        </div>
+        <Field as={Input} label="Reason" name={`${name}.${index}.reason`} />
       </div>
     );
   };

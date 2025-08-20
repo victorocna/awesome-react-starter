@@ -67,7 +67,7 @@ const Page = () => {
             Disabled dropdown with default selection
           </label>
           <div className="w-80">
-            <Dropdown defaultSelected="USA" disabled={true}>
+            <Dropdown defaultSelected="USA" disabled>
               {countries.map(showCountries)}
             </Dropdown>
           </div>

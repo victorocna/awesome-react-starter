@@ -6,10 +6,10 @@ const Country = () => {
   return (
     <Field
       as={Dropdown}
+      help="Uses custom dropdown"
+      label="Country"
       name="country"
       placeholder="Select your country"
-      label="Country"
-      help="Uses custom dropdown"
     >
       {countries.map((country) => (
         <option key={country.value} value={country.value}>

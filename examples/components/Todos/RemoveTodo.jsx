@@ -3,7 +3,7 @@ import { deleteTodo } from '../../api/todo';
 
 const RemoveTodo = ({ id }) => {
   const mutation = useMutation(deleteTodo, {
-    invalidateQueries: ['admin/todos'],
+    invalidateQueries: ['inf', 'admin/todos'],
   });
 
   const handleDelete = () => {

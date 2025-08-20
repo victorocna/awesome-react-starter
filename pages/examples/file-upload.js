@@ -1,6 +1,5 @@
 import { withAuth } from '@auth';
-import { FileDrop, FileUpload } from '@components/Fields';
-import { Submit } from '@components/Fields';
+import { FileDrop, FileUpload, Submit } from '@components/Fields';
 import { Layout } from '@examples/components';
 import { formatFileName } from '@functions';
 import { useMutation } from '@hooks';
@@ -69,7 +68,7 @@ const Page = () => {
 
             <div className="w-1/2">
               <p className="mb-1">Multiple file input upload</p>
-              <FileUpload setFile={setFile} file={file} multiple={true} />
+              <FileUpload setFile={setFile} file={file} multiple />
             </div>
 
             <div className="w-1/2">

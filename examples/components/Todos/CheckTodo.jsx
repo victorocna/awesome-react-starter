@@ -4,7 +4,7 @@ import { checkTodo } from '../../api/todo';
 
 const CheckTodo = ({ id, done }) => {
   const mutation = useMutation(checkTodo, {
-    invalidateQueries: ['admin/todos'],
+    invalidateQueries: ['inf', 'admin/todos'],
   });
 
   const handleClick = () => {

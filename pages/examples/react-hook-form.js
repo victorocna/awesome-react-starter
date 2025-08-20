@@ -16,18 +16,18 @@ const Page = () => {
           initialValues={initialValues}
           onSubmit={handleSubmit}
         >
-          <Form className="space-y-4" debug={true}>
+          <Form className="space-y-4" debug>
             <div className="md:w-1/2">
-              <Field as={Email} name="email" label="Basic email field" help="Required info" />
+              <Field as={Email} help="Required info" label="Basic email field" name="email" />
             </div>
             <div className="w-full">
-              <Field as={PlusMinus} name="quantity" label="Basic plus-minus field" />
+              <Field as={PlusMinus} label="Basic plus-minus field" name="quantity" />
             </div>
             <div className="w-80">
-              <Field as={DatePicker} name="checkInDate" label="Check-in date picker" />
+              <Field as={DatePicker} label="Check-in date picker" name="checkInDate" />
             </div>
             <div className="w-80">
-              <Field as={TimePicker} name="checkInTime" label="Check-in time picker" />
+              <Field as={TimePicker} label="Check-in time picker" name="checkInTime" />
             </div>
             <Submit className="button full primary">Submit</Submit>
           </Form>

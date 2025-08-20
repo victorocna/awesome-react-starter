@@ -46,7 +46,7 @@ const DatePicker = ({ value: initialValue, onChange, calendarProps = {}, ...prop
       </div>
 
       {isOpen && (
-        <Modal centered show={true} onHide={hide}>
+        <Modal centered show onHide={hide}>
           <Calendar onClickDay={onClickDay} {...calendarProps} />
         </Modal>
       )}

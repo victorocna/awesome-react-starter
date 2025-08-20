@@ -4,15 +4,15 @@ import { Field, Form } from '@components/HookForm';
 
 const StepOneForm = () => {
   return (
-    <Form className="grid gap-4" debug={true}>
-      <Field as={Input} name="fullname" label="Full name" help="Required info" />
+    <Form className="grid gap-4" debug>
+      <Field as={Input} help="Required info" label="Full name" name="fullname" />
       <div className="grid gap-4 md:grid-cols-2">
-        <Field as={Dropdown} name="filter" label="Filter items">
+        <Field as={Dropdown} label="Filter items" name="filter">
           <option value="all">View all</option>
           <option value="completed">Only completed</option>
           <option value="pending">Only pending</option>
         </Field>
-        <Field as={Combobox} name="county" label="Choose a county">
+        <Field as={Combobox} label="Choose a county" name="county">
           <option value="01">Alba</option>
           <option value="02">Arad</option>
           <option value="03">Arges</option>
@@ -26,8 +26,8 @@ const StepOneForm = () => {
           <option value="10">Buzau</option>
         </Field>
       </div>
-      <Field as={Email} name="email" label="Email address" help="Required info" />
-      <Field as={Checkbox} name="terms" help="Help label">
+      <Field as={Email} help="Required info" label="Email address" name="email" />
+      <Field as={Checkbox} help="Help label" name="terms">
         I accept the terms and conditions of this application
       </Field>
       <Button className="button full primary" type="submit">

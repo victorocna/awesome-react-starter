@@ -2,12 +2,14 @@ import { ErrorBoundary, ScreenSizeInfo, Toaster } from '@components';
 import { queryClientConfig } from '@constants/query-client';
 import { sitename } from '@site.config';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Head from 'next/head';
 import '../css/index.css';
 
+const queryClient = new QueryClient(queryClientConfig);
+
 const Root = (props) => {
   const { Component, pageProps } = props;
-  const queryClient = new QueryClient(queryClientConfig);
 
   return (
     <>
@@ -17,6 +19,7 @@ const Root = (props) => {
       </Head>
       <ErrorBoundary>
         <QueryClientProvider client={queryClient}>
+          <ReactQueryDevtools />
           <Component {...pageProps} />
         </QueryClientProvider>
         <Toaster />

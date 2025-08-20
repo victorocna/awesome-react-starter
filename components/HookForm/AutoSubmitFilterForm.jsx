@@ -1,50 +1,57 @@
 import { Debug } from '@components/HookForm';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useEffect, useRef } from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
+import { FormProvider, useForm, useWatch } from 'react-hook-form';
 
 const AutoSubmitFilterForm = ({
   children,
-  initialValues,
-  validationSchema,
-  onSubmit,
-  debug,
   className,
+  debug,
+  initialValues,
+  onSubmit,
+  validationSchema,
 }) => {
   const methods = useForm({
     resolver: yupResolver(validationSchema),
     defaultValues: initialValues,
+    mode: 'onChange',
   });
-
-  const onSubmitRef = useRef(onSubmit);
-  const hasInitialized = useRef(false);
 
   const showDebug = debug || process.env.SHOW_FORM_DEBUG === 'yes';
   const isProduction = process.env.NODE_ENV === 'production';
+
+  const values = useWatch({ control: methods.control });
+  const firstRef = useRef(true);
+  const timeoutRef = useRef(null);
+  const onSubmitRef = useRef(onSubmit);
 
   useEffect(() => {
     onSubmitRef.current = onSubmit;
   }, [onSubmit]);
 
   useEffect(() => {
-    const subscription = methods.watch((values) => {
-      // Skip the very first call (initialization)
-      if (!hasInitialized.current) {
-        hasInitialized.current = true;
-        return;
-      }
+    if (firstRef.current) {
+      firstRef.current = false;
+      return;
+    }
 
+    if (timeoutRef.current != null) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    timeoutRef.current = setTimeout(() => {
+      timeoutRef.current = null;
       if (onSubmitRef.current) {
         onSubmitRef.current(values);
       }
-    });
+    }, 250);
 
     return () => {
-      if (subscription && subscription.unsubscribe) {
-        subscription.unsubscribe();
+      if (timeoutRef.current != null) {
+        clearTimeout(timeoutRef.current);
       }
     };
-  }, [methods]);
+  }, [values]);
 
   return (
     <FormProvider {...methods}>

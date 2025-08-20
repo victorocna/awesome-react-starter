@@ -1,20 +1,24 @@
+import { extractError } from '@functions';
 import { axios, router, toaster } from '@lib';
 
 const signup = async (ref, data) => {
   try {
-    // execute google recaptcha
+    // Execute google reCAPTCHA
     data['g-recaptcha-response'] = await ref.current.executeAsync();
 
-    // execute main action
+    // Execute main action
     await axios.post('signup', data);
 
-    // notify user and other actions
+    // Notify user and other actions
     toaster.success('Your account has been created');
     router.push('/thank-you');
   } catch (err) {
-    toaster.error(err.message);
+    const { message } = extractError(err);
+    if (message) {
+      toaster.error(message);
+    }
 
-    // reset google recaptcha on invalid login
+    // Reset google reCAPTCHA on invalid login
     ref.current.reset();
   }
 };

@@ -1,5 +1,7 @@
 import { useQuery } from '@hooks';
-import { QuoteError, QuoteLoading, QuoteSuccess } from '.';
+import QuoteError from './QuoteError';
+import QuoteLoading from './QuoteLoading';
+import QuoteSuccess from './QuoteSuccess';
 
 const Quote = () => {
   const { data, status } = useQuery(`https://api.quotable.io/random`);
@@ -10,7 +12,7 @@ const Quote = () => {
         <h1 className="text-xl font-bold">Random quote</h1>
       </div>
 
-      {status === 'loading' && <QuoteLoading />}
+      {status === 'pending' && <QuoteLoading />}
       {status === 'error' && <QuoteError />}
       {status === 'success' && <QuoteSuccess {...data} />}
     </article>

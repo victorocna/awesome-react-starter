@@ -1,12 +1,14 @@
-import React from 'react';
+import { flexRender } from '@tanstack/react-table';
+import { memo } from 'react';
 
 const TableRow = ({ row }) => {
+  const cells = row.getVisibleCells();
   return (
-    <tr {...row.getRowProps()}>
-      {row.cells.map((cell) => {
+    <tr>
+      {cells.map((cell) => {
         return (
-          <td key={cell} className="px-4 py-2 group" {...cell.getCellProps()}>
-            {cell.render('Cell')}
+          <td key={cell.id} className="group px-4 py-2">
+            {flexRender(cell.column.columnDef.cell, cell.getContext())}
           </td>
         );
       })}
@@ -14,4 +16,4 @@ const TableRow = ({ row }) => {
   );
 };
 
-export default TableRow;
+export default memo(TableRow);

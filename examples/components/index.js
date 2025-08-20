@@ -14,6 +14,5 @@ export { default as Quote } from './Quote';
 export { default as QuoteError } from './QuoteError';
 export { default as QuoteLoading } from './QuoteLoading';
 export { default as QuoteSuccess } from './QuoteSuccess';
-
 export { default as SayGoodbye } from './SayGoodbye';
 export { default as SayHello } from './SayHello';

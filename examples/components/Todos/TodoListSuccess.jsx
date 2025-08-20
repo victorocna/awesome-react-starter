@@ -1,4 +1,6 @@
-import { CheckTodo, RemoveTodo, TodoName } from '.';
+import CheckTodo from './CheckTodo';
+import RemoveTodo from './RemoveTodo';
+import TodoName from './TodoName';
 
 const TodoListSuccess = ({ pages }) => {
   const showTodo = ({ _id: id, name, done }) => {
@@ -11,7 +13,7 @@ const TodoListSuccess = ({ pages }) => {
     );
   };
 
-  return <div className="grid gap-2">{pages.map((page) => page.map(showTodo))}</div>;
+  return <div className="grid gap-2">{pages.map(showTodo)}</div>;
 };
 
 export default TodoListSuccess;

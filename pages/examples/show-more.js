@@ -19,7 +19,7 @@ const Page = () => {
             pork. Tri-tip pig ground round, tail brisket shankle tongue jerky beef ribs venison
             tenderloin bacon strip steak. Tail biltong pork chop alcatra bresaola pork loin.
           </p>
-          <ShowMore label="Optional info" visible={true}>
+          <ShowMore label="Optional info" visible>
             <div>The same show more components, but with a twist.</div>
             <div>Visible on first render and with a custom label.</div>
           </ShowMore>

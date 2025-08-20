@@ -1,10 +1,10 @@
-.tooltip > .arrow:before {
+.tooltip > .arrow::before {
   @apply border-b-4 border-primary;
 }
 .tooltip > .tooltip-inner {
   @apply bg-primary;
 }
-.bs-tooltip-bottom > .arrow:before {
+.bs-tooltip-bottom > .arrow::before {
   border-left-color: transparent;
   border-right-color: transparent;
   border-top-color: transparent;
@@ -18,8 +18,10 @@
   display: grid;
   place-content: center;
 }
-.btn-close:before {
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
+.btn-close::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-solid);
   content: '\f00d';
 }

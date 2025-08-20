@@ -24,11 +24,11 @@ const UsState = () => {
   return (
     <Field
       as={Select}
-      name="state"
       disabled={disabled}
-      placeholder="Select your state"
-      label="US State"
       help="Active only when you choose USA"
+      label="US State"
+      name="state"
+      placeholder="Select your state"
     >
       {states.map((state) => (
         <option key={state} value={state}>

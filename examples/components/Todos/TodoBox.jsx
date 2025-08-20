@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import { AddTodo, FilterTodos, SortTodos, TodoList } from '.';
+import AddTodo from './AddTodo';
+import FilterTodos from './FilterTodos';
+import SortTodos from './SortTodos';
+import TodoList from './TodoList';
 
 const TodoBox = () => {
   const [options, setOptions] = useState({});

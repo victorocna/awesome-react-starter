@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Password = (props) => {
   const [showPassword, toggle] = useState(false);
@@ -7,7 +7,7 @@ const Password = (props) => {
 
   return (
     <div className="relative">
-      <input type={type} className="input" {...props} />
+      <input type={type} className="input" autoComplete="current-password" {...props} />
       <button
         type="button"
         className="absolute right-0 p-2 outline-none"

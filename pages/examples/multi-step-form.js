@@ -6,7 +6,7 @@ import { MultiStepForm } from '@examples/components/Multistep';
 const Page = () => {
   return (
     <Layout title="Complex multi step form">
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid gap-4 md:grid-cols-3">
         <NoSsr>
           <MultiStepForm />
         </NoSsr>

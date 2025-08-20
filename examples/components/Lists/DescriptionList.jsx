@@ -41,7 +41,7 @@ const DescriptionList = () => {
                 role="list"
                 className="divide-y divide-gray-100 rounded-md border border-gray-200"
               >
-                <li className="flex items-center justify-between py-4 pl-4 pr-5 text-sm ">
+                <li className="flex items-center justify-between py-4 pl-4 pr-5 text-sm">
                   <div className="flex w-0 flex-1 items-center">
                     <i className="fa-solid fa-paperclip text-gray-400"></i>
                     <div className="ml-4 flex min-w-0 flex-1 gap-2">
@@ -50,12 +50,16 @@ const DescriptionList = () => {
                     </div>
                   </div>
                   <div className="ml-4 flex-shrink-0">
-                    <a href="#" className="font-medium text-primary hover:text-primary">
+                    <a
+                      href="#"
+                      className="font-medium text-primary hover:text-primary"
+                      onClick={(e) => e.preventDefault()}
+                    >
                       Download
                     </a>
                   </div>
                 </li>
-                <li className="flex items-center justify-between py-4 pl-4 pr-5 text-sm ">
+                <li className="flex items-center justify-between py-4 pl-4 pr-5 text-sm">
                   <div className="flex w-0 flex-1 items-center">
                     <i className="fa-solid fa-paperclip text-gray-400"></i>
                     <div className="ml-4 flex min-w-0 flex-1 gap-2">
@@ -66,7 +70,11 @@ const DescriptionList = () => {
                     </div>
                   </div>
                   <div className="ml-4 flex-shrink-0">
-                    <a href="#" className="font-medium text-primary hover:text-primary">
+                    <a
+                      href="#"
+                      className="font-medium text-primary hover:text-primary"
+                      onClick={(e) => e.preventDefault()}
+                    >
                       Download
                     </a>
                   </div>

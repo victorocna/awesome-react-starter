@@ -1,13 +1,13 @@
 import { confirm } from '@api/identity';
 import { Loading } from '@components';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
 const Confirm = ({ hash }) => {
   const { status } = useQuery(`confirm/${hash}`, () => confirm(hash));
 
   return (
     <>
-      {status === 'loading' && <Loading />}
+      {status === 'pending' && <Loading />}
       {status === 'error' && (
         <p className="animated fadeIn text-red-600">Error! Your account was not confirmed.</p>
       )}

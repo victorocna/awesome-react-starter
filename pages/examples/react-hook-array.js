@@ -4,8 +4,12 @@ import { ArrayAddReasons, ArrayListReasons } from '@examples/components/HookForm
 import { initialValues, validationSchema } from '@examples/models/array-form';
 
 const Page = () => {
-  const handleSubmit = (values, actions) => {
-    actions.setSubmitting(false);
+  // eslint-disable-next-line no-unused-vars
+  const handleSubmit = async (values, methods) => {
+    // react-hook-form manages "isSubmitting" automatically for async handlers.
+    // Put any async submit logic here (e.g. API calls). No actions.setSubmitting()
+    // is necessary — resolving the promise will clear the submitting state.
+    return;
   };
 
   return (
@@ -16,7 +20,7 @@ const Page = () => {
           initialValues={initialValues}
           onSubmit={handleSubmit}
         >
-          <Form className="space-y-4" debug={true}>
+          <Form className="space-y-4" debug>
             <div className="flex flex-col gap-2">
               <h3 className="text-lg">Add reasons why you like coding (or remove them).</h3>
               <p>

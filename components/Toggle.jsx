@@ -17,23 +17,23 @@ const Toggle = ({ label = 'Toggle me', initialState = false, onToggle, disabled,
   return (
     <label
       className={classnames(
-        'inline-flex items-center cursor-pointer',
-        disabled && 'opacity-50 cursor-not-allowed'
+        'inline-flex cursor-pointer items-center',
+        disabled && 'cursor-not-allowed opacity-50'
       )}
     >
       <input
         type="checkbox"
         checked={isChecked}
         onChange={handleChange}
-        className="sr-only peer"
+        className="peer sr-only"
         disabled={disabled}
       />
       <div
         className={classnames(
-          'relative w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600',
-          "peer-checked:after:translate-x-full peer-checked:after:border-white after:content-['']",
-          'after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300',
-          'after:border after:rounded-full after:h-5 after:w-5 after:transition-all',
+          'peer relative h-6 w-11 rounded-full bg-gray-200 peer-checked:bg-blue-600',
+          "after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white",
+          'after:absolute after:start-[2px] after:top-[2px] after:border-gray-300 after:bg-white',
+          'after:h-5 after:w-5 after:rounded-full after:border after:transition-all',
           extraClass
         )}
       />

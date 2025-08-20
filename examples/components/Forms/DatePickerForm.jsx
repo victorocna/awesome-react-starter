@@ -1,5 +1,5 @@
 import { DatePicker } from '@components/Fields';
-import { Field, Fieldset, Form, HookForm } from '@components/HookForm';
+import { Field, Form, HookForm } from '@components/HookForm';
 import * as Yup from 'yup';
 
 const DatePickerForm = () => {
@@ -15,11 +15,9 @@ const DatePickerForm = () => {
 
   return (
     <HookForm {...formProps}>
-      <Form className="space-y-4" debug={true}>
+      <Form className="space-y-4" debug>
         <div className="w-80">
-          <Fieldset name="checkInDate" label="Check-in date picker">
-            <Field id="checkInDate" name="checkInDate" as={DatePicker} />
-          </Fieldset>
+          <Field as={DatePicker} label="Check-in date picker" name="checkInDate" />
         </div>
       </Form>
     </HookForm>

@@ -1,37 +1,58 @@
 import { classnames } from '@lib';
 import { debounce, isFunction } from 'lodash';
-import { useCallback, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-const Search = ({ value, onChange, extraClass, placeholder }) => {
-  const ref = useRef();
+const Search = ({ extraClass, id, minChars = 3, onChange, placeholder, value = '' }) => {
+  const ref = useRef(null);
+  const debRef = useRef(null);
+  const [text, setText] = useState(value);
 
-  const request = debounce((value) => {
-    if (isFunction(onChange)) {
-      onChange(value);
-    }
-  }, 500);
-  const debounceRequest = useCallback((value) => request(value), []);
+  useEffect(() => {
+    setText(value ?? '');
+  }, [value]);
+
+  useEffect(() => {
+    debRef.current?.cancel?.();
+    debRef.current = debounce((val) => {
+      if (!isFunction(onChange)) {
+        return;
+      }
+      if (val === '' || (typeof val === 'string' && val.length >= minChars)) {
+        onChange(val);
+      }
+    }, 500);
+    return () => {
+      debRef.current?.cancel?.();
+    };
+  }, [onChange, minChars]);
 
   const handleChange = (event) => {
-    return debounceRequest(event.target.value);
+    const next = event.target.value;
+    setText(next);
+    debRef.current?.(next);
   };
 
   const handleKeyUp = (event) => {
-    event.keyCode === 13 && ref.current.blur();
+    if (event.key === 'Enter') {
+      ref.current?.blur?.();
+    }
   };
 
   const resetInputValue = () => {
-    ref.current.value = '';
+    setText('');
+    debRef.current?.cancel?.();
     if (isFunction(onChange)) {
       onChange('');
     }
+    ref.current?.focus?.();
   };
 
   return (
     <div className={classnames('relative flex items-center', extraClass)}>
       <input
+        id={id}
         className="input pl-8"
-        defaultValue={value}
+        value={text}
         onChange={handleChange}
         onKeyUp={handleKeyUp}
         placeholder={placeholder}
@@ -41,11 +62,11 @@ const Search = ({ value, onChange, extraClass, placeholder }) => {
       <div className="absolute left-2 px-1">
         <i className="fas fa-search text-gray-500"></i>
       </div>
-      {ref?.current?.value && (
+      {text !== '' && (
         <button
           className="absolute right-0 top-0 z-30 h-full px-3 py-2 text-gray-500 outline-none"
           onClick={resetInputValue}
-          tabIndex="-1"
+          tabIndex={-1}
           type="button"
         >
           <i className="fas fa-times"></i>

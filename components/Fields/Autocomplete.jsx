@@ -11,14 +11,17 @@ const Autocomplete = ({ url, optionValue, optionLabel, searchKey, ...props }) =>
   };
   const debouncedChange = debounce(handleChange, 500);
 
+  // Cleanup the debounce function on unmount
+  useEffect(() => {
+    return () => {
+      if (debouncedChange.cancel) {
+        debouncedChange.cancel();
+      }
+    };
+  }, [debouncedChange]);
+
   // Fetch data from API
   const { data, status } = useQuery(url, { [searchKey]: inputValue });
-
-  // Format items for the combobox
-  const formatItems = (item) => ({
-    value: item[optionValue],
-    label: item[optionLabel],
-  });
 
   // Set items every time the search value changes
   const [items, setItems] = useState([]);
@@ -26,12 +29,16 @@ const Autocomplete = ({ url, optionValue, optionLabel, searchKey, ...props }) =>
     if (status === 'success') {
       // dirty hack to handle both array and object responses
       if (has(data, 'data')) {
-        setItems(data?.data?.map(formatItems) || []);
+        setItems(
+          data?.data?.map((item) => ({ value: item[optionValue], label: item[optionLabel] })) || []
+        );
       } else {
-        setItems(data?.map(formatItems) || []);
+        setItems(
+          data?.map((item) => ({ value: item[optionValue], label: item[optionLabel] })) || []
+        );
       }
     }
-  }, [inputValue, status]);
+  }, [status, data, optionValue, optionLabel]);
 
   return (
     <AsyncCombobox onKeyUp={debouncedChange} status={status} {...props}>

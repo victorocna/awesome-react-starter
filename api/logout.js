@@ -1,4 +1,5 @@
 import { store } from '@auth';
+import { extractError } from '@functions';
 import { axios, router, toaster } from '@lib';
 
 const logout = async () => {
@@ -6,13 +7,16 @@ const logout = async () => {
     await axios.post('logout');
     store.dispatch({ type: 'REMOVE' });
 
-    // notify user and other actions
+    // Notify user and other actions
     toaster.success('Logout successful');
 
-    // redirect home
+    // Redirect home
     router.push('/login');
   } catch (err) {
-    toaster.error(err.message);
+    const { message } = extractError(err);
+    if (message) {
+      toaster.error(message);
+    }
   }
 };
 

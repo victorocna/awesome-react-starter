@@ -3,7 +3,7 @@ import React from 'react';
 const MenuButton = () => {
   return (
     <div
-      className="ml-2 inline-block rounded border bg-white py-1 px-2 text-primary xl:hidden"
+      className="ml-2 inline-block rounded border bg-white px-2 py-1 text-primary xl:hidden"
       aria-label="Open menu"
     >
       <label htmlFor="menu" className="mb-0 flex cursor-pointer items-center text-primary">

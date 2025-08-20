@@ -5,13 +5,13 @@ import { Age, Country, UsState } from '../HookForm';
 
 const StepTwoForm = ({ goBack }) => {
   return (
-    <Form className="grid gap-4" debug={true}>
+    <Form className="grid gap-4" debug>
       <div className="grid gap-4 md:grid-cols-2">
         <Country />
         <UsState />
       </div>
       <div className="grid gap-4 md:grid-cols-2">
-        <Field as={DateOfBirth} name="dateOfBirth" label="Date of birth" help="Optional info" />
+        <Field as={DateOfBirth} help="Optional info" label="Date of birth" name="dateOfBirth" />
         <Age />
       </div>
 

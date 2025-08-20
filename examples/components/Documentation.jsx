@@ -2,7 +2,7 @@ import React from 'react';
 
 const Documentation = () => {
   return (
-    <aside className="bg-white p-4 rounded-md prose h-fit">
+    <aside className="prose h-fit rounded-md bg-white p-4">
       <h3>Read our documentation</h3>
       <p className="text-sm">
         <span>The multi-step form is a common pattern in web applications. </span>

@@ -38,20 +38,16 @@ const FileDrop = ({ accept, setFile, disabled, disableDrop = false, multiple = t
   };
 
   return (
-    <div className="flex flex-col border rounded-md">
+    <div className="flex flex-col rounded-md border">
       <div
-        className="border-dashed border-2 border-gray-300 rounded-lg p-4 text-center w-full"
+        className="w-full rounded-lg border-2 border-dashed border-gray-300 p-4 text-center"
         onDrop={handleDrop}
         onDragOver={handleDragOver}
       >
         <p className="text-gray-600">{fileName || 'Drag and drop files here or click to select'}</p>
 
         <div className="mt-4">
-          <Button
-            className="button full secondary rounded-r-none h-fit"
-            onClick={handleClick}
-            disabled={disabled}
-          >
+          <Button className="button full secondary h-fit" onClick={handleClick} disabled={disabled}>
             <span>Select</span>
           </Button>
         </div>

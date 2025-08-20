@@ -18,7 +18,7 @@ const Menu = () => {
         onTouchMove={(e) => onTouchMove(e.touches[0].clientX)}
         onTouchEnd={onTouchEnd}
       >
-        <div className="flex flex-col py-8 h-screen overflow-y-auto lg:sticky lg:top-0">
+        <div className="flex h-screen flex-col overflow-y-auto py-8 lg:sticky lg:top-0">
           <div className="px-8">
             <Logo />
           </div>

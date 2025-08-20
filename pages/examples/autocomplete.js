@@ -13,11 +13,12 @@ const Page = () => {
         </p>
 
         <div className="mb-4">
-          <label htmlFor="#" className="mb-0 cursor-pointer">
+          <label htmlFor="async-crypto-autocomplete-placeholder" className="mb-0 cursor-pointer">
             Async crypto autocomplete with placeholder
           </label>
           <div className="w-80">
             <Autocomplete
+              id="async-crypto-autocomplete-placeholder"
               url={`${process.env.APP_BASE_URL}/api/mock/assets?limit=5`}
               placeholder="Search your favorite crypto"
               searchKey="search"

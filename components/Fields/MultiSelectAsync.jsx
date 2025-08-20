@@ -11,6 +11,7 @@ const MultiSelectAsync = ({
   api = '',
   getOptionToValue = defaultGetOptionToValue,
   getValueToOption = defaultGetValueToOption,
+  id,
   initialValues,
   onChange = () => {},
   searchKey = '',
@@ -145,6 +146,7 @@ const MultiSelectAsync = ({
           {/* Dropdown input */}
           <div className="dropdown cursor-pointer" onClick={toggleMultiselect}>
             <input
+              id={id}
               className="-my-2 w-full cursor-pointer select-none bg-transparent outline-none"
               readOnly
               value={inputValue}

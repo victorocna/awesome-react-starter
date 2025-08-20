@@ -25,7 +25,6 @@ const AutoSubmitFilterForm = ({
   const showDebug = debug || process.env.SHOW_FORM_DEBUG === 'yes';
   const isProduction = process.env.NODE_ENV === 'production';
 
-  const firstRef = useRef(true);
   const onSubmitRef = useRef(onSubmit);
   const lastHashRef = useRef(null);
   const debRef = useRef(null);
@@ -68,8 +67,7 @@ const AutoSubmitFilterForm = ({
 
   useEffect(() => {
     const sub = watch(() => {
-      if (firstRef.current) {
-        firstRef.current = false;
+      if (initialValues && lastHashRef.current == null) {
         return;
       }
       debRef.current?.();
@@ -77,12 +75,11 @@ const AutoSubmitFilterForm = ({
     return () => {
       sub?.unsubscribe?.();
     };
-  }, [watch]);
+  }, [watch, initialValues]);
 
   useEffect(() => {
     if (initialValues) {
       reset(initialValues, { keepDefaultValues: false });
-      firstRef.current = true;
       lastHashRef.current = JSON.stringify(normalize(initialValues));
     }
   }, [initialValues, reset]);

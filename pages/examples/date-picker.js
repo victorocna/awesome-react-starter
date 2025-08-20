@@ -7,7 +7,7 @@ import { useState } from 'react';
 const Page = () => {
   const today = format(new Date(), 'yyyy-MM-dd');
   const [checkIn, setCheckIn] = useState(today);
-  const [checkOut, setCheckOut] = useState();
+  const [checkOut, setCheckOut] = useState('');
 
   return (
     <Layout title="Date Picker">
@@ -35,8 +35,8 @@ const Page = () => {
               id="checkOut"
               value={checkOut}
               onChange={setCheckOut}
+              calendarProps={{ minDate: new Date() }}
               readOnly
-              calendarProps={{ minDate: new Date(checkIn) }}
             />
             <span>Selected check-out date: {checkOut}</span>
           </div>

@@ -16,18 +16,19 @@ const Dropdown = ({ children, disabled, icon, id, onChange, placeholder, value }
         {...downshift.getToggleButtonProps()}
       >
         <input
-          id={id}
-          value={downshift.selectedItem?.label || ''}
           className="-my-2 w-full bg-transparent outline-none"
-          readOnly
-          placeholder={placeholder}
           disabled={disabled}
+          id={id}
+          placeholder={placeholder}
+          readOnly
+          value={downshift.selectedItem?.label || ''}
         />
         <span role="button" className={classnames(disabled && 'pointer-events-none')}>
           {icon || <i className="fas fa-chevron-down" />}
         </span>
       </div>
-      <OptionList {...downshift}>{inputItems}</OptionList>
+
+      <OptionList items={inputItems} {...downshift} />
     </div>
   );
 };

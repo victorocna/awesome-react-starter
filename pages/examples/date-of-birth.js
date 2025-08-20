@@ -18,7 +18,7 @@ const Page = () => {
         <p className="mb-1">Classic date of birth field</p>
         <div className="flex gap-2">
           <div className="w-80">
-            <label className="mb-0 cursor-pointer">Date of birth</label>
+            <span>Date of birth</span>
             <DateOfBirth onChange={handleChange} value={dateOfBirth} />
             <span>Selected date of birth (YYYY-MM-DD): {dateOfBirth}</span>
           </div>

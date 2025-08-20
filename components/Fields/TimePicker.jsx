@@ -3,7 +3,7 @@ import { classnames } from '@lib';
 import { isFunction } from 'lodash';
 import { useRef, useState } from 'react';
 
-const TimePicker = ({ disabled = false, interval = 1, onChange, placeholder, value }) => {
+const TimePicker = ({ disabled = false, id, interval = 1, onChange, placeholder, value }) => {
   const [time, setTime] = useState({
     hour: Number(value?.split(':')[0]),
     minute: Number(value?.split(':')[1]),
@@ -90,6 +90,7 @@ const TimePicker = ({ disabled = false, interval = 1, onChange, placeholder, val
     <div ref={ref} className="relative w-40 select-none">
       <div className="relative" onClick={handleClick}>
         <input
+          id={id}
           className="input pr-8"
           disabled={disabled}
           placeholder={placeholder || 'HH:mm'}

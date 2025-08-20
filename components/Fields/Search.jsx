@@ -2,7 +2,7 @@ import { classnames } from '@lib';
 import { debounce, isFunction } from 'lodash';
 import { useEffect, useRef, useState } from 'react';
 
-const Search = ({ extraClass, minChars = 3, onChange, placeholder, value = '' }) => {
+const Search = ({ extraClass, id, minChars = 3, onChange, placeholder, value = '' }) => {
   const ref = useRef(null);
   const debRef = useRef(null);
   const [text, setText] = useState(value);
@@ -50,6 +50,7 @@ const Search = ({ extraClass, minChars = 3, onChange, placeholder, value = '' })
   return (
     <div className={classnames('relative flex items-center', extraClass)}>
       <input
+        id={id}
         className="input pl-8"
         value={text}
         onChange={handleChange}

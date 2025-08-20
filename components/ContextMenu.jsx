@@ -14,13 +14,13 @@ const ContextMenu = ({ options, children }) => {
   const ref = useRef();
   useOnClickOutside(ref, hide);
 
-  const showOptions = ({ label, onClick, href, renderCondition = true }) => {
+  const showOptions = ({ label, onClick, href, renderCondition = true }, index) => {
     if (!renderCondition) {
       return null;
     }
 
     return (
-      <li className="hover:bg-gray-100">
+      <li key={`context-menu-option-${index}`} className="hover:bg-gray-100">
         <Button href={href} onClick={onClick} className="flex items-center px-4 py-2 text-gray-600">
           {label}
         </Button>

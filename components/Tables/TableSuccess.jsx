@@ -1,7 +1,7 @@
 import { TableHeader, TableRow } from '@components/Tables';
 import { useTable } from '@hooks';
 import { isEmpty, size } from 'lodash';
-import { memo, useMemo } from 'react';
+import { useMemo } from 'react';
 
 const TableSuccess = ({ name, columns, data }) => {
   const memoCols = useMemo(() => columns, [columns]);
@@ -33,4 +33,4 @@ const TableSuccess = ({ name, columns, data }) => {
   );
 };
 
-export default memo(TableSuccess);
+export default TableSuccess;

@@ -47,11 +47,7 @@ const FileDrop = ({ accept, setFile, disabled, disableDrop = false, multiple = t
         <p className="text-gray-600">{fileName || 'Drag and drop files here or click to select'}</p>
 
         <div className="mt-4">
-          <Button
-            className="button full secondary h-fit rounded-r-none"
-            onClick={handleClick}
-            disabled={disabled}
-          >
+          <Button className="button full secondary h-fit" onClick={handleClick} disabled={disabled}>
             <span>Select</span>
           </Button>
         </div>

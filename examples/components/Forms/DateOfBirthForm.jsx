@@ -17,7 +17,8 @@ const DateOfBirthForm = () => {
     <HookForm {...formProps}>
       <Form className="space-y-4" debug>
         <div className="w-80">
-          <Field as={DateOfBirth} label="Check-in date picker" name="dateOfBirth" />
+          <span>Check-in date picker</span>
+          <Field as={DateOfBirth} name="dateOfBirth" />
         </div>
       </Form>
     </HookForm>

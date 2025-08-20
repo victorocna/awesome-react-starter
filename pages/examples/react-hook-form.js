@@ -4,8 +4,12 @@ import { Layout } from '@examples/components';
 import { initialValues, validationSchema } from '@examples/models/form';
 
 const Page = () => {
-  const handleSubmit = (values, actions) => {
-    actions.setSubmitting(false);
+  // eslint-disable-next-line no-unused-vars
+  const handleSubmit = async (values, methods) => {
+    // react-hook-form manages "isSubmitting" automatically for async handlers.
+    // Put any async submit logic here (e.g. API calls). No actions.setSubmitting()
+    // is necessary — resolving the promise will clear the submitting state.
+    return;
   };
 
   return (

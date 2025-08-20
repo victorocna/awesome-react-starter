@@ -20,10 +20,10 @@ const Page = () => {
         </p>
 
         <div className="mb-4 w-80">
-          <label htmlFor="#" className="mb-0 cursor-pointer">
+          <label htmlFor="dropdown-simple" className="mb-0 cursor-pointer">
             Simple dropdown
           </label>
-          <Dropdown>
+          <Dropdown id="dropdown-simple">
             <option value="marguerita">Pizza marguerita</option>
             <option value="salami">Pizza salami</option>
             <option value="capriciosa">Pizza capriciosa</option>
@@ -31,43 +31,47 @@ const Page = () => {
         </div>
 
         <div className="mb-4 w-80">
-          <label htmlFor="#" className="mb-0 cursor-pointer">
+          <label htmlFor="dropdown-countries" className="mb-0 cursor-pointer">
             Dropdown with countries
           </label>
-          <Dropdown>{countries.map(showCountries)}</Dropdown>
+          <Dropdown id="dropdown-countries">{countries.map(showCountries)}</Dropdown>
         </div>
 
         <div className="mb-4 w-80">
-          <label htmlFor="#" className="mb-0 cursor-pointer">
+          <label htmlFor="dropdown-placeholder" className="mb-0 cursor-pointer">
             Country dropdown with placeholder
           </label>
-          <Dropdown placeholder="Select a country">{countries.map(showCountries)}</Dropdown>
+          <Dropdown id="dropdown-placeholder" placeholder="Select a country">
+            {countries.map(showCountries)}
+          </Dropdown>
         </div>
 
         <div className="mb-4 w-80">
-          <label htmlFor="#" className="mb-0 cursor-pointer">
+          <label htmlFor="dropdown-default" className="mb-0 cursor-pointer">
             Country dropdown with default selection
           </label>
-          <Dropdown defaultSelected="DEU">{countries.map(showCountries)}</Dropdown>
+          <Dropdown id="dropdown-default" value="DEU">
+            {countries.map(showCountries)}
+          </Dropdown>
         </div>
 
         <div className="mb-4">
-          <label htmlFor="#" className="mb-0 cursor-pointer">
+          <label htmlFor="dropdown-default-placeholder" className="mb-0 cursor-pointer">
             Country dropdown with placeholder and default selection
           </label>
           <div className="w-80">
-            <Dropdown defaultSelected="USA" placeholder="Select a country">
+            <Dropdown id="dropdown-default-placeholder" value="USA" placeholder="Select a country">
               {countries.map(showCountries)}
             </Dropdown>
           </div>
         </div>
 
         <div className="mb-4">
-          <label htmlFor="#" className="mb-0 cursor-pointer">
+          <label htmlFor="dropdown-disabled" className="mb-0 cursor-pointer">
             Disabled dropdown with default selection
           </label>
           <div className="w-80">
-            <Dropdown defaultSelected="USA" disabled>
+            <Dropdown id="dropdown-disabled" value="USA" disabled>
               {countries.map(showCountries)}
             </Dropdown>
           </div>

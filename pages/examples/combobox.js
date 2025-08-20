@@ -20,10 +20,10 @@ const Page = () => {
         </p>
 
         <div className="mb-4 w-80">
-          <label htmlFor="#" className="mb-0 cursor-pointer">
+          <label htmlFor="combobox-simple" className="mb-0 cursor-pointer">
             Simple combobox
           </label>
-          <Combobox>
+          <Combobox id="combobox-simple">
             <option value="marguerita">Pizza marguerita</option>
             <option value="salami">Pizza salami</option>
             <option value="capriciosa">Pizza capriciosa</option>
@@ -31,31 +31,35 @@ const Page = () => {
         </div>
 
         <div className="mb-4 w-80">
-          <label htmlFor="#" className="mb-0 cursor-pointer">
+          <label htmlFor="combobox-countries" className="mb-0 cursor-pointer">
             Combobox with countries
           </label>
-          <Combobox>{countries.map(showCountries)}</Combobox>
+          <Combobox id="combobox-countries">{countries.map(showCountries)}</Combobox>
         </div>
 
         <div className="mb-4 w-80">
-          <label htmlFor="#" className="mb-0 cursor-pointer">
+          <label htmlFor="combobox-placeholder" className="mb-0 cursor-pointer">
             Country combobox with placeholder
           </label>
-          <Combobox placeholder="Select a country">{countries.map(showCountries)}</Combobox>
+          <Combobox id="combobox-placeholder" placeholder="Select a country">
+            {countries.map(showCountries)}
+          </Combobox>
         </div>
 
         <div className="mb-4 w-80">
-          <label htmlFor="#" className="mb-0 cursor-pointer">
+          <label htmlFor="combobox-default" className="mb-0 cursor-pointer">
             Country combobox with default selection
           </label>
-          <Combobox defaultSelected="DEU">{countries.map(showCountries)}</Combobox>
+          <Combobox id="combobox-default" value="DEU">
+            {countries.map(showCountries)}
+          </Combobox>
         </div>
 
         <div className="mb-4 w-80">
-          <label htmlFor="#" className="mb-0 cursor-pointer">
+          <label htmlFor="combobox-disabled" className="mb-0 cursor-pointer">
             Disabled combobox with default selection
           </label>
-          <Combobox defaultSelected="DEU" disabled>
+          <Combobox id="combobox-disabled" value="DEU" disabled>
             {countries.map(showCountries)}
           </Combobox>
         </div>

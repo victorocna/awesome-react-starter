@@ -1,21 +1,27 @@
 import { TableHeader, TableRow } from '@components/Tables';
 import { useTable } from '@hooks';
 import { isEmpty, size } from 'lodash';
+import { memo, useMemo } from 'react';
 
 const TableSuccess = ({ name, columns, data }) => {
+  const memoCols = useMemo(() => columns, [columns]);
+  const memoRows = useMemo(() => data?.pages ?? [], [data?.pages]);
+
   const table = useTable({
-    columns,
-    data: data.pages.flat(),
+    columns: memoCols,
+    data: memoRows,
   });
+
+  const tableRows = table.getRowModel().rows;
 
   return (
     <table className="w-full table-auto border-collapse">
       <TableHeader headers={table.getAllLeafColumns()} />
       <tbody className="divide-y whitespace-nowrap text-sm text-gray-500">
-        {table.getRowModel().rows.map((row, i) => (
-          <TableRow key={`${name}-row-${i}`} row={row} />
+        {tableRows.map((row, index) => (
+          <TableRow key={`${name}-row-${index}`} row={row} />
         ))}
-        {isEmpty(table.getRowModel().rows) && (
+        {isEmpty(tableRows) && (
           <tr>
             <td className="p-4" colSpan={size(columns)}>
               Nothing to show
@@ -27,4 +33,4 @@ const TableSuccess = ({ name, columns, data }) => {
   );
 };
 
-export default TableSuccess;
+export default memo(TableSuccess);

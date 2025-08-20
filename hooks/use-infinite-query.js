@@ -3,16 +3,16 @@ import { axiosAuth } from '@lib';
 import { useInfiniteQuery as rqUseInfiniteQuery } from '@tanstack/react-query';
 import { stringifyUrl } from 'query-string';
 
-const useInfiniteQuery = (url, filters = {}, rqOptions = {}) => {
-  const norm = normalize(filters);
-  const key = JSON.stringify(norm);
+const useInfiniteQuery = (url, params = {}, rqOptions = {}) => {
+  const { norm, key } = normalize(params);
   const per_page = 30;
 
   return rqUseInfiniteQuery({
     queryKey: ['inf', url, key],
-    queryFn: ({ pageParam = 1 }) => {
+    queryFn: ({ pageParam = 1, signal }) => {
       const query = { per_page, page: pageParam, ...norm };
-      return axiosAuth(stringifyUrl({ url, query }));
+      const fullUrl = stringifyUrl({ url, query }, { skipNull: true, skipEmptyString: true });
+      return axiosAuth(fullUrl, { signal });
     },
     getNextPageParam: (lastPage) => {
       if (!lastPage?.pageParams?.hasNext) {
@@ -21,18 +21,24 @@ const useInfiniteQuery = (url, filters = {}, rqOptions = {}) => {
       return lastPage.pageParams.page + 1;
     },
     initialPageParam: 1,
-    staleTime: 30000,
     select: (infinite) => {
-      const data = { pageParams: {}, pages: [] };
-      for (const p of infinite.pages) {
-        if (p?.pageParams) {
-          data.pageParams = p.pageParams;
-        }
-        if (p?.pages) {
-          data.pages.push(p.pages);
+      if (!infinite?.pages || infinite.pages.length === 0) {
+        return { pageParams: {}, pages: [] };
+      }
+
+      const last = infinite.pages[infinite.pages.length - 1];
+      const pageParams = last?.pageParams || {};
+
+      const pages = [];
+      for (let i = 0; i < infinite.pages.length; i++) {
+        const p = infinite.pages[i];
+        const arr = Array.isArray(p?.pages) ? p.pages : [];
+        for (let j = 0; j < arr.length; j++) {
+          pages.push(arr[j]);
         }
       }
-      return data;
+
+      return { pageParams, pages };
     },
     ...rqOptions,
   });

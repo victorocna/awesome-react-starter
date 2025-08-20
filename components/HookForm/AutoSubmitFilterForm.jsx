@@ -1,7 +1,9 @@
 import { Debug } from '@components/HookForm';
+import { normalize } from '@functions';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { debounce, isFunction } from 'lodash';
 import { useEffect, useRef } from 'react';
-import { FormProvider, useForm, useWatch } from 'react-hook-form';
+import { FormProvider, useForm } from 'react-hook-form';
 
 const AutoSubmitFilterForm = ({
   children,
@@ -10,48 +12,80 @@ const AutoSubmitFilterForm = ({
   initialValues,
   onSubmit,
   validationSchema,
+  delay = 250,
+  disabled = false,
 }) => {
   const methods = useForm({
-    resolver: yupResolver(validationSchema),
+    resolver: validationSchema ? yupResolver(validationSchema) : undefined,
     defaultValues: initialValues,
     mode: 'onChange',
   });
+  const { watch, reset, setFocus } = methods;
 
   const showDebug = debug || process.env.SHOW_FORM_DEBUG === 'yes';
   const isProduction = process.env.NODE_ENV === 'production';
 
-  const values = useWatch({ control: methods.control });
   const firstRef = useRef(true);
-  const timeoutRef = useRef(null);
   const onSubmitRef = useRef(onSubmit);
+  const lastHashRef = useRef(null);
+  const debRef = useRef(null);
 
   useEffect(() => {
     onSubmitRef.current = onSubmit;
   }, [onSubmit]);
 
   useEffect(() => {
-    if (firstRef.current) {
-      firstRef.current = false;
-      return;
-    }
-
-    if (timeoutRef.current != null) {
-      clearTimeout(timeoutRef.current);
-    }
-
-    timeoutRef.current = setTimeout(() => {
-      timeoutRef.current = null;
-      if (onSubmitRef.current) {
-        onSubmitRef.current(values);
+    debRef.current?.cancel?.();
+    debRef.current = debounce(() => {
+      if (disabled) {
+        return;
       }
-    }, 250);
+      const run = methods.handleSubmit(
+        (data) => {
+          const { key } = normalize(data);
+          if (key === lastHashRef.current) {
+            return;
+          }
+          lastHashRef.current = key;
+          if (isFunction(onSubmitRef.current)) {
+            return onSubmitRef.current(data, methods);
+          }
+        },
+        (errors) => {
+          const firstError = Object.keys(errors || {})[0];
+          if (firstError) {
+            setFocus(firstError);
+          }
+        }
+      );
+      run();
+    }, delay);
 
     return () => {
-      if (timeoutRef.current != null) {
-        clearTimeout(timeoutRef.current);
-      }
+      debRef.current?.cancel?.();
     };
-  }, [values]);
+  }, [delay, disabled, methods, setFocus]);
+
+  useEffect(() => {
+    const sub = watch(() => {
+      if (firstRef.current) {
+        firstRef.current = false;
+        return;
+      }
+      debRef.current?.();
+    });
+    return () => {
+      sub?.unsubscribe?.();
+    };
+  }, [watch]);
+
+  useEffect(() => {
+    if (initialValues) {
+      reset(initialValues, { keepDefaultValues: false });
+      firstRef.current = true;
+      lastHashRef.current = JSON.stringify(normalize(initialValues));
+    }
+  }, [initialValues, reset]);
 
   return (
     <FormProvider {...methods}>

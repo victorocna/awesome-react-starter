@@ -55,10 +55,7 @@ const useSelect = ({ children, id, onChange, value }) => {
   const { selectedItem, selectItem } = downshift;
 
   // Find the default selected item by value
-  const isDefaultSelected = (item) => {
-    return isEqual(item.value, value);
-  };
-  const defaultSelectedItem = items.find(isDefaultSelected) || null;
+  const defaultSelectedItem = items.find((item) => isEqual(item.value, value)) || null;
 
   // Select the default item if any
   useEffect(() => {

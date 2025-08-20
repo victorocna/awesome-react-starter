@@ -4,6 +4,7 @@ export { default as extractId } from './extract-id';
 export { default as falsy } from './falsy';
 export { default as formatDate } from './format-date';
 export { default as formatFileName } from './format-file-name';
+export { default as isRequestCanceled } from './is-request-canceled';
 export { default as isValidDate } from './is-valid-date';
 export { default as normalize } from './normalize';
 export { default as safeNumber } from './safe-number';

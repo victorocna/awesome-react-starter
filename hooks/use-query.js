@@ -5,8 +5,7 @@ import axios from 'axios';
 import { stringifyUrl } from 'query-string';
 
 const useQuery = (url, params = {}, rqOptions = {}) => {
-  const norm = normalize(params);
-  const key = JSON.stringify(norm);
+  const { norm, key } = normalize(params);
 
   return rqUseQuery({
     queryKey: ['q', url, key],
@@ -20,7 +19,6 @@ const useQuery = (url, params = {}, rqOptions = {}) => {
 
       return axiosAuth(fullUrl, { signal });
     },
-    staleTime: 30000,
     ...rqOptions,
   });
 };

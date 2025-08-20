@@ -10,11 +10,11 @@ const TodoTable = ({ options }) => {
     <>
       <TableColumns pageParams={data?.pageParams} />
 
-      {status === 'pending' && <TableLoading name="staff" columns={todoColumns} />}
-      {status === 'error' && <TableError name="staff" columns={todoColumns} />}
+      {status === 'pending' && <TableLoading name="todos" columns={todoColumns} />}
+      {status === 'error' && <TableError name="todos" columns={todoColumns} />}
       {status === 'success' && (
         <>
-          <TableSuccess name="staff" columns={todoColumns} data={data} {...props} />
+          <TableSuccess name="todos" columns={todoColumns} data={data} />
           <div className="px-4 sm:p-4">
             <LoadMoreOnClick {...props} />
           </div>

@@ -5,7 +5,7 @@ import { Field, Form } from '@components/HookForm';
 const StepOneForm = () => {
   return (
     <Form className="grid gap-4" debug={true}>
-      <Field as={Input} help="Required info" label="Full name" name="fullname" autoFocus />
+      <Field as={Input} help="Required info" label="Full name" name="fullname" autoFocus={true} />
       <div className="grid gap-4 md:grid-cols-2">
         <Field as={Dropdown} label="Filter items" name="filter">
           <option value="all">View all</option>

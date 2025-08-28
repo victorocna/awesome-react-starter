@@ -17,7 +17,7 @@ const ForgotForm = () => {
       onSubmit={handleSubmit}
     >
       <Form className="space-y-4">
-        <Field as={Email} autoFocus label="Your email" name="email" />
+        <Field as={Email} autoFocus={true} label="Your email" name="email" />
         <Submit className="button full primary">Send password reset email</Submit>
         <Recaptcha ref={ref} />
       </Form>

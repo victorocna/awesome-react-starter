@@ -26,7 +26,7 @@ const AddTodoForm = () => {
         <Field
           as={Input}
           autoComplete="off"
-          autoFocus
+          autoFocus={true}
           name="name"
           placeholder="Write something here"
         />

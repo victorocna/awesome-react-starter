@@ -17,7 +17,7 @@ const LoginForm = () => {
       onSubmit={handleSubmit}
     >
       <div className="space-y-4">
-        <Field as={Email} autoFocus label="Your email" name="email" />
+        <Field as={Email} autoFocus={true} label="Your email" name="email" />
         <Field as={Password} label="Your password" name="password" />
         <Submit className="button full primary">Login</Submit>
         <Recaptcha ref={ref} />

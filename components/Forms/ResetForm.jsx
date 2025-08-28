@@ -17,7 +17,7 @@ const ResetForm = ({ hash }) => {
       onSubmit={handleSubmit}
     >
       <Form className="space-y-4">
-        <Field as={Password} autoFocus label="Your new password" name="password" />
+        <Field as={Password} autoFocus={true} label="Your new password" name="password" />
         <Submit className="button full primary">Reset password</Submit>
         <Recaptcha ref={ref} />
       </Form>

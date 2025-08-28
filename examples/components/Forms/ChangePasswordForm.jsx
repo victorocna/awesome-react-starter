@@ -24,7 +24,7 @@ const ChangePasswordForm = () => {
         <div className="space-y-6">
           <Field
             as={Password}
-            autoFocus
+            autoFocus={true}
             help="Required info"
             label="Password"
             name="changePassword"

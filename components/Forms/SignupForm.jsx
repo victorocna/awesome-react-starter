@@ -17,7 +17,7 @@ const SignupForm = () => {
       onSubmit={handleSubmit}
     >
       <Form className="space-y-4">
-        <Field as={Input} autoFocus label="Your name" name="name" />
+        <Field as={Input} autoFocus={true} label="Your name" name="name" />
         <Field as={Email} label="Your email" name="email" />
         <Field as={Password} label="Your password" name="password" />
         <Submit className="button full primary">Signup</Submit>

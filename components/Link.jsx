@@ -1,10 +1,10 @@
 import NextLink from 'next/link';
-import React from 'react';
+import { isValidElement } from 'react';
 
 const Link = ({ children, href, onClick, ...props }) => {
   // If the child is a plain <a> element, enable legacyBehavior so
   // older code that nests an <a> inside <Link> keeps working.
-  const childIsAnchor = React.isValidElement(children) && children.type === 'a';
+  const childIsAnchor = isValidElement(children) && children.type === 'a';
 
   // If href is exactly '#' and no onClick was provided, prevent default
   // navigation so anchor doesn't jump to top of page.

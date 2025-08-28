@@ -1,10 +1,10 @@
 import { Dropdown, Search } from '@components/Fields';
-import { AutoSubmitFilterForm, Field } from '@components/HookForm';
+import { AutoSubmitForm, Field } from '@components/HookForm';
 import { initialValues, validationSchema } from '@examples/models/todo-filters';
 
 const TodoFilters = ({ setOptions }) => {
   return (
-    <AutoSubmitFilterForm
+    <AutoSubmitForm
       className="flex flex-col gap-4 sm:flex-row"
       initialValues={initialValues}
       onSubmit={setOptions}
@@ -28,7 +28,7 @@ const TodoFilters = ({ setOptions }) => {
         <option value="completed">Completed</option>
         <option value="pending">Pending</option>
       </Field>
-    </AutoSubmitFilterForm>
+    </AutoSubmitForm>
   );
 };
 

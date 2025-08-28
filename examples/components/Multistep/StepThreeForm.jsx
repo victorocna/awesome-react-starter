@@ -4,7 +4,7 @@ import { Field, Form } from '@components/HookForm';
 
 const StepThreeForm = ({ goBack }) => {
   return (
-    <Form className="grid gap-4" debug>
+    <Form className="grid gap-4" debug={true}>
       <div className="grid gap-4 md:grid-cols-2">
         <Field as={Textarea} help="Optional information about you" label="Bio" name="bio" />
       </div>

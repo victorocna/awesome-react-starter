@@ -8,7 +8,7 @@ const useQuery = (url, params = {}, rqOptions = {}) => {
   const { norm, key } = normalize(params);
 
   return rqUseQuery({
-    queryKey: ['q', url, key],
+    queryKey: [url, key],
     queryFn: async ({ signal }) => {
       const fullUrl = stringifyUrl({ url, query: norm }, { skipNull: true, skipEmptyString: true });
 

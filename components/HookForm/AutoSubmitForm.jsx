@@ -5,7 +5,7 @@ import { debounce, isFunction } from 'lodash';
 import { useEffect, useRef } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 
-const AutoSubmitFilterForm = ({
+const AutoSubmitForm = ({
   children,
   className,
   debug,
@@ -94,4 +94,4 @@ const AutoSubmitFilterForm = ({
   );
 };
 
-export default AutoSubmitFilterForm;
+export default AutoSubmitForm;

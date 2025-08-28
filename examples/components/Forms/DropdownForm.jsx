@@ -15,7 +15,7 @@ const DropdownForm = () => {
 
   return (
     <HookForm {...formProps}>
-      <Form className="space-y-4" debug>
+      <Form className="space-y-4" debug={true}>
         <div className="w-80">
           <Field as={Dropdown} label="Pick your gender" name="gender">
             <option value="M">Male</option>

@@ -8,7 +8,7 @@ const useInfiniteQuery = (url, params = {}, rqOptions = {}) => {
   const per_page = 30;
 
   return rqUseInfiniteQuery({
-    queryKey: ['inf', url, key],
+    queryKey: [url, key],
     queryFn: ({ pageParam = 1, signal }) => {
       const query = { per_page, page: pageParam, ...norm };
       const fullUrl = stringifyUrl({ url, query }, { skipNull: true, skipEmptyString: true });

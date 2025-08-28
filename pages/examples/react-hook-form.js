@@ -20,7 +20,7 @@ const Page = () => {
           initialValues={initialValues}
           onSubmit={handleSubmit}
         >
-          <Form className="space-y-4" debug>
+          <Form className="space-y-4" debug={true}>
             <div className="md:w-1/2">
               <Field as={Email} help="Required info" label="Basic email field" name="email" />
             </div>

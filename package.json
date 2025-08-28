@@ -27,7 +27,6 @@
     "@tailwindcss/forms": "^0.5.2",
     "@tailwindcss/typography": "^0.5.4",
     "@tanstack/react-query": "^5.85.5",
-    "@tanstack/react-query-devtools": "^5.85.5",
     "@tanstack/react-table": "^8.21.3",
     "accounting": "^0.4.1",
     "autoprefixer": "10.4.5",
@@ -57,6 +56,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@tanstack/react-query-devtools": "^5.85.5",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^10.1.8",

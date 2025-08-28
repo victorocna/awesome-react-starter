@@ -15,7 +15,7 @@ const DatePickerForm = () => {
 
   return (
     <HookForm {...formProps}>
-      <Form className="space-y-4" debug>
+      <Form className="space-y-4" debug={true}>
         <div className="w-80">
           <Field as={DatePicker} label="Check-in date picker" name="checkInDate" />
         </div>

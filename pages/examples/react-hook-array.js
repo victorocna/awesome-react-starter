@@ -20,7 +20,7 @@ const Page = () => {
           initialValues={initialValues}
           onSubmit={handleSubmit}
         >
-          <Form className="space-y-4" debug>
+          <Form className="space-y-4" debug={true}>
             <div className="flex flex-col gap-2">
               <h3 className="text-lg">Add reasons why you like coding (or remove them).</h3>
               <p>

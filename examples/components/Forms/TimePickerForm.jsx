@@ -15,7 +15,7 @@ const TimePickerForm = () => {
 
   return (
     <HookForm {...formProps}>
-      <Form className="space-y-4" debug>
+      <Form className="space-y-4" debug={true}>
         <div className="w-80">
           <Field as={TimePicker} label="Check-in time picker" name="checkInTime" />
         </div>

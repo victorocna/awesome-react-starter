@@ -6,7 +6,7 @@ import { initialValues, validationSchema } from '../../models/todo';
 
 const AddTodoForm = () => {
   const mutation = useMutation(createTodo, {
-    invalidateQueries: ['inf', 'admin/todos'],
+    invalidateQueries: ['admin/todos'],
   });
 
   // Reset the form after a successful submission

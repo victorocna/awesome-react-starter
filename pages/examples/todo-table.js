@@ -12,11 +12,7 @@ const Page = () => {
       <div className="flex flex-col rounded-lg border bg-white shadow">
         <div className="flex justify-between border-b p-4">
           <h3 className="text-base font-semibold md:text-xl lg:text-2xl">To Dos</h3>
-          <Link
-            className="button full primary no-underline"
-            href="#"
-            onClick={(e) => e.preventDefault()}
-          >
+          <Link href="#" className="button full primary no-underline">
             <i className="fas fa-plus-circle mr-2" />
             <span>Add new</span>
           </Link>

@@ -22,7 +22,7 @@ const IconsStats = () => {
             </div>
           </div>
           <div className="bg-gray-50 px-6 py-4">
-            <Link className="font-medium text-primary" href="#" onClick={(e) => e.preventDefault()}>
+            <Link href="#" className="font-medium text-primary">
               View all
             </Link>
           </div>
@@ -44,7 +44,7 @@ const IconsStats = () => {
             </div>
           </div>
           <div className="bg-gray-50 px-6 py-4">
-            <Link className="font-medium text-primary" href="#" onClick={(e) => e.preventDefault()}>
+            <Link href="#" className="font-medium text-primary">
               View all
             </Link>
           </div>
@@ -66,7 +66,7 @@ const IconsStats = () => {
             </div>
           </div>
           <div className="bg-gray-50 px-6 py-4">
-            <Link className="font-medium text-primary" href="#" onClick={(e) => e.preventDefault()}>
+            <Link href="#" className="font-medium text-primary">
               View all
             </Link>
           </div>

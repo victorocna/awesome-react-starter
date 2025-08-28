@@ -3,9 +3,8 @@ import { Layout } from '@examples/components';
 import { useQuery } from '@hooks';
 
 const Page = () => {
-  const { data, status } = useQuery(
-    'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=5'
-  );
+  const cryptoUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=5';
+  const { data, status } = useQuery(cryptoUrl);
 
   const showCrypto = (data) => (
     <option key={data.symbol} value={data.symbol}>

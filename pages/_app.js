@@ -2,7 +2,6 @@ import { ErrorBoundary, ScreenSizeInfo, Toaster } from '@components';
 import { queryClientConfig } from '@constants/query-client';
 import { sitename } from '@site.config';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Head from 'next/head';
 import '../css/index.css';
 
@@ -19,7 +18,6 @@ const Root = (props) => {
       </Head>
       <ErrorBoundary>
         <QueryClientProvider client={queryClient}>
-          {process.env.NODE_ENV !== 'production' && <ReactQueryDevtools />}
           <Component {...pageProps} />
         </QueryClientProvider>
         <Toaster />

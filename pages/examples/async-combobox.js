@@ -3,8 +3,10 @@ import { Layout } from '@examples/components';
 import { useQuery } from '@hooks';
 
 const Page = () => {
-  const { data, status } = useQuery('https://api.coincap.io/v2/assets?limit=5');
-  const showCripto = (data) => (
+  const cryptoUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=5';
+  const { data, status } = useQuery(cryptoUrl);
+
+  const showCrypto = (data) => (
     <option key={data.symbol} value={data.symbol}>
       {data.name}
     </option>
@@ -21,23 +23,27 @@ const Page = () => {
         </p>
 
         <div className="mb-4">
-          <label htmlFor="#" className="mb-0 cursor-pointer">
+          <label htmlFor="async-crypto-dropdown-placeholder" className="mb-0 cursor-pointer">
             Async crypto dropdown with placeholder
           </label>
           <div className="w-80">
-            <AsyncCombobox status={status} placeholder="Select your favorite crypto">
-              {data?.data?.map(showCripto)}
+            <AsyncCombobox
+              id="async-crypto-dropdown-placeholder"
+              status={status}
+              placeholder="Select your favorite crypto"
+            >
+              {data?.map(showCrypto)}
             </AsyncCombobox>
           </div>
         </div>
 
         <div className="mb-4">
-          <label htmlFor="#" className="mb-0 cursor-pointer">
+          <label htmlFor="async-crypto-dropdown-default" className="mb-0 cursor-pointer">
             Async crypto dropdown with default selection
           </label>
           <div className="w-80">
-            <AsyncCombobox status={status} value="BTC">
-              {data?.data?.map(showCripto)}
+            <AsyncCombobox id="async-crypto-dropdown-default" status={status} value="BTC">
+              {data?.map(showCrypto)}
             </AsyncCombobox>
           </div>
         </div>

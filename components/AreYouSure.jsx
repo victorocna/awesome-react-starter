@@ -3,7 +3,7 @@ import { Modal } from 'react-bootstrap';
 
 const AreYouSure = ({ isOpen, hide, iAmSure, children }) => {
   return (
-    <Modal centered show={isOpen} onHide={hide}>
+    <Modal centered={true} show={isOpen} onHide={hide}>
       <Modal.Header closeButton>
         <Modal.Title>Confirm operation</Modal.Title>
       </Modal.Header>

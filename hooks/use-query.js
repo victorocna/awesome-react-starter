@@ -1,22 +1,26 @@
+import { normalize } from '@functions';
 import { axiosAuth } from '@lib';
+import { useQuery as rqUseQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { stringifyUrl } from 'query-string';
-import { useQuery as query } from 'react-query';
 
-const useQuery = (url, options) => {
-  const fullUrl = stringifyUrl({ url, query: options });
+const useQuery = (url, params = {}, rqOptions = {}) => {
+  const { norm, key } = normalize(params);
 
-  const queryFn = () => {
-    // Handle external API calls
-    if (url.startsWith('http')) {
-      return axios.get(fullUrl).then((res) => res.data);
-    }
+  return rqUseQuery({
+    queryKey: [url, key],
+    queryFn: async ({ signal }) => {
+      const fullUrl = stringifyUrl({ url, query: norm }, { skipNull: true, skipEmptyString: true });
 
-    // Handle internal API calls
-    return axiosAuth(fullUrl);
-  };
+      if (/^https?:\/\//i.test(url)) {
+        const r = await axios.get(fullUrl, { signal });
+        return r.data;
+      }
 
-  return query(fullUrl, queryFn, options);
+      return axiosAuth(fullUrl, { signal });
+    },
+    ...rqOptions,
+  });
 };
 
 export default useQuery;

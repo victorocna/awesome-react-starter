@@ -1,15 +1,15 @@
+import { extractError, isRequestCanceled } from '@functions';
 import { toaster } from '@lib';
+import { useQueryClient, useMutation as useQueryMutation } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
-import { useQueryClient, useMutation as useQueryMutation } from 'react-query';
 
 /**
  * Custom hook for useMutation
  *
- * @param {String} key
  * @param {Function} fn
  * @param {Object} options
  * @returns {Object} Returns the mutation function, status and others
- * @see https://react-query.tanstack.com/reference/useMutation
+ * @see https://tanstack.com/query/latest/docs/framework/react/reference/useMutation
  */
 const useMutation = (fn, options = {}) => {
   const {
@@ -22,27 +22,32 @@ const useMutation = (fn, options = {}) => {
 
   const router = useRouter();
   const queryClient = useQueryClient();
-  const mutation = useQueryMutation(fn, {
+  const mutation = useQueryMutation({
+    mutationFn: fn,
     onSuccess: (data) => {
       if (invalidateQueries) {
-        queryClient.invalidateQueries(invalidateQueries);
+        queryClient.invalidateQueries({ queryKey: invalidateQueries });
       }
       if (data?.message) {
-        toaster.success(data?.message);
+        toaster.success(data.message);
       }
       if (redirectOnSuccess) {
         router.push(redirectOnSuccess);
       }
       if (typeof successCallback === 'function') {
-        successCallback();
+        successCallback(data);
       }
     },
     onError: (err) => {
-      if (err?.message) {
-        toaster.error(err?.message);
+      if (isRequestCanceled(err) || err?.__redirectToLogin) {
+        return;
+      }
+      const { message } = extractError(err);
+      if (message) {
+        toaster.error(message);
       }
       if (typeof errorCallback === 'function') {
-        errorCallback();
+        errorCallback(err);
       }
     },
     ...rest,

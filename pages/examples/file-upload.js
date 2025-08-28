@@ -1,6 +1,5 @@
 import { withAuth } from '@auth';
-import { FileDrop, FileUpload } from '@components/Fields';
-import { Submit } from '@components/Fields';
+import { FileDrop, FileUpload, Submit } from '@components/Fields';
 import { Layout } from '@examples/components';
 import { formatFileName } from '@functions';
 import { useMutation } from '@hooks';
@@ -51,10 +50,10 @@ const Page = () => {
             <h3>Other examples</h3>
 
             <p>Default file input example (without drop)</p>
-            <FileUpload setFile={setFile} file={file} disableDrop />
+            <FileUpload setFile={setFile} file={file} disableDrop={true} />
             <div>
               <p className="mb-1">File drop (without drop)</p>
-              <FileDrop file={file} setFile={setFile} disableDrop />
+              <FileDrop file={file} setFile={setFile} disableDrop={true} />
             </div>
 
             <div className="w-1/2">
@@ -64,17 +63,17 @@ const Page = () => {
 
             <div>
               <p className="mb-1">Disabled file drop</p>
-              <FileDrop file={file} setFile={setFile} disabled />
+              <FileDrop file={file} setFile={setFile} disabled={true} />
             </div>
 
             <div className="w-1/2">
               <p className="mb-1">Multiple file input upload</p>
-              <FileUpload setFile={setFile} file={file} multiple={true} />
+              <FileUpload setFile={setFile} file={file} multiple />
             </div>
 
             <div className="w-1/2">
               <p className="mb-1">Disabled file input upload</p>
-              <FileUpload disabled setFile={setFile} file={file} />
+              <FileUpload disabled={true} setFile={setFile} file={file} />
             </div>
           </div>
           <p className="mb-2">
@@ -84,7 +83,7 @@ const Page = () => {
         </div>
         <div className="flex">
           <Submit
-            className="mt-2 button full secondary"
+            className="button full secondary mt-2"
             disabled={disabled}
             onClick={handleSubmit}
             isLoading={isLoading}

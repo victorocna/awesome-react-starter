@@ -15,16 +15,20 @@ const HookForm = ({ children, initialValues, validationSchema, onSubmit }) => {
     });
   };
 
-  const handleSubmit = async (data) => {
+  const handleValid = async (data) => {
     await onSubmit(data, methods);
   };
-  const handleFail = async () => {
+
+  const handleInvalid = async () => {
     markAllFieldsTouched();
   };
 
+  methods.__onValid = handleValid;
+  methods.__onInvalid = handleInvalid;
+
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(handleSubmit, handleFail)}>{children}</form>
+      <form onSubmit={methods.handleSubmit(handleValid, handleInvalid)}>{children}</form>
     </FormProvider>
   );
 };

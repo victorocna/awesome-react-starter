@@ -6,7 +6,7 @@ const StepThreeForm = ({ goBack }) => {
   return (
     <Form className="grid gap-4" debug={true}>
       <div className="grid gap-4 md:grid-cols-2">
-        <Field as={Textarea} name="bio" label="Bio" help="Optional information about you" />
+        <Field as={Textarea} help="Optional information about you" label="Bio" name="bio" />
       </div>
       <div className="flex flex-wrap gap-4">
         <Button type="submit" className="button full primary">

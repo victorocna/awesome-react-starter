@@ -1,13 +1,12 @@
-import React, { forwardRef } from 'react';
 import ReCaptcha from 'react-google-recaptcha';
 
-const Recaptcha = (props, ref) => {
+const Recaptcha = ({ ref, ...props }) => {
   const sitekey = process.env.RECAPTCHA_SITE_KEY;
   if (!sitekey) {
     return null;
   }
 
-  return <ReCaptcha ref={ref} sitekey={sitekey} size="invisible" />;
+  return <ReCaptcha ref={ref} sitekey={sitekey} size="invisible" {...props} />;
 };
 
-export default forwardRef(Recaptcha);
+export default Recaptcha;

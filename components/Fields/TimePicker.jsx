@@ -1,9 +1,9 @@
 import { useDisclosure, useOnClickOutside } from '@hooks';
 import { classnames } from '@lib';
 import { isFunction } from 'lodash';
-import { useMemo, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
-const TimePicker = ({ disabled = false, interval = 1, onChange, placeholder, value }) => {
+const TimePicker = ({ disabled = false, id, interval = 1, onChange, placeholder, value }) => {
   const [time, setTime] = useState({
     hour: Number(value?.split(':')[0]),
     minute: Number(value?.split(':')[1]),
@@ -24,9 +24,7 @@ const TimePicker = ({ disabled = false, interval = 1, onChange, placeholder, val
     );
   };
 
-  const isTimeInvalid = useMemo(() => {
-    return !isTimeValid(time);
-  }, [time]);
+  const isTimeInvalid = !isTimeValid(time);
 
   const formatTime = (time) => {
     if (!isTimeValid(time)) {
@@ -37,9 +35,7 @@ const TimePicker = ({ disabled = false, interval = 1, onChange, placeholder, val
     }`;
   };
 
-  const formattedTime = useMemo(() => {
-    return formatTime(time);
-  }, [time]);
+  const formattedTime = formatTime(time);
 
   const scrollIntoView = (time) => {
     const { hour, minute } = time;
@@ -94,10 +90,11 @@ const TimePicker = ({ disabled = false, interval = 1, onChange, placeholder, val
     <div ref={ref} className="relative w-40 select-none">
       <div className="relative" onClick={handleClick}>
         <input
+          id={id}
           className="input pr-8"
           disabled={disabled}
           placeholder={placeholder || 'HH:mm'}
-          readOnly
+          readOnly={true}
           type="text"
           value={formattedTime}
         />

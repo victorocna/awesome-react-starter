@@ -9,6 +9,12 @@ const ArrayField = ({ AddComponent, SectionComponent, name, emptyRow = {} }) => 
   const { errors, submitCount, touchedFields: touched } = formState;
   const fieldValues = watch(name);
 
+  // Rerender SectionComponent when fieldValues change
+  const [key, rerender] = useRerender();
+  useEffect(() => {
+    rerender();
+  }, [fieldValues, rerender]);
+
   // Check if the field has an error
   const hasError = touched[name] && errors[name] && submitCount > 0 && isString(errors[name]);
 
@@ -21,18 +27,12 @@ const ArrayField = ({ AddComponent, SectionComponent, name, emptyRow = {} }) => 
     );
   }
 
-  // Rerender SectionComponent when fieldValues change
-  const [key, rerender] = useRerender();
-  useEffect(() => {
-    rerender();
-  }, [fieldValues]);
-
   const showSections = () => (
     <div className="flex flex-col gap-4">
       <AddComponent name={name} emptyRow={emptyRow} />
       {hasError && (
         <div>
-          <p className="text-red-500 text-sm h-5">{errors[name]}</p>
+          <p className="h-5 text-sm text-red-500">{errors[name]}</p>
         </div>
       )}
       <SectionComponent key={key} name={name} emptyRow={emptyRow} sections={fieldValues} />

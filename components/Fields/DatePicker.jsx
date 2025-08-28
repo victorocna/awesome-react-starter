@@ -7,7 +7,7 @@ import { Modal } from 'react-bootstrap';
 import Calendar from 'react-calendar';
 import Input from './Input';
 
-const DatePicker = ({ value: initialValue, onChange, calendarProps = {}, ...props }) => {
+const DatePicker = ({ id, value: initialValue, onChange, calendarProps = {}, ...props }) => {
   const [value, setValue] = useState(initialValue);
   const { isOpen, show, hide } = useDisclosure();
 
@@ -27,7 +27,7 @@ const DatePicker = ({ value: initialValue, onChange, calendarProps = {}, ...prop
         onChange('');
       }
     }
-  }, [value]);
+  }, [value, onChange]);
 
   if (isValidDate(new Date(initialValue))) {
     calendarProps.defaultValue = new Date(initialValue);
@@ -37,16 +37,16 @@ const DatePicker = ({ value: initialValue, onChange, calendarProps = {}, ...prop
 
   return (
     <div className="relative">
-      <Input {...props} value={value} onChange={handleChange} />
+      <Input {...props} id={id} onChange={handleChange} value={value} />
       <div
-        className="absolute top-0 right-0 grid h-full cursor-pointer place-items-center p-2.5 outline-none"
+        className="absolute right-0 top-0 grid h-full cursor-pointer place-items-center p-2.5 outline-none"
         onClick={show}
       >
         <i className="fas fa-calendar-alt text-primary" />
       </div>
 
       {isOpen && (
-        <Modal centered show={true} onHide={hide}>
+        <Modal centered={true} show={true} onHide={hide}>
           <Calendar onClickDay={onClickDay} {...calendarProps} />
         </Modal>
       )}

@@ -1,21 +1,28 @@
 {
+  "root": true,
   "env": {
     "node": true,
     "browser": true,
     "es2020": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "ignorePatterns": ["node_modules/", ".next/"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 11,
+    "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "react-hooks"],
   "rules": {
     "no-console": [
-      "error",
+      "warn",
       {
         "allow": ["warn", "error"]
       }
@@ -29,7 +36,9 @@
     "no-warning-comments": "warn",
     "react/no-unescaped-entities": "off",
     "react/react-in-jsx-scope": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "settings": {
     "react": {

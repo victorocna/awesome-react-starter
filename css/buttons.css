@@ -24,7 +24,6 @@ button:disabled {
 }
 button:disabled > * {
   pointer-events: none;
-  visibility: hidden;
 }
 button:disabled ~ * {
   cursor: not-allowed;
@@ -32,11 +31,11 @@ button:disabled ~ * {
 
 .button.full,
 .button.square {
-  @apply border-2 py-2 px-6 text-sm font-medium;
+  @apply border-2 px-6 py-2 text-sm font-medium;
 }
 
 .button.mini {
-  @apply border bg-white py-1 px-3 text-sm;
+  @apply border bg-white px-3 py-1 text-sm;
 }
 
 .button.full.primary {

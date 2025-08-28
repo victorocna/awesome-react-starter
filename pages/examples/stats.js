@@ -5,7 +5,7 @@ const Page = () => {
   return (
     <Layout title="Stats">
       <div className="flex flex-col gap-20">
-        <p className="text-base max-w-3xl text-gray-800">
+        <p className="max-w-3xl text-base text-gray-800">
           Use these Tailwind CSS description list components to present detailed information in a
           structured and readable format. These components are designed and built by the Tailwind
           CSS team, and include a variety of different styles and layouts.

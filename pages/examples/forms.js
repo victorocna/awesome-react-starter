@@ -129,7 +129,7 @@ const Page = () => {
             <Checkbox value="red" defaultChecked>
               Red
             </Checkbox>
-            <Checkbox value="yellow" disabled>
+            <Checkbox value="yellow" disabled={true}>
               Yellow (disabled)
             </Checkbox>
             <Checkbox value="purple">Purple</Checkbox>
@@ -146,7 +146,7 @@ const Page = () => {
           <RadioGroup name="favouriteColor" selectedValue="red">
             <Radio value="green">Green</Radio>
             <Radio value="red">Red</Radio>
-            <Radio value="yellow" disabled>
+            <Radio value="yellow" disabled={true}>
               Yellow (disabled)
             </Radio>
             <Radio value="purple">Purple</Radio>

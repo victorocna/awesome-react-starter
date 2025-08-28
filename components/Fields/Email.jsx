@@ -1,7 +1,7 @@
-import React from 'react';
-
 const Email = (props) => {
-  return <input type="email" inputMode="email" className="input" {...props} />;
+  return (
+    <input type="email" inputMode="email" className="input" autoComplete="username" {...props} />
+  );
 };
 
 export default Email;

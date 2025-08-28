@@ -4,13 +4,14 @@ import { checkTodo } from '../../api/todo';
 
 const CheckTodo = ({ id, done }) => {
   const mutation = useMutation(checkTodo, {
-    invalidateQueries: 'admin/todos',
+    invalidateQueries: ['admin/todos'],
   });
+
   const handleClick = () => {
     mutation.mutate({ id, done });
   };
 
-  return <Checkbox value={done} checked={done} onClick={handleClick} />;
+  return <Checkbox value={done} checked={done} onChange={handleClick} />;
 };
 
 export default CheckTodo;

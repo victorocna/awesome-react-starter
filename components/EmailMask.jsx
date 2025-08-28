@@ -1,5 +1,3 @@
-import { useMemo } from 'react';
-
 const EmailMask = ({ value }) => {
   const at = value.indexOf('@');
   const dot = value.lastIndexOf('.');
@@ -13,9 +11,7 @@ const EmailMask = ({ value }) => {
     );
   };
 
-  const mask = useMemo(() => {
-    return { __html: makeMask(value) };
-  }, []);
+  const mask = { __html: makeMask(value) };
 
   return <p dangerouslySetInnerHTML={mask}></p>;
 };

@@ -35,7 +35,7 @@ const Page = () => {
 
         <h3>Buttons with state</h3>
         <div className="flex items-center gap-2">
-          <Button className="button full primary" disabled>
+          <Button className="button full primary" disabled={true}>
             Disabled
           </Button>
         </div>

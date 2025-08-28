@@ -1,4 +1,4 @@
-import { HeaderStep } from '.';
+import HeaderStep from './HeaderStep';
 
 const HeaderSteps = ({ step }) => {
   // step is in the form step1, step2, step3

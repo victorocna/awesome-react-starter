@@ -1,10 +1,11 @@
 import { store } from '@auth';
+import { extractError } from '@functions';
 import { axios, router, toaster } from '@lib';
 import { decode } from 'jsonwebtoken';
 
 const login = async (ref, data) => {
   try {
-    // execute google recaptcha
+    // Execute google reCAPTCHA
     data['g-recaptcha-response'] = await ref.current.executeAsync();
 
     const { token } = await axios.post('login', data);
@@ -13,13 +14,16 @@ const login = async (ref, data) => {
     }
     store.dispatch({ type: 'SET', jwt: token });
 
-    // notify user and other actions
+    // Notify user and other actions
     toaster.success('Login successful');
     router.push('/admin');
   } catch (err) {
-    toaster.error(err.message);
+    const { message } = extractError(err);
+    if (message) {
+      toaster.error(message);
+    }
 
-    // reset google recaptcha on invalid login
+    // Reset google reCAPTCHA on invalid login
     ref.current.reset();
   }
 };

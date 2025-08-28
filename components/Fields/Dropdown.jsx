@@ -2,8 +2,8 @@ import { useDropdown } from '@hooks';
 import { classnames } from '@lib';
 import OptionList from './OptionList';
 
-const Dropdown = ({ children, value, onChange, placeholder, disabled, icon }) => {
-  const { inputItems, ...downshift } = useDropdown({ children, value, onChange });
+const Dropdown = ({ children, disabled, icon, id, onChange, placeholder, value }) => {
+  const { inputItems, ...downshift } = useDropdown({ children, id, onChange, value });
 
   return (
     <div className="relative">
@@ -16,17 +16,19 @@ const Dropdown = ({ children, value, onChange, placeholder, disabled, icon }) =>
         {...downshift.getToggleButtonProps()}
       >
         <input
-          value={downshift.selectedItem?.label || ''}
           className="-my-2 w-full bg-transparent outline-none"
-          readOnly={true}
-          placeholder={placeholder}
           disabled={disabled}
+          id={id}
+          placeholder={placeholder}
+          readOnly={true}
+          value={downshift.selectedItem?.label || ''}
         />
         <span role="button" className={classnames(disabled && 'pointer-events-none')}>
           {icon || <i className="fas fa-chevron-down" />}
         </span>
       </div>
-      <OptionList {...downshift}>{inputItems}</OptionList>
+
+      <OptionList items={inputItems} {...downshift} />
     </div>
   );
 };

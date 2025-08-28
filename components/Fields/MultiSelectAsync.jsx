@@ -5,18 +5,19 @@ import {
 } from '@functions/format-multi-select';
 import { useOnClickOutside, useQuery } from '@hooks';
 import { debounce, has, isEqual, isFunction, sortBy } from 'lodash';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const MultiSelectAsync = ({
   api = '',
   getOptionToValue = defaultGetOptionToValue,
   getValueToOption = defaultGetValueToOption,
+  id,
   initialValues,
   onChange = () => {},
   searchKey = '',
 }) => {
   // Initialize defaultSelected options based on initialValues
-  const defaultSelected = useMemo(() => initialValues?.map(getValueToOption) || [], []);
+  const defaultSelected = initialValues?.map(getValueToOption) || [];
 
   // Define state variables
   const [options, setOptions] = useState([]);
@@ -93,7 +94,7 @@ const MultiSelectAsync = ({
   const debouncedKeyUp = debounce(handleKeyUp, 500);
 
   // Calculate the input value based on selected options
-  const inputValue = useMemo(() => {
+  const inputValue = (() => {
     if (selectedOptions.length === 0) {
       return '';
     } else if (selectedOptions.length === 1) {
@@ -101,7 +102,7 @@ const MultiSelectAsync = ({
     } else {
       return `${selectedOptions.length} selected`;
     }
-  }, [selectedOptions]);
+  })();
 
   // Fetch data from the API based on the search term
   const { data, isLoading, status } = useQuery(api, { [searchKey]: searchTerm });
@@ -112,14 +113,14 @@ const MultiSelectAsync = ({
       const values = has(data, 'data') ? data.data : has(data, 'pages') ? data.pages : data;
       setOptions(values.map(getValueToOption) || []);
     }
-  }, [searchTerm, status]);
+  }, [status, data, getValueToOption]);
 
   // Call onChange callback when selected options change
   useEffect(() => {
     if (isFunction(onChange)) {
       onChange(selectedOptions.map(getOptionToValue));
     }
-  }, [selectedOptions]);
+  }, [selectedOptions, getOptionToValue, onChange]);
 
   // Update selectAll state based on selected options and available options
   useEffect(() => {
@@ -145,6 +146,7 @@ const MultiSelectAsync = ({
           {/* Dropdown input */}
           <div className="dropdown cursor-pointer" onClick={toggleMultiselect}>
             <input
+              id={id}
               className="-my-2 w-full cursor-pointer select-none bg-transparent outline-none"
               readOnly={true}
               value={inputValue}

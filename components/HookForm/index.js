@@ -1,5 +1,5 @@
 export { default as ArrayField } from './ArrayField';
-export { default as AutoSubmit } from './AutoSubmit';
+export { default as AutoSubmitForm } from './AutoSubmitForm';
 export { default as Debug } from './Debug';
 export { default as Field } from './Field';
 export { default as Fieldset } from './Fieldset';

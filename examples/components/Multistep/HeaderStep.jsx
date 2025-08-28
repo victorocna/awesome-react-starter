@@ -8,7 +8,7 @@ const HeaderStep = ({ isActive, children }) => {
       </h4>
       <div
         className={classnames(
-          'h-2 w-full rounded-full text-default',
+          'text-default h-2 w-full rounded-full',
           isActive ? 'bg-green-500' : 'bg-gray-400'
         )}
       ></div>

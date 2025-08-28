@@ -1,49 +1,47 @@
+import { normalize } from '@functions';
 import { axiosAuth } from '@lib';
+import { useInfiniteQuery as rqUseInfiniteQuery } from '@tanstack/react-query';
 import { stringifyUrl } from 'query-string';
-import { useInfiniteQuery as infiniteQuery } from 'react-query';
 
-/**
- * Custom hook for useInfiniteQuery
- *
- * @param {String} url
- * @param {Object} options
- * @returns {Object} Returns query data, status and others
- * @see https://react-query.tanstack.com/reference/useInfiniteQuery
- */
-const useInfiniteQuery = (url, options = {}) => {
+const useInfiniteQuery = (url, params = {}, rqOptions = {}) => {
+  const { norm, key } = normalize(params);
   const per_page = 30;
-  const getNextPageParam = ({ pageParams }) => {
-    if (!pageParams?.hasNext) {
-      return false;
-    }
-    return pageParams?.page + 1;
-  };
 
-  const fetcher = ({ pageParam: page }) => {
-    const query = { per_page, ...options };
-    if (page) {
-      query.page = page;
-    }
-    return axiosAuth(stringifyUrl({ url, query }));
-  };
-  const config = { getNextPageParam, per_page, ...options };
+  return rqUseInfiniteQuery({
+    queryKey: [url, key],
+    queryFn: ({ pageParam = 1, signal }) => {
+      const query = { per_page, page: pageParam, ...norm };
+      const fullUrl = stringifyUrl({ url, query }, { skipNull: true, skipEmptyString: true });
+      return axiosAuth(fullUrl, { signal });
+    },
+    getNextPageParam: (lastPage) => {
+      if (!lastPage?.pageParams?.hasNext) {
+        return undefined;
+      }
+      return lastPage.pageParams.page + 1;
+    },
+    initialPageParam: 1,
+    select: (infinite) => {
+      if (!infinite?.pages || infinite.pages.length === 0) {
+        return { pageParams: {}, pages: [] };
+      }
 
-  const response = infiniteQuery([url, options], fetcher, config);
-  if (response.status !== 'success') {
-    return response;
-  }
+      const last = infinite.pages[infinite.pages.length - 1];
+      const pageParams = last?.pageParams || {};
 
-  const data = {
-    pageParams: {},
-    pages: [],
-  };
-  for (const page of response.data.pages) {
-    const { pages, pageParams } = page;
-    data.pageParams = pageParams;
-    data.pages.push(pages);
-  }
+      const pages = [];
+      for (let i = 0; i < infinite.pages.length; i++) {
+        const p = infinite.pages[i];
+        const arr = Array.isArray(p?.pages) ? p.pages : [];
+        for (let j = 0; j < arr.length; j++) {
+          pages.push(arr[j]);
+        }
+      }
 
-  return { ...response, data };
+      return { pageParams, pages };
+    },
+    ...rqOptions,
+  });
 };
 
 export default useInfiniteQuery;

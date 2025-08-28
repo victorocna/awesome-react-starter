@@ -6,7 +6,7 @@ import { initialValues, validationSchema } from '../../models/todo';
 
 const AddTodoForm = () => {
   const mutation = useMutation(createTodo, {
-    invalidateQueries: 'admin/todos',
+    invalidateQueries: ['admin/todos'],
   });
 
   // Reset the form after a successful submission
@@ -25,10 +25,10 @@ const AddTodoForm = () => {
       <Form className="flex gap-4">
         <Field
           as={Input}
-          name="name"
-          placeholder="Write something here"
           autoComplete="off"
           autoFocus={true}
+          name="name"
+          placeholder="Write something here"
         />
         <Submit className="button full accent" isLoading={mutation.isLoading}>
           Add

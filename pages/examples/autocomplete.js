@@ -13,12 +13,13 @@ const Page = () => {
         </p>
 
         <div className="mb-4">
-          <label htmlFor="#" className="mb-0 cursor-pointer">
+          <label htmlFor="async-crypto-autocomplete-placeholder" className="mb-0 cursor-pointer">
             Async crypto autocomplete with placeholder
           </label>
           <div className="w-80">
             <Autocomplete
-              url="https://api.coincap.io/v2/assets?limit=5"
+              id="async-crypto-autocomplete-placeholder"
+              url="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=5"
               placeholder="Search your favorite crypto"
               searchKey="search"
               optionValue="symbol"

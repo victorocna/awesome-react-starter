@@ -1,13 +1,15 @@
 import { LoadMoreOnClick } from '@components/Buttons';
 import { useInfiniteQuery } from '@hooks';
-import { TodoListError, TodoListLoading, TodoListSuccess } from '.';
+import TodoListError from './TodoListError';
+import TodoListLoading from './TodoListLoading';
+import TodoListSuccess from './TodoListSuccess';
 
 const TodoList = ({ options }) => {
   const { data, status, ...props } = useInfiniteQuery('admin/todos', options);
 
   return (
     <div className="flex-1">
-      {status === 'loading' && <TodoListLoading />}
+      {status === 'pending' && <TodoListLoading />}
       {status === 'error' && <TodoListError />}
       {status === 'success' && (
         <>

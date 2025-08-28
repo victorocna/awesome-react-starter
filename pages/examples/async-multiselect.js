@@ -14,7 +14,7 @@ const Page = () => {
           <div className="w-80">
             <MultiSelectAsync
               id="async-multiselect-1"
-              api={`${process.env.APP_BASE_URL}/api/mock/assets`}
+              api="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=5"
               getOptionToValue={(selectValue) => ({
                 id: selectValue?.value,
                 name: selectValue?.label,
@@ -36,7 +36,7 @@ const Page = () => {
           <div className="w-80">
             <MultiSelectAsync
               id="async-multiselect-2"
-              api={`${process.env.APP_BASE_URL}/api/mock/assets`}
+              api="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=5"
               getOptionToValue={(selectValue) => ({
                 id: selectValue?.value,
                 name: selectValue?.label,

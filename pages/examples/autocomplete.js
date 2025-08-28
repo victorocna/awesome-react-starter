@@ -19,7 +19,7 @@ const Page = () => {
           <div className="w-80">
             <Autocomplete
               id="async-crypto-autocomplete-placeholder"
-              url={`${process.env.APP_BASE_URL}/api/mock/assets?limit=5`}
+              url="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=5"
               placeholder="Search your favorite crypto"
               searchKey="search"
               optionValue="symbol"

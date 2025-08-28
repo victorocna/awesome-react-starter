@@ -94,7 +94,7 @@ const TimePicker = ({ disabled = false, id, interval = 1, onChange, placeholder,
           className="input pr-8"
           disabled={disabled}
           placeholder={placeholder || 'HH:mm'}
-          readOnly
+          readOnly={true}
           type="text"
           value={formattedTime}
         />

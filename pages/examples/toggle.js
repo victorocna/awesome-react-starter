@@ -21,7 +21,7 @@ const Page = () => {
 
         <h3 className="mt-0">Example #3</h3>
         <p className="mb-1">Disabled toggle</p>
-        <Toggle label="Disabled" initialState={false} disabled />
+        <Toggle label="Disabled" initialState={false} disabled={true} />
 
         <h3 className="mt-0">Example #4</h3>
         <p className="mb-1">Toggle enabled by default</p>
@@ -29,7 +29,7 @@ const Page = () => {
 
         <h3 className="mt-0">Example #5</h3>
         <p className="mb-1">Disabled toggle with initialStae set to true</p>
-        <Toggle initialState label="Disabled enabled" disabled />
+        <Toggle initialState label="Disabled enabled" disabled={true} />
 
         <h3 className="mt-0">Example #6</h3>
         <p className="mb-1">Toggle with custom onTrigger callback</p>

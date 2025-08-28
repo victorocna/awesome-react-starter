@@ -20,7 +20,7 @@ const Dropdown = ({ children, disabled, icon, id, onChange, placeholder, value }
           disabled={disabled}
           id={id}
           placeholder={placeholder}
-          readOnly
+          readOnly={true}
           value={downshift.selectedItem?.label || ''}
         />
         <span role="button" className={classnames(disabled && 'pointer-events-none')}>

@@ -36,7 +36,7 @@ const Page = () => {
               value={checkOut}
               onChange={setCheckOut}
               calendarProps={{ minDate: new Date() }}
-              readOnly
+              readOnly={true}
             />
             <span>Selected check-out date: {checkOut}</span>
           </div>

@@ -148,7 +148,7 @@ const MultiSelectAsync = ({
             <input
               id={id}
               className="-my-2 w-full cursor-pointer select-none bg-transparent outline-none"
-              readOnly
+              readOnly={true}
               value={inputValue}
             />
             <span role="button">

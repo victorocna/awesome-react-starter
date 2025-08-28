@@ -50,10 +50,10 @@ const Page = () => {
             <h3>Other examples</h3>
 
             <p>Default file input example (without drop)</p>
-            <FileUpload setFile={setFile} file={file} disableDrop />
+            <FileUpload setFile={setFile} file={file} disableDrop={true} />
             <div>
               <p className="mb-1">File drop (without drop)</p>
-              <FileDrop file={file} setFile={setFile} disableDrop />
+              <FileDrop file={file} setFile={setFile} disableDrop={true} />
             </div>
 
             <div className="w-1/2">
@@ -63,7 +63,7 @@ const Page = () => {
 
             <div>
               <p className="mb-1">Disabled file drop</p>
-              <FileDrop file={file} setFile={setFile} disabled />
+              <FileDrop file={file} setFile={setFile} disabled={true} />
             </div>
 
             <div className="w-1/2">
@@ -73,7 +73,7 @@ const Page = () => {
 
             <div className="w-1/2">
               <p className="mb-1">Disabled file input upload</p>
-              <FileUpload disabled setFile={setFile} file={file} />
+              <FileUpload disabled={true} setFile={setFile} file={file} />
             </div>
           </div>
           <p className="mb-2">

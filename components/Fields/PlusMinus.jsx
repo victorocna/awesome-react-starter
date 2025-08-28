@@ -33,7 +33,7 @@ const PlusMinus = ({ id, onChange, max = null, min = 0, value: initialValue }) =
         id={id}
         className="w-14 cursor-default border-x border-neutral-300 px-3 py-2 text-center"
         value={value}
-        readOnly
+        readOnly={true}
         tabIndex={-1}
       />
       <button type="button" className="px-3 py-2" onClick={incrementValue}>

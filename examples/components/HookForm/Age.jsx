@@ -21,7 +21,13 @@ const Age = () => {
   }, [dateOfBirth, setValue]);
 
   return (
-    <Field as={Number} help="Computed from your date of birth" label="Age" name="age" readOnly />
+    <Field
+      as={Number}
+      help="Computed from your date of birth"
+      label="Age"
+      name="age"
+      readOnly={true}
+    />
   );
 };
 

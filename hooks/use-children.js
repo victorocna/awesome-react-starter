@@ -9,7 +9,7 @@ const useChildren = (children) => {
     const { children, label, value, ...rest } = props;
     return {
       label: label || children,
-      value: value || children,
+      value: value !== undefined ? value : children,
       ...rest,
     };
   }).filter(({ hidden }) => !hidden);

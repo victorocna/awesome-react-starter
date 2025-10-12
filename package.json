@@ -8,7 +8,14 @@
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tests": "playwright test playwright-tests",
+    "tests:desktop": "playwright test playwright-tests --project=\"desktop:email\" --project=\"desktop:e2e (auth)\" --project=\"desktop:ui (no auth)\"",
+    "tests:desktop:ui": "playwright test playwright-tests --project=\"desktop:email\" --project=\"desktop:e2e (auth)\" --project=\"desktop:ui (no auth)\" --ui",
+    "tests:desktop:headed": "playwright test playwright-tests --project=\"desktop:email\" --project=\"desktop:e2e (auth)\" --project=\"desktop:ui (no auth)\" --headed",
+    "tests:mobile": "playwright test playwright-tests --project=\"mobile:chrome:email\" --project=\"mobile:safari:email\" --project=\"mobile:chrome:e2e (auth)\" --project=\"mobile:safari:e2e (auth)\" --project=\"mobile:chrome:ui (no auth)\" --project=\"mobile:safari:ui (no auth)\"",
+    "tests:mobile:ui": "playwright test playwright-tests --project=\"mobile:chrome:email\" --project=\"mobile:safari:email\" --project=\"mobile:chrome:e2e (auth)\" --project=\"mobile:safari:e2e (auth)\" --project=\"mobile:chrome:ui (no auth)\" --project=\"mobile:safari:ui (no auth)\" --ui",
+    "tests:mobile:headed": "playwright test playwright-tests --project=\"mobile:chrome:email\" --project=\"mobile:safari:email\" --project=\"mobile:chrome:e2e (auth)\" --project=\"mobile:safari:e2e (auth)\" --project=\"mobile:chrome:ui (no auth)\" --project=\"mobile:safari:ui (no auth)\" --headed"
   },
   "keywords": [
     "react",
@@ -56,6 +63,8 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.0",
+    "@playwright/test": "^1.55.1",
     "@tanstack/react-query-devtools": "^5.85.5",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",

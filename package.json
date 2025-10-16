@@ -15,7 +15,8 @@
     "tests:desktop:headed": "playwright test playwright-tests --project=\"desktop:email\" --project=\"desktop:e2e (auth)\" --project=\"desktop:ui (no auth)\" --headed",
     "tests:mobile": "playwright test playwright-tests --project=\"mobile:chrome:email\" --project=\"mobile:safari:email\" --project=\"mobile:chrome:e2e (auth)\" --project=\"mobile:safari:e2e (auth)\" --project=\"mobile:chrome:ui (no auth)\" --project=\"mobile:safari:ui (no auth)\"",
     "tests:mobile:ui": "playwright test playwright-tests --project=\"mobile:chrome:email\" --project=\"mobile:safari:email\" --project=\"mobile:chrome:e2e (auth)\" --project=\"mobile:safari:e2e (auth)\" --project=\"mobile:chrome:ui (no auth)\" --project=\"mobile:safari:ui (no auth)\" --ui",
-    "tests:mobile:headed": "playwright test playwright-tests --project=\"mobile:chrome:email\" --project=\"mobile:safari:email\" --project=\"mobile:chrome:e2e (auth)\" --project=\"mobile:safari:e2e (auth)\" --project=\"mobile:chrome:ui (no auth)\" --project=\"mobile:safari:ui (no auth)\" --headed"
+    "tests:mobile:headed": "playwright test playwright-tests --project=\"mobile:chrome:email\" --project=\"mobile:safari:email\" --project=\"mobile:chrome:e2e (auth)\" --project=\"mobile:safari:e2e (auth)\" --project=\"mobile:chrome:ui (no auth)\" --project=\"mobile:safari:ui (no auth)\" --headed",
+    "mcp:auth": "npx -y @gongrzhe/server-gmail-autoauth-mcp auth"
   },
   "keywords": [
     "react",

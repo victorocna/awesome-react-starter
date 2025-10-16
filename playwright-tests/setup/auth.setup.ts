@@ -19,8 +19,8 @@ const USER_NAME = process.env.USER_NAME || 'E2E Test User';
 function getPasswordOrGenerate() {
   try {
     const secrets = readRuntimeSecrets?.();
-    if (secrets?.password && typeof secrets.password === 'string') {
-      return secrets.password;
+    if (secrets?.currentPassword && typeof secrets.currentPassword === 'string') {
+      return secrets.currentPassword;
     }
   } catch {
     /* ignore */
@@ -29,7 +29,7 @@ function getPasswordOrGenerate() {
 }
 
 test('authenticate via API (create if missing) and save storage', async ({ page }) => {
-  const password = getPasswordOrGenerate();
+  const currentPassword = getPasswordOrGenerate();
 
   // 1) Context API
   const api = await request.newContext({
@@ -43,7 +43,7 @@ test('authenticate via API (create if missing) and save storage', async ({ page 
       name: USER_NAME,
       email: EMAIL,
       confirmed: true,
-      password,
+      password: currentPassword,
       'g-recaptcha-response': RECAPTCHA,
     },
     failOnStatusCode: false,
@@ -56,14 +56,14 @@ test('authenticate via API (create if missing) and save storage', async ({ page 
   }
 
   if (signupRes.status() === 201) {
-    writeRuntimeSecrets({ password });
+    writeRuntimeSecrets({ currentPassword });
   }
 
   // 3) Login (aici serverul îți poate seta refresh-token în cookie ȘI/SAU returna token JSON)
   const loginRes = await api.post('/login', {
     data: {
       email: EMAIL,
-      password,
+      password: currentPassword,
       'g-recaptcha-response': RECAPTCHA,
     },
     failOnStatusCode: false,

@@ -87,7 +87,7 @@ export default defineConfig({
       },
     },
     {
-      name: 'mobile:crome:email',
+      name: 'mobile:chrome:email',
       grep: /@mail/,
       fullyParallel: false,
       workers: 1,

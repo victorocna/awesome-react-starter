@@ -5,8 +5,7 @@ const NEW_PASSWORD = generateStrongPassword();
 const MISMATCH_PASSWORD = 'MismatchPassword!';
 
 async function gotoProfile(page) {
-  await page.goto('/admin');
-  await page.getByRole('link', { name: /profile/i }).click();
+  await page.goto('/examples/profile');
   await expect(page).toHaveURL(/\/examples\/profile/);
 }
 

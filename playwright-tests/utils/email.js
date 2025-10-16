@@ -2,10 +2,11 @@ import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
 
 function credentialsPath() {
-  if (process.env.GMAIL_CREDENTIALS_PATH) return process.env.GMAIL_CREDENTIALS_PATH;
-  return process.platform === 'win32'
-    ? `${process.env.USERPROFILE}\\.gmail-mcp\\credentials.json`
-    : `${process.env.HOME}/.gmail-mcp/credentials.json`;
+  // if (process.env.GMAIL_CREDENTIALS_PATH) return process.env.GMAIL_CREDENTIALS_PATH;
+  // return process.platform === 'win32'
+  //   ? `${process.env.USERPROFILE}\\.gmail-mcp\\credentials.json`
+  //   : `${process.env.HOME}/.gmail-mcp/credentials.json`;
+  return 'playwright-tests/setup/credentials.json';
 }
 
 async function withGmailMCP(run) {

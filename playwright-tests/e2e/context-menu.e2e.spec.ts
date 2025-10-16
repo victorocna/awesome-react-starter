@@ -32,7 +32,6 @@ test.describe('Context Menu page', () => {
   });
 
   test('shows context menu with mixed options', async ({ page }) => {
-    await page.goto('/examples/context-menu');
     await openContextMenu(page, 2);
     await expect(page.getByRole('button', { name: /option 1/i })).toBeVisible();
     await expect(page.getByRole('button', { name: /link 1/i })).toBeVisible();

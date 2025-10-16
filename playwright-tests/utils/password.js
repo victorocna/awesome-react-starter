@@ -2,7 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const RUNTIME_FILE = path.resolve(process.cwd(), '.e2e-runtime.secrets.json');
+const RUNTIME_FILE = path.resolve(
+  process.cwd(),
+  'playwright-tests/setup/.e2e-runtime.secrets.json'
+);
 
 function readRuntimeSecrets() {
   try {
@@ -17,7 +20,6 @@ function readRuntimeSecrets() {
 }
 
 function writeRuntimeSecrets(next) {
-  // scriem atomic-ish
   const tmp = RUNTIME_FILE + '.tmp';
   fs.writeFileSync(tmp, JSON.stringify(next, null, 2), 'utf8');
   fs.renameSync(tmp, RUNTIME_FILE);
@@ -46,7 +48,6 @@ function generateStrongPassword() {
     '*',
   ];
   const mix = base + must.map(pick).join('');
-  // amestecăm
   return shuffle(mix).slice(0, 16);
 
   function pick(arr) {

@@ -109,6 +109,6 @@ build/
 # playwright
 playwright-tests/setup/user.json
 test-results/
-.e2e-runtime.secrets.json
+playwright-tests/setup/.e2e-runtime.secrets.json
 credentials.json
 gcp-oauth.keys.json

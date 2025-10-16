@@ -34,8 +34,7 @@ async function setCompletionFilter(page, label: 'View all' | 'Only pending' | 'O
 
 test.describe('To-do List page', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/admin');
-    await page.getByRole('link', { name: /to ?do list/i }).click();
+    await page.goto('/examples/todo-list');
     await expect(page).toHaveURL(/\/examples\/todo-list/);
   });
 

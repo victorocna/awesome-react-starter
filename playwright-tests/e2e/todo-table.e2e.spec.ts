@@ -1,16 +1,11 @@
 import { test, expect } from '@playwright/test';
 
-async function gotoAdmin(page) {
-  await page.goto('/admin');
-}
 async function gotoTodoList(page) {
-  await gotoAdmin(page);
-  await page.getByRole('link', { name: /to ?do list/i }).click();
+  await page.goto('/examples/todo-list');
   await expect(page).toHaveURL(/\/examples\/todo-list/);
 }
 async function gotoTodoTable(page) {
-  await gotoAdmin(page);
-  await page.getByRole('link', { name: /to ?do table/i }).click();
+  await page.goto('/examples/todo-table');
   await expect(page).toHaveURL(/\/examples\/todo-table/);
 }
 

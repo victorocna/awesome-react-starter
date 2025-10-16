@@ -1,7 +1,11 @@
 import { test, expect, request } from '@playwright/test';
 import * as fs from 'fs';
 import * as path from 'path';
-import { readRuntimeSecrets, generateStrongPassword } from 'playwright-tests/utils/password';
+import {
+  readRuntimeSecrets,
+  generateStrongPassword,
+  writeRuntimeSecrets,
+} from 'playwright-tests/utils/password';
 
 const APP = process.env.APP_BASE_URL!;
 const API = process.env.API_BASE_URL || APP;
@@ -15,8 +19,8 @@ const USER_NAME = process.env.USER_NAME || 'E2E Test User';
 function getPasswordOrGenerate() {
   try {
     const secrets = readRuntimeSecrets?.();
-    if (secrets?.currentPassword && typeof secrets.currentPassword === 'string') {
-      return secrets.currentPassword;
+    if (secrets?.password && typeof secrets.password === 'string') {
+      return secrets.password;
     }
   } catch {
     /* ignore */
@@ -49,6 +53,10 @@ test('authenticate via API (create if missing) and save storage', async ({ page 
   if (!okSignup) {
     const body = await safeJson(signupRes);
     throw new Error(`[signup] ${signupRes.status()} ${JSON.stringify(body)}`);
+  }
+
+  if (signupRes.status() === 201) {
+    writeRuntimeSecrets({ password });
   }
 
   // 3) Login (aici serverul îți poate seta refresh-token în cookie ȘI/SAU returna token JSON)

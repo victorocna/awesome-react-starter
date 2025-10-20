@@ -37,15 +37,13 @@ POSTMARK_SECRET="[key]"
 
 ### 📁 4. Configure Gmail credentials
 
-1.  Copy the .gmail-mcp folder (which contains credentials.json) from MEGA.
+1.  Copy the .gmail-mcp folder (which contains gcp-oauth.keys.json) from MEGA (look up for a directory named Playwright).
 
 2.  Move it to your user directory:
 
         a. Windows: C:\Users\[numeUser]\.gmail-mcp
 
-        b. macOS:
-
-    /Users/[numeUser]/.gmail-mcp
+        b. macOS: /Users/[numeUser]/.gmail-mcp
 
 ### ⚙️ 5. Update VS Code user settings
 

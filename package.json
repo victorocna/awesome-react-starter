@@ -16,7 +16,8 @@
     "tests:mobile": "playwright test playwright-tests --project=\"mobile:chrome:email\" --project=\"mobile:safari:email\" --project=\"mobile:chrome:e2e (auth)\" --project=\"mobile:safari:e2e (auth)\" --project=\"mobile:chrome:ui (no auth)\" --project=\"mobile:safari:ui (no auth)\"",
     "tests:mobile:ui": "playwright test playwright-tests --project=\"mobile:chrome:email\" --project=\"mobile:safari:email\" --project=\"mobile:chrome:e2e (auth)\" --project=\"mobile:safari:e2e (auth)\" --project=\"mobile:chrome:ui (no auth)\" --project=\"mobile:safari:ui (no auth)\" --ui",
     "tests:mobile:headed": "playwright test playwright-tests --project=\"mobile:chrome:email\" --project=\"mobile:safari:email\" --project=\"mobile:chrome:e2e (auth)\" --project=\"mobile:safari:e2e (auth)\" --project=\"mobile:chrome:ui (no auth)\" --project=\"mobile:safari:ui (no auth)\" --headed",
-    "mcp:auth": "npx -y @gongrzhe/server-gmail-autoauth-mcp auth"
+    "mcp:auth": "npx -y @gongrzhe/server-gmail-autoauth-mcp auth",
+    "tests:auth": "npx playwright test playwright-tests/setup/auth.setup.ts"
   },
   "keywords": [
     "react",

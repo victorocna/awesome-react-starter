@@ -3,7 +3,7 @@ import { MenuGroup, MenuItem } from '@components';
 const Pages = () => {
   return (
     <>
-      <MenuItem href="/admin" level="1">
+      <MenuItem href="/mgt-portal/admin" level="1">
         Dashboard
       </MenuItem>
       <MenuItem href="/examples/todo-list" level="1">

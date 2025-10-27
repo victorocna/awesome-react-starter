@@ -16,7 +16,7 @@ const login = async (ref, data) => {
 
     // Notify user and other actions
     toaster.success('Login successful');
-    router.push('/admin');
+    router.push('/mgt-portal/admin');
   } catch (err) {
     const { message } = extractError(err);
     if (message) {

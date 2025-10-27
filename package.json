@@ -40,7 +40,7 @@
     "lodash": "^4.17.21",
     "merge-class-names": "^1.4.2",
     "next": "^15.2.4",
-    "pino": "^8.4.0",
+    "pino": "^10.1.0",
     "query-string": "^7.0.0",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.2",

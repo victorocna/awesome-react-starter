@@ -23,6 +23,23 @@ module.exports = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: '/mgt-portal/admin/:path*',
+        destination: '/admin/:path*',
+      },
+    ];
+  },
+  async redirects() {
+    return [
+      {
+        source: '/admin/:path*',
+        destination: '/404',
+        permanent: false,
+      },
+    ];
+  },
   generateEtags: false,
   poweredByHeader: false,
   compiler: {

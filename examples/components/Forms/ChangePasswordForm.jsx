@@ -7,7 +7,7 @@ import { initialValues, validationSchema } from '@models/change-password';
 const ChangePasswordForm = () => {
   const mutation = useMutation(changePassword, {
     successMessage: 'Success! The password has changed!',
-    redirectOnSuccess: '/admin',
+    redirectOnSuccess: '/mgt-portal/admin',
   });
 
   const handleSubmit = (data) => {

@@ -1,4 +1,4 @@
-import { refreshToken } from '@api';
+import refreshToken from '@api/refresh-token';
 import jwt from 'jsonwebtoken';
 import isTokenExpired from './is-token-expired';
 import store from './store';

@@ -10,7 +10,7 @@ const withAuth = (WrappedComponent) => {
     } catch (error) {
       console.error('Authorization failed:', error);
       store.dispatch({ type: 'REMOVE' });
-      Router.push('/login');
+      Router.replace('/login');
     }
   };
 

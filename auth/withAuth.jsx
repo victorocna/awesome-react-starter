@@ -1,56 +1,30 @@
+import { ensureUser, store } from '@auth';
 import Router from 'next/router';
-import { useEffect, useState } from 'react';
-import ensureUser from './ensure-user';
-import store from './store';
+import { useEffect } from 'react';
 
-/**
- * @see https://github.com/zeit/next.js/issues/153#issuecomment-257924301
- */
 const withAuth = (WrappedComponent) => {
-  const verifyUser = async (onSuccess) => {
+  const verifyAuth = async () => {
     try {
-      const token = await ensureUser();
-      store.dispatch({ type: 'SET', jwt: token });
-      if (typeof onSuccess === 'function') {
-        onSuccess();
-      }
-    } catch {
+      const accessToken = await ensureUser();
+      store.dispatch({ type: 'SET', jwt: accessToken });
+    } catch (error) {
+      console.error('Authorization failed:', error);
+      store.dispatch({ type: 'REMOVE' });
       Router.replace('/login');
     }
   };
 
   const Wrapper = (props) => {
-    const [verified, setVerified] = useState(false);
-
     useEffect(() => {
-      let mounted = true;
+      // Initial authentication check
+      verifyAuth();
 
-      const onVerificationSuccess = () => {
-        if (mounted) {
-          setVerified(true);
-        }
-      };
-
-      const handleFocus = () => {
-        verifyUser(onVerificationSuccess);
-      };
-
-      verifyUser(onVerificationSuccess);
-
-      // Refresh JWT token when window is focused
-      window.addEventListener('focus', handleFocus);
-
-      return () => {
-        mounted = false;
-        window.removeEventListener('focus', handleFocus);
-      };
+      // Re-run verification on window focus and cleanup
+      window.addEventListener('focus', verifyAuth);
+      return () => window.removeEventListener('focus', verifyAuth);
     }, []);
 
-    if (!verified) {
-      return null;
-    }
-
-    return <WrappedComponent withAuth {...props} />;
+    return <WrappedComponent {...props} />;
   };
 
   return Wrapper;

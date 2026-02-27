@@ -17,9 +17,32 @@ module.exports = {
   },
   async headers() {
     return [
+      // Apply security headers to all routes
       {
         source: '/:path*',
         headers,
+      },
+      // Cache images and icons for 1 year
+      {
+        source: ['/images/:path*', '/icons/:path*'],
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+      },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/mgt-portal/admin/:path*',
+        destination: '/admin/:path*',
+      },
+    ];
+  },
+  async redirects() {
+    return [
+      {
+        source: '/admin/:path*',
+        destination: '/404',
+        permanent: false,
       },
     ];
   },

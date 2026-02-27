@@ -135,7 +135,7 @@ You can append the following flags for additional functionality:
 Example:
 
 ```sh
-npx playwright-tests test  playwright-tests/e2e/forgot-password.e2e.spec.ts --headed
+npx playwright test playwright-tests/e2e/forgot-password.e2e.spec.ts --headed
 ```
 
 Also available commands:

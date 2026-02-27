@@ -3,19 +3,10 @@ import { Loading } from '@components';
 import { useQuery } from '@tanstack/react-query';
 
 const Confirm = ({ hash }) => {
-  const {
-    data,
-    error,
-    isPending, // v5
-    isError, // v5
-    isSuccess, // v5
-    fetchStatus, // 'idle' | 'fetching' | 'paused'
-  } = useQuery({
+  const { isPending, isError, isSuccess } = useQuery({
     queryKey: ['confirm', hash],
     queryFn: () => confirm(hash),
-    enabled: Boolean(hash), // avoid running with undefined hash
-    retry: 1, // optional
-    staleTime: 0, // optional
+    enabled: Boolean(hash),
   });
 
   return (

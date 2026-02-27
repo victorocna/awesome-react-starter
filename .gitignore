@@ -105,3 +105,10 @@ build/
 # vscode
 .vscode/*
 !.vscode/settings.json
+
+# playwright
+playwright-tests/setup/user.json
+test-results/
+playwright-tests/setup/.e2e-runtime.secrets.json
+credentials.json
+gcp-oauth.keys.json

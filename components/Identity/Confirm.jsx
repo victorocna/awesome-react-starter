@@ -10,8 +10,8 @@ const Confirm = ({ hash }) => {
   // We need to use reCAPTCHA since it's a public endpoint
   const { status, mutate } = useMutation(() => confirm(ref, hash));
 
-  // Initialize the mutation on component mount
-  useEffect(() => mutate(), [mutate]);
+  // Run the mutation only once when the component mounts
+  useEffect(() => mutate(), []);
 
   return (
     <>

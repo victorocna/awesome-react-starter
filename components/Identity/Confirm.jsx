@@ -1,9 +1,17 @@
 import { confirm } from '@api/identity';
 import { Loading } from '@components';
-import { useQuery } from '@tanstack/react-query';
+import { Recaptcha } from '@components/Fields';
+import { useMutation } from '@hooks';
+import { useEffect, useRef } from 'react';
 
 const Confirm = ({ hash }) => {
-  const { status } = useQuery(`confirm/${hash}`, () => confirm(hash));
+  const ref = useRef(null);
+
+  // We need to use reCAPTCHA since it's a public endpoint
+  const { status, mutate } = useMutation(() => confirm(ref, hash));
+
+  // Run the mutation only once when the component mounts
+  useEffect(() => mutate(), []);
 
   return (
     <>
@@ -14,6 +22,7 @@ const Confirm = ({ hash }) => {
       {status === 'success' && (
         <p className="animated fadeIn text-green-700">Success! Your account was confirmed.</p>
       )}
+      <Recaptcha ref={ref} />
     </>
   );
 };

@@ -1,23 +1,28 @@
 import { confirm } from '@api/identity';
 import { Loading } from '@components';
-import { useQuery } from '@tanstack/react-query';
+import { Recaptcha } from '@components/Fields';
+import { useMutation } from '@hooks';
+import { useEffect, useRef } from 'react';
 
 const Confirm = ({ hash }) => {
-  const { isPending, isError, isSuccess } = useQuery({
-    queryKey: ['confirm', hash],
-    queryFn: () => confirm(hash),
-    enabled: Boolean(hash),
-  });
+  const ref = useRef(null);
+
+  // We need to use reCAPTCHA since it's a public endpoint
+  const { status, mutate } = useMutation(() => confirm(ref, hash));
+
+  // Initialize the mutation on component mount
+  useEffect(() => mutate(), [mutate]);
 
   return (
     <>
-      {isPending && <Loading />}
-      {isError && (
+      {status === 'pending' && <Loading />}
+      {status === 'error' && (
         <p className="animated fadeIn text-red-600">Error! Your account was not confirmed.</p>
       )}
-      {isSuccess && (
+      {status === 'success' && (
         <p className="animated fadeIn text-green-700">Success! Your account was confirmed.</p>
       )}
+      <Recaptcha ref={ref} />
     </>
   );
 };

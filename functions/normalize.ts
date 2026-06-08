@@ -1,5 +1,5 @@
-const normalize = (input) => {
-  const walk = (v) => {
+const normalize = (input: unknown): { norm: unknown; key: string } => {
+  const walk = (v: unknown): [unknown, string | undefined] => {
     if (v == null) {
       return [undefined, undefined];
     }
@@ -22,8 +22,8 @@ const normalize = (input) => {
       return [iso, JSON.stringify(iso)];
     }
     if (Array.isArray(v)) {
-      const out = [];
-      const parts = [];
+      const out: unknown[] = [];
+      const parts: (string | undefined)[] = [];
       for (let i = 0; i < v.length; i++) {
         const [nv, ks] = walk(v[i]);
         if (nv !== undefined) {
@@ -34,12 +34,13 @@ const normalize = (input) => {
       return [out, `[${parts.join(',')}]`];
     }
     if (typeof v === 'object') {
-      const keys = Object.keys(v).sort();
-      const out = {};
-      const parts = [];
+      const obj = v as Record<string, unknown>;
+      const keys = Object.keys(obj).sort();
+      const out: Record<string, unknown> = {};
+      const parts: string[] = [];
       for (let i = 0; i < keys.length; i++) {
         const k = keys[i];
-        const [nv, ks] = walk(v[k]);
+        const [nv, ks] = walk(obj[k]);
         if (nv !== undefined) {
           out[k] = nv;
           parts.push(`${JSON.stringify(k)}:${ks}`);

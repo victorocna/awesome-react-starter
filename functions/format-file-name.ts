@@ -1,6 +1,8 @@
 import { size } from 'lodash';
 
-const formatFileName = (files) => {
+type FileLike = { name: string };
+
+const formatFileName = (files: Record<string, FileLike>): string => {
   try {
     if (size(Object.keys(files)) === 1) {
       return files[0].name;

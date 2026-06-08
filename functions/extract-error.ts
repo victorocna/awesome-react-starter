@@ -1,20 +1,29 @@
-const flattenValidation = (errors) => {
+interface ExtractedError {
+  message: string;
+  status?: number;
+  code?: string;
+  data?: unknown;
+  validation?: string[];
+  redirectedToLogin?: boolean;
+}
+
+const flattenValidation = (errors: unknown): string[] => {
   if (!errors) {
     return [];
   }
   if (Array.isArray(errors)) {
-    return errors.map((e) => (typeof e === 'string' ? e : e?.message || JSON.stringify(e)));
+    return errors.map((e: any) => (typeof e === 'string' ? e : e?.message || JSON.stringify(e)));
   }
   if (typeof errors === 'object') {
     // e.g. { field1: ['msg1','msg2'], field2: ['msg3'] }
-    return Object.values(errors)
+    return Object.values(errors as Record<string, unknown>)
       .flat()
       .map((e) => String(e));
   }
   return [String(errors)];
 };
 
-const extractError = (err) => {
+const extractError = (err: any): ExtractedError => {
   if (!err) {
     return { message: 'Unexpected error' };
   }

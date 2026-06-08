@@ -7,7 +7,7 @@ const whoami = () => {
     const decoded = jwt.decode(token);
 
     return decoded;
-  } catch (err) {
+  } catch {
     return {};
   }
 };

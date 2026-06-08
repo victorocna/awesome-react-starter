@@ -81,6 +81,9 @@ typings/
 .next
 out/
 
+# next.js typescript
+next-env.d.ts
+
 # nuxt.js build output
 .nuxt
 

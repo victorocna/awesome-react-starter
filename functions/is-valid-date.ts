@@ -1,6 +1,6 @@
 import { isValid } from 'date-fns';
 
-const isValidDate = (date) => {
+const isValidDate = (date: unknown): boolean => {
   try {
     if (typeof date === 'string') {
       return isValid(new Date(date));

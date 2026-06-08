@@ -1,6 +1,6 @@
 import { last } from 'lodash';
 
-const extractIdFromSlug = (slug) => {
+const extractIdFromSlug = (slug: string): string | undefined => {
   try {
     return last(slug.split('-'));
   } catch {

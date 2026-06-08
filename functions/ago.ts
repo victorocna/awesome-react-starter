@@ -1,9 +1,9 @@
 import { formatDistance } from 'date-fns';
 
-const ago = (date) => {
+const ago = (date: string | number | Date): string => {
   try {
     return formatDistance(new Date(date), new Date());
-  } catch (err) {
+  } catch {
     return '';
   }
 };

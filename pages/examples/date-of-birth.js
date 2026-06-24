@@ -1,5 +1,5 @@
 import { DateOfBirth } from '@components/Fields';
-import { Layout } from '@examples/components';
+import { Layout } from '@components';
 import { DateOfBirthForm } from '@examples/components/Forms';
 import { isValidDate } from '@functions';
 import { useState } from 'react';
@@ -12,7 +12,7 @@ const Page = () => {
   };
 
   return (
-    <Layout title="Date of birth">
+    <>
       <div className="prose-sm">
         <h3 className="mt-0">Example #1</h3>
         <p className="mb-1">Classic date of birth field</p>
@@ -30,7 +30,7 @@ const Page = () => {
           <DateOfBirthForm />
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 
@@ -48,3 +48,14 @@ export async function getStaticProps() {
 }
 
 export default Page;
+
+
+/**
+ * Attaches the default layout to the page.
+ *
+ * @param {React.ReactNode} page - The page content.
+ * @returns {React.ReactElement} The layout wrapper.
+ */
+Page.getLayout = function getLayout(page) {
+  return <Layout title="Date of birth">{page}</Layout>;
+};

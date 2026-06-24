@@ -1,4 +1,4 @@
-import { classnames } from '@lib';
+import { cn } from '@lib/utils';
 
 const Trim = ({ extraClass, value }) => {
   if (!value) {
@@ -19,7 +19,7 @@ const Trim = ({ extraClass, value }) => {
 
   return (
     <div
-      className={classnames('cursor-default overflow-x-auto whitespace-nowrap', extraClass)}
+      className={cn('cursor-default overflow-x-auto whitespace-nowrap', extraClass)}
       title={value}
     >
       {format(value)}

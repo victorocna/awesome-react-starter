@@ -1,10 +1,11 @@
 import js from '@eslint/js';
-import globals from 'globals';
+import tsPlugin from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import prettier from 'eslint-config-prettier';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import prettier from 'eslint-config-prettier';
-import tsParser from '@typescript-eslint/parser';
-import tsPlugin from '@typescript-eslint/eslint-plugin';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import globals from 'globals';
 
 export default [
   {
@@ -40,6 +41,7 @@ export default [
       'react/prop-types': 'off',
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
+      curly: ['error', 'all'],
     },
   },
   {
@@ -49,6 +51,7 @@ export default [
     },
     plugins: {
       '@typescript-eslint': tsPlugin,
+      'simple-import-sort': simpleImportSort,
     },
     rules: {
       'no-undef': 'off',
@@ -57,7 +60,14 @@ export default [
         'error',
         { ignoreRestSiblings: true, caughtErrors: 'none' },
       ],
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
     },
   },
   prettier,
+  {
+    rules: {
+      'curly': ['error', 'all'],
+    },
+  },
 ];

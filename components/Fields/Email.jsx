@@ -1,7 +1,7 @@
+import { Input } from '@components/ui/input';
+
 const Email = (props) => {
-  return (
-    <input type="email" inputMode="email" className="input" autoComplete="username" {...props} />
-  );
+  return <Input type="email" inputMode="email" autoComplete="username" {...props} />;
 };
 
 export default Email;

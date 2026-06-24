@@ -22,6 +22,8 @@
       "@auth/*": ["./auth/*"],
       "@components": ["./components/index"],
       "@components/*": ["./components/*"],
+      "@components/ui": ["./components/ui/index"],
+      "@components/ui/*": ["./components/ui/*"],
       "@constants": ["./constants/index"],
       "@constants/*": ["./constants/*"],
       "@css": ["./css/index"],
@@ -40,6 +42,13 @@
       "@site.config": ["./site.config"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }

@@ -1,7 +1,8 @@
-import { Bone } from '@components';
 import { TableHeader } from '@components/Tables';
+import { Skeleton } from '@components/ui/skeleton';
 import { useTable } from '@hooks';
 import { bogus, toaster } from '@lib';
+import { cn } from '@lib/utils';
 import { useEffect } from 'react';
 
 const TableError = ({ name, columns }) => {
@@ -17,7 +18,7 @@ const TableError = ({ name, columns }) => {
       <tr key={`${name}-${i}`}>
         {table.getAllLeafColumns().map((column, j) => (
           <td key={`${name}-${i}-${j}`} className="whitespace-nowrap p-4">
-            <Bone type="error" extraClass={column?.extraClass} />
+            <Skeleton className={cn('w-full bg-destructive', column?.extraClass)} />
           </td>
         ))}
       </tr>

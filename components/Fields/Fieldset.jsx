@@ -1,16 +1,17 @@
-import React from 'react';
+import {
+  FieldDescription,
+  FieldGroup,
+  FieldLegend,
+  FieldSet as FieldsetPrimitive,
+} from '@components/ui/field';
 
-const Fieldset = ({ label, name, help, children }) => {
+const Fieldset = ({ label, help, children }) => {
   return (
-    <fieldset>
-      {label && (
-        <label htmlFor={name} className="form-label mb-0 w-full cursor-pointer">
-          {label}
-        </label>
-      )}
-      {children}
-      {help && <div className="form-help text-sm text-secondary">{help}</div>}
-    </fieldset>
+    <FieldsetPrimitive>
+      {label && <FieldLegend>{label}</FieldLegend>}
+      {help && <FieldDescription>{help}</FieldDescription>}
+      <FieldGroup>{children}</FieldGroup>
+    </FieldsetPrimitive>
   );
 };
 

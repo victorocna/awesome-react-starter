@@ -1,129 +1,100 @@
-import { withAuth } from '@auth';
-import { Button, ContextMenu } from '@components';
-import { Layout } from '@examples/components';
-import { useState } from 'react';
+import { Layout } from '@components';
+import { Button } from '@components/ui/button';
+import {
+  ContextMenu,
+  ContextMenuCheckboxItem,
+  ContextMenuContent,
+  ContextMenuGroup,
+  ContextMenuItem,
+  ContextMenuLabel,
+  ContextMenuRadioGroup,
+  ContextMenuRadioItem,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
+  ContextMenuSub,
+  ContextMenuSubContent,
+  ContextMenuSubTrigger,
+  ContextMenuTrigger,
+} from '@components/ui/context-menu';
+import Link from 'next/link';
 
-const Page = () => {
-  const [showOptions, setShowOptions] = useState('admin');
-
-  const options = [
-    {
-      label: 'Option 1',
-      onClick: () => alert('Option 1'),
-    },
-    {
-      label: 'Option 2',
-      onClick: () => alert('Option 2'),
-    },
-  ];
-
-  const linkOptions = [
-    {
-      label: 'Link 1',
-      href: '/examples/buttons',
-    },
-    {
-      label: 'Link 2',
-      href: '/examples/context-menu',
-    },
-  ];
-
-  const mixedOptions = [
-    {
-      label: 'Option 1',
-      onClick: () => alert('Option 1'),
-    },
-    {
-      label: 'Link 1',
-      href: '/examples/buttons',
-    },
-  ];
-
-  const userAndAdminOptions = [
-    {
-      label: 'Admin option 1',
-      onClick: () => alert('Admin option 1'),
-      renderCondition: showOptions === 'admin',
-    },
-    {
-      label: 'Admin option 2',
-      onClick: () => setShowOptions('Admin option 2'),
-      renderCondition: showOptions === 'admin',
-    },
-    {
-      label: 'User option 1',
-      onClick: () => alert('User option 1'),
-      renderCondition: showOptions === 'user',
-    },
-    {
-      label: 'User option 2',
-      onClick: () => alert('User option 2'),
-      renderCondition: showOptions === 'user',
-    },
-  ];
-
+export default function Page() {
   return (
-    <Layout title="Context Menu">
-      <div className="prose-sm">
-        <h3 className="mt-0">Example #1</h3>
-        <p>Context menu with options that have onClick (will execute a function when clicked)</p>
-        <div className="not-prose w-36">
-          <ContextMenu options={options}>
-            <i className="fa-solid fa-ellipsis-vertical text-xl" />
-          </ContextMenu>
-        </div>
-        <h3 className="mt-4">Example #2</h3>
-        <p>Context menu with options that have href (will redirect to a new page when clicked)</p>
-        <div className="not-prose w-36">
-          <ContextMenu options={linkOptions}>
-            <i className="fa-solid fa-ellipsis-vertical text-xl" />
-          </ContextMenu>
-        </div>
-        <h3 className="mt-4">Example #3</h3>
-        <p>
-          Context menu with mixed options (some have onClick and some have href) and renderCondition
-        </p>
-        <div className="not-prose w-36">
-          <ContextMenu options={mixedOptions}>
-            <i className="fa-solid fa-ellipsis-vertical text-xl" />
-          </ContextMenu>
-        </div>
-        <h3 className="mt-4">Example #4</h3>
-        <p>Context menu with custom button (is given as a child of the component)</p>
-        <div className="not-prose w-44">
-          <ContextMenu options={options}>
-            <div className="button full primary">Custom button</div>
-          </ContextMenu>
-        </div>
-        <h3 className="mt-4">Example #5</h3>
-        <p>
-          Context menu with options that have renderCondition (will only show options that match the
-          condition)
-        </p>
-        <div className="not-prose w-36">
-          <ContextMenu options={userAndAdminOptions}>
-            <i className="fa-solid fa-ellipsis-vertical text-xl" />
-          </ContextMenu>
-        </div>
-        <p>
-          Currently showing options for: <span className="font-bold">{showOptions}</span> (used to
-          demonstrate renderCondition)
-        </p>
-        <div className="flex gap-2">
-          <Button onClick={() => setShowOptions('admin')} className="button full primary">
-            Show admin options
-          </Button>
-          <Button onClick={() => setShowOptions('user')} className="button full primary">
-            Show user options
-          </Button>
-        </div>
-      </div>
-    </Layout>
+    <>
+            <div className="flex flex-col gap-2 border-b pb-4">
+              <h2 className="text-xl font-bold font-heading">Context Menu</h2>
+              <div className="flex items-center gap-4">
+                <p className="text-sm text-muted-foreground">
+                  Displays a menu triggered by a right-click action.
+                </p>
+                <Button asChild variant="link" size="xs">
+                  <Link target="_blank" href="https://ui.shadcn.com/docs/components/context-menu">
+                    See Documentation
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            <div className="flex flex-1 items-start justify-start py-4">
+              <ContextMenu>
+                <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
+                  <span className="hidden pointer-fine:inline-block">Right click here</span>
+                  <span className="hidden pointer-coarse:inline-block">Long press here</span>
+                </ContextMenuTrigger>
+                <ContextMenuContent className="w-48">
+                  <ContextMenuGroup>
+                    <ContextMenuItem>
+                      Back
+                      <ContextMenuShortcut>⌘[</ContextMenuShortcut>
+                    </ContextMenuItem>
+                    <ContextMenuItem disabled>
+                      Forward
+                      <ContextMenuShortcut>⌘]</ContextMenuShortcut>
+                    </ContextMenuItem>
+                    <ContextMenuItem>
+                      Reload
+                      <ContextMenuShortcut>⌘R</ContextMenuShortcut>
+                    </ContextMenuItem>
+                    <ContextMenuSub>
+                      <ContextMenuSubTrigger>More Tools</ContextMenuSubTrigger>
+                      <ContextMenuSubContent className="w-44">
+                        <ContextMenuGroup>
+                          <ContextMenuItem>Save Page...</ContextMenuItem>
+                          <ContextMenuItem>Create Shortcut...</ContextMenuItem>
+                          <ContextMenuItem>Name Window...</ContextMenuItem>
+                        </ContextMenuGroup>
+                        <ContextMenuSeparator />
+                        <ContextMenuGroup>
+                          <ContextMenuItem>Developer Tools</ContextMenuItem>
+                        </ContextMenuGroup>
+                        <ContextMenuSeparator />
+                        <ContextMenuGroup>
+                          <ContextMenuItem variant="destructive">Delete</ContextMenuItem>
+                        </ContextMenuGroup>
+                      </ContextMenuSubContent>
+                    </ContextMenuSub>
+                  </ContextMenuGroup>
+                  <ContextMenuSeparator />
+                  <ContextMenuGroup>
+                    <ContextMenuCheckboxItem checked>Show Bookmarks</ContextMenuCheckboxItem>
+                    <ContextMenuCheckboxItem>Show Full URLs</ContextMenuCheckboxItem>
+                  </ContextMenuGroup>
+                  <ContextMenuSeparator />
+                  <ContextMenuGroup>
+                    <ContextMenuRadioGroup value="pedro">
+                      <ContextMenuLabel>People</ContextMenuLabel>
+                      <ContextMenuRadioItem value="pedro">Pedro Duarte</ContextMenuRadioItem>
+                      <ContextMenuRadioItem value="colm">Colm Tuite</ContextMenuRadioItem>
+                    </ContextMenuRadioGroup>
+                  </ContextMenuGroup>
+                </ContextMenuContent>
+              </ContextMenu>
+            </div>
+          </>
   );
-};
+}
 
 export async function getStaticProps() {
-  // hide page on production environments
   if (process.env.NODE_ENV === 'production') {
     return {
       notFound: true,
@@ -135,4 +106,13 @@ export async function getStaticProps() {
   };
 }
 
-export default withAuth(Page);
+
+/**
+ * Attaches the default layout to the page.
+ *
+ * @param {React.ReactNode} page - The page content.
+ * @returns {React.ReactElement} The layout wrapper.
+ */
+Page.getLayout = function getLayout(page) {
+  return <Layout title="Context Menu">{page}</Layout>;
+};

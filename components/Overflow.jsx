@@ -1,9 +1,9 @@
-import { classnames } from '@lib';
+import { cn } from '@lib/utils';
 import { Children, cloneElement } from 'react';
 
 const Overflow = ({ children }) => {
   const append = (child) => {
-    const className = classnames(child.props.className, 'truncate');
+    const className = cn(child.props.className, 'truncate');
     const props = {
       ...child.props,
       title: child.props.children,

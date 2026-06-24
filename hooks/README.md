@@ -6,25 +6,6 @@ Array state helpers.
 
 Useful for scenarios like pushing a new item in an array, removing an item from an array and others.
 
-## useCollapsible
-
-Determines from local storage if a collapsible section is opened or closed.
-
-Useful for scenarios like persisting the collapsed or expanded state of a multi level menu.
-
-```jsx
-const MenuGroup = () => {
-  const { isOpen, toggle } = useCollapsible(`menu.${name}`);
-
-  return (
-    <div className={classnames(!isOpen && 'hidden')}>
-      <MenuItem href="/about-us">About us</MenuItem>
-      <MenuItem href="/contact">Contact</MenuItem>
-    </div>
-  );
-};
-```
-
 ## useDebounce
 
 Updates a value with delay.

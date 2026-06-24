@@ -27,7 +27,7 @@ const StepOneForm = () => {
         </Field>
       </div>
       <Field as={Email} help="Required info" label="Email address" name="email" />
-      <Field as={Checkbox} name="terms" isCheckbox help="Help label">
+      <Field as={Checkbox} name="terms" help="Help label">
         I accept the terms and conditions of this application
       </Field>
       <Button className="button full primary" type="submit">

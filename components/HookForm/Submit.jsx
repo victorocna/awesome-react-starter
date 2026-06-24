@@ -1,5 +1,5 @@
-import { Button } from '@components';
-import { classnames } from '@lib';
+import { Button } from '@components/ui/button';
+import { Spinner } from '@components/ui/spinner';
 import { useFormContext } from 'react-hook-form';
 
 const Submit = ({ children, isLoading, ...props }) => {
@@ -11,14 +11,10 @@ const Submit = ({ children, isLoading, ...props }) => {
   props.disabled = disabled;
 
   return (
-    <div className="relative inline-flex items-center">
-      <Button type="submit" className="button full primary" {...props}>
-        <div className={classnames(disabled && 'invisible')}>{children}</div>
-      </Button>
-      {disabled && (
-        <img src="/icons/loading.gif" alt="loading" className="absolute inset-0 m-auto h-6 w-6" />
-      )}
-    </div>
+    <Button type="submit" {...props}>
+      {isLoading || isSubmitting ? <Spinner data-icon="inline-start" /> : null}
+      <div>{children}</div>
+    </Button>
   );
 };
 

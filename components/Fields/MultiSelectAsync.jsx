@@ -147,7 +147,7 @@ const MultiSelectAsync = ({
           <div className="dropdown cursor-pointer" onClick={toggleMultiselect}>
             <input
               id={id}
-              className="-my-2 w-full cursor-pointer select-none bg-transparent outline-none"
+              className="-my-2 w-full cursor-pointer select-none bg-transparent outline-hidden"
               readOnly={true}
               value={inputValue}
             />
@@ -162,7 +162,7 @@ const MultiSelectAsync = ({
                 {/* Search input */}
                 <div className="relative">
                   <input
-                    className="w-full rounded border border-gray-300 px-2 py-1 pr-8 transition duration-200 ease-in-out focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full rounded-sm border border-gray-300 px-2 py-1 pr-8 transition duration-200 ease-in-out focus:border-transparent focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                     onChange={handleSearchInputChange}
                     onKeyUp={debouncedKeyUp}
                     placeholder="Search..."
@@ -190,7 +190,7 @@ const MultiSelectAsync = ({
                     <div className="flex items-center">
                       <Button
                         onClick={handleSelectAll}
-                        className="my-1 rounded bg-primary px-2 py-1 text-white"
+                        className="my-1 rounded-sm bg-primary px-2 py-1 text-white"
                       >
                         {selectAll ? 'Deselect All' : 'Select All'}
                       </Button>
@@ -199,7 +199,7 @@ const MultiSelectAsync = ({
                     <div className="flex flex-col flex-wrap gap-2">
                       {options.map((option) => (
                         <label
-                          className="flex cursor-pointer select-none items-center space-x-2 rounded px-2 py-1 hover:bg-gray-100"
+                          className="flex cursor-pointer select-none items-center space-x-2 rounded-sm px-2 py-1 hover:bg-gray-100"
                           key={option.value}
                         >
                           <input

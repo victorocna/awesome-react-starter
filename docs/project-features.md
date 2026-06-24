@@ -22,7 +22,6 @@ Review and update the security headers in the `headers.js` file and analyse your
 
 - table components compatible with `react-table` package
 - data formatting components for showing dates, time, percentages, prices, plural
-- modal components and others compatible with `react-bootstrap` package
 - meta components: favicon, open graph, app head
 - layout components: layout, menu, context menu, bone, error boundary, error fallback
 - icon components: spinner, loading

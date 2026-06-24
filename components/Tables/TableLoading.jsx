@@ -1,7 +1,8 @@
-import { Bone } from '@components';
 import { TableHeader } from '@components/Tables';
+import { Skeleton } from '@components/ui/skeleton';
 import { useTable } from '@hooks';
 import { bogus } from '@lib';
+import { cn } from '@lib/utils';
 
 const TableLoading = ({ name, columns }) => {
   const table = useTable({ columns });
@@ -12,7 +13,7 @@ const TableLoading = ({ name, columns }) => {
       <tr key={`${name}-${i}`}>
         {table.getAllLeafColumns().map((column, j) => (
           <td key={`${name}-${i}-${j}`} className="whitespace-nowrap p-4">
-            <Bone type="pending" extraClass={column?.extraClass} />
+            <Skeleton className={cn('w-full', column?.extraClass)} />
           </td>
         ))}
       </tr>

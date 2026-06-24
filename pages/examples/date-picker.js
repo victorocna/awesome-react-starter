@@ -1,5 +1,5 @@
 import { DatePicker } from '@components/Fields';
-import { Layout } from '@examples/components';
+import { Layout } from '@components';
 import { DatePickerForm } from '@examples/components/Forms';
 import { format } from 'date-fns';
 import { useState } from 'react';
@@ -10,7 +10,7 @@ const Page = () => {
   const [checkOut, setCheckOut] = useState('');
 
   return (
-    <Layout title="Date Picker">
+    <>
       <div className="prose-sm">
         <h3 className="mt-0">Example #1</h3>
         <p className="mb-1">Classic date picker with default value</p>
@@ -48,7 +48,7 @@ const Page = () => {
           <DatePickerForm />
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 
@@ -66,3 +66,14 @@ export async function getStaticProps() {
 }
 
 export default Page;
+
+
+/**
+ * Attaches the default layout to the page.
+ *
+ * @param {React.ReactNode} page - The page content.
+ * @returns {React.ReactElement} The layout wrapper.
+ */
+Page.getLayout = function getLayout(page) {
+  return <Layout title="Date Picker">{page}</Layout>;
+};

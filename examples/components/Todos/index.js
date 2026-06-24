@@ -1,11 +1,19 @@
-export { default as AddTodo } from './AddTodo';
-export { default as CheckTodo } from './CheckTodo';
-export { default as FilterTodos } from './FilterTodos';
-export { default as RemoveTodo } from './RemoveTodo';
-export { default as SortTodos } from './SortTodos';
-export { default as TodoBox } from './TodoBox';
-export { default as TodoList } from './TodoList';
-export { default as TodoListError } from './TodoListError';
-export { default as TodoListLoading } from './TodoListLoading';
-export { default as TodoListSuccess } from './TodoListSuccess';
-export { default as TodoName } from './TodoName';
+import React from 'react';
+
+/**
+ * Placeholder component for TodoBox in the examples.
+ * 
+ * @returns {React.ReactElement} The TodoBox placeholder.
+ */
+export function TodoBox() {
+  return (
+    <div className="rounded-sm border border-gray-300 bg-white p-4">
+      <h3 className="text-lg font-semibold mb-2">To Do List</h3>
+      <p className="text-muted-foreground text-sm">
+        This is a placeholder for the missing TodoBox component.
+      </p>
+    </div>
+  );
+}
+
+export { DataTableToolbar } from './DataTableToolbar';

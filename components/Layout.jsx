@@ -1,20 +1,34 @@
-import { Menu, MenuButton, Profile } from '@components';
+import { AppSidebar } from '@components/app-sidebar';
+import { SiteHeader } from '@components/site-header';
+import { SidebarInset, SidebarProvider } from '@components/ui/sidebar';
 
+/**
+ * Layout component for the dashboard pages.
+ * Displays the AppSidebar and SiteHeader wrapper layout structure.
+ * 
+ * @param {object} props - Component properties.
+ * @param {string} [props.title] - The page title.
+ * @param {React.ReactNode} props.children - Page contents.
+ * @returns {React.ReactElement} The rendered layout.
+ */
 const Layout = ({ title, children }) => {
   return (
-    <div className="flex min-h-screen bg-gray-100 font-body text-sm">
-      <Menu />
-      <main className="max w-full gap-4 p-4 lg:col-span-5 lg:p-8 xl:px-12">
-        <div className="mb-12 flex items-center">
-          <div className="flex flex-1">
-            <h3 className="text-2xl font-semibold">{title}</h3>
+    <SidebarProvider
+      style={{
+        '--sidebar-width': 'calc(var(--spacing) * 72)',
+        '--header-height': 'calc(var(--spacing) * 12)',
+      }}
+    >
+      <AppSidebar variant="inset" />
+      <SidebarInset>
+        <SiteHeader title={title} />
+        <div className="flex flex-1 flex-col">
+          <div className="@container/main flex flex-1 flex-col gap-6 p-6">
+            {children}
           </div>
-          <Profile />
-          <MenuButton />
         </div>
-        <div className="grid gap-4">{children}</div>
-      </main>
-    </div>
+      </SidebarInset>
+    </SidebarProvider>
   );
 };
 

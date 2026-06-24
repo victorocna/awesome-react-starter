@@ -1,9 +1,9 @@
 import { Overflow } from '@components';
-import { Layout } from '@examples/components';
+import { Layout } from '@components';
 
 const Page = () => {
   return (
-    <Layout title="Overflow">
+    <>
       <div className="prose-sm">
         <p role="description" className="mt-0">
           Overflow components help you truncate a very long text. <br /> They should be used for
@@ -11,18 +11,18 @@ const Page = () => {
         </p>
         <section className="flex gap-2">
           <Overflow>
-            <div className="w-60 rounded bg-purple-800 px-2 text-white">
+            <div className="w-60 rounded-sm bg-purple-800 px-2 text-white">
               A very very long text wrapped in the overflow element
             </div>
           </Overflow>
           <Overflow>
-            <div className="w-60 rounded bg-yellow-200 px-2 text-black">
+            <div className="w-60 rounded-sm bg-yellow-200 px-2 text-black">
               Another overflowing element that should be truncated
             </div>
           </Overflow>
         </section>
       </div>
-    </Layout>
+    </>
   );
 };
 
@@ -40,3 +40,14 @@ export async function getStaticProps() {
 }
 
 export default Page;
+
+
+/**
+ * Attaches the default layout to the page.
+ *
+ * @param {React.ReactNode} page - The page content.
+ * @returns {React.ReactElement} The layout wrapper.
+ */
+Page.getLayout = function getLayout(page) {
+  return <Layout title="Overflow">{page}</Layout>;
+};

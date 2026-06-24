@@ -1,27 +1,16 @@
-import { LoadMoreOnClick } from '@components/Buttons';
-import { TableColumns, TableError, TableLoading, TableSuccess } from '@components/Tables';
-import { todoColumns } from '@examples/data';
-import { useInfiniteQuery } from '@hooks';
+import React from 'react';
 
-const TodoTable = ({ options }) => {
-  const { data, status, ...props } = useInfiniteQuery('admin/todos', options);
-
+/**
+ * Placeholder component for TodoTable in the examples.
+ * 
+ * @returns {React.ReactElement} The TodoTable placeholder.
+ */
+export default function TodoTable() {
   return (
-    <>
-      <TableColumns pageParams={data?.pageParams} />
-
-      {status === 'pending' && <TableLoading name="todos" columns={todoColumns} />}
-      {status === 'error' && <TableError name="todos" columns={todoColumns} />}
-      {status === 'success' && (
-        <>
-          <TableSuccess name="todos" columns={todoColumns} data={data} />
-          <div className="px-4 sm:p-4">
-            <LoadMoreOnClick {...props} />
-          </div>
-        </>
-      )}
-    </>
+    <div className="p-4">
+      <p className="text-muted-foreground text-sm">
+        This is a placeholder for the missing TodoTable component.
+      </p>
+    </div>
   );
-};
-
-export default TodoTable;
+}

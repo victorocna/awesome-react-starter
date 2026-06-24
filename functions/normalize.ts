@@ -1,4 +1,41 @@
+/**
+ * Normalizes input objects by filtering empty values, sorting keys, and
+ * automatically serializing TanStack Table states (sorting, columnFilters)
+ * into clean, backend-ready query parameters.
+ *
+ * @param input The raw input query parameters or form values.
+ * @returns An object containing the normalized parameters and a unique cache key.
+ */
 const normalize = (input: unknown): { norm: unknown; key: string } => {
+  let processedInput = input;
+
+  if (input && typeof input === 'object' && !Array.isArray(input)) {
+    const obj = input as Record<string, any>;
+    const { sorting, columnFilters, ...rest } = obj;
+    const newObj: Record<string, any> = { ...rest };
+
+    if (Array.isArray(sorting)) {
+      if (sorting.length > 0) {
+        newObj.sort = sorting
+          .map((s) => {
+            return `${s.desc ? '-' : ''}${s.id}`;
+          })
+          .join(',');
+      }
+    }
+
+    if (Array.isArray(columnFilters)) {
+      columnFilters.forEach((filter) => {
+        if (filter && typeof filter === 'object' && 'id' in filter && 'value' in filter) {
+          if (filter.value !== undefined && filter.value !== '') {
+            newObj[filter.id] = filter.value;
+          }
+        }
+      });
+    }
+    processedInput = newObj;
+  }
+
   const walk = (v: unknown): [unknown, string | undefined] => {
     if (v == null) {
       return [undefined, undefined];
@@ -51,7 +88,7 @@ const normalize = (input: unknown): { norm: unknown; key: string } => {
     return [undefined, undefined];
   };
 
-  const [norm, key] = walk(input);
+  const [norm, key] = walk(processedInput);
   return {
     norm: norm === undefined ? {} : norm,
     key: key || '{}',

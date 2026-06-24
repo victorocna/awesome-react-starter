@@ -1,5 +1,4 @@
 module.exports = {
-  important: true,
   theme: {
     extend: {
       colors: {
@@ -19,9 +18,6 @@ module.exports = {
     './pages/**/*.js', // all pages as well
   ],
   plugins: [
-    require('@tailwindcss/forms')({
-      strategy: 'class',
-    }),
     require('@tailwindcss/typography'),
   ],
 };

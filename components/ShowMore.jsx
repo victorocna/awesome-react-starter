@@ -1,4 +1,4 @@
-import { classnames } from '@lib';
+import { cn } from '@lib/utils';
 import { useState } from 'react';
 
 const ShowMore = ({ children, label = 'Show more', visible = false }) => {
@@ -11,7 +11,7 @@ const ShowMore = ({ children, label = 'Show more', visible = false }) => {
     <div>
       <button type="button" className="flex items-center gap-1 text-primary" onClick={handleClick}>
         <span>{label}</span>
-        <i className={classnames(show ? 'fas fa-chevron-up' : 'fas fa-chevron-down')} />
+        <i className={cn(show ? 'fas fa-chevron-up' : 'fas fa-chevron-down')} />
       </button>
       {show && <div>{children}</div>}
     </div>

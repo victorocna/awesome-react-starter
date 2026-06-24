@@ -1,5 +1,5 @@
 import { ArrayField, Form, HookForm, Submit } from '@components/HookForm';
-import { Layout } from '@examples/components';
+import { Layout } from '@components';
 import { ArrayAddReasons, ArrayListReasons } from '@examples/components/HookForm';
 import { initialValues, validationSchema } from '@examples/models/array-form';
 
@@ -13,7 +13,7 @@ const Page = () => {
   };
 
   return (
-    <Layout title="React hook array">
+    <>
       <div>
         <HookForm
           validationSchema={validationSchema}
@@ -42,7 +42,7 @@ const Page = () => {
           </Form>
         </HookForm>
       </div>
-    </Layout>
+    </>
   );
 };
 
@@ -60,3 +60,14 @@ export async function getStaticProps() {
 }
 
 export default Page;
+
+
+/**
+ * Attaches the default layout to the page.
+ *
+ * @param {React.ReactNode} page - The page content.
+ * @returns {React.ReactElement} The layout wrapper.
+ */
+Page.getLayout = function getLayout(page) {
+  return <Layout title="React hook array">{page}</Layout>;
+};

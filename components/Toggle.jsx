@@ -1,4 +1,4 @@
-import { classnames } from '@lib';
+import { cn } from '@lib/utils';
 import { useState } from 'react';
 
 const Toggle = ({ label = 'Toggle me', initialState = false, onToggle, disabled, extraClass }) => {
@@ -16,7 +16,7 @@ const Toggle = ({ label = 'Toggle me', initialState = false, onToggle, disabled,
 
   return (
     <label
-      className={classnames(
+      className={cn(
         'inline-flex cursor-pointer items-center',
         disabled && 'cursor-not-allowed opacity-50'
       )}
@@ -29,10 +29,10 @@ const Toggle = ({ label = 'Toggle me', initialState = false, onToggle, disabled,
         disabled={disabled}
       />
       <div
-        className={classnames(
+        className={cn(
           'peer relative h-6 w-11 rounded-full bg-gray-200 peer-checked:bg-blue-600',
           "after:content-[''] peer-checked:after:translate-x-full peer-checked:after:border-white",
-          'after:absolute after:start-[2px] after:top-[2px] after:border-gray-300 after:bg-white',
+          'after:absolute after:inset-s-[2px] after:top-[2px] after:border-gray-300 after:bg-white',
           'after:h-5 after:w-5 after:rounded-full after:border after:transition-all',
           extraClass
         )}

@@ -1,7 +1,6 @@
 import { Button } from '@components';
-import { DateOfBirth } from '@components/Fields';
-import { Field, Form } from '@components/HookForm';
-import { Age, Country, UsState } from '../HookForm';
+import { Form } from '@components/HookForm';
+import { Country, UsState } from '../HookForm';
 
 const StepTwoForm = ({ goBack }) => {
   return (
@@ -9,10 +8,6 @@ const StepTwoForm = ({ goBack }) => {
       <div className="grid gap-4 md:grid-cols-2">
         <Country />
         <UsState />
-      </div>
-      <div className="grid gap-4 md:grid-cols-2">
-        <Field as={DateOfBirth} help="Optional info" label="Date of birth" name="dateOfBirth" />
-        <Age />
       </div>
 
       <div className="flex flex-wrap gap-4">

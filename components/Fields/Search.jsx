@@ -1,4 +1,4 @@
-import { classnames } from '@lib';
+import { cn } from '@lib/utils';
 import { debounce, isFunction } from 'lodash';
 import { useEffect, useRef, useState } from 'react';
 
@@ -48,7 +48,7 @@ const Search = ({ extraClass, id, minChars = 3, onChange, placeholder, value = '
   };
 
   return (
-    <div className={classnames('relative flex items-center', extraClass)}>
+    <div className={cn('relative flex items-center', extraClass)}>
       <input
         id={id}
         className="input pl-8"
@@ -64,7 +64,7 @@ const Search = ({ extraClass, id, minChars = 3, onChange, placeholder, value = '
       </div>
       {text !== '' && (
         <button
-          className="absolute right-0 top-0 z-30 h-full px-3 py-2 text-gray-500 outline-none"
+          className="absolute right-0 top-0 z-30 h-full px-3 py-2 text-gray-500 outline-hidden"
           onClick={resetInputValue}
           tabIndex={-1}
           type="button"

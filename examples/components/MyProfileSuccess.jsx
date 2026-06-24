@@ -1,18 +1,20 @@
-import { Tab, Tabs } from 'react-bootstrap';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs';
 import ChangePasswordForm from './Forms/ChangePasswordForm';
 import MyProfileDetails from './MyProfileDetails';
 
 const MyProfileSuccess = ({ name, email }) => (
-  <>
-    <Tabs className="profile-tabs" defaultActiveKey="1">
-      <Tab eventKey="1" title={<p>Account</p>}>
-        <MyProfileDetails name={name} email={email} />
-      </Tab>
-      <Tab eventKey="2" title={<p>Change Password</p>}>
-        <ChangePasswordForm />
-      </Tab>
-    </Tabs>
-  </>
+  <Tabs defaultValue="account" className="w-full">
+    <TabsList>
+      <TabsTrigger value="account">Account</TabsTrigger>
+      <TabsTrigger value="password">Change Password</TabsTrigger>
+    </TabsList>
+    <TabsContent value="account">
+      <MyProfileDetails name={name} email={email} />
+    </TabsContent>
+    <TabsContent value="password">
+      <ChangePasswordForm />
+    </TabsContent>
+  </Tabs>
 );
 
 export default MyProfileSuccess;

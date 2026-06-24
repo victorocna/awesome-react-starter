@@ -1,4 +1,4 @@
-import { Dropdown, Search } from '@components/Fields';
+import { Search } from '@components/Fields';
 import { AutoSubmitForm, Field } from '@components/HookForm';
 import { initialValues, validationSchema } from '@examples/models/todo-filters';
 
@@ -17,17 +17,6 @@ const TodoFilters = ({ setOptions }) => {
         name="search"
         placeholder="Search by name or #tag"
       />
-      <Field
-        as={Dropdown}
-        help="Select an item from the dropdown"
-        label="Search by todo status"
-        name="only"
-        placeholder="Search by status"
-      >
-        <option value="all">All</option>
-        <option value="completed">Completed</option>
-        <option value="pending">Pending</option>
-      </Field>
     </AutoSubmitForm>
   );
 };

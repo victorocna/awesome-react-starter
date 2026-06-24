@@ -1,9 +1,9 @@
 import { Pill } from '@components';
-import { Layout } from '@examples/components';
+import { Layout } from '@components';
 
 const Page = () => {
   return (
-    <Layout title="Pills">
+    <>
       <div className="prose-sm">
         <p role="description" className="mt-0">
           Small labels that help qualify information.
@@ -14,7 +14,7 @@ const Page = () => {
           <Pill className="bg-purple-800 text-white">Purple pill</Pill>
         </section>
       </div>
-    </Layout>
+    </>
   );
 };
 
@@ -32,3 +32,14 @@ export async function getStaticProps() {
 }
 
 export default Page;
+
+
+/**
+ * Attaches the default layout to the page.
+ *
+ * @param {React.ReactNode} page - The page content.
+ * @returns {React.ReactElement} The layout wrapper.
+ */
+Page.getLayout = function getLayout(page) {
+  return <Layout title="Pills">{page}</Layout>;
+};

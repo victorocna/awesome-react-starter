@@ -36,7 +36,7 @@ const ChangePasswordForm = () => {
             name="confirmPassword"
           />
         </div>
-        <Submit className="button full primary">Save changes</Submit>
+        <Submit>Save changes</Submit>
       </Form>
     </HookForm>
   );

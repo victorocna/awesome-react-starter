@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function useIntersectionObserver({
-  root,
+  root = null,
   target,
   onIntersect,
   threshold = 1.0,

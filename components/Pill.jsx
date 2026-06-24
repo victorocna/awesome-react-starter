@@ -1,10 +1,10 @@
-import { classnames } from '@lib';
+import { cn } from '@lib/utils';
 
 const Pill = ({ children, className }) => {
   return (
     <div className="inline-block">
       <div
-        className={classnames(
+        className={cn(
           'rounded-full px-3 py-1 text-xs font-medium leading-tight',
           className || 'bg-gray-200'
         )}

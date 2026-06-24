@@ -1,6 +1,6 @@
 import { withAuth } from '@auth';
 import { FileDrop, FileUpload, Submit } from '@components/Fields';
-import { Layout } from '@examples/components';
+import { Layout } from '@components';
 import { formatFileName } from '@functions';
 import { useMutation } from '@hooks';
 import { toaster } from '@lib';
@@ -36,7 +36,7 @@ const Page = () => {
   };
 
   return (
-    <Layout title="File upload">
+    <>
       <div className="prose-sm">
         <h3 className="mt-0">Main examples</h3>
         <div className="w-1/2">
@@ -92,7 +92,7 @@ const Page = () => {
           </Submit>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 
@@ -110,3 +110,14 @@ export async function getStaticProps() {
 }
 
 export default withAuth(Page);
+
+
+/**
+ * Attaches the default layout to the page.
+ *
+ * @param {React.ReactNode} page - The page content.
+ * @returns {React.ReactElement} The layout wrapper.
+ */
+Page.getLayout = function getLayout(page) {
+  return <Layout title="File upload">{page}</Layout>;
+};

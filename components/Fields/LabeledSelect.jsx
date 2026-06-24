@@ -1,8 +1,8 @@
-import { classnames } from '@lib';
+import { cn } from '@lib/utils';
 
 const LabeledSelect = ({ extraClass = '', id, label, onChange, options, value }) => {
   return (
-    <div className={classnames('relative rounded-lg border border-gray-400', extraClass)}>
+    <div className={cn('relative rounded-lg border border-gray-400', extraClass)}>
       <label
         className="absolute left-0 top-0 px-2 pt-2 text-xs text-gray-400"
         htmlFor={id}
@@ -12,7 +12,7 @@ const LabeledSelect = ({ extraClass = '', id, label, onChange, options, value })
       </label>
       <select
         aria-labelledby={`${id}-label`}
-        className="mt-4 w-full cursor-pointer appearance-none bg-transparent p-2 pt-3 focus-visible:outline-none"
+        className="mt-4 w-full cursor-pointer appearance-none bg-transparent p-2 pt-3 focus-visible:outline-hidden"
         id={id}
         onChange={onChange}
         value={value}

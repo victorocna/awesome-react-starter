@@ -1,56 +1,43 @@
-import { isValidDate } from '@functions';
-import { useDisclosure } from '@hooks';
-import { format as dateFormat } from 'date-fns';
-import { isFunction } from 'lodash';
-import { useEffect, useState } from 'react';
-import { Modal } from 'react-bootstrap';
-import Calendar from 'react-calendar';
-import Input from './Input';
+import { Button } from '@components/ui/button';
+import { Calendar } from '@components/ui/calendar';
+import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover';
+import { formatDate } from '@functions';
+import { CalendarIcon } from 'lucide-react';
 
-const DatePicker = ({ id, value: initialValue, onChange, calendarProps = {}, ...props }) => {
-  const [value, setValue] = useState(initialValue);
-  const { isOpen, show, hide } = useDisclosure();
-
-  const onClickDay = (value) => {
-    setValue(dateFormat(value, 'yyyy-MM-dd'));
-    hide();
-  };
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
-  useEffect(() => {
-    if (isFunction(onChange)) {
-      try {
-        onChange(isValidDate(value) ? value : '');
-      } catch {
-        onChange('');
-      }
+const DatePicker = ({ value, onChange, calendarProps, ...props }) => {
+  const handleChange = (newDate) => {
+    if (typeof onChange === 'function') {
+      onChange(newDate);
     }
-  }, [value, onChange]);
-
-  if (isValidDate(new Date(initialValue))) {
-    calendarProps.defaultValue = new Date(initialValue);
-  } else {
-    calendarProps.defaultValue = new Date();
-  }
+  };
 
   return (
-    <div className="relative">
-      <Input {...props} id={id} onChange={handleChange} value={value} />
-      <div
-        className="absolute right-0 top-0 grid h-full cursor-pointer place-items-center p-2.5 outline-none"
-        onClick={show}
-      >
-        <i className="fas fa-calendar-alt text-primary" />
-      </div>
+    <>
+      <input type="hidden" {...props} value={value ? JSON.stringify(value) : ''} />
 
-      {isOpen && (
-        <Modal centered={true} show={true} onHide={hide}>
-          <Calendar onClickDay={onClickDay} {...calendarProps} />
-        </Modal>
-      )}
-    </div>
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button
+            variant="outline"
+            className="justify-start px-2.5 font-normal w-full overflow-hidden text-ellipsis"
+          >
+            <CalendarIcon className="size-4 mr-2" />
+            {value ? formatDate(value, 'LLL dd, y') : <span>Pick a date</span>}
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-auto p-0" align="start">
+          <Calendar
+            mode="single"
+            selected={value}
+            onSelect={handleChange}
+            captionLayout="dropdown"
+            numberOfMonths={1}
+            resetOnSelect
+            {...calendarProps}
+          />
+        </PopoverContent>
+      </Popover>
+    </>
   );
 };
 

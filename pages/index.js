@@ -1,26 +1,50 @@
-import { Link } from '@components';
+import { Link, ModeToggle } from '@components';
 import { LoginForm } from '@components/Forms';
+import { Button } from '@components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@components/ui/card';
 
+/**
+ * Login page component serving as the home page.
+ * Displays the login form with theme support toggling.
+ * 
+ * @returns {React.ReactElement} The rendered login page.
+ */
 const Page = () => {
   return (
-    <main className="cover flex min-h-screen flex-col items-center justify-center px-4 py-8">
-      <div className="my-8 flex w-full max-w-xl flex-col rounded-lg bg-white px-4 py-8 lg:px-12">
-        <h2 className="mb-4 text-2xl font-bold">Login</h2>
-        <LoginForm />
-        <div className="mt-2">
-          <Link href="/forgot" className="text-gray-600">
-            Forgot password?
-          </Link>
-        </div>
-        <div className="mt-2">
-          <Link href="/signup" className="text-gray-600">
-            <span className="mr-1">No account yet?</span>
-            <span className="font-bold text-purple-800">Signup now</span>
-          </Link>
-        </div>
+    <main className="cover relative flex min-h-screen flex-col items-center justify-center px-4 py-8">
+      <div className="absolute top-4 right-4">
+        <ModeToggle />
       </div>
+      <Card className="w-full max-w-md">
+        <CardHeader>
+          <CardTitle>Login</CardTitle>
+          <CardDescription>Enter your credentials to access your account.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <LoginForm />
+        </CardContent>
+        <CardFooter className="flex flex-col items-start">
+          <Button asChild variant="link" className="p-0">
+            <Link href="/forgot">Forgot password?</Link>
+          </Button>
+
+          <Button asChild variant="link" className="p-0">
+            <Link href="/signup">
+              No account yet? <span className="font-bold text-card-foreground">Signup now</span>
+            </Link>
+          </Button>
+        </CardFooter>
+      </Card>
     </main>
   );
 };
 
 export default Page;
+

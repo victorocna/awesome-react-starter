@@ -1,15 +1,18 @@
-import React from 'react';
+import {
+  SelectContent,
+  Select as SelectPrimitive,
+  SelectTrigger,
+  SelectValue,
+} from '@components/ui/select';
 
-const Select = ({ children, placeholder, ...props }) => {
+const Select = ({ children, placeholder, onChange, ...props }) => {
   return (
-    <select className="select" {...props}>
-      {placeholder && (
-        <option value="" hidden>
-          {placeholder}
-        </option>
-      )}
-      {children}
-    </select>
+    <SelectPrimitive onValueChange={onChange} {...props}>
+      <SelectTrigger>
+        <SelectValue placeholder={placeholder} />
+      </SelectTrigger>
+      <SelectContent>{children}</SelectContent>
+    </SelectPrimitive>
   );
 };
 

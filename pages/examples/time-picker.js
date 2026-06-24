@@ -1,10 +1,10 @@
 import { TimePicker } from '@components/Fields';
-import { Layout } from '@examples/components';
+import { Layout } from '@components';
 import { TimePickerForm } from '@examples/components/Forms';
 
 const Page = () => {
   return (
-    <Layout title="Time Picker">
+    <>
       <div className="prose-sm">
         <h3 className="mt-0">Example #1</h3>
         <p className="mb-1">Basic time picker</p>
@@ -28,7 +28,7 @@ const Page = () => {
         <p className="mb-1">Disabled time picker</p>
         <TimePicker disabled value={'12:00'} />
       </div>
-    </Layout>
+    </>
   );
 };
 
@@ -46,3 +46,14 @@ export async function getStaticProps() {
 }
 
 export default Page;
+
+
+/**
+ * Attaches the default layout to the page.
+ *
+ * @param {React.ReactNode} page - The page content.
+ * @returns {React.ReactElement} The layout wrapper.
+ */
+Page.getLayout = function getLayout(page) {
+  return <Layout title="Time Picker">{page}</Layout>;
+};

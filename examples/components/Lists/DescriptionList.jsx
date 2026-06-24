@@ -46,10 +46,10 @@ const DescriptionList = () => {
                     <i className="fa-solid fa-paperclip text-gray-400"></i>
                     <div className="ml-4 flex min-w-0 flex-1 gap-2">
                       <span className="truncate font-medium">resume_back_end_developer.pdf</span>
-                      <span className="flex-shrink-0 text-gray-400">2.4mb</span>
+                      <span className="shrink-0 text-gray-400">2.4mb</span>
                     </div>
                   </div>
-                  <div className="ml-4 flex-shrink-0">
+                  <div className="ml-4 shrink-0">
                     <a href="#" className="font-medium text-primary hover:text-primary">
                       Download
                     </a>
@@ -62,10 +62,10 @@ const DescriptionList = () => {
                       <span className="truncate font-medium">
                         coverletter_back_end_developer.pdf
                       </span>
-                      <span className="flex-shrink-0 text-gray-400">4.5mb</span>
+                      <span className="shrink-0 text-gray-400">4.5mb</span>
                     </div>
                   </div>
-                  <div className="ml-4 flex-shrink-0">
+                  <div className="ml-4 shrink-0">
                     <a href="#" className="font-medium text-primary hover:text-primary">
                       Download
                     </a>

@@ -1,9 +1,9 @@
 import { MultiSelectAsync } from '@components/Fields';
-import { Layout } from '@examples/components';
+import { Layout } from '@components';
 
 const Page = () => {
   return (
-    <Layout title="Async MultiSelect">
+    <>
       <div className="prose-sm">
         <p className="mt-0 font-bold">Dynamic values for the MultiSelect element</p>
 
@@ -55,7 +55,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 
@@ -73,3 +73,14 @@ export async function getStaticProps() {
 }
 
 export default Page;
+
+
+/**
+ * Attaches the default layout to the page.
+ *
+ * @param {React.ReactNode} page - The page content.
+ * @returns {React.ReactElement} The layout wrapper.
+ */
+Page.getLayout = function getLayout(page) {
+  return <Layout title="Async MultiSelect">{page}</Layout>;
+};

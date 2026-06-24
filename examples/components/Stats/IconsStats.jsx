@@ -5,7 +5,7 @@ const IconsStats = () => {
     <div className="flex flex-col gap-4">
       <h3 className="text-base font-semibold">Last 30 days</h3>
       <div className="grid gap-4 lg:grid-cols-3">
-        <div className="flex flex-col overflow-hidden rounded-lg shadow-sm">
+        <div className="flex flex-col overflow-hidden rounded-lg shadow-xs">
           <div className="flex items-center gap-4 bg-white p-4">
             <div className="flex items-center justify-center rounded-lg bg-primary p-4 text-xl text-white">
               <i className="fa-regular fa-user"></i>
@@ -27,7 +27,7 @@ const IconsStats = () => {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col overflow-hidden rounded-lg shadow-sm">
+        <div className="flex flex-col overflow-hidden rounded-lg shadow-xs">
           <div className="flex items-center gap-4 bg-white p-4">
             <div className="flex items-center justify-center rounded-lg bg-primary p-4 text-xl text-white">
               <i className="fa-regular fa-envelope"></i>
@@ -49,7 +49,7 @@ const IconsStats = () => {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col overflow-hidden rounded-lg shadow-sm">
+        <div className="flex flex-col overflow-hidden rounded-lg shadow-xs">
           <div className="flex items-center gap-4 bg-white p-4">
             <div className="flex items-center justify-center rounded-lg bg-primary p-4 text-xl text-white">
               <i className="fa-solid fa-arrow-pointer"></i>

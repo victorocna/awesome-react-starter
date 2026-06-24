@@ -1,4 +1,4 @@
-import { classnames } from '@lib';
+import { cn } from '@lib/utils';
 import { flexRender } from '@tanstack/react-table';
 import { memo } from 'react';
 
@@ -7,7 +7,7 @@ const TableHeader = ({ headers }) => {
     <thead className="bg-gray-100">
       <tr className="border-b text-xs text-primary">
         {headers.map((column) => (
-          <th key={column.id} className={classnames('whitespace-nowrap p-4', column?.extraClass)}>
+          <th key={column.id} className={cn('whitespace-nowrap p-4', column?.extraClass)}>
             {flexRender(column.columnDef.header, column.getContext?.())}
           </th>
         ))}

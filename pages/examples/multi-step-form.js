@@ -5,14 +5,14 @@ import { MultiStepForm } from '@examples/components/Multistep';
 
 const Page = () => {
   return (
-    <Layout title="Complex multi step form">
+    <>
       <div className="grid gap-4 md:grid-cols-3">
         <NoSsr>
           <MultiStepForm />
         </NoSsr>
         <Documentation />
       </div>
-    </Layout>
+    </>
   );
 };
 
@@ -30,3 +30,14 @@ export async function getStaticProps() {
 }
 
 export default withAuth(Page);
+
+
+/**
+ * Attaches the default layout to the page.
+ *
+ * @param {React.ReactNode} page - The page content.
+ * @returns {React.ReactElement} The layout wrapper.
+ */
+Page.getLayout = function getLayout(page) {
+  return <Layout title="Complex multi step form">{page}</Layout>;
+};

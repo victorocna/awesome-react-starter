@@ -1,9 +1,9 @@
 import { ShowMore } from '@components';
-import { Layout } from '@examples/components';
+import { Layout } from '@components';
 
 const Page = () => {
   return (
-    <Layout title="Components">
+    <>
       <div className="prose-sm">
         <p role="description" className="mt-0">
           A quick element you can use to temporarly hide content from your interface.
@@ -25,7 +25,7 @@ const Page = () => {
           </ShowMore>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 
@@ -43,3 +43,14 @@ export async function getStaticProps() {
 }
 
 export default Page;
+
+
+/**
+ * Attaches the default layout to the page.
+ *
+ * @param {React.ReactNode} page - The page content.
+ * @returns {React.ReactElement} The layout wrapper.
+ */
+Page.getLayout = function getLayout(page) {
+  return <Layout title="Components">{page}</Layout>;
+};

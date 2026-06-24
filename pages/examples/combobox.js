@@ -1,75 +1,48 @@
-import { Combobox } from '@components/Fields';
-import { Layout } from '@examples/components';
-import { countries } from '../../data';
+import { Layout } from '@components';
+import Link from 'next/link';
+import { Button } from '@components/ui/button';
+import { Combobox, ComboboxInput, ComboboxContent, ComboboxList, ComboboxItem, ComboboxEmpty } from '@components/ui/combobox';
 
-const Page = () => {
-  const showCountries = (country) => (
-    <option key={country.value} value={country.value}>
-      {country.label}
-    </option>
-  );
-
+export default function Page() {
   return (
-    <Layout title="Combobox">
-      <div className="prose-sm">
-        <p className="mt-0">
-          <strong>A dropdown and an autocomplete in the same component</strong>
-          <br />
-          Combobox elements are an extended version of the dropdown element based on the awesome NPM
-          package <code>downshift</code>
-        </p>
+    <>
+            <div className="flex flex-col gap-2 border-b pb-4">
+              <h2 className="text-xl font-bold font-heading">Combobox</h2>
+              <div className="flex items-center gap-4">
+                <p className="text-sm text-muted-foreground">
+                  Autocomplete input with search filter capabilities.
+                </p>
+                <Button asChild variant="link" size="xs">
+                  <Link target="_blank" href="https://ui.shadcn.com/docs/components/combobox">
+                    See Documentation
+                  </Link>
+                </Button>
+              </div>
+            </div>
 
-        <div className="mb-4 w-80">
-          <label htmlFor="combobox-simple" className="mb-0 cursor-pointer">
-            Simple combobox
-          </label>
-          <Combobox id="combobox-simple">
-            <option value="marguerita">Pizza marguerita</option>
-            <option value="salami">Pizza salami</option>
-            <option value="capriciosa">Pizza capriciosa</option>
-          </Combobox>
-        </div>
-
-        <div className="mb-4 w-80">
-          <label htmlFor="combobox-countries" className="mb-0 cursor-pointer">
-            Combobox with countries
-          </label>
-          <Combobox id="combobox-countries">{countries.map(showCountries)}</Combobox>
-        </div>
-
-        <div className="mb-4 w-80">
-          <label htmlFor="combobox-placeholder" className="mb-0 cursor-pointer">
-            Country combobox with placeholder
-          </label>
-          <Combobox id="combobox-placeholder" placeholder="Select a country">
-            {countries.map(showCountries)}
-          </Combobox>
-        </div>
-
-        <div className="mb-4 w-80">
-          <label htmlFor="combobox-default" className="mb-0 cursor-pointer">
-            Country combobox with default selection
-          </label>
-          <Combobox id="combobox-default" value="DEU">
-            {countries.map(showCountries)}
-          </Combobox>
-        </div>
-
-        <div className="mb-4 w-80">
-          <label htmlFor="combobox-disabled" className="mb-0 cursor-pointer">
-            Disabled combobox with default selection
-          </label>
-          <Combobox id="combobox-disabled" value="DEU" disabled={true}>
-            {countries.map(showCountries)}
-          </Combobox>
-        </div>
-      </div>
-    </Layout>
+            <div className="flex flex-1 items-start justify-start py-4">
+              
+            <div className="w-[200px]">
+              <Combobox>
+                <ComboboxInput showClear placeholder="Select framework..." />
+                <ComboboxContent>
+                  <ComboboxList>
+                    <ComboboxItem value="next">Next.js</ComboboxItem>
+                    <ComboboxItem value="react">React</ComboboxItem>
+                    <ComboboxItem value="vue">Vue</ComboboxItem>
+                    <ComboboxItem value="angular">Angular</ComboboxItem>
+                    <ComboboxEmpty>No results found.</ComboboxEmpty>
+                  </ComboboxList>
+                </ComboboxContent>
+              </Combobox>
+            </div>
+    
+            </div>
+          </>
   );
-};
+}
 
 export async function getStaticProps() {
-  // hide page on production environments
   if (process.env.NODE_ENV === 'production') {
     return {
       notFound: true,
@@ -81,4 +54,13 @@ export async function getStaticProps() {
   };
 }
 
-export default Page;
+
+/**
+ * Attaches the default layout to the page.
+ *
+ * @param {React.ReactNode} page - The page content.
+ * @returns {React.ReactElement} The layout wrapper.
+ */
+Page.getLayout = function getLayout(page) {
+  return <Layout title="Combobox">{page}</Layout>;
+};

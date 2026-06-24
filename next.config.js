@@ -55,5 +55,8 @@ module.exports = {
   compiler: {
     styledComponents: true,
   },
+  serverExternalPackages: ['@reduxjs/toolkit'],
   devIndicators: false,
 };
+
+

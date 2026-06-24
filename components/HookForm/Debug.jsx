@@ -1,24 +1,21 @@
-import { useFormContext, useWatch } from 'react-hook-form';
+import { DevTool } from '@hookform/devtools';
+import { useEffect, useState } from 'react';
+import { useFormContext } from 'react-hook-form';
 
 const Debug = () => {
-  const { control, formState } = useFormContext();
-  const values = useWatch({ control });
+  const { control } = useFormContext();
+  const [isMounted, setIsMounted] = useState(false);
 
-  // Full form state debug object
-  const debugValues = {
-    values,
-    errors: formState.errors,
-    touchedFields: formState.touchedFields,
-    dirtyFields: formState.dirtyFields,
-    isSubmitting: formState.isSubmitting,
-    isValid: formState.isValid,
-  };
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
-  return (
-    <pre className="bg-red-200 p-4 font-mono text-sm lg:px-8">
-      {JSON.stringify(debugValues, null, 2)}
-    </pre>
-  );
+  if (!isMounted) {
+    return null;
+  }
+
+  return <DevTool control={control} />;
 };
 
 export default Debug;
+

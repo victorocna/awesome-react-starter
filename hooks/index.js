@@ -1,10 +1,8 @@
 export { default as useArray } from './use-array';
 export { default as useChildren } from './use-children';
 export { default as useCollapsible } from './use-collapsible';
-export { default as useCombobox } from './use-combobox';
 export { default as useDebounce } from './use-debounce';
 export { default as useDisclosure } from './use-disclosure';
-export { default as useDropdown } from './use-dropdown';
 export { default as useInfiniteQuery } from './use-infinite-query';
 export { default as useIntersectionObserver } from './use-intersection-observer';
 export { default as useMutation } from './use-mutation';
@@ -14,7 +12,6 @@ export { default as useProfile } from './use-profile';
 export { default as useQuery } from './use-query';
 export { default as useRenderCount } from './use-render-count';
 export { default as useRerender } from './use-rerender';
-export { default as useSelect } from './use-select';
 export { default as useSwipeable } from './use-swipeable';
 export { default as useTable } from './use-table';
 export { default as useToggle } from './use-toggle';

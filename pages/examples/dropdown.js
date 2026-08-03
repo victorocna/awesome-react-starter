@@ -16,7 +16,7 @@ const Page = () => {
           <strong>Looks like a HTML select, but it's not a HTML select</strong>
           <br />
           Dropdown elements are an extended version of the HTML select based on the awesome NPM
-          package <code>downshift</code>
+          package <code>radix-ui</code>
         </p>
 
         <div className="mb-4 w-80">

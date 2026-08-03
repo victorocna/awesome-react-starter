@@ -19,7 +19,7 @@ const Page = () => {
           <strong>Dynamic values for the Dropdown element</strong>
           <br />
           Dropdown elements are an extended version of the HTML select based on the awesome NPM
-          package <code>downshift</code>
+          package <code>radix-ui</code>
         </p>
 
         <div className="mb-4">

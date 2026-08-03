@@ -19,7 +19,7 @@ const Page = () => {
           <strong>Dynamic values for the Combobox element</strong>
           <br />
           Combobox elements are an extended version of the dropdown element based on the awesome NPM
-          package <code>downshift</code>
+          package <code>@base-ui/react</code>
         </p>
 
         <div className="mb-4">

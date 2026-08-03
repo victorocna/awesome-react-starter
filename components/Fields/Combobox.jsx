@@ -1,35 +1,72 @@
-import { useCombobox } from '@hooks';
+import { Combobox as ComboboxPrimitive } from '@base-ui/react/combobox';
+import { useChildren } from '@hooks';
 import { classnames } from '@lib';
-import OptionList from './OptionList';
 
-const Combobox = ({ children, disabled, icon, id, onChange, placeholder, value }) => {
-  const { inputItems, ...downshift } = useCombobox({ children, id, onChange, value });
+const Combobox = ({ children, disabled, id, onChange, placeholder, value }) => {
+  const items = useChildren(children);
 
   return (
-    <div className="relative">
-      <div
-        className={classnames(
-          'dropdown',
-          downshift.isOpen && inputItems.length > 0 && 'rounded-b-none',
-          disabled && 'pointer-events-none bg-gray-200'
-        )}
-        {...downshift.getComboboxProps()}
+    <ComboboxPrimitive.Root
+      items={items}
+      value={value}
+      onValueChange={onChange}
+      disabled={disabled}
+      itemToStringLabel={(item) => item.label || ''}
+      id={id}
+    >
+      <ComboboxPrimitive.InputGroup
+        className={(state) => {
+          return classnames(
+            'border rounded-md h-9 px-3 flex items-center gap-2 bg-white',
+            state.open && 'rounded-b-none',
+            disabled && 'pointer-events-none bg-gray-200'
+          );
+        }}
       >
-        <input
+        <ComboboxPrimitive.Input
           className="-my-2 w-full bg-transparent outline-none"
-          {...downshift.getInputProps({ id, placeholder, disabled })}
+          placeholder={placeholder}
+          id={id}
+          disabled={disabled}
         />
-        <button
-          className={classnames(disabled && 'pointer-events-none')}
-          type="button"
-          {...downshift.getToggleButtonProps()}
-        >
-          {icon || <i className="fas fa-chevron-down" />}
-        </button>
-      </div>
+        <ComboboxPrimitive.Trigger className={classnames(disabled && 'pointer-events-none')}>
+          <i className="fas fa-chevron-down" />
+        </ComboboxPrimitive.Trigger>
+      </ComboboxPrimitive.InputGroup>
 
-      <OptionList items={inputItems} {...downshift} />
-    </div>
+      <ComboboxPrimitive.Portal>
+        <ComboboxPrimitive.Positioner sideOffset={0} align="start">
+          <ComboboxPrimitive.Popup
+            className="z-10 max-h-80 overflow-y-auto rounded-b-lg border border-t-0 border-neutral-300 bg-white shadow-sm outline-none p-0"
+            style={{ width: 'var(--anchor-width)' }}
+          >
+            <ComboboxPrimitive.Empty className="text-center text-sm text-gray-400">
+              <div className="flex w-full justify-center py-2">No items found.</div>
+            </ComboboxPrimitive.Empty>
+            <ComboboxPrimitive.List className="outline-none">
+              {(item) => {
+                return (
+                  <ComboboxPrimitive.Item
+                    key={item.value}
+                    value={item}
+                    className={(state) => {
+                      return classnames(
+                        'px-3 py-1 cursor-pointer outline-none select-none',
+                        state.highlighted && 'bg-gray-200',
+                        state.selected && 'font-medium',
+                        state.disabled && 'pointer-events-none opacity-50'
+                      );
+                    }}
+                  >
+                    {item.label}
+                  </ComboboxPrimitive.Item>
+                );
+              }}
+            </ComboboxPrimitive.List>
+          </ComboboxPrimitive.Popup>
+        </ComboboxPrimitive.Positioner>
+      </ComboboxPrimitive.Portal>
+    </ComboboxPrimitive.Root>
   );
 };
 

@@ -10,6 +10,8 @@ const queryClient = new QueryClient(queryClientConfig);
 const Root = (props) => {
   const { Component, pageProps } = props;
 
+  const getLayout = Component.getLayout ?? ((page) => page);
+
   return (
     <>
       <Head>
@@ -18,7 +20,7 @@ const Root = (props) => {
       </Head>
       <ErrorBoundary>
         <QueryClientProvider client={queryClient}>
-          <Component {...pageProps} />
+          {getLayout(<Component {...pageProps} />)}
         </QueryClientProvider>
         <Toaster />
         <ScreenSizeInfo />

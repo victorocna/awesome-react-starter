@@ -21,11 +21,17 @@ const withAuth = (WrappedComponent) => {
 
       // Re-run verification on window focus and cleanup
       window.addEventListener('focus', verifyAuth);
-      return () => window.removeEventListener('focus', verifyAuth);
+      return () => {
+        window.removeEventListener('focus', verifyAuth);
+      };
     }, []);
 
     return <WrappedComponent {...props} />;
   };
+
+  if (WrappedComponent.getLayout) {
+    Wrapper.getLayout = WrappedComponent.getLayout;
+  }
 
   return Wrapper;
 };
